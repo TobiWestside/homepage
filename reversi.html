@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+	<title>Reversi</title>
+	<meta name="description" content="Reversi" />
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	
+	<script type="text/javascript">
+		/*
+		 * Initialize variables
+		 * Set initial distribution of tiles on the field
+		 * Mark borders
+		 */
+		function init() {
+			// Number of turns played
+			turns = 0;
+			// Keep track of which tile is which color
+			tilesColors = new Array(89);
+			// There are two colors, white and black
+			colors = [];
+			colors[0] = "#FFFFFF";
+			colors[1] = "#000000";
+
+			// Initial distribution
+			tilesColors[44] = colors[0];
+			tilesColors[55] = colors[0];
+			tilesColors[45] = colors[1];
+			tilesColors[54] = colors[1];
+			document.getElementById("44").style.backgroundColor = colors[0];
+			document.getElementById("55").style.backgroundColor = colors[0];
+			document.getElementById("45").style.backgroundColor = colors[1];
+			document.getElementById("54").style.backgroundColor = colors[1];
+
+			// Mark some tiles as borders because
+			// the playing field is only 8x8
+			// | 0| 1| 2| 3| 4| 5| 6| 7| 8| 9|
+			// |10|11|12|13|14|15|16|17|18|19|
+			// |20|21|22|23|24|25|26|27|28|29|
+			// |30|31|32|33|34|35|36|37|38|39|
+			// |40|41|42|43|44|45|46|47|48|49|
+			// |50|51|52|53|54|55|56|57|58|59|
+			// |60|61|62|63|64|65|66|67|68|69|
+			// |70|71|72|73|74|75|76|77|78|79|
+			// |80|81|82|83|84|85|86|87|88|89|
+
+			// This way, we can use the row numbers and column numbers to address tiles
+			// for example, tile 34 is in row 3, column 4
+			// | b| b| b| b| b| b| b| b| b| b|
+			// | b|11|12|13|14|15|16|17|18| b|
+			// | b|21|22|23|24|25|26|27|28| b|
+			// | b|31|32|33|34|35|36|37|38| b|
+			// | b|41|42|43|44|45|46|47|48| b|
+			// | b|51|52|53|54|55|56|57|58| b|
+			// | b|61|62|63|64|65|66|67|68| b|
+			// | b|71|72|73|74|75|76|77|78| b|
+			// | b|81|82|83|84|85|86|87|88| b|
+			
+			for (i = 0; i < 10; i++) {
+				tilesColors[i] = "border";
+				if (i * 10 != 90) {
+					tilesColors[i * 10] = "border";
+				}
+				if ((i*10) + 9 != 9 && (i*10) + 9 != 89 && (i*10) + 9 != 99) {
+					tilesColors[(i*10) + 9] = "border";
+				}
+			}
+		}
+
+		/*
+		 * Checks which tiles will be flipped in the specified direction from the specified tile
+		 * and appends them to the tiles array
+		 * 
+		 * Values direction can have:
+		 * Right:        1
+		 * Left:        -1
+		 * Down:        10
+		 * Up:         -10
+		 * Right-Down:  11
+		 * Left-Down:    9
+		 * Right-Up:    -9
+		 * Left-Up:    -11
+		 */
+		function addTilesToBeColoredInDirection(tileId, direction, tiles) {
+			var counter = 0;
+			// The color changes with each turn
+			var color = colors[turns % 2];
+			// The loop intentionally is an infinite loop
+			// The loop ends when the coordinates are outside the playing field or
+			// when there are no tiles of the opponent's color in the direction that is searched or
+			// when the next tile is of the color of the player
+			for (j = 1; ; j++) {
+				// Coordinates of the next tile to be checked
+				var coordinates = parseInt(tileId) + j*direction;
+				// If there is a tile in the direction from the field that the player clicked on
+				if (tilesColors[coordinates] != undefined && tilesColors[coordinates] != "border") {
+					// If tiles in the direction are of the opponent's color, they can potentially be flipped, so count them
+					if (tilesColors[coordinates] != color) {
+						counter++;
+					} else if (tilesColors[coordinates] == color && counter > 0) {
+						// If there where some tiles of the opponent's color and now there is a tile of the player's color
+						// those tiles will be flipped, so add them to the array
+						for (var k = 1; k <= counter; k++) {
+							tiles.push(String(parseInt(tileId) + k*direction));
+						}
+					} else {
+						// If there is a tile of the player's color, but there are no tiles that can be flipped in between
+						counter = 0;
+						break;
+					}
+				} else {
+					// If there is no tile in the direction from the field that the player clicked on
+					counter = 0;
+					break;
+				}
+			}
+		}
+		
+		/*
+		 * Return the coordinates of the tiles that will be flipped
+		 * when a player clicks on the tile with the specified tileId
+		 */
+		function tilesToBeColored(tileId) {
+			// The coordinates of the tiles that will be flipped (i.e. change color)
+			tiles = [];
+			//var counter = 0;
+			// Check which tiles change their color
+			// Need to check in all directions: right, left, up, down, and diagonal: right-up, right-down, left-up, left-down
+			// Direction numbers
+			const RIGHT = 1;
+			const LEFT = -1;
+			const DOWN = 10;
+			const UP = -10;
+			addTilesToBeColoredInDirection(tileId, RIGHT, tiles);
+			addTilesToBeColoredInDirection(tileId, LEFT, tiles);
+			addTilesToBeColoredInDirection(tileId, DOWN, tiles);
+			addTilesToBeColoredInDirection(tileId, UP, tiles);
+			addTilesToBeColoredInDirection(tileId, RIGHT + DOWN, tiles);
+			addTilesToBeColoredInDirection(tileId, LEFT + DOWN, tiles);
+			addTilesToBeColoredInDirection(tileId, RIGHT + UP, tiles);
+			addTilesToBeColoredInDirection(tileId, LEFT + UP, tiles);
+
+			// Return the tiles that will be flipped
+			return tiles;
+		}
+		
+		/*
+		 * Update colors of the html elements
+		 * Increment the number of turns
+		 * Update player scores
+		 * Check if the next player has any possible moves or should be skipped
+		 * Check if the game is over
+		 * Update color of active player
+		 */
+		function afterTurn() {
+			// Assign each element the correct color and set the shadow
+			for (k = 0; k < tilesColors.length; k++) {
+				var element = document.getElementById(k);
+				if (element != undefined) {
+					element.style.backgroundColor = tilesColors[k];
+				}
+				if (tilesColors[k] == colors[0]) {
+					element.style.boxShadow="0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC";
+				}
+				if (tilesColors[k] == colors[1]) {
+					element.style.boxShadow="0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222";
+				}
+			}
+			turns++;
+			
+			// Count the numbers of white and black tiles
+			// and display them to the players
+			var white = 0;
+			var black = 0;
+			for (var i = 0; i < tilesColors.length; i++) {
+				if (tilesColors[i] == colors[0]) {
+					white++;
+				}
+			}
+			for (var i = 0; i < tilesColors.length; i++) {
+				if (tilesColors[i] == colors[1]) {
+					black++;
+				}
+			}
+			document.getElementById("whiteLabel").innerHTML = white;
+			document.getElementById("blackLabel").innerHTML = black;
+			
+			// Number of possible tile flips of the next player
+			var moves = 0;
+			for (var i = 0; i < tilesColors.length; i++) {
+				if (tilesColors[i] == undefined) {
+					moves = moves + (tilesToBeColored(i)).length;
+				}
+			}
+			
+			if (moves == 0) {
+				// If the next player can't flip any tiles, they are skipped
+				turns++;
+				for (var i=0; i<tilesColors.length; i++) {
+					if (tilesColors[i] == undefined) {
+						moves = moves + (tilesToBeColored(i)).length;
+					}
+				}
+				if (moves == 0) {
+					// If both players can't flip any tiles, the game is over
+					if(white > black){
+						alert("White wins!");
+					}
+					else if(white < black){
+						alert("Black wins!");
+					}
+					else{
+						alert("Game over");
+					}
+					
+				}
+			}
+			// Display the color of the current player
+			document.getElementById("playerLabel").style.backgroundColor = colors[turns%2];
+		}
+		
+		/*
+         * Do a flip animation on the specified tile
+		 */
+		function flip(tileId) {
+			var i = 0;
+			// Rotate 180deg horizontally, in 10 steps of 18deg each
+			var id = setInterval(function() {
+				var transform = "rotateY(" + i + "deg)";
+				document.getElementById(parseInt(tileId)).style.transform = transform;
+				
+				if (i == 180) {
+					clearInterval(id);
+				}
+				i = i + 18;
+			}, 10);
+		}
+		
+		/*
+		 * Check if the move is allowed and if so,
+		 * update the colors of the affected tiles and
+		 * do the flip animation
+		 */
+		function checkTile(tileId) {
+			var clickedTileColor = tilesColors[parseInt(tileId)];
+			// If the tile doesn't have a color yet
+			if (clickedTileColor == undefined) {
+				// Check which tiles will be flipped
+				var tiles = tilesToBeColored(tileId)
+				// If at least one tile is flipped, the move is allowed
+				if (tiles.length > 0) {
+					// Update the color of the field that the player clicked on
+					tilesColors[parseInt(tileId)] = colors[turns % 2];
+					// Update the colors of the tiles to be flipped
+					for (k = 0; k < tiles.length; k++) {
+						tilesColors[parseInt(tiles[k])] = colors[turns % 2];
+						flip(tiles[k]);
+					}
+					afterTurn();
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body onload="init();">
+	<nav class="menu-main">
+        <ul>
+            <li><a href="index.html">Tobias Fränzel</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <hr class="divider">
+    <div id="container-main">
+		<h1>Reversi</h1>
+		<div style="width:84vmin; float:none; height:5vmin; margin-left:auto; margin-bottom:1vmin; margin-right:auto;">
+			<div id="playerLabel" style="height:5vmin; width:5vmin; border:1px solid black; margin-right:1vmin; float:left;"></div>
+			<div id="whiteLabel" style="height:5vmin; width:5vmin; border:1px solid black; text-align:center; vertical-align:middle; font-size:4vmin; margin-right:1vmin; float:left;">2</div>
+			<div id="blackLabel" style="height:5vmin; width:5vmin; border:1px solid black; text-align:center; vertical-align:middle; font-size:4vmin; float:left; background-color:black; color:white;">2</div>
+			<button style="border:2px solid #555555; height:5vmin; width:10vmin; margin-left:auto; display:block;" onclick="location.reload();">Restart</button>
+		</div>
+		<table style="background-color:green; height:84vmin; width:84vmin; border-collapse:collapse; margin-left:auto; margin-right:auto;">
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(11);">
+					<div id="11" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(11);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(12);">
+					<div id="12" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(12);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(13);">
+					<div id="13" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(13);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(14);">
+					<div id="14" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(14);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(15);">
+					<div id="15" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(15);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(16);">
+					<div id="16" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(16);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(17);">
+					<div id="17" style="box-shadow:; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(17);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(18);">
+					<div id="18" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(18);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(21);">
+					<div id="21" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(21);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(22);">
+					<div id="22" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(22);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(23);">
+					<div id="23" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(23);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(24);">
+					<div id="24" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(24);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(25);">
+					<div id="25" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(25);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(26);">
+					<div id="26" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(26);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(27);">
+					<div id="27" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(27);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(28);">
+					<div id="28" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(28);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(31);">
+					<div id="31" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(31);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(32);">
+					<div id="32" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(32);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(33);">
+					<div id="33" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(33);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(34);">
+					<div id="34" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(34);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(35);">
+					<div id="35" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(35);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(36);">
+					<div id="36" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(36);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(37);">
+					<div id="37" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(37);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(38);">
+					<div id="38" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(38);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(41);">
+					<div id="41" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(41);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(42);">
+					<div id="42" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(42);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(43);">
+					<div id="43" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(43);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(44);">
+					<div id="44" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(44);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(45);">
+					<div id="45" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(45);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(46);">
+					<div id="46" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(46);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(47);">
+					<div id="47" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(47);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(48);">
+					<div id="48" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(48);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(51);">
+					<div id="51" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(51);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(52);">
+					<div id="52" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(52);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(53);">
+					<div id="53" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(53);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(54);">
+					<div id="54" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(54);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(55);">
+					<div id="55" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(55);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(56);">
+					<div id="56" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(56);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(57);">
+					<div id="57" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(57);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(58);">
+					<div id="58" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(58);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(61);">
+					<div id="61" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(61);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(62);">
+					<div id="62" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(62);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(63);">
+					<div id="63" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(63);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(64);">
+					<div id="64" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(64);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(65);">
+					<div id="65" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(65);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(66);">
+					<div id="66" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(66);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(67);">
+					<div id="67" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(67);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(68);">
+					<div id="68" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(68);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(71);">
+					<div id="71" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(71);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(72);">
+					<div id="72" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(72);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(73);">
+					<div id="73" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(73);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(74);">
+					<div id="74" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(74);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(75);">
+					<div id="75" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(75);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(76);">
+					<div id="76" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(76);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(77);">
+					<div id="77" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(77);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(78);">
+					<div id="78" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(78);"></div>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(81);">
+					<div id="81" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(81);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(82);">
+					<div id="82" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(82);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(83);">
+					<div id="83" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(83);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(84);">
+					<div id="84" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(84);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(85);">
+					<div id="85" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(85);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(86);">
+					<div id="86" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(86);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(87);">
+					<div id="87" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(87);"></div>
+				</td>
+				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(88);">
+					<div id="88" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(88);"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+<!-- Matomo -->
+<script type="text/javascript">
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+	  var u="//tobiasfraenzel.de/misc/piwik/";
+	  _paq.push(['setTrackerUrl', u+'matomo.php']);
+	  _paq.push(['setSiteId', '1']);
+	  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+  </script>
+  <!-- End Matomo Code -->  
+
+</html>

@@ -1,0 +1,15 @@
+div#container-main {
+    text-align: center;
+}
+
+button#generateBtn {
+    text-align: center;
+    padding: 0.5em;
+    font-size:1.2em;
+    margin-bottom: 2em;
+}
+
+div#container-description {
+    text-align:left;
+    margin-top: 10em;
+}

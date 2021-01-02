@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/playlist_styles.css"/>
+	<title>Youtube Playlist-Generator</title>
+	<meta name="description" content="Erstelle deine eigene Youtube Playlist, auch ohne Account."/>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body onload="parseUrl((window.location).toString());">
+	<nav class="menu-main">
+        <ul>
+            <li><a href="index.html">Tobias Fränzel</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <hr class="divider">
+    <div id="container-main">
+		<h1>Playlist-Generator</h1>
+
+		<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+		<div id="playerContainer">
+			<div id="player"></div>
+		</div>
+
+		<script>
+			var sharedPl = false;
+			// 2. This code loads the IFrame Player API code asynchronously.
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			// 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
+			var player;
+			var width;
+			var height;
+			var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			var wWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			// Scale player width to 80% of the window
+			width = wWidth * 0.8
+			// Scale player height to 9/16 of the width
+			// (because most videos are in 16:9 format)
+			height = (width / 16) * 9;
+			// Minimum width and height
+			if (width > 800) {
+				width = 800;
+				height = 450;
+			}
+
+			width = width.toString();
+			height = height.toString();
+
+			function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+				height: height,
+				width: width,
+				videoId: 'r1Xe0XY0OQQ', // Default video
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+				});
+			}
+
+			// 4. The API will call this function when the video player is ready.
+			function onPlayerReady(event) {
+				// Automatically load a shared playlist
+				if (sharedPl == true) {
+					loadPl();
+				}
+			}
+
+			// 5. The API calls this function when the player's state changes.
+			//    The function indicates that when playing a video (state=1),
+			//    the player should play for six seconds and then stop.
+			var done = false;
+			function onPlayerStateChange(event) {
+				if (event.data == YT.PlayerState.BUFFERING) {
+					// Set the video title as tab title
+					var title = player.getVideoData().title;
+					if (title == "") {
+						title = "New Playlist";
+					}
+					document.title = title + " // Youtube Playlist-Generator";
+				} else if (event.data == "-1") {
+					// Set the video title as tab title
+					var title = player.getVideoData().title;
+					if (title == "") {
+						title = "New Playlist";
+					}
+					document.title = title + " // Youtube Playlist-Generator";
+				}
+			}
+
+			function stopVideo() {
+				player.stopVideo();
+			}
+
+			function pauseVideo(){
+				player.pauseVideo();
+			}
+
+			// Get video ID from URL
+			// Youtube URLs typically have one of two forms:
+			// 1) https://youtube.com/watch?v=<ID>
+			// 2) https://youtu.be/<ID>
+			// This function assumes that if an URL is not in the first form it is in the second
+			function getIdFromUrl(url) {
+				startIndex = 0;
+				startIndex = url.indexOf("?v=") + 3;
+				if (startIndex < 3) {
+					startIndex = url.indexOf(".be/") + 4;
+				}
+				endIndex = startIndex + 11;
+				id = url.slice(startIndex, endIndex);
+				return id;
+			}
+
+			// Creates a playlist from the URLs in the TextArea
+			function loadPl() {
+				// Create a comma-separated string from the URLs in TextArea
+				urls = document.getElementById("urls").value;
+				urls = urls.trim();
+				urlsArray = urls.split("\n");
+				idList = "";
+
+				for (var i = 0; i < urlsArray.length; i++) {
+					idList = idList.concat(getIdFromUrl(urlsArray[i]));
+					if (i < urlsArray.length - 1) {
+						idList = idList.concat(",");
+					}
+				}
+				// Tell the player to load the playlist
+				player.loadPlaylist(idList);
+				// Enable loop
+				player.setLoop(true);
+				// Check loop checkbox
+				document.getElementById("loopCheck").checked = "checked";
+				// Play the first video
+				// (most browsers now have autoplay disabled,
+				// so this only has an effect if a user enabled it explicitly)
+				player.playVideoAt(0);
+				// Generate the URL for sharing the playlist
+				generateShareUrl();
+			}
+
+			// Parse the current URL to get video IDs for shared playlists
+			function parseUrl(url){
+				var ids;
+				// Similar to the Youtube URLs, in playlist-share-URLs all IDs are prefixed with "?v="
+				ids = url.split("?v=");
+
+				// If there is at least one video ID the length of the ids array will be > 1
+				if (ids.length > 1) {
+					// Create Youtube URLs from the video IDs and add them to the TextArea
+					document.getElementById("urls").value = "https://www.youtube.com/watch?v=" + encodeURI(ids[1]);
+					// If there is more then 1 ID, then separate the following IDs with '\n'
+					if (ids.length > 2) {
+						for (var i = 2; i < ids.length; i++) {
+							document.getElementById("urls").value += "\nhttps://www.youtube.com/watch?v=" + encodeURI(ids[i]);
+
+						}
+					}
+					// Mark this as a shared playlist and load it
+					sharedPl = true;
+					loadPl();
+				}
+			}
+
+			// Create the share URL and prepare the tinyurl call
+			function generateShareUrl() {
+				// Base URL
+				shareUrl = "http://tobiasfraenzel.de/playlist";
+
+				// Get video IDs from the URLs in the TextArea
+				// and add them to the share URL
+				urls = document.getElementById("urls").value;
+				urls = urls.trim();
+				urlsArray = urls.split("\n");
+
+				for (var i=0; i<urlsArray.length; i++) {
+					shareUrl = shareUrl.concat("?v=" + getIdFromUrl(urlsArray[i]));
+				}
+
+				// Set the share URL in the text input 
+				document.getElementById("shareUrlField").value = encodeURI(shareUrl);
+				// Select the URL to make copying easier
+				document.getElementById("shareUrlField").select();
+				// Set the tinyurl URL
+				var link = "http://tinyurl.com/api-create.php?url=" + shareUrl;
+				document.getElementById("shortURL").href = link
+			}
+
+			// Enable or disable loop
+			function toggleLoop() {
+				var loopCheck = document.getElementById("loopCheck");
+				if (loopCheck.checked == "checked") {
+					player.setLoop(true);
+				} else {
+					player.setLoop(false);
+				}
+			}
+
+			// Enable or disable shuffle
+			function toggleShuffle() {
+				var shuffleCheck = document.getElementById("shuffleCheck");
+				if (shuffleCheck.checked == "checked") {
+					player.setShuffle(true);
+				} else {
+					player.setShuffle(false);
+				}
+			}
+		</script>
+		<div id="container-checkboxes">
+			<input type="checkbox" id="loopCheck" onclick="toggleLoop();"/>
+			<label for="loopCheck" onclick="toggleLoop();">
+				Loop
+			</label>
+			<br/>
+			<input type="checkbox" id="shuffleCheck" onclick="toggleShuffle();"/>
+			<label for="shuffleCheck" onclick="toggleShuffle();">
+				Shuffle
+			</label>
+		</div>
+		<textarea id="urls">https://www.youtube.com/watch?v=r1Xe0XY0OQQ</textarea>
+		<button id="playlistBtn" onclick="loadPl();">
+			Playlist erstellen
+		</button>
+		<br>
+		Playlist teilen: <input type="text" onfocus="this.select();" id="shareUrlField">
+		<a href="#" target="_blank" rel="noopener noreferrer" id="shortURL">Kurz-Link erstellen</a>
+
+		<div id="container-description">
+			<h2>Über den Playlist-Generator</h2>
+			<p>Mit dem Playlist-Generator kannst du auch ohne einen Youtube-Account deine eigenen Playlists erstellen.</p>
+			<p>Füge einfach die Links zu den Youtube-Videos im Textfeld ein und klicke auf "Playlist erstellen". Es ist nur ein Link pro Zeile zulässig.</p>
+		</div>
+
+		<!-- Piwik -->
+			<script type="text/javascript">
+			  var _paq = _paq || [];
+			  _paq.push(['trackPageView']);
+			  _paq.push(['enableLinkTracking']);
+			  (function() {
+				var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tobiasfraenzel.de/misc/piwik/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', 1]);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+				g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			  })();
+			</script>
+			<noscript><p><img src="http://tobiasfraenzel.de/misc/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+	</div>
+</body>
+
+<!-- Matomo -->
+<script type="text/javascript">
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+	  var u="//tobiasfraenzel.de/misc/piwik/";
+	  _paq.push(['setTrackerUrl', u+'matomo.php']);
+	  _paq.push(['setSiteId', '1']);
+	  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+  </script>
+  <!-- End Matomo Code -->
+  
+</html>

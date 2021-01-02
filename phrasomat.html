@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/phrasomat_styles.css"/>
+	<title>Phrasomat</title>
+	<meta name="description" content="Der Phrasomat kann Fachausdrücke für jede Gelegenheit generieren. Ihnen fehlt ein Fachausdruck? Kein Problem mit dem Phrasomat!" />
+	<link rel="icon" type="image/png" href="img/favicon.png">
+		
+	<script type="text/javascript">
+		function generatePhrase() {
+			var firstPart = new Array("ambivalente", "nachhaltige", "differenzierte", "progressive", "konzentrierte", "konzertierte", "integrierte", "permanente", "synchrone", "reziproke", "regulierte", "asynchrone", "funktionelle", "orientierte");
+			var secondPart = new Array("Handlungs", "Globalisierungs", "Assimilations", "F&uuml;hrungs", "Fluktuations", "Wachstums", "Interpretations", "Drittgenerations", "Koalitions", "Organisations", "Aktions");
+			var thirdPart = new Array("struktur", "tendenz", "divergenz", "potenz", "konzeption", "problematik", "korrelation", "phase", "ebene", "kontingenz", "programmierung", "flexibilit&auml;t");
+			
+			var firstRand = Math.floor((Math.random() * firstPart.length - 1) + 1);
+			var secondRand = Math.floor((Math.random() * secondPart.length - 1) + 1);
+			var thirdRand = Math.floor((Math.random() * thirdPart.length - 1) + 1);
+			
+			var phrase = document.getElementById("phrase");
+			phrase.innerHTML = firstPart[firstRand] + " " + secondPart[secondRand] + thirdPart[thirdRand];
+		}
+	</script>
+</head>
+<body onload="generatePhrase();">
+	<nav class="menu-main">
+        <ul>
+            <li><a href="index.html">Tobias Fränzel</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <hr class="divider">
+    <div id="container-main">
+		<h1>Phrasomat</h1>
+		<h2 id="phrase"></h2>
+		<button id="generateBtn" onclick="generatePhrase();">Ausdruck generieren</button>
+		
+		<div id="container-description">
+			<h2>Über den Phrasomat</h2>
+				<p>Der Phrasomat kann Fachausdrücke für jede Gelegenheit generieren.</p>
+				<p>Dir fehlt ein Fachausdruck? Kein Problem mit dem Phrasomat!</p>
+				<p>Er zeichnet sich besonders aus durch seine integrierte Aktionsebene und wurde unter Berücksichtigung des Konzepts der nachhaltigen Aktionsprogrammierung implementiert.</p>
+		</div>
+		
+		<!-- Piwik -->
+			<script type="text/javascript">
+			  var _paq = _paq || [];
+			  _paq.push(['trackPageView']);
+			  _paq.push(['enableLinkTracking']);
+			  (function() {
+				var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tobiasfraenzel.de/misc/piwik/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', 1]);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+				g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			  })();
+			</script>
+			<noscript><p><img src="http://tobiasfraenzel.de/misc/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+
+	</div>
+</body>
+
+<!-- Matomo -->
+<script type="text/javascript">
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+	  var u="//tobiasfraenzel.de/misc/piwik/";
+	  _paq.push(['setTrackerUrl', u+'matomo.php']);
+	  _paq.push(['setSiteId', '1']);
+	  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+  </script>
+  <!-- End Matomo Code -->
+
+</html>

@@ -1,0 +1,33 @@
+textarea#urls {
+    width: 100%;
+    height: 10em;
+    padding: 0.5em;
+    font-size: 1.5em;
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+div#container-main {
+    text-align: center;
+}
+
+button#playlistBtn {
+    text-align: center;
+    padding: 0.5em;
+    font-size:1.2em;
+    margin-bottom: 2em;
+}
+
+div#container-checkboxes {
+    text-align:left;
+}
+
+div#container-description {
+    text-align:left;
+    margin-top: 10em;
+}
+
+input#shareUrlField {
+    padding: 0.5em;
+    width: 60%;
+}
