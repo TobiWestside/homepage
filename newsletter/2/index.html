@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #2</h1><span>
+                        
+                            Hallo und herzlich willkommen zur zweiten Ausgabe meines Newsletters KI News. Hier fasse ich alle zwei Wochen interessante Meldungen zusammen, die mit Themen der künstlicher Intelligenz und maschinellem Lernen zu tun haben.<p></p><p>
+Diesmal lassen sich die Nachrichten unter die Überschrift <strong> Anwendungen von KI Technologien</strong> stellen. Die nächste Ausgabe wird sich dafür mit den Folgen und Auswirkungen von KI Entwicklungen beschäftigen.</p><p></p><p>
+Für hilfreiche Rückmeldungen, konstruktives Feedback und Verbesserungsvorschläge an <a href="mailto:kinews@tobiasfraenzel.de?subject=Feedback%20KI%20News" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">kinews@tobiasfraenzel.de</a> bin ich dankbar.</p><p></p><p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="4">So nutzt Instacart ML Modelle im täglichen Betrieb</h2><span><p>
+Der amerikanische Supermarkt-Lieferdienst <a href="https://www.instacart.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Instacart</a> hat vor kurzem eine ausführliche Beschreibung veröffentlicht, welche Schwierigkeiten in ihrem Tagesgeschäft sie mit ML Modellen zu lösen versuchen.</p><p>
+Das Prinzip hinter Instacart ist das folgende: die Kunden bestellen über Instacart die Waren, die sie sonst im Supermarkt gekauft hätten. Instacart gibt die Bestellungen gebündelt an Einkäufer weiter, die in die Läden gehen, einkaufen und die Produkte dann den Kunden nach Hause bringen.</p><p></p><p>
+Die wichtigsten Modelle bei Instacart sind laut dem Artikel die folgenden (eine komplette Übersicht findet ihr im verlinkten Artikel):</p><p>
+Das <em> Item Availability Model</em> wird genutzt, um die Verfügbarkeit von beliebten Produkten in einer bestimmten Filiale zu einer bestimmten Zeit vorherzugsagen. Dabei werden Produkte in "active" (werden regelmäßig bestellt) und "non-active" (saisonale Produkte und Auslaufmodelle) unterschieden. Die Vorhersagen des Modells können außerdem durch Informationen von den Einkäufern des Unternehmens ergänzt werden, wenn sie zum Beispiel sehen, dass ein bestimmtes Produkt in einem Supermarkt ausverkauft ist.</p><p>
+Die Vorhersagen zur Verfügbarkeit haben unter anderem Einfluss auf die Reihenfolge der Produkte in den Suchergebnissen, wo Produkte mit geringer vorhergesagter Verfügbarkeit niedriger eingestuft werden.</p><p></p><p>
+Wenn ein Kunde ein Produkt in den Warenkorb legt, das laut Vorhersage wahrscheinlich nicht verfügbar sein wird, kommt das nächste Modell zum Zug: das <em> Item Replacement Recommendation Model</em>. Dieses schlägt eine Reihe von Alternativen vor, aus denen der Kunde wählen kann was statt des Wunschprodukts gekauft werden soll, wenn das ausverkauft ist.</p><p></p><p>
+Der <em> Matching Algorithm</em> und das <em>Capacity Model</em> werden benutzt, um die Anzahl der Einkäufer und die Anzahl der Kunden vorherzusagen und anzupassen.</p><p>
+Dazu kommen noch weitere Modelle die bei der Vorhersage der Lieferzeit helfen sollen, z.B. das <em>Drive Time Model,</em> das die Fahrtzeit vorhersagt und das <em>Parking Model</em>, das vorhersagt wie lange die Suche nach einem Parkplatz dauern wird.</p><p></p><p>
+Der Artikel hat auch noch viele weitere Details darüber wie Instacart "hinter den Kulissen" funktioniert:</p><p><a href="https://spectrum.ieee.org/artificial-intelligence/machine-learning/the-algorithms-that-make-instacart-roll" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://spectrum.ieee.org/artificial-intelligence/machine-learning/the-algorithms-that-make-instacart-roll</a> (englisch)</p><p></p></span><h2 id="3">Neuronales Netz spielt GeoGuessr</h2><span><p><a href="https://www.geoguessr.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GeoGuessr</a> ist ein Spiel, bei dem man in Google StreetView an einen zufälligen Ort gesetzt wird und, durch Umschauen in der Umgebung, erraten muss wo man ist. Beim Spielen kam einem britischen Informatiker der Gedanke, dass Computer mithilfe von maschinellem Lernen heute viele Dinge tun können, die Menschen können. Bei der Nachforschung, ob das auch für GeoGuessr gilt, fand er ein pretrained (bereits trainiertes) neuronales Netz des TIB Hannover (<a href="https://github.com/TIBHannover/GeoEstimation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Code auf Github</a>). Dieses Netz kann für ein Foto die wahrscheinlichen Koordinaten des Ortes vorhersagen wo es aufgenommen wurde.</p><p>
+Um dieses Modell für GeoGuessr nutzen zu können, hat er ein Skript geschrieben, das in GeoGuessr mehrere Screenshots macht und diese zur Bestimmung der Koordinaten an das Modell weitergibt.</p><p>
+Doch wie gut ist das System im GeoGuessen? Um diese Frage zu beantworten, lies er es in drei Runden gegen seine Frau antreten, die auch nur anhand der Screenshots die richtige Position erraten sollte. Am Ende stand es 2:1 für das neuronale Netz!</p><p></p><p><a href="https://healeycodes.com/geoguessing-with-deep-learning/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://healeycodes.com/geoguessing-with-deep-learning/</a> (englisch)</p><p></p></span><h2 id="2">Balancierung von Spielmechaniken mithilfe von KI-Spielern</h2><span><p>
+In einem Blogeintrag beschreiben Mitarbeiter von Google Stadia, wie sie KIs gegeneinander spielen lassen, um in ihrem Spiel <em>Chimera </em>die Kraftverhältnisse zwischen den Karten auszubalancieren.</p><p>
+Chimera ist ein Prototyp eines virtuellen Kartenspiels, das schon <a href="https://ai.googleblog.com/2020/11/using-gans-to-create-fantastical.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">in der Vergangenheit für Versuche mit maschinellem Lernen</a> genutzt wurde. Im aktuellen Test wurde die Stärke von zwei verschiedenen Kartendecks des Spiels verglichen. Mit CNN-basierten Spielern wurden Millionen von Spielen simuliert, um möglichst aussagekräftige statistische Daten über die Stärke der Karten zu bekommen. Durch die Auswertung konnten sie feststellen, dass eine Kreatur im Spiel, der T-Rex <span class="emoji">🦖</span>, zu stark war und seine Eigenschaften entsprechend anpassen.</p><p>
+Zwei Eigenschaften der genutzten CNN-Modelle könnten sie auch für die Anwendung bei anderen Spielen, außerhalb von internen Tests bei Google, machen: Zum einen ist die Architektur laut des Blogeintrags klein genug um auf einer CPU zu laufen, das Modell scheint also keine Unmengen an Ressourcen zu erfordern. Zum anderen wurden einfach Screenshots genutzt, um das Modell über den aktuellen Stand des Spiels zu informieren. Das ist offensichtlich eine sehr flexible Methode, die leicht auf andere Spiele übertragbar sein sollte.</p><p></p><p><a href="https://ai.googleblog.com/2021/03/leveraging-machine-learning-for-game.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2021/03/leveraging-machine-learning-for-game.html</a> (englisch)</p><p></p></span><h2 id="1">Transformer-Netze in der Bildverarbeitung</h2><span><p>
+Seit der Vorstellung der Architektur 2017 haben sich Transformer im Bereich der Sprachverarbeitung (Natural Language Processing, NLP) immer mehr durchgesetzt und die bis dahin genutzten Architekturen wie <a href="https://de.wikipedia.org/wiki/Long_short-term_memory" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LSTMs</a> verdrängt. Bekannte Sprachmodelle, die auf der Transformer-Architektur basieren, sind zum Beispiel <a href="https://arxiv.org/abs/1810.04805v2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">BERT</a> und <a href="https://arxiv.org/abs/2005.14165" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GPT</a>.</p><p>
+Transformer können jedoch nicht nur für Sprachmodelle eingesetzt werden, sondern auch zur Bildverarbeitung. Dabei haben sie ähnliche Vorteile wie im Sprachbereich: sie können Zusammenhänge auch über eine Distanz hinweg herstellen.</p><p>
+Das ist ein Pluspunkt gegenüber der aktuell für Bilder meistgenutzten Architektur, den <a href="https://de.wikipedia.org/wiki/Convolutional_Neural_Network" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Convolutional Neural Networks</a> (CNNs). CNNs sind absichtlich so ausgelegt, dass sie nur einen kleinen Bereich des Bildes auf einmal betrachten. Dadurch sind sie gegenüber klassischen fully connected-Netzen sehr ressourcensparend, aber verlieren sozusagen das große Ganze aus den "Augen".</p><p>
+Transformer-basierte neuronale Netze können durch das Training Convolution-ähnliche Eigenschaften entwickeln, aber gleichzeitig die größeren Zusammenhänge behalten.</p><p>
+Dieser Blogeintrag gibt einen guten Überblick über die Grundlagen und die Anwendungen von Transformern in der Bildverarbeitung: <a href="https://techblog.ezra.com/transformers-in-medical-computer-vision-643b0af8fc41" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://techblog.ezra.com/transformers-in-medical-computer-vision-643b0af8fc41</a> (englisch)</p><p></p></span>
+<p id="bottom-nav-container"><a href="../1">« Vorherige</a><a class="" href="../3">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

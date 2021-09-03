@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #4</h1><span>
+                        
+                            Hallo und herzlich willkommen zur vierten Ausgabe meines Newsletters KI News. Hier fasse ich interessante Meldungen zusammen, die mit künstlicher Intelligenz und maschinellem Lernen zu tun haben.<p></p><p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="4">Geplante EU Regulierung von KI</h2><span><p>
+Die Europäische Kommission hat einen ersten Einblick in ihre Pläne zur künftigen Regulierung von KI Technologie in der EU gegeben.</p><p>
+Das Grundgerüst bildet eine Einteilung in vier Risikoklassen:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">minimal</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">limited</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">high</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">unacceptable</li>
+</ul><em>Unacceptable </em>ist alles was Sicherheit, Leben und Rechte der Menschen gefährdet. Als Beispiel wird ein Sozialkredit-System genannt, wie es beispielsweise in China existiert.</p><p></p><p>
+Zu <em>High Risk</em> gehören z.B. Anwendungen in der kritischen Infrastruktur, Ausbildung, Bewerber- und Personalmanagement, in sicherheitskritischen Komponenten von Produkten, wenn es um den Zugang zu wichtigen Dienstleistungen geht (beispielsweise Kreditscores), sowie in wichtigen staatlichen Prozessen, wie der Strafverfolgung, Grenzkontrolle und Justiz.</p><p>
+Ebenfalls unter High Risk fallen alle Methoden zur biometrischen Erkennung aus der Entfernung, wie zum Beispiel Gesichtserkennung. Diese sollen auch zur Strafverfolgung nur in bestimmten Fällen eingesetzt werden dürfen.</p><p></p><p><em>Limited Risk</em> sind zum Beispiel Chatbots, die laut des Entwurfs ihre Nutzer informieren müssen, dass sie nicht mit einem Menschen kommunizieren.</p><p></p><p>
+Alles andere, zum Beispiel Spam Filter und KI in Computerspielen gilt als <em>Minimal Risk</em> und soll ohne Auflagen benutzbar sein.</p><p></p><p>
+Zusätzlich soll ein Monitoring-System eingeführt werden und High Risk-Modelle, die sich im Laufe ihrer Anwendung zu sehr ändern, müssen neu zertifiziert werden.</p><p></p><p>
+Wenn alles läuft wie von der Kommission geplant, sollen die neuen Regeln Ende 2022 mit einer Übergangsphase eingeführt werden.</p><p></p><p>
+Seite der EU Kommission: <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai</a> (englisch)</p><p>
+Interview mit einer Medienethikerin zu den neuen Regeln: <a href="https://www.zeit.de/digital/internet/2021-04/kuenstliche-intelligenz-regeln-eu-kommission-medienethik-jessica-heesen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.zeit.de/digital/internet/2021-04/kuenstliche-intelligenz-regeln-eu-kommission-medienethik-jessica-heesen</a></p><p></p></span><h2 id="3">Fehler in den Daten - sind große Modelle schlechter als gedacht?</h2><span><p>
+In den letzten Jahren werden ML Modelle basierend auf neuronalen Netzen immer größer. Denn je mehr Neuronen und je mehr Schichten sie haben, desto besser die Leistung auf den Testdaten. Aber sind die Daten überhaupt korrekt?</p><p></p><p>
+Forscher von MIT und Amazon haben zehn der meistgenutzten open-source ML Datasets auf Fehler untersucht. Darunter waren zum Beispiel die MNIST und ImageNet Datasets, Amazon Reviews und die AudioSet Daten. Dabei haben sie festgestellt, dass die Daten im Durchschnitt zu 3,4% falsch gelabelt waren (von 0,15% in den MNIST Daten bis zu 10,12% in QuickDraw).</p><p>
+Um die Auswirkung dieser Fehler auf die Vorhersagen der daraus entstandenen Modelle zu testen, haben die Forscher bereits trainierte Modelle genommen und deren Leistung auf den korrigierten Daten überprüft.</p><p></p><p>
+Das überraschende Ergebnis: einfachere Modelle schnitten besser ab als größere. Zum Beispiel auf den ImageNet Daten: Ein ResNet-18 (18 Schichten) war besser als ein ResNet-50 (50 Schichten).</p><p>
+Das zeigt, dass es schwierig sein kann, die echte Performance eines Modells anhand seiner Leistung auf den Testdaten einzuschätzen - vielleicht ist es nur besser darin, die Fehler der Daten zu reproduzieren.</p><p></p><p>
+Studie: <a href="https://arxiv.org/abs/2103.14749" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2103.14749</a> (englisch)</p><p>
+Artikel: <a href="https://www.technologyreview.com/2021/04/01/1021619/ai-data-errors-warp-machine-learning-progress" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.technologyreview.com/2021/04/01/1021619/ai-data-errors-warp-machine-learning-progress</a> (englisch)</p><p></p></span><h2 id="2">E-Sports Rankings mit IBM Watson</h2><span><p>
+Ein bisschen in eigener Sache, aber auch passend zum Newsletter: an diesem Projekt habe ich letztes Jahr mitgearbeitet.</p><p>
+In einem Team aus 6 Kollegen und unterstützt von Mentoren und Experten von Activision Blizzard haben wir ein KI-gestütztes Rankingsystem für die E-Sports-Liga <a href="https://overwatchleague.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Overwatch League (OWL)</a> entwickelt.</p><p></p><p>
+Dabei gab es zwei besondere Herausforderungen: zum einen ist Overwatch ein Mannschaftsspiel, was es schwerer macht die individuelle Leistung eines Spielers zu bewerten. Zum anderen gibt es drei verschiedene "Rollen" im Spiel, die wiederum unterschiedliche Aufgaben erfüllen müssen, damit das Team erfolgreich sein kann. Das macht es auch schwer zwei Spieler mit unterschiedlichen Rollen miteinander zu vergleichen.</p><p></p><p>
+Mithilfe verschiedener Methoden (unter anderem <a href="https://www.ibm.com/de-de/cloud/watson-studio/autoai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">AutoAI</a>), berechnet unser System für jeden Spieler zwei Werte: einen "Overall" Wert, der alle Spieler miteinander vergleichbar macht und einen zweiten Wert für die Rolle, die der Spieler in seinem Team übernimmt.</p><p>
+Nach diesen Werten werden die Spieler dann im Ranking geordnet.</p><p></p><p>
+Die Rankings werden seit zwei Wochen in der OWL eingesetzt und werden hier veröffentlicht: <a href="https://overwatchleague.com/en-us/power-rankings" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://overwatchleague.com/en-us/power-rankings</a></p><p></p><p>
+Einführungsvideo: <a href="https://www.youtube.com/watch?v=PjeKaWimdVI" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=PjeKaWimdVI</a> (englisch)</p><p>
+Artikel: <a href="https://www.forbes.com/sites/krisholt/2021/04/13/ibm-watson-ai-will-calculate-the-overwatch-leagues-data-driven-power-rankings-in-2021/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.forbes.com/sites/krisholt/2021/04/13/ibm-watson-ai-will-calculate-the-overwatch-leagues-data-driven-power-rankings-in-2021/</a> (englisch)</p><p>
+Ankündigung bei OWL: <a href="https://overwatchleague.com/en-us/news/introducing-power-rankings-with-ibm-watson" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://overwatchleague.com/en-us/news/introducing-power-rankings-with-ibm-watson</a> (englisch)</p><p>
+Ankündigung bei IBM: <a href="https://www.ibm.com/sports/overwatchleague/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.ibm.com/sports/overwatchleague/</a> (englisch)</p><p></p></span><h2 id="1">Außerdem</h2><span><ul style="margin-left: 40px;">
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Passend zum Deep-Fake-Thema der letzten Ausgabe:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Niederländische Abgeordnete haben in einer Videokonferenz mit einer Fake Version eines Mitarbeiters von Alexej Nawalny gesprochen:<br/>
+<a href="https://nltimes.nl/2021/04/24/dutch-mps-video-conference-deep-fake-imitation-navalnys-chief-staff" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://nltimes.nl/2021/04/24/dutch-mps-video-conference-deep-fake-imitation-navalnys-chief-staff</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Leschs Kosmos Ausgabe zu Deep Fakes: <a href="https://www.youtube.com/watch?v=ItTvXIM4cjE" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=ItTvXIM4cjE</a></li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In der Türkei gibt es eine App, die, mithilfe von KI, aus Kaffeesatz die Zukunft vorhersagen soll: <a href="https://www.ardmediathek.de/video/europamagazin/tuerkei-kaffeesatzlesen/das-erste/Y3JpZDovL2Rhc2Vyc3RlLmRlL2V1cm9wYW1hZ2F6aW4vNWY1ZWQxNzEtZmNiZC00MzNkLThmMWQtYjIxNGExMzMyYjE1/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ARD Mediathek (Video)</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../3">« Vorherige</a><a class="" href="../5">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

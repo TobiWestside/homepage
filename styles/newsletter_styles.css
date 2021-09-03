@@ -1,0 +1,19 @@
+#bottom-nav-container {
+    text-align: center;
+    margin-top: 3em;
+}
+
+#bottom-nav-container a {
+    margin: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+}
+
+.hidden {
+    visibility: hidden;
+}

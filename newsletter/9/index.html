@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #9</h1><span>
+                        
+                            Hallo und herzlich willkommen zur neunten Ausgabe meines Newsletters KI News. In dieser Ausgabe geht es um das neue Github Copilot Tool, ein deutsches KI Startup, eine neue Video-Technologie von Nvidia und den Versuch ein Computerspiel durch ein neuronales Netz zu ersetzen.<p>
+Viel Spaß beim Lesen!</p><p></p></span><h2 id="5">Github Copilot</h2><span><p>
+Github ist eine Internetplattform zur Versionsverwaltung in Softwareprojekten, die 2018 von Microsoft übernommen wurde. Vor ein paar Tagen hat Github ein neues Tool namens Copilot vorgestellt. Copilot soll beim Programmieren helfen, indem es zum gegebenen Kontext den passenden Code vorschlägt - zum Beispiel zu einem Kommentar die entsprechende Funktion schreibt, die das implementiert, was im Kommentar beschrieben ist.</p><p>
+Copilot basiert auf OpenAI Codex, einem noch nicht nicht öffentlich benutzbaren Modell von OpenAI, das einen Text in Code übersetzen können soll. Codex wurde dazu mit natürlicher Sprache (nur Englisch) und öffentlich zugänglichem Code trainiert.</p><p></p><p>
+Copilot ist zur Zeit noch in der “Technical Preview” Phase, in der man sich für eine Warteliste anmelden muss, um Zugang zu bekommen.</p><p>
+Wenn man den hat, kann man Copilot als Plugin in die Entwicklungsumgebung Visual Studio Code einbinden. Um einen Vorschlag zu machen, schickt dieses Plugin dann die aktuelle Datei (maximal einige hundert Zeilen) an den Copilot Cloud Service. Dieser lässt das Modell einige Vorschläge machen und schickt sie zurück an den/die Benutzer:in. Die Entscheidung des/der Benutzer:in für einen der Vorschläge wird wiederum genutzt um zukünftige Vorschläge zu verbessern.</p><p></p><p>
+Ein Problem bei dieser Art von Programmierhilfe sind die Lizenzen, unter denen Software und Source Code stehen, und die oft das Kopieren von Code oder das Ableiten von eigenen Funktionen nur unter bestimmten Bedingungen erlauben.</p><p>
+Ich musste beispielsweise einmal eine Funktion für einen Kollegen programmieren, weil er eine OpenSource Implementierung der Funktion gesehen hatte, und es rechtliche Bedenken gab, dass Code, den er schreiben würde, eventuell von der OpenSource Version beeinflusst sein könnte.</p><p>
+Github Copilot, bzw. Codex, wurde nur auf OpenSource Code trainiert.</p><p></p><p>
+Wie hat Github also solche Lizenzprobleme bei Copilot gelöst?</p><p>
+Scheinbar gar nicht. Laut FAQ sind ca. 0,1% der Copilot-Vorschläge 1:1 aus den Trainingsdaten kopiert. Als Lösung will Github das Copilot Tool zukünftig um eine Funktion erweitern, die anzeigt, ob Code kopiert wurde, und falls ja, von wo. Mit diesen Informationen kann der/die Programmierer:in dann die Entscheidung treffen, den Code zu verwenden oder eben nicht.</p><p>
+In Fällen wie meinem, wo das reine Anschauen des Codes schon dazu führt, dass jemand anderes die Funktion schreiben muss, wäre es dann allerdings auch schon zu spät.</p><p>
+Ganz abgesehen davon, dass vermutlich die allermeisten Unternehmen nicht möchten, dass ihr geheimer Programmcode als "Kontext" an Github (und damit Microsoft) gesendet wird.</p><p></p><p>
+Webseite von Github Copilot: <a href="https://copilot.github.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://copilot.github.com/</a> (englisch)</p><p>
+Artikel bei t3n: <a href="https://t3n.de/news/ki-gestuetztes-pair-programming-1388462/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/ki-gestuetztes-pair-programming-1388462/</a></p><p>
+Untersuchung von Github zum kopierten Code: <a href="https://docs.github.com/en/github/copilot/research-recitation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://docs.github.com/en/github/copilot/research-recitation</a></p><p></p></span><h2 id="4">Zoom übernimmt das deutsche Startup Kites</h2><span><p>
+Die Videokonferenzfirma Zoom hat das Karlsruher Startup Kites übernommen. Kites entwickelt Technologie um gesprochene Sprache mit niedriger Latenz maschninell zu übersetzen.</p><p>
+Die Technik ist ursprünglich am Karlsruhe Institut für Technologie entstanden, wo mehrere der Gründer arbeiten. Dort sollte sie die Kommunikation in internationalen Teams vereinfachen.</p><p>
+Daraus hat sich ein Startup entwickelt, das sich besonders auf Übersetzung mit geringer Latenz spezialisiert hat.</p><p></p><p>
+Die Technologie ist in einem Paper beschrieben, das die Gründer letztes Jahr veröffentlicht haben. Darin beschreiben sie zwei verschiedene Ansätze, die beide auf neuronalen Netzen beruhen; der eine auf Netzen mit der <a href="https://de.wikipedia.org/wiki/Long_short-term_memory" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Long Short Term Memory (LSTM)</a> Architektur, der andere auf solchen mit der <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a> Architektur.</p><p>
+Der Unterschied zu bestehenden Ansätzen liegt vor allem darin, dass hier ein besonderer Fokus darauf gelegt wird, die Latenz zu verringern.</p><p></p><p>
+Die so entwickelten Modelle haben daher eine relativ geringe Latenz, zwischen 0,85s und 1,8s, abhängig von der gewünschten Genauigkeit. Diese war im besten Fall sogar leicht besser als die menschliche. Auf einem bekannten Datensatz zur Spracherkennung (Switchboard), verstehen Menschen im Durchschnitt 5,5% der Wörter falsch, das beste Modell von Kites nur 5%. Allerdings war bei diesem Modell die Latenz relativ hoch.</p><p>
+Ein Modell, das Wörter mit der selben Genauigkeit erkennt wie ein Mensch, hatte eine Latenz von 1s.</p><p></p><p>
+Ankündigung von Zoom: <a href="https://blog.zoom.us/zoom-to-acquire-kites-gmbh/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://blog.zoom.us/zoom-to-acquire-kites-gmbh/</a> (englisch)</p><p>
+Webseite von Kites: <a href="https://www.kites.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.kites.ai/</a> (englisch)</p><p>
+Beschreibung der Technologie: <a href="https://arxiv.org/abs/2010.03449" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2010.03449</a> (englisch)</p><p>
+Switchboard Daten: <a href="https://catalog.ldc.upenn.edu/LDC97S62" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://catalog.ldc.upenn.edu/LDC97S62</a></p><p></p></span><h2 id="3">Neue Video-Technologie von Nvidia</h2><span><p>
+Forscher:innen von Nvidia haben eine Technik entwickelt, die mit Video-Nahaufnahmen von sprechenden Menschen mehrere interessante Dinge machen kann.</p><p>
+Zum einen kann sie aus einem Foto einer Person und der Videoaufnahme einer anderen Person ein Video der ersten Person machen, in dem sie sich genauso bewegt wie die Person im ursprünglichen Video.</p><p></p><p>
+Das System untersucht zuerst das Foto und das Video auf wichtige Eigenschaften, sogenannte Keypoints. Diese beschreiben dreidimensional die Gesichtsform und den Gesichtsausdruck. Dazu kommt noch die Kopfhaltung.</p><p>
+Die Keypoints, die Gesichtsausdruck und Kopfhaltung der fotografierten Person beschreiben, werden dann so verschoben, dass sie denen des Videos entsprechen. Die Gesichtsform muss natürlich gleich bleiben.</p><p>
+Aus diesen Informationen wird dann von einem neuronalen Netz mit <a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GAN</a> Architektur ein neues Bild vorhergesagt, das die Person vom Foto zeigt, aber mit dem gleichen Gesichtsausdruck und Kopfhaltung wie die Person im Video. Aus mehreren solcher Bilder hintereinander ensteht dann ein neues Video, das die Person vom Foto zeigt.</p><p></p><p>
+Dadurch, dass das neu erzeugte Video nur von einem Eingabebild und den Keypoints des Videos abhängt, ergeben sich noch zwei weitere Möglichkeiten.</p><p>
+Indem man die Keypoints des Videos nachträglich verändert, kann man Kopfhaltung und Gesichtsausdruck einer Person in einem Video auch nach der Aufzeichnung noch verändern.</p><p>
+Außerdem kann diese Technik auch als sehr sparsame Videocodierung genutzt werden, zum Beispiel in Videokonferenzen. Dazu könnte lokal bei den Teilnehmer:innen jeweils das eigene Video in ein Foto und eine Reihe von Keypoints umgewandelt werden. Diese Daten sind natürlich viel kleiner als das eigentliche Video. Bei den Empfänger:innen wird die Technik dann verwendet um das ursprüngliche Video wiederherzustellen.</p><p></p><p>
+Webseite mit Demo und Video: <a href="https://nvlabs.github.io/face-vid2vid/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://nvlabs.github.io/face-vid2vid/</a> (englisch)</p><p></p></span><h2 id="2">Neuronales Netz ersetzt Computerspiel</h2><span><p>
+In Computerspielen passiert die Interaktion zwischen Spieler:in und Spiel hauptsächlich durch Tastatur- und Mauseingaben und Ausgaben des Spiels auf dem Bildschirm. Das Spiel kennt den aktuellen Zustand der Spielewelt und stellt diesen als Bild auf dem Bildschirm dar.</p><p>
+Wenn der/die Spieler:in eine Eingabe macht, prüft das Spiel mit den einprogrammierten Regeln, was diese Aktion in der Spielwelt für Auswirkungen hat und verändert das angezeigte Bild entsprechend. Zum Beispiel drückt der/die Spieler:in auf die W Taste. Für das Spiel bedeutet das, dass die Spielfigur einen Schritt nach vorne macht. Das wird über ein aktualisiertes Bild umgesetzt, in dem der Charakter in der Spielwelt ein Stück weiter gelaufen ist.</p><p>
+Wenn aber beispielsweise ein Felsbrocken vor der Spielfigur liegt und den Weg versperrt, kann sie nicht geradeaus weiterlaufen. Das wird über ein neues Bild zurückgemeldet, in dem die Spielfigur immer noch an der gleichen Stelle vor dem Felsen steht.</p><p>
+Das nächste angezeigte Bild in einem Computerspiel hängt also immer vom aktuellen internen Zustand des Spiels (dargestellt durch das aktuell angezeigte Bild), den einprogrammierten Spielregeln und den Eingaben des/der Spieler:in ab.</p><p></p><p>
+Nvidia hat ein Modell namens GameGAN entwickelt, das bei Spielen aus den vorherigen Bildern und den Benutzereingaben vorhersagen kann, wie das nächste Bild aussehen wird. GameGAN ersetzt also im Prinzip das komplette programmierte Spiel durch ein neuronales Netz. Wie der Name schon andeutet, basiert auch dieses Modell auf der <a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GAN</a> Architektur.</p><p>
+Da Spiele oft sehr aufwändig programmiert sind, und es entsprechend schwierig ist, sie durch ein neuronales Netz zu ersetzen, hat Nvidia das Prinzip mit relativ einfachen Spielen demonstriert, z.B. Pacman.</p><p></p><p>
+Der Youtuber Sentdex hat das GameGAN Modell kopiert und erweitert, um einen Schritt weiter zu gehen: er hat es auf Daten aus GTA V trainiert, ein recht komplexes 3D Videospiel.</p><p>
+Dazu hat er zuerst einen Bot programmiert, der auf einem bestimmten Straßenabschnitt mit einem Auto immer hin und her fährt, um Trainingsdaten zu sammeln.</p><p>
+Mit diesen Daten hat er dann das GameGAN Modell trainiert und konnte am Ende tatsächlich mit einem Auto auf einer Straße aus dem Spiel fahren, ohne dass das Spiel lief und ohne selbst Spielelogik programmiert zu haben.</p><p>
+Alles was auf dem Bildschirm passierte wurde ausschließlich vom neuronalen Netz erzeugt.</p><p></p><p>
+Video von Sentdex: <a href="https://www.youtube.com/watch?v=udPY5rQVoW0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=udPY5rQVoW0</a> (englisch)</p><p>
+GameGAN Webseite: <a href="https://nv-tlabs.github.io/gameGAN/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://nv-tlabs.github.io/gameGAN/</a> (englisch)</p><p>
+Artikel bei t3n: <a href="https://t3n.de/news/nvidia-ki-baut-gta5-1387696/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/nvidia-ki-baut-gta5-1387696/</a></p><p></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine App erkennt aus einem Haufen Legosteine welche Steine es sind und schlägt Lego-Modelle vor, die daraus gebaut werden können: <a href="https://brickit.app/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Webseite der App</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI im McDrive: <a href="https://www.zdnet.com/article/i-just-watched-mcdonalds-new-ai-drive-thru-and-ive-lost-my-appetite/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei zdnet</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Amazon lässt Algorithmen über Entlassungen bei Fahrern für seinen Lieferdienst Flex entscheiden: <a href="https://www.bloomberg.com/news/features/2021-06-28/fired-by-bot-amazon-turns-to-machine-managers-and-workers-are-losing-out" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Bloomberg</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Carolin Kebekus Show zum Thema KI: <a href="https://www.youtube.com/watch?v=Y6NsrPcOKC4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Rijksmuseum in Amsterdam benutzt KI, um Teile eines Rembrandt-Gemäldes zu rekonstruieren: <a href="https://www.rijksmuseum.nl/en/whats-on/exhibitions/operation-night-watch" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Webseite Rijksmuseum</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kameras mit Gesichtserkennung an einem Canon-Standort in China lassen nur lächelnde Mitarbeiter rein: <a href="https://www.theverge.com/2021/6/17/22538160/ai-camera-smile-recognition-office-workers-china-canon" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">WHO Leitlinien zur Ethik von Gesundheits-KI: <a href="https://www.theverge.com/2021/6/30/22557119/who-ethics-ai-healthcare" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Erläuterung einer Reihe von “Biases”, also Verzerrungen, die in KI Systemen auftreten können, und mögliche Gegenmaßnahmen: <a href="https://queue.acm.org/detail.cfm?id=3466134" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">acm.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Diskussion zum Thema Starke KI: nachdem ich in der letzten Ausgabe einen Artikel über das Paper “Reward is enough” verlinkt hatte, diesmal die Gegenthese: “Reward is unnecessary”: <a href="http://tilde.town/~fessus/reward_is_unnecessary.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Paper als PDF</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">ONCE Dataset: Datensatz zum autonomen Fahren, mit Lidar- und Kamerabildern von 144 Stunden Autofahrt: <a href="https://once-for-auto-driving.github.io/index.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Webseite bei Github</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../8">« Vorherige</a><a class="" href="../10">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

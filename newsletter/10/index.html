@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #10</h1><span>
+                        
+                            Hallo und herzlich willkommen zur ersten zweistelligen Ausgabe (🎉) meines Newsletters KI News. In dieser Ausgabe geht es unter anderem um selbstmörderische KI Wölfe, maschinelles Lernen in der Schlaganfall-Therapie und autonome Bagger.<p>
+Viel Spaß beim Lesen!</p><p></p></span><h2 id="5">KI Wolf bringt sich um statt Schafe zu fressen</h2><span><p>
+2019 haben zwei Studenten in China ein Experiment mit Reinforcement Learning gemacht. Dazu haben sie ein einfaches Spiel entwickelt, in dem zwei Wölfe versuchen sollen Schafe zu fangen. Dabei sollten sie möglichst schnell sein, deshab gab es Punktabzug für die Dauer des Spiels. Außerdem waren auf dem Spielfeld ein paar Felsbrocken verteilt, bei deren Berührung die Wölfe starben, was auch Punktabzug gab.</p><p></p><p>
+Nach 200.000 Trainingsiterationen hatten die Wölfe immer noch große Probleme die Schafe zu fangen, was zu hohen Strafen wegen der Zeit führte.</p><p>
+Da sie versuchen sollten möglichst viele Punkte zu bekommen, entwickelte sich eine Strategie, den Punktabzug für zu lange Dauer zu minimieren: Selbstmord. Wenn die Wölfe beim Start nahe genug an einem Felsbrocken waren, versuchten sie erst gar nicht Schafe zu fangen, sondern gaben auf und rannten gegen einen Felsen, um das Spiel schnell zu beenden.</p><p></p><p>
+Als dieses Zwischenergebnis im Frühjahr dieses Jahres in China bekannt wurde, führte das zu Diskussionen über KI Ethik. In der weiteren Entwicklung der Diskussionen begannen einige ihr eigenes Leben mit dem der Wölfe zu vergleichen: Wenn der Ausgangspunkt so schlecht ist, dass es unwahrscheinlich erscheint die eigenen Ziele zu erreichen, warum dann überhaupt anstrengen? Warum nicht gleich aufgeben?</p><p>
+Es entstand sogar ein eigener Begriff für diese Art, die eigenen Träume aufzugeben: 躺平 (auf Deutsch: “flach liegen”).</p><p></p><p>
+Das Experiment, das das alles ausgelöst hat, war allerdings am Ende doch noch erfolgreich. Nach 10 Millionen Trainingsiterationen hatten die Wölfe schließlich gelernt die Schafe zu fangen.</p><p></p><p>
+Video über den Stand am Ende des Experiments: <a href="https://www.bilibili.com/video/BV16X4y1V7Yu" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.bilibili.com/video/BV16X4y1V7Yu</a> (chinesisch)</p><p>
+Blogeintrag, der das Experiment und die Diskussionen beschreibt: <a href="https://onezero.medium.com/the-ai-wolf-that-preferred-suicide-over-eating-sheep-49edced3c710" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://onezero.medium.com/the-ai-wolf-that-preferred-suicide-over-eating-sheep-49edced3c710</a> (englisch)</p><p></p></span><h2 id="4">Vorhersage der Genesung von Schlaganfallpatienten</h2><span><p>
+Bei Schlaganfällen sind die betroffenen Hirnregionen, die Auswirkungen und auch die Genesungschancen sehr individuell und können von Patient:in zu Patient:in unterschiedlich sein.</p><p>
+Gleichzeitig sind die Folgen oft sehr schwer und nur 15% der Patient:innen erholen sich wieder vollständig.</p><p>
+Besonders bei den schwer betroffenen Patient:innen ist es schwierig zu erkennen, wer bessere oder schlechtere Heilungschancen hat.</p><p>
+Um allen Patient:innen die jeweils angemessene Therapie zu geben wäre es daher gut, wenn man vorher wüsste, wie weit sie jeweils wieder genesen können.</p><p></p><p>
+Um das vorhersagen zu können, hat ein internationales Team aus Forscher:innen <a href="https://de.wikipedia.org/wiki/Support_Vector_Machine" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Support Vector Machines</a> (SVMs) auf den Daten von 92 Schlaganfallpatient:innen trainiert.</p><p>
+SVMs sind eine ML Technik, die Daten in mehrere Klassen einteilen kann.</p><p>
+Zum Trainieren der SVMs wurden hier Daten über die Verbindungen im Gehirn (sogenannte Konnektome) und die Schwere der Bewegungseinschränkung der Patient:innen genutzt. Die Daten wurden zum ersten Mal nach zwei Wochen erhoben und dann nochmal nach drei Monaten, um den Fortschritt der Genesung zu dokumentieren.</p><p></p><p>
+Die so trainierten SVMs konnten dann anhand des Konnektoms zwei Wochen nach dem Schlaganfall mit 92% Genauigkeit vorhersagen, ob sich der Patient oder die Patientin wieder erholen wird oder nicht.</p><p></p><p>
+Veröffentlichung einer der beteiligten Universitäten: <a href="https://actu.epfl.ch/news/machine-learning-improves-the-prediction-of-stroke/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://actu.epfl.ch/news/machine-learning-improves-the-prediction-of-stroke/</a> (englisch)</p><p>
+Paper: <a href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awab082/6316639" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awab082/6316639</a> (englisch)</p><p></p></span><h2 id="3">Baidu trainiert autonomen Bagger</h2><span><p>
+Forscher:innen des chinesischen Suchmaschinenkonzerns Baidu und der Universität Maryland haben ein Steuerungssystem für Bagger entwickelt, die damit über längere Zeit selbstständig Material verladen können.</p><p>
+In einem Experiment mit unterschiedlich großen Baggern haben sie das System an verschiedenen Aufgaben getestet und sind zu dem Ergebnis gekommen, dass die Leistung ähnlich ist wie die eines erfahrenen Baggerfahrers. Unter diesen Aufgaben waren zum Beispiel das Baggern in trockener und nasser Erde, das Verladen von großen und kleinen Steinen, regnerisches Wetter und nasse Erde gemischt mit Steinen.</p><p>
+Auch bei einem Test in einem Recyclingunternehmen war das System erfolgreich.</p><p></p><p>
+Als Eingabedaten nutzt das System eine Reihe von verschiedenen Sensoren, unter anderem Kameras und LiDAR, wie sie auch in autonomen Autos verwendet werden.</p><p>
+Diese Daten werden dann in einer Reihe von Schritten verarbeitet. Besonders wichtig sind dabei die Aufnahmen der Kameras.</p><p>
+Als erstes wird auf den Bildern eine Bildverbesserung durchgeführt. Dann versucht das System zu klassifizieren, um welche Art von Material es sich handelt (z.B. trocken, nass, Steine, Erde, …).</p><p>
+Danach wird eine sogenannte Semantic Segmentation gemacht. Das bedeutet, auf dem Bild werden verschiedene Dinge erkannt, z.B. Erde, Rohre oder Lastwagen, und voneinander abgegrenzt.</p><p>
+Auf dem Ergebnis der Semantic Segmentation wird dann noch eine Instance Segmentation ausgeführt, bei der mehrere gleiche Gegenstände voneinander abgegrenzt werden, z.B. mehrere Steine, die nebeneinander liegen.</p><p>
+Für jeden der erkannten Gegenstände wird dann die Position und Lage im Raum eingeschätzt.</p><p></p><p>
+Mithilfe dieser Analyse erstellt das System einen Plan, wie die gegebene Aufgabe ausgeführt werden kann. Diese Planung wird dann noch feiner unterteilt, bis zu den einzelnen Bewegungen, die der Bagger ausführen muss.</p><p>
+Die Bewegungsinformationen werden schließlich an die Steuerungssoftware übergeben, die den Bagger bewegt.</p><p></p><p>
+Laut Aussage von Baidu arbeiten sie bereits mit mehreren großen Baumaschinenproduzenten zusammen, um die Technologie auf den Markt zu bringen.</p><p></p><p>
+Blogeintrag von Baidu: <a href="http://research.baidu.com/Blog/index-view?id=159" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://research.baidu.com/Blog/index-view?id=159</a> (englisch)</p><p>
+Youtube Video über das Projekt: <a href="https://www.youtube.com/watch?v=KFcNf_k0E_M" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=KFcNf_k0E_M</a></p><p></p></span><h2 id="2">Weitere Reaktionen zu Github Copilot</h2><span><p>
+Das Github Copilot Projekt, über das ich in der letzten Ausgabe des Newsletters berichtet habe, hat auch in den letzten zwei Wochen noch viele weitere Reaktionen ausgelöst. Hier habe ich eine Auswahl zusammengestellt:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Video auf Twitter, wie Copilot aus dem Spiel Quake kopierten Code ausgibt und am Ende eine andere Lizenz darüber schreibt: <a href="https://twitter.com/mitsuhiko/status/1410886329924194309" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twitter.com/mitsuhiko/status/1410886329924194309</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Diskussion auf Hackernews dazu: <a href="https://news.ycombinator.com/item?id=27710287" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://news.ycombinator.com/item?id=27710287</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel bei t3n zu Copilot: <a href="https://t3n.de/news/githubs-neues-ki-tool-copilot-um-1389766/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/githubs-neues-ki-tool-copilot-um-1389766/</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Argumentation, dass der von Copilot erzeugte Code nicht unter das Urherberrecht fällt: <a href="https://www.heise.de/meinung/Edit-Policy-GitHubs-KI-Copilot-ist-keine-Urheberrechtsverletzung-6128502.html?seite=all" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.heise.de/meinung/Edit-Policy-GitHubs-KI-Copilot-ist-keine-Urheberrechtsverletzung-6128502.html?seite=all</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ähnliche Argumentation in einem Blogeintrag: <a href="https://mjg59.dreamwidth.org/57615.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://mjg59.dreamwidth.org/57615.html</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von fast.ai, der Copilot nur als Anfang einer größeren Entwicklung sieht: <a href="https://www.fast.ai/2021/07/19/copilot/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.fast.ai/2021/07/19/copilot/</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag zur Erzeugung von Code mit einem open source Sprachmodell (GPT-J-6B): <a href="https://minimaxir.com/2021/06/gpt-j-6b/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://minimaxir.com/2021/06/gpt-j-6b/</a><br/>
+	(Der Blogeintrag ist eigentlich schon vor der Veröffentlichung von Github Copilot erschienen, aber er passt gut zum Thema)<br/>
+	 </li>
+</ul></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI bei Bundesligaspielen: <a href="https://t3n.de/news/dfl-aws-deutschen-fussball-ki-1389650/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine <a href="https://foundation.mozilla.org/de/blog/mozilla-investigation-youtube-algorithm-recommends-videos-that-violate-the-platforms-very-own-policies/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Studie von Mozilla</a> bestätigt, dass der Video-Vorschlagsalgorithmus von Youtube schlecht ist<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tencent benutzt Gesichterkennung, um Minderjährige nachts vom Handyspielen abzuhalten: <a href="http://www.sixthtone.com/news/1007915/tencent-deploys-facial-recognition-to-detect-minors-gaming-at-night" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Sixthtone</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI erkennt, wenn Politiker in Parlamentssitzungen aufs Handy schauen: <a href="https://t3n.de/news/ki-handy-politiker-dries-depoorter-1389691/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Studie zum Verhalten von Menschen gegenüber KIs: <a href="https://www.sueddeutsche.de/muenchen/muenchen-verkehr-autonomes-fahren-studie-1.5340151" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der SZ</a> und <a href="https://www.sciencedirect.com/science/article/pii/S2589004221006477" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Link zur Studie</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bewerbungssoftware gibt einer Deutsch sprechenden Bewerberin eine 6 von 9 Punkten für ihre Englischfähigkeiten: <a href="https://www.technologyreview.com/2021/07/07/1027916/we-tested-ai-interview-tools/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Technology Review</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Elon Musk sagt, autonomes Fahren ist ein schwierigeres Problem als er dachte: <a href="https://www.theverge.com/2021/7/5/22563751/tesla-elon-musk-full-self-driving-admission-autopilot-crash" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Passend dazu: Das amerikanische Verbrauchermagazin Consumer Reports warnt vor dem neuesten Update der “Full Self Driving” Software: <a href="https://www.consumerreports.org/car-safety/tesla-full-self-driving-beta-software-lacks-safeguards-a6698414036/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Consumer Reports</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://blog.eleuther.ai/year-one/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag über das erste Jahr von Eleuther.ai</a>, die die GPT Modelle von OpenAI als open source Version nachgebaut haben<br/>
+	 </li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../9">« Vorherige</a><a class="" href="../11">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

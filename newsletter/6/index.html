@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #6</h1><span>
+                        
+                            Hallo und herzlich willkommen zur sechsten Ausgabe meines Newsletters KI News. Diesmal gibt es einen Schwerpunkt rund um Bildverarbeitung. Die anderen Nachrichten habe ich aber nicht vergessen, die sind dann beim nächsten Mal mit dabei.<p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="6">Erkennung des Geschlechts an den Augen</h2><span><p>
+2018 hat eine Gruppe von amerikanischen Forschern eine Studie zum Einsatz von KI zur Erkennung von Risikofaktoren für Herzkreislauferkrankungen durchgeführt. Dabei sollte ein neuronales Netz anhand von Bildern des <a href="https://de.wikipedia.org/wiki/Augenhintergrund" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Augenhintergrunds</a> die verschiedenen Risikofaktoren erkennen (zum Beispiel den Blutdruck oder ob die Person raucht).</p><p>
+Einer der Faktoren, der vom eingesetzten Modell auch sehr gut erkannt wurde, war das Geschlecht.</p><p>
+Das besondere ist dabei, dass es bisher keine medizinischen Erkenntnisse über geschlechtsspezifische Unterschiede im Augenhintergrund gab. Es sieht also so aus, als hätte das neuronale Netz hier etwas entdeckt, dass den Medizinern bisher entgangen ist.</p><p></p><p>
+Jetzt hat eine Gruppe von Medizinern in London diese Ergebnisse reproduziert. Neben der Bestätigung der Erkenntnisse der ersten Studie sehen sie es als wichtiges Ergebnis ihrer Arbeit, dass sie gezeigt haben, dass Forschung mit KI auch für Forscher aus anderen Fachgebieten möglich ist.</p><p>
+Für ihre Untersuchungen haben sie die <a href="https://cloud.google.com/automl" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">AutoML Plattform</a> von Google benutzt, die es ermöglicht ML Modelle zu erstellen, ohne selbst Programmieren zu können.</p><p>
+Obwohl als Schwäche genannt wird, dass man mit der AutoML Plattform weniger Einblick in das Training der Modelle bekommt, sehen sie solche sogenannten "No Code" Plattformen als wichtigen Beitrag zur Demokratisierung der Deep Learning Technologie.</p><p></p><p>
+Artikel von 2018: <a href="https://www.nature.com/articles/s41551-018-0195-0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41551-018-0195-0</a> (englisch)</p><p>
+Neuer Artikel: <a href="https://www.nature.com/articles/s41598-021-89743-x" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41598-021-89743-x</a> (englisch)</p><p></p></span><h2 id="5">Erste Deepfake-Werbung in Deutschland</h2><span><p>
+Der norwegische Stromanbieter Tibber hat als erstes Unternehmen in Deutschland Deepfake Technologie in einem Werbespot verwendet und Angela Merkel für sich sprechen lassen. Einem Artikel bei t3n zufolge hat die produzierende Werbeagentur dazu die OpenSource Software "DeepFaceLab" eingesetzt.</p><p></p><p>
+DeepFaceLab wurde mithilfe des <a href="https://www.tensorflow.org/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TensorFlow-Frameworks</a> für neuronale Netze programmiert.</p><p>
+Der interne Ablauf beim Erzeugen eines Bilds funktioniert dabei so:</p><p></p><p><em>1. Extraktion - Gesichtserkennung, Ausrichtung und Ausschnitt</em></p><p>
+a) Auf den eingespeisten Bildern werden die Gesichter mithilfe eines neuronalen Netzes erkannt</p><p>
+b) Damit die aufeinanderfolgenden Bilder in einem Video auch zusammen passen, werden die markanten Punkte in den Gesichtern, wie Augen, Nase und Mund, auf den Bildern erkannt und daran die Ausrichtung des Gesichts festgestellt. Dann wird berechnet, wie sich diese Punkte von einem Bild zum nächsten bewegt haben.</p><p>
+c) Im dritten Schritt werden die Gesichter aus den Bildern ausgeschnitten, um sie austauschen zu können.</p><p></p><p><em>2. Training</em></p><p>
+In der Trainingsphase wird ein Modell trainiert, das lernt wie der Gesichtsausdruck des "Quellgesichts" auf dem "Zielgesicht" aussehen würde. Dabei werden verschiedene Teile des Gesichts unterschiedlich stark gewichtet. Das meiste Gewicht wird auf die Augen gelegt, weil es hier viele Details gibt.</p><p></p><p><em>3. Konvertierung</em></p><p>
+a) Das generierte Gesicht wird an der passenden Stelle in das Originalbild eingefügt</p><p>
+b) Die Farben des eingefügten Gesichts werden an das Bild angepasst</p><p>
+c) Die Auflösung des eingefügten Gesichts wird mithilfe eines weiteren neuronalen Netzes erhöht</p><p></p><p>
+Trotz dieser aufwändigen Technik ist das Ergebnis im Werbespot eher mittelgut geworden. Laut Tibber ist das Absicht, um den Zuschauern klar zu zeigen, dass es sich nicht um die echte Merkel handelt.</p><p>
+Warum dann überhaupt Deepfake benutzen und nicht eine Schauspielerin verkleiden und schminken? Auch das wurde von der Deutschland-Chefin beantwortet: Das Unternehmen wolle in der Werbung "technologisch neue Wege gehen". Es geht also offenbar nicht darum, ob es Sinn macht die Technik zu verwenden, sondern eher um das "fortschrittliche" Image, das damit verbunden ist und das auf die Firma abfärben soll.</p><p></p><p>
+Werbespot auf Youtube: <a href="https://www.youtube.com/watch?v=dLAjWtlTpnY" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=dLAjWtlTpnY</a></p><p>
+Artikel bei t3n: <a href="https://t3n.de/news/angela-merkel-werbung-startup-deepfake-1378618/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/angela-merkel-werbung-startup-deepfake-1378618/</a></p><p>
+DeepFaceLab: <a href="https://github.com/iperov/DeepFaceLab" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/iperov/DeepFaceLab</a></p><p>
+Beschreibung wie DeepFaceLab funktioniert: <a href="https://arxiv.org/abs/2005.05535" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2005.05535</a> (englisch)</p><p></p></span><h2 id="4">KI-generiertes Musikvideo</h2><span><p>
+Yannic Kilcher, <a href="http://www.da.inf.ethz.ch/people/YannicKilcher/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Forscher am Data Analytics Lab der ETH Zürich</a>, hat auf seinem Youtube Kanal ein Musikvideo veröffentlicht. Die Bilder, die in diesem Video gezeigt werden, stellen die Interpretation des Liedtextes durch zwei neuronale Netze dar: eins generiert die Bilder (<a href="https://arxiv.org/abs/1809.11096" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">BigGAN</a>) und das andere schätzt ein, wie gut ein Bild zum Text passt (<a href="https://openai.com/blog/clip/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CLIP</a>).</p><p>
+Der Text wurde von den Kategorien des bekannten <a href="https://www.image-net.org/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ImageNet-Datensatzes</a> inspiriert und hat keine tiefere Bedeutung, außer als Vorlage für interessante Bilder zu dienen.</p><p></p><p>
+Wie genau die Bilder erzeugt wurden erklärt Yannic netterweise auch in seinem Video:</p><p>
+Für jede Zeile des Lieds gibt es ein Bild. Das BigGAN Netz erzeugt am Anfang ein zufälliges Bild. Vom CLIP Modell wird dann eingeschätzt, wie gut das Bild zur Textzeile passt. Diese Einschätzung geht dann wieder zurück an BigGAN, das damit als nächstes ein Bild erzeugen kann, das besser zum Text passt. In einigen Iterationen werden die Bilder so immer passender zum Text.</p><p></p><p>
+Für den Übergang zwischen zwei Bildern nutzt er die Art wie Bilder in einem ML Modell verarbeitet werden.</p><p>
+Beim Training lernt ein Modell bestimmte Eigenschaften eines Bildes. Je nachdem worauf genau es trainiert wurde, können das ganz unterschiedliche Eigenschaften sein. Jeder Eigenschaft wird vom Modell eine Zahl zugeordnet, die zeigt als wie stark ausgeprägt sie erkannt wurde.</p><p>
+Ein Beispiel: In einem Modell, das erkennen soll welche Farbe ein Bild hat, könnten die Grundfarben rot, grün und blau jeweils eine Eigenschaft sein. Wenn man diesem Modell ein komplett grünes Bild gibt, dann erkennt es die Eigenschaft 'grün' als sehr stark und die anderen Farben als schwach. In der Darstellung als Zahlen wäre grün also eine 1 und die anderen Farben eine 0.</p><p>
+Bei einem komplett blauen Bild wäre dementsprechend blau die 1 und die beiden anderen jeweils 0.</p><p></p><p>
+Jetzt wird es etwas abstrakt: man kann diese Eigenschaften als Dimensionen eines mehrdimensionalen Raums betrachten, dem sogenannten latenten Raum. Dann liegt jedes Bild auf einem bestimmten Punkt in diesem Raum. Der genaue Punkt, auf dem ein Bild liegt, wird durch die Zahlen definiert, die den einzelnen Eigenschaften zugeordnet sind.</p><p>
+Im Beispiel von oben besteht der latente Raum aus drei Dimensionen: rot, grün und blau. Der Punkt, auf dem das grüne Beispielbild liegt, ist daher (0,1,0). Das blaue Bild liegt auf (0,0,1).</p><p></p><p>
+Um einen sanften Übergang zwischen zwei Bildern zu bekommen, hat Yannic diese Punkte im latenten Raum betrachtet. Um die Übergangsbilder zu bekommen, ist er im Prinzip einfach im latenten Raum von einem Bild zum nächsten gelaufen. Die Punkte, an denen er dabei vorbeigekommen ist, stellen ja ihrerseits auch wieder Bilder dar und sind in den Augen des Modells der logische Übergang zwischen den Bildern zum Text.</p><p>
+Um nochmal das Beispiel aufzugreifen: Um im Video einen sanften Übergang zwischen einem grünen und einem blauen Bild zu bekommen, braucht man Zwischenbilder. Diese bekommt man, indem man im latenten Raum vom Punkt des grünen Bildes (0,1,0) zum Punkt des blauen Bildes (0,0,1) läuft.</p><p>
+Zwischen diesen beiden Punkten liegt zum Beispiel (0,0.5,0.5), was einem türkisen Bild entspricht. Durch mehrere dieser Zwischenschritte bekommt man so einen sanften Übergang von grün zu blau.</p><p></p><p>
+Die so erzeugten Übergangsbilder hat er sich anzeigen lassen und in das Video eingebaut. Das Ergebnis ist faszinierend.</p><p></p><p>
+Youtube Video: <a href="https://www.youtube.com/watch?v=rR5_emVeyBk" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=rR5_emVeyBk</a></p><p>
+Code auf Github: <a href="https://github.com/yk/clip_music_video" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/yk/clip_music_video</a></p><p>
+Erklärung zum Latent Space: <a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d</a> (englisch)</p><p></p></span><h2 id="3">KI macht gerenderte Bilder fotorealistisch</h2><span><p>
+Forscher von Intel haben eine Methode entwickelt um computergenerierte Bilder, zum Beispiel in Computerspielen, realistischer wirken zu lassen.</p><p>
+Das Kernstück bildet ein<a href="https://de.wikipedia.org/wiki/Convolutional_Neural_Network" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"> Convolutional Neural Network (CNN)</a>. Dieses verarbeitet die Bilder zusammen mit zusätzlichen Informationen von der Grafikkarte. Dabei handelt es sich zum Beispiel um Informationen zu Beleuchtung und Material in der dargestellten Szene. Mit den Eingabebildern und den Zusatzinformationen generiert das CNN dann die verbesserten Bilder.</p><p>
+Beim Training bekam das CNN zwei Ziele zur Optimierung: geringe strukturelle Unterschiede zwischen dem ursprünglichen Bild und dem generierten, also dass die dargestellte Szene gleich bleibt, sowie ein möglichst hoher Realismus.</p><p></p><p>
+Um festzustellen, wie realistisch das Bild ist, wurde ein "realism score" berechnet. Dafür wurden zwei verschiedene neuronale Netze verwendet. Eins zur Segmentierung des Bildes, das heißt, es erkennt welche Pixel zu welchen dargestellten Gegenständen gehören. Und das andere zur Feature Extraction, das heißt, es erkennt welche Eigenschaften das Bild hat. Die Ergebnisse der beiden Netze werden dann miteinander zum "realism score" verrechnet.</p><p></p><p>
+Die Autoren des Papers erwarten, dass ihre Technik sich gut in die Rendering Pipeline von Computerspielen einfügen lässt und in Zukunft zum Einsatz kommen wird. In der aktuellen Form dauert die Optimierung allerdings noch eine halbe Sekunde pro Bild, was für Computerspiele natürlich deutlich zu lang ist.</p><p></p><p>
+Artikel bei t3n: <a href="https://t3n.de/news/intel-ki-gta-fotorealistisch-1379258/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/intel-ki-gta-fotorealistisch-1379258/</a></p><p>
+Paper: <a href="http://vladlen.info/papers/EPE.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://vladlen.info/papers/EPE.pdf</a> (englisch)</p><p>
+Youtube Video: <a href="https://www.youtube.com/watch?v=P1IcaBn3ej0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=P1IcaBn3ej0</a></p><p></p></span><h2 id="2">Diffusion Models zur Bildgenerierung</h2><span><p>
+Bei der Generierung von Bildern sind <a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Generative Adversarial Networks (GANs)</a> der aktuelle Stand der Technik. Forscher von OpenAI haben jetzt Diffusion Models als Alternative zu GANs untersucht. Das nehme ich hier zum Anlass um zu beschreiben was Diffusion Models eigentlich sind und wie sie funktionieren.</p><p></p><p>
+Diffusion Models sind ein vom physikalischen Phänomen der <a href="https://de.wikipedia.org/wiki/Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Diffusion</a> inspirierter Ansatz. Diffusion ist die Vermischung von Gasen oder Flüssigkeiten von alleine, ohne äußere Einwirkung.</p><p>
+Zum Training von Diffusion Models wird im Prinzip das gleiche mit den Pixeln von Bildern gemacht: Sie werden gemischt, bis sie gleichmäßig verteilt sind. Dadurch wird das Bild immer verrauschter, bis am Ende nur noch Rauschen übrig ist. Das Modell wird darauf trainiert diesen Prozess umzukehren und das Rauschen zu reduzieren.</p><p></p><p>
+Das lässt sich dann nutzen, um, beginnend mit zufällig erzeugtem Rauschen, neue Bilder zu generieren. Dabei wird das Modell wiederholt auf das Rauschen angewandt und verwandelt es jedes Mal ein Stück mehr in Richtung eines Bildes.</p><p>
+Man könnte fast sagen, ein Diffusion Model geht ähnlich vor wie es Michelangelo gesagt haben soll: Um ein Bild eines Löwen zu generieren entfernt es einfach alles, was nicht nach Löwe aussieht.</p><p></p><p>
+Als Vorteile von Diffusion Models gegenüber GANs nennen die Forscher von OpenAI die bessere Skalierbarkeit und die einfachere Übertragbarkeit in neue Bereiche. Dass sie dennoch noch nicht mit GANs mithalten können, liegt laut ihrer Hypothese vor allem daran, dass die GAN-Architekturen schon weiter erforscht und verfeinert wurden. Mit ihrer Forschung wollen sie deshalb dazu beitragen, diesen Vorsprung zu verkleinern.</p><p></p><p>
+Paper: <a href="https://arxiv.org/abs/2105.05233" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2105.05233</a> (englisch)</p><p>
+Ursprüngliches Paper zu Diffusion Models: <a href="https://arxiv.org/abs/1503.03585" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/1503.03585</a> (englisch)</p><p></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="margin-bottom: 0cm;line-height: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die iPhone Kamera App hat eine Funktion, die einem sagt was man gerade sieht: <a href="https://www.youtube.com/watch?v=UnoeaUpHKxY" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">https://www.youtube.com/watch?v=UnoeaUpHKxY</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sind Träume dazu da um ein Overfitting des Gehirns zu vermeiden? <a href="https://www.cell.com/patterns/fulltext/S2666-3899(21)00064-7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Cell</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Amazon verbietet der Polizei auf unbestimmte Zeit, die Amazon-Gesichtserkennung zu benutzen: <a href="https://www.reuters.com./technology/exclusive-amazon-extends-moratorium-police-use-facial-recognition-software-2021-05-18/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Reuters</a> <a href="https://t3n.de/news/gesichtserkennung-amazon-verbot-polizei-1379737/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="margin-bottom: 0cm;line-height: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI kann den Klang einer Geige vorhersagen: <a href="https://www.nature.com/articles/s41598-021-88931-z" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Nature</a> <a href="https://t3n.de/news/diese-ki-weiss-instrument-klingt-1379200/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="margin-bottom: 0cm;line-height: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Video, das die KI-Neuigkeiten von der Google IO zusammenfasst: <a href="https://www.youtube.com/watch?v=3k37fz9p6_k" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=3k37fz9p6_k</a><br/>
+	 </li>
+<li style="margin-bottom: 0cm;line-height: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tesla testet LiDAR Sensoren, deren Einsatz für autonomes Fahren sie bisher strikt abgelehnt haben: <a href="https://t3n.de/news/tesla-testet-lidar-sensoren-elon-musk-1380629/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../5">« Vorherige</a><a class="" href="../7">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

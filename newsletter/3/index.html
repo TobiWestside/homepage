@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #3</h1><span>
+                        
+                            Hallo und herzlich willkommen zur dritten Ausgabe meines Newsletters KI News. Hier fasse ich interessante Meldungen zusammen, die mit künstlicher Intelligenz und maschinellem Lernen zu tun haben.<p></p><p>
+Diesmal geht es, wie letztes Mal versprochen, um Nachrichten zu den Folgen und Auswirkungen von KI Entwicklungen.</p><p></p><p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="4">Motorrad-Influencerin ist eigentlich ein Mann</h2><span><p>
+Die Bilder auf dem Twitter Account <a href="https://twitter.com/azusagakuyuki" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">@azusagakuyuki</a> zeigen scheinbar eine junge japanische Frau mit ihrem Motorrad. Tatsächlich ist es aber ein 50-jähriger Mann, der sein Gesicht auf den Fotos mithilfe der <a href="https://www.faceapp.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">FaceApp</a> nachträglich verändert hat.</p><p></p><p>
+Laut <a href="https://techcrunch.com/2017/02/08/faceapp-uses-neural-networks-for-photorealistic-selfie-tweaks/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">einem TechCrunch Artikel</a> werden dazu von FaceApp "deep generative convolutional neural networks" verwendet. Diese Aneinanderreihung von Fachbegriffen wirkt auf Leser, die sich nicht so viel mit dem Thema beschäftigen, erstmal sehr beeindruckend - aber was sagt sie wirklich aus? Gehen wir mal von vorne nach hinten durch:</p><p></p><p><em>deep</em> - ab wie vielen Ebenen man bei einem neuronalen Netz von "deep learning" sprechen kann ist nicht genau festgelegt. Fest steht nur, dass es neben Eingabe- und Ausgabeschicht noch mindestens einen "hidden layer" geben muss. Da die Leistungsfähigkeit eines neuronalen Netzes mit der Anzahl der Ebenen ansteigt, sind heute die allermeisten neuronalen Netze "deep".</p><p></p><p><em>generative</em> - bedeutet einfach, dass das Modell etwas generiert; in diesem Fall das neue Bild mit dem veränderten Gesicht. Ein häufig verwendetes Konzept für generierende Modelle sind sogenannte "generative adversarial networks" (GANs).</p><p></p><p><em>convolutional neural network</em> - CNNs sind die aktuell meistgenutzte Architektur für neuronale Netze, die im Bereich der Bildverarbeitung eingesetzt werden.</p><p></p><p>
+Ganz einfach ausgedrückt bedeutet "deep generative convolutional neural networks" also nur, dass von FaceApp zur Erzeugung der Bilder die Art von neuronalen Netzen benutzt wird, die man erwarten würde.</p><p>
+Wie leicht die Implementierung solcher Netze ist, zeigt diese TensorFlow Anleitung: <a href="https://www.tensorflow.org/tutorials/generative/dcgan" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.tensorflow.org/tutorials/generative/dcgan</a></p><p></p><p>
+Artikel über den Twitter Account: <a href="https://www.bbc.com/news/world-asia-56447357" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.bbc.com/news/world-asia-56447357</a> (englisch)</p><p>
+Artikel über FaceApp: <a href="https://www.standard.co.uk/tech/what-is-faceapp-gender-appearance-filter-safety-a4473221.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.standard.co.uk/tech/what-is-faceapp-gender-appearance-filter-safety-a4473221.html</a> (englisch)</p><p></p></span><h2 id="3">Deepfake? Die Augen verraten es</h2><span><p>
+Um solche Fake-Bilder wie von der Motorradfahrerin in Zukunft besser erkennen zu können, haben Forscher der Uni Buffalo eine neue Methode zur Erkennung von Deepfake-Fotos entwickelt. Dazu nutzen sie die kleinen Spiegelungen, die in den Augen durch eine Lichtquelle entstehen.</p><p>
+Auf echten Fotos sind die Spiegelungen meistens fast gleich, weil sich eben in beiden Augen zum Beispiel die gleiche Lampe spiegelt.</p><p>
+Bei Fake-Bildern auf dem aktuellen Stand der Technik, zum Beispiel von <a href="https://thispersondoesnotexist.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">thispersondoesnotexist.com</a>, sind solche Spiegelungen in den Augen zwar auch vorhanden, aber sie sind meistens unterschiedlich. Dadurch kann man die echten von den falschen Fotos unterscheiden.</p><p></p><p>
+Die Forscher sind dabei so vorgegangen: Zuerst lokalisieren sie mithilfe einer Gesichtserkennung das Gesicht auf den Bildern, und dann, mit einem sogenannten "landmark extractor", die Augen.</p><p>
+Die Augen schneiden sie aus dem Bild aus und bearbeiten sie mit verschiedenen Bildbearbeitungsmethoden, wie Kantenerkennung und Schwellwerten, bis sie die Spiegelungen gefunden haben.</p><p>
+Die Flächen der Spiegelungen vergleichen sie dann mit der "Intersection over Union"-Methode, mit der die Ähnlichkeit beurteilt werden kann. Ein niedriger Wert bedeutet dabei, dass die Ähnlichkeit gering ist und somit eine hohe Wahrscheinlichkeit dafür, dass das Foto ein Fake ist.</p><p></p><p>
+Veröffentlichung der Uni Buffalo: <a href="http://www.buffalo.edu/news/releases/2021/03/010.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://www.buffalo.edu/news/releases/2021/03/010.html</a> (englisch)</p><p>
+Direktlink zum Paper: <a href="https://arxiv.org/pdf/2009.11924.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/pdf/2009.11924.pdf</a> (englisch)</p><p></p></span><h2 id="2">CEO von OpenAI schlägt Grundeinkommen vor</h2><span><p>
+Sam Altman, der CEO von OpenAI, hat in einem Blobeintrag vorgeschlagen, eine Variante des bedingungslosen Grundeinkommens einzuführen.</p><p>
+Seine Überlegungen beginnen mit der Annahme, dass KI gesteuerte Software und Roboter in Zukunft Arbeiter ersetzen können. Das Training der immer größeren Modelle wird dabei immer aufwändiger und damit immer kapitalintensiver werden. Das bedeutet, dass für Unternehmen Kapital im Verhältnis zu Arbeitern wichtiger werden wird.</p><p></p><p>
+Seine Schlussfolgerung ist, dass zukünftig nicht mehr die Arbeit besteuert werden sollte (Einkommensteuer), sondern das Kapital (Firmenwert und Landbesitz).</p><p>
+Aus den Einnahmen durch diese Steuer sollen alle Erwachsenen eine jährliche Auszahlung bekommen. Die Auszahlungen an alle steigen, wenn sich der Wert von Firmen und Grundstücken erhöht. Dadurch haben alle ein Interesse daran, dass es dem Land insgesamt immer besser geht.</p><p>
+Seiner Schätzung nach könnten, bei Umsetzung dieser Idee, alle Erwachsenen in den USA im Jahr 2031 jeweils 13.500 $ bekommen.</p><p></p><p>
+Blogeintrag: <a href="https://moores.samaltman.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://moores.samaltman.com/</a> (englisch)</p><p></p></span><h2 id="1">Amazon-Paketboten müssen Kameraüberwachung zustimmen</h2><span><p>
+In den USA müssen die Fahrer der Lieferdienste, die Pakete direkt für Amazon ausliefern, ein Formular unterschreiben, das es Amazon und ihrem Arbeitgeber erlaubt, sie während der Fahrt am und im Auto zu überwachen. Dazu werden Kameras und Sensoren verwendet, die bis zu 20 Minuten nach der Fahrt aktiv bleiben.</p><p></p><p><a href="https://www.vice.com/en/article/dy8n3j/amazon-delivery-drivers-forced-to-sign-biometric-consent-form-or-lose-job" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Laut eines Artikels bei vice.com</a> handelt es sich dabei um Technik des Anbieters <a href="https://www.netradyne.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">netradyne</a>. Netradyne bietet laut Selbstbeschreibung "KI, maschinelles Lernen und Edge Computing, um Unfälle zu reduzieren". Welche Daten dabei ausgewertet werden wird in der <a href="https://amzl-dsp-bgc-docs.s3.amazonaws.com/DSP+Privacy+Policy+for+Vehicle+Camera+Technology.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Datenschutzerklärung</a> beschrieben.</p><p>
+Neben "klassischen" Fahrdaten wie Strecke, Geschwindigkeit und Bremsvorgänge sind das auch einige, die erst durch die "intelligenten" Kameras möglich werden. Dazu gehören zum Beispiel ob Ampeln und Stopschilder überfahren werden, zu schnelles Fahren und ob der Fahrer konzentriert oder abgelenkt ist.</p><p></p><p>
+Pressebericht: <a href="https://www.vice.com/en/article/dy8n3j/amazon-delivery-drivers-forced-to-sign-biometric-consent-form-or-lose-job" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.vice.com/en/article/dy8n3j/amazon-delivery-drivers-forced-to-sign-biometric-consent-form-or-lose-job</a> (englisch)</p><p>
+Bedingungen: <a href="https://amzl-dsp-bgc-docs.s3.amazonaws.com/Vehicle+Technology+and+Biometric+Consent.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://amzl-dsp-bgc-docs.s3.amazonaws.com/Vehicle+Technology+and+Biometric+Consent.pdf</a> (englisch)</p><p>
+Datenschutzerklärung: <a href="https://amzl-dsp-bgc-docs.s3.amazonaws.com/DSP+Privacy+Policy+for+Vehicle+Camera+Technology.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://amzl-dsp-bgc-docs.s3.amazonaws.com/DSP+Privacy+Policy+for+Vehicle+Camera+Technology.pdf</a> (englisch)</p><p></p></span>
+<p id="bottom-nav-container"><a href="../2">« Vorherige</a><a class="" href="../4">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

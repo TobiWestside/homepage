@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #5</h1><span>
+                        
+                            Hallo und herzlich willkommen zur fünften Ausgabe meines Newsletters KI News. Hier fasse ich interessante Meldungen zusammen, die mit künstlicher Intelligenz und maschinellem Lernen zu tun haben.<p></p><p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="6">Hintergrund von Porträtfotos austauschen</h2><span><p>
+Ein Team von Google Research hat eine neue Methode entwickelt den Hintergrund von Porträtfotos auszutauschen und gleichzeitig die Belichtung an den neuen Hintergrund anzupassen.</p><p>
+Dazu wird eine Architektur aus mehreren neuronalen Netzen benutzt, die als Eingabedaten das Porträtfoto und den neuen Hintergrund bekommt. Der Hintergrund muss dabei zusätzliche Daten zur Beleuchtung enthalten, ein sogenanntes "HDR lighting environment".</p><p></p><p>
+Um das gewünschte Ergebnis zu erhalten, werden drei Schritte durchgeführt:</p><p></p><p>
+1. Ein <a href="https://de.wikipedia.org/wiki/Convolutional_Neural_Network" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Convolutional Neural Network</a> (CNN) erkennt die Person und die "Alpha Matte". Alpha Matte ist der Bildausschnitt, der die Person enthält.</p><p></p><p>
+2. Das "Relighting Module" wird auf das Porträtbild angewendet. Es besteht aus zwei neuronalen Netzen mit derselben <a href="https://en.wikipedia.org/wiki/U-Net" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">U-Net</a> Architektur. Es erkennt die Geometrie und Albedo (wie stark eine Oberfläche reflektiert) und bestimmt damit die Beleuchtung für jedes Pixel:</p><p>
+2a. Das Geometrie-Netz erkennt die Richtung, in die Licht reflektiert wird.</p><p>
+2b. Das Albedo-Netz erkennt wie stark etwas reflektiert.</p><p></p><p>
+3. In Schritt drei wird das Bild "neu beleuchtet", die Person wird mithilfe der Alpha Matte ausgeschnitten und mit dem neuen Hintergrund zusammengesetzt:</p><p>
+3a. Aus dem neuen Hintergrund werden "Light Maps" berechnet, die die Helligkeit von Oberflächen darstellen. Diese werden mithilfe der in Schritt zwei erkannten Eigenschaften auf die abgebildete Person angewendet (ebenfalls mithilfe von U-Nets). Dadurch wird die Beleuchtung der Person an den neuen Hintergrund angepasst.</p><p>
+3b. Als letztes wird die Person ausgeschnitten und mit dem neuen Hintergrund zusammengesetzt. Dazu wird wieder ein U-Net verwendet, wieder mit derselben Architektur wie auch schon bei den Geometrie- und Albedo-Netzen</p><p></p><p>
+In der dritten Ausgabe des Newsletters habe ich geschrieben, dass man von KI erzeugte Fake-Bilder oft an den Reflexionen in den Augen erkennt. Tatsächlich werden die Reflexionen in den Augen auch hier explizit als eine der Schwächen des Systems genannt.</p><p></p><p>
+Webseite zum Paper: <a href="https://augmentedperception.github.io/total_relighting/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://augmentedperception.github.io/total_relighting/</a></p><p></p></span><h2 id="5">KI-gesteuerter Roboter mit Laserkanonen</h2><span><p>
+Carbon Robotics, ein Startup aus Seattle, hat einen sehr beeindruckenden Roboter gebaut: 4,3t schwer, zwölf Kameras und acht 150W Laser, die alle 50ms ausgelöst werden können.</p><p>
+Zum Glück handelt es sich dabei nicht um eine Art Kriegsroboter, sondern um ein autonomes landwirtschaftliches Gerät. Das Gefährt sieht ähnlich aus wie ein futuristischer Mähdrescher und soll zur umweltschonenden Unkrautvernichtung eingesetzt werden.</p><p></p><p>
+Das funktioniert so: Dem Fahrzeug werden die Koordinaten des Feldes, auf dem es fahren soll, und die Bereiche zum Wenden am Ende der Bahnen eingestellt. Per GPS bestimmt es die eigene Position und bleibt innerhalb der festgelegten Bereiche.</p><p>
+Mittels Kameras vorne und hinten und eines Bilderkennungs-Algorithmus erkennt es automatisch die Furchen im Feld, in denen es fahren kann. Zusätzlich nutzt es auch Lidar Sensoren um Kollisionen mit Hindernissen zu vermeiden.</p><p></p><p>
+Ist es auf dem Feld, kommen die zwölf nach unten gerichteten Kameras zum Einsatz. Mit ihnen werden Bilder von den Pflanzen gemacht, die auf dem Feld wachsen. Diese Bilder werden dann von zwei verschiedenen Klassifizierungs-Modellen, eins für Nutzpflanzen, eins für Unkraut, eingestuft. Sagt die Bilderkennung "Unkraut", visiert einer der Laser die Pflanze an und verbrennt sie mit einem kurzen Lichtimpuls. Für die Bilderkennung ist ein extra Hochleistungsrechner mit acht NVIDIA Grafikkarten an Bord.</p><p></p><p>
+Die Vorteile dieser laserbasierten Unkrautvernichtung sind laut Hersteller, dass keine Herbizide eingesetzt werden müssen und somit kein Schaden an Boden und Nutzpflanzen entsteht, dass keine manuelle Arbeit nötig ist, höhere Erträge, sowie dass der Einsatz in der Biolandwirtschaft möglich ist.</p><p></p><p>
+Trotz der genannten Vorteile ist es unwahrscheinlich, dass wir diese Geräte bald in Deutschland sehen, denn nach Herstellerangaben lohnt sich der Einsatz erst für Felder mit mindestens 80ha Größe. Laut <a href="https://de.statista.com/statistik/daten/studie/173089/umfrage/betriebsgroesse-von-agrarbetrieben-2010/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Statista</a> ist jedoch in Deutschland die gesamte landwirtschaftliche Fläche pro Betrieb im Durchschnitt nur gut 60ha groß. Vielleicht gibt es ja in ein paar Jahren ein kleineres Modell, das dann auch zur Größe der Äcker hier passt.</p><p></p><p>
+Pressemitteilung: <a href="https://www.businesswire.com/news/home/20210413005415/en/Carbon-Robotics-Disrupts-Farming-Industry-with-Autonomous-Weeders" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.businesswire.com/news/home/20210413005415/en/Carbon-Robotics-Disrupts-Farming-Industry-with-Autonomous-Weeders</a> (englisch)</p><p>
+Webseite: <a href="https://carbonrobotics.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://carbonrobotics.com/</a> (englisch)</p><p>
+Youtube Video: <a href="https://www.youtube.com/watch?v=vSPhhw-2ShI" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=vSPhhw-2ShI</a></p><p></p></span><h2 id="4">KI "berechnet" Materialbelastung</h2><span><p><a href="https://de.wikipedia.org/wiki/Verbundwerkstoff" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Verbundwerkstoffe</a> sind Werkstoffe, die aus mehreren miteinander verbundenen Materialien bestehen. Durch diese Verbindung bekommen sie neue Eigenschaften, zum Beispiel können sie bei gleicher Stabilität leichter sein. Deshalb werden sie beispielsweise für Verpackungen oder im Flugzeugbau verwendet.</p><p>
+Wie sich ein Verbundwerkstoff bei Belastung verhält ist allerdings, wegen der unterschiedlichen Eigenschaften der Materialien, aufwändig zu berechnen.</p><p>
+Forscher am MIT haben ein Modell entwickelt, das die Materialbelastung in Verbundwerkstoffen voraussagen soll, wodurch diese aufwändigen physikalischen Berechnungen ersetzt werden könnten.</p><p></p><p>
+Diese Berechnungen sind heute so aufwändig, dass sie sogar den Versuchsaufbau der Forscher stark eingeschränkt haben. Um die Komplexität so weit wie möglich zu reduzieren haben sie nur (simulierte) zweidimensionale Stoffe aus nur zwei Materialien untersucht, von denen eins weich und eins spröde war.</p><p>
+Die Simulation der Stoffe war außerdem auf 8x8 Pixel beschränkt und immer achsensymmetrisch.</p><p>
+Diese Einschränkungen waren notwendig, weil die Forscher als erstes Trainingsdaten erzeugen mussten, wofür sie die aufwändigen Berechnungen für jedes Trainingsbeispiel neu durchführen mussten. Als Trainingsdaten wählten die Forscher zufällig 2000 verschiedene Kombinationen der weichen und spröden Materialien.</p><p>
+Dann kam der Teil, dem die Einschränkungen geschuldet sind: für jeden der 2000 verschiedenen Stoffe mussten die Spannungs- und Dehnungsfelder bei Belastung berechnet werden. Diese berechneten Felder wurden dann wieder in grafische Darstellungen umgewandelt.</p><p></p><p>
+Mit den zufällig ausgewählten Verbundwerkstoffen und den dazugehörigen Bilder der Felder bei Belastung wurde dann ein GAN (generative adversarial network) trainiert. Ein GAN ist eine Architektur aus zwei neuronalen Netzen, die so trainiert werden, dass sie Daten erzeugen, die den Trainingsdaten sehr ähnlich sind. In diesem Fall erzeugt das GAN aus dem 8x8 Bild eines Verbundwerkstoffs eine überzeugende Darstellung der erwarteten Spannungs- und Dehnungsfelder bei Belastung.</p><p></p><p>
+Wichtig zu bedenken ist allerdings, dass, obwohl die Ergebnisse überzeugend aussehen, das neuronale Netz keine Ahnung von der zugrundeliegenden Physik hat. Es erzeugt einfach nur Bilder, die den Mustern entsprechen, die es aus den Trainingsdaten gelernt hat.</p><p></p><p>
+Nachdem der erste Versuch gut funktioniert hat, haben die Forscher noch weitere Möglichkeiten untersucht, darunter Stoffe aus nicht-quadratischen Komponenten, andere Belastungen, und "high-resolution" 32x32 Eingabebilder. Am Ende freuen sie sich über die daraus folgende "breite Anwendbarkeit" ihres Modells.</p><p>
+Diese Schlussfolgerung kann ich nicht ganz nachvollziehen, denn 8x8 Pixel große, symmetrische 2D Verbundstoffe bestehend aus Materialien aus geometrischen Formen wirken auf mich nicht besonders praxisnah. Allerdings kenne ich mich mit Materialwissenschaft und Werkstofftechnik auch nicht besonders gut aus, daher übersehe ich vielleicht etwas.</p><p>
+(Die Pressemitteilung des MIT zum Thema geht sogar noch weiter und spricht von <em>"New AI tool calculates materials’ stress and strain based on photos"</em>, was eine schwierige Behauptung ist, da das GAN nur Bilder erzeugt, aber keine Berechnung der Belastung durchführt.</p><p>
+Außerdem beginnt sie direkt mit <em>"Isaac Newton may have met his match."</em>. Ebenfalls eine schwierige Aussage, zu behaupten, ein Bildverarbeitungsalgorithmus sei vergleichbar mit einem der wichtigsten Physiker der Geschichte.)</p><p></p><p>
+Meiner Meinung nach könnte solch ein Modell, wenn es noch weiterentwickelt wird, am ehesten bei der Entwicklung von neuen Materialien zum Einsatz kommen, wenn schnell viele verschiedene Möglichkeiten ausprobiert werden sollen. Aber es kann die echte Berechnung der Materialeigenschaften am Ende doch nicht ersetzen.</p><p></p><p>
+Paper: <a href="https://advances.sciencemag.org/content/7/15/eabd7416" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://advances.sciencemag.org/content/7/15/eabd7416</a> (englisch)</p><p>
+Pressemitteilung: <a href="https://news.mit.edu/2021/ai-materials-stress-strain-0422" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://news.mit.edu/2021/ai-materials-stress-strain-0422</a> (englisch)</p><p></p></span><h2 id="3">Selbstfahrende Autos</h2><span><p><span style="font-size:16px"><em>Lyft verkauft "Autonomes Fahren"-Bereich</em></span></p><p>
+Die Fahrdienstleister Lyft und Uber haben beide in den letzten Jahren an Technologien zum Autonomen Fahren gearbeitet. Da beide Unternehmen große Verluste machen (2020 Lyft: $1,8 Mrd. Verlust bei $2,4 Mrd. Umsatz / Uber: $6,8 Mrd. Verlust bei $11,1 Mrd. Umsatz), scheint das aktuelle Geschäftsmodell nicht zu funktionieren. Die Entwicklung selbstfahrender Autos wäre daher eine Möglichkeit langfristig die Kosten zu senken, indem die Fahrer eingespart werden.</p><p>
+Jetzt verkauft allerdings Lyft den "Autonomes Fahren"-Bereich an Toyota. Bedeuted das, dass ihr Vertrauen in die Autohersteller gewachsen ist, ein selbstfahrendes Auto auf den Markt zu bringen? Oder haben sie im Gegenteil erkannt, dass es noch lange dauern wird, bis die Technik einsatzbereit ist und wollen daher die Entwicklungskosten sparen um die Zwischenzeit zu überleben?</p><p><a href="https://investor.lyft.com/news-and-events/news/news-details/2021/Woven-Planet-a-subsidiary-of-Toyota-to-acquire-Lyfts-self-driving-car-division/default.aspx" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pressemitteilung von Lyft</a></p><p>
+Ergebnisse von <a href="https://investor.lyft.com/news-and-events/news/news-details/2021/Lyft-Announces-Fourth-Quarter-and-Fiscal-Year-Results/default.aspx" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Lyft</a> und <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2020/default.aspx" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Uber</a></p><p></p><p><span style="font-size:16px"><em>Selbstfahrende Taxis in München</em></span></p><p>
+Die Intel-Tochterfirma Mobileye will 2022 einen Dienst für selbstfahrende Taxis ohne Sicherheitsfahrer in München starten. Dort werden die Autos bereits seit Sommer 2020 mit Fahrer an Bord getestet. Das Projekt steht noch unter dem Vorbehalt, dass es durch ein Bundesgesetz (ist bereits im Gesetzgebungsprozess) und den Freistaat Bayern erlaubt wird.</p><p><a href="https://www.bmvi.de/SharedDocs/DE/Artikel/DG/gesetz-zum-autonomen-fahren.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mitteilung des Bundesverkehrsministeriums zum geplanten Gesetz</a></p><p>
+Artikel bei <a href="https://www.br.de/nachrichten/wirtschaft/fahren-in-der-zukunft-robotaxis-in-muenchen-fuer-2022-geplant,SVgqVJc" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">BR</a> und <a href="https://t3n.de/news/intel-mobileye-autonom-robotaxi-deutschland-1373146/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">t3n</a></p><p></p><p><span style="font-size:16px"><em>Tesla Unfall doch mit Fahrer</em></span></p><p>
+Ende April war ein tödlicher Tesla-Unfall in den Schlagzeilen, weil die Polizei am Unfallort niemanden auf dem Fahrersitz gefunden hat. Das hat zu einigen Diskussionen geführt, über die Sicherheit des Autopilot Systems und auch die Frage, ob Tesla seine Kunden mit Namen wie "Autopilot" und "Full Self Driving" nicht in falscher Sicherheit wiegt, da es sich tatsächlich nur um Assistenzsysteme handelt.</p><p>
+Außerdem hat das amerikanische Magazin Consumer Reports in Tests auf abegesperrten Strecken herausgefunden, dass der Tesla Autopilot das Auto unter Umständen auch dann fährt, wenn niemand auf dem Fahrersitz sitzt.</p><p>
+Tesla hat nach einer vorläufigen Untersuchung mitgeteilt, dass der Autopilot auf der betreffenden Straße gar nicht eingeschaltet werden kann, und somit auch nicht den Unfall verursacht haben kann.</p><p>
+Dieser Einschätzung hat sich nach einer eigenen Untersuchung auch die amerikanische Verkehrssicherheitsbehörde NTSB angeschlossen. Zusätzlich schreibt das NTSB, dass auf Bildern einer Überwachungskamera zu sehen ist, wie sich der Eigentümer des Autos auf den Fahrersitz setzt.</p><p><a href="https://www.reuters.com/technology/tesla-drives-autopilot-through-regulatory-grey-zone-2021-04-20/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel über den Unfall (Reuters)</a> (englisch)</p><p><a href="https://www.reuters.com/business/autos-transportation/tesla-cars-can-drive-with-no-one-drivers-seat-consumer-reports-2021-04-22/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel mit Aussage von Consumer Reports (Reuters)</a> (englisch)</p><p><a href="https://www.ntsb.gov/investigations/AccidentReports/Reports/HWY21FH007-preliminary-report.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Bericht des NTSB (pdf)</a> (englisch)</p><p></p></span><h2 id="2">Ist maschinenlesbar das bessere ML?</h2><span><p>
+Der Londoner Softwareentwickler Cal Paterson argumentiert in einem Blogeintrag, dass maschinenlesbare Daten vorgezogen werden vor Daten, die durch maschinelles Lernen gewonnen werden.</p><p></p><p>
+Diesen Standpunkt verdeutlicht er am Beispiel von Google. Obwohl Google sehr viel KI Forschung betreibt (diese Ausgabe eingerechnet kamen Nachrichten von Google bisher in 60% meiner Newsletter vor), werden für die Google Suche immer mehr Metadaten benötigt.</p><p>
+Wenn du schonmal eine Webseite veröffentlicht hast, kennst du sicher einige davon, zum Beispiel Canonical URL, Sitemap.xml, OpenGraph, Schema.org oder Microformat. Wenn dir das nichts sagt, kennst du vielleicht die Infoboxen von Wikipedia, die neben den Suchergebnissen angezeigt werden. Oder du hast schonmal die Produktsuche von Google Shopping benutzt, für das die Händler die Produktdaten in einem maschinenlesbaren Format bereitstellen müssen.</p><p></p><p>
+All diese Daten könnte Google auch durch Analyse der entsprechenden Webseiten mithilfe von ML Modellen bekommen. Aber das wäre aufwändiger, und wahrscheinlich auch fehleranfälliger, als sich die Daten in einem maschinenlesbaren Format geben zu lassen.</p><p>
+In diesem Verhalten hat Cal ein Muster erkannt: Um eine neue Technik einzuführen wird zuerst KI benutzt um die nötigen Daten zu bekommen. Wenn sie sich etabliert hat und der Mehrwert offensichtlich ist, kommt der Übergang zur Benutzung von Metadaten.</p><p></p><p>
+Blogeintrag: <a href="https://calpaterson.com/metadata.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://calpaterson.com/metadata.html</a> (englisch)</p><p>
+Google Paper: <a href="https://research.google/pubs/pub334/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://research.google/pubs/pub334/</a> (englisch)</p><p></p></span><h2 id="1">Außerdem</h2><span><ul style="margin-left: 40px;">
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Für noch besser zu den Hörern passende Playlists hat Spotify ein Patent auf KI-Geschmackserkennung anhand der Stimme angemeldet. Das stößt auf einige Kritik: <a href="https://patents.justia.com/patent/10891948" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Patent</a> und <a href="https://www.stopspotifysurveillance.org/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Gegenkampagne</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine KI hat ein amerikanisches Kreuzworträtsel-Turnier gewonnen: <a href="https://slate.com/technology/2021/04/american-crossword-puzzle-tournament-dr-fill-artificial-intelligence.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Slate</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Rewe testet ab Herbst Technik für kassenloses Einkaufen in einem Supermarkt in Köln: <a href="https://www.rewe-group.com/de/presse-und-medien/newsroom/pressemitteilungen/so-einfach-wie-nie-zuvor-rewe-testet-neue-wege-des-lebensmitteleinkaufs/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pressemitteilung</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../4">« Vorherige</a><a class="" href="../6">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

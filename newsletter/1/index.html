@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #1</h1><span>
+                        
+                            Hallo und herzlich willkommen zur ersten Ausgabe meines neuen Newsletters KI News. Hier werde ich alle zwei Wochen interessante Meldungen zusammenfassen, die mit Themen der künstlicher Intelligenz und maschinellem Lernen zu tun haben.<p></p><p>
+Diesmal geht es um einen neuen Codec zur Sprach-Kompression, die Einschätzung der politischen Orientierung anhand von Porträtfotos und einen Curling spielenden Roboter.</p><p></p><p>
+Für hilfreiche Rückmeldungen, konstruktives Feedback und Verbesserungsvorschläge an <a href="mailto:kinews@tobiasfraenzel.de?subject=Feedback%20KI%20News" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">kinews@tobiasfraenzel.de</a> bin ich dankbar.</p><p></p><p>
+Viel Spaß beim Lesen der heutigen Ausgabe!</p><p></p></span><h2 id="3">Neuer Codec für Sprach-Kompression</h2><span><p>
+Google hat einen neuen Sprachcodec vorgestellt, der, zur Übertragung einer natürlich klingenden Stimme, mit deutlich geringerer Bandbreite auskommen soll als aktuelle Codecs.</p><p>
+Ein Codec ist eine Software, die analoge Signale, wie z.B. Sprache oder Musik, digital <strong>co</strong>dieren und <strong>dec</strong>odieren kann. Generell haben Sprachcodecs einen Eingabe- und einen Ausgabeteil. Im Eingabeteil wird die Sprache quantisiert, dann wird sie als digitale Daten übertragen und im Ausgabeteil wird die Sprache aus den übertragenen Daten rekonstruiert. Je geringer die Bandbreite, desto schlechter funktioniert diese Rekonstruktion. Deshalb fangen bei schlechtem Handyempfang die Stimmen an blechern zu klingen.</p><p>
+Um dieses Problem zu überwinden, nutzt Google für die Rekonstruktion der Sprache ein Modell basierend auf einem neuronalen Netz, das auch aus sehr wenigen Daten noch natürlich klingende Sprache erzeugen kann. Dabei handelt es sich um ein recurrent generative model, basierend auf <a href="https://arxiv.org/abs/1802.08435" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">WaveRNN</a>.</p><p></p><p><a href="https://ai.googleblog.com/2021/02/lyra-new-very-low-bitrate-codec-for.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2021/02/lyra-new-very-low-bitrate-codec-for.html</a> (englisch)</p><p><a href="https://www.golem.de/news/lyra-google-stellt-extrem-effizienten-ki-sprach-codec-vor-2103-154601.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.golem.de/news/lyra-google-stellt-extrem-effizienten-ki-sprach-codec-vor-2103-154601.html</a> (Pressebericht auf deutsch)</p><p></p></span><h2 id="2">Klassifizierung von politischer Orientierung anhand von Porträtbildern</h2><span><p>
+Einem Forscher der Stanford University ist es, mithilfe eines Facial Recognition Modells, gelungen, nur anhand von Porträtbildern, die politische Orientierung eines Menschen einzuschätzen.</p><p>
+Die Vorgehensweise dazu bestand aus drei Schritten: Zuerst wurden die Bilder auf das Gesicht zugeschnitten und auf 224x224 Pixel skaliert. Im zweiten Schritt wurden, mithilfe eines schon trainierten Gesichtserkennungsmodells (VGGFace2), die markantesten Eigenschaften der Gesichter extrahiert (sogenannte face descriptors). Mit den face descriptors wurde dann eine logistische Regression durchgeführt, um die politische Orientierung in liberal oder konservativ zu klassifizieren.</p><p>
+Es wurden rund eine Million Bilder von Menschen aus den USA, Kanada und dem Vereinigten Königreich verwendet. Die Bilderquellen waren Facebook (ca. 10%) und eine nicht näher genannte Dating Website (ca. 90%).</p><p>
+Im Ergebnis konnten 72% der Bilder korrekt klassifiziert werden. Zum Vergleich: die menschliche Genauigkeit bei dieser Klassifizierung liegt bei ca. 55%.</p><p>
+Es ist bekannt, dass Eigenschaften, die auf Bildern relativ einfach zu erkennen sind, Schlüsse auf die politische Orientierung zulassen. Dazu gehören zum Beispiel Alter, Geschlecht und Ethnie einer Person. Um auszuschließen, dass die Klassifizierung vor allem auf solchen, relativ offensichtlichen, Faktoren basiert, wurden in einem Test die Bilder so ausgewählt, dass die Personen darauf in diesen Eigenschaften gleich waren. Bei Bildern, die nur Menschen mit gleichem Alter, Geschlecht und Ethnie zeigten, war die Genauigkeit etwas niedriger, es wurden jedoch immer noch 69% erreicht.</p><p></p><p><a href="https://www.nature.com/articles/s41598-020-79310-1" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41598-020-79310-1</a> (englisch)</p><p></p></span><h2 id="1">KI Curling Roboter</h2><span><p>
+Auf der Suche nach einem geeigneten Anwendungszweck, um ein KI System von der Simulation in die Realität zu holen, hat ein deutsch-südkoreanisches Team einen Curling spielenden Roboter namens Curly gebaut.</p><p>
+Der Roboter plant das Abspielen seiner Steine, indem er zuerst mithilfe von Bilderkennung die aktuelle Spielsituation erfasst. Diese wird dann in eine Curling Simulation gegeben, womit der beste mögliche Wurf bestimmt wird. Darauf folgt ein deep reinforcement learning (DRL) Modell, das durch die Ergebnisse der letzten Würfe Rückschlüsse auf die aktuellen Umgebungsbedingungen (z.B. Zustand der Eisdecke) zieht. Das Ergebnis der Simulation wird mithilfe der Ausgabe des Modells angepasst, um auf Änderungen in der Umwelt entsprechend zu reagieren.</p><p>
+Curly wurde hauptsächlich ohne die Curling-typischen Wischer getestet, ähnlich wie beim Rollstuhl-Curling. Daher wurde seine Leistung auch mit der südkoreanischen Rollstuhl-Curling-Mannschaft verglichen. Curly kam auf eine beste durchschnittliche Abweichung von 1,3m, was in einer ähnlichen Größenordnung ist wie die Teams bei den Paralympics 2018, mit 0,8m-1,3m.</p><p>
+Außerdem hat Curly auch Testspiele gegen eine südkoreanische Frauenmannschaft bestritten, wovon es auch Videos auf Youtube gibt: <a href="https://youtu.be/1ZQOo0H6_FA" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://youtu.be/1ZQOo0H6_FA</a></p><p></p><p><a href="https://robotics.sciencemag.org/content/5/46/eabb9764" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://robotics.sciencemag.org/content/5/46/eabb9764</a> (englisch)</p><p></p></span>
+<p id="bottom-nav-container"><a class="hidden" href="../0">« Vorherige</a><a class="" href="../2">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

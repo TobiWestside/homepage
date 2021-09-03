@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #11</h1><span>
+                        
+                            Hallo und herzlich willkommen zur elften Ausgabe von KI News. In dieser Ausgabe geht es um das Training von Robotern, warum wir die Fähigkeiten von KI überschätzen und wer bei einer Siegerehrung am unglücklichsten ist.<p>
+Viel Spaß beim Lesen!</p><p></p></span><h2 id="4">Training von autonomen Robotern mit Reinforcement Learning</h2><span><p>
+Eine Gruppe von Forscher:innen hat das erste rein ML-basierte System entwickelt, mit dem sich Roboter mit Beinen an ihre Umgebung anpassen können.</p><p>
+Anpassen bedeutet hier, dass sie zum Beispiel erkennen wenn der Boden plötzlich rutschiger ist oder es bergab geht und ihr Verhalten so verändern, dass sie auch mit den neuen Bedingungen zurecht kommen.</p><p></p><p>
+In den durchgeführten Tests hat das System besser funktioniert als von Hand programmierte Systeme. Dies erklären die Forscher:innen damit, dass es unmöglich ist, alle Eventualitäten als Regeln einzuprogrammieren. Dazu gehören neben verschiedenen Umgebungsbedingungen auch Veränderungen am Roboter selbst, z.B. durch Beschädigungen.</p><p></p><p>
+Das neue System besteht aus zwei Modulen, dem “Base Policy” Modul und dem “Adaption” Modul.</p><p>
+Beide werden im Voraus in einer komplett virtuellen, computersimulierten Umgebung trainiert. Das Base Policy Modul wird mit Reinforcement Learning darauf trainiert, den Roboter bei verschiedenen Umgebungsbedingungen zu steuern.</p><p>
+Das Adaption Modul lernt anhand der Bewegungen des Roboters die Umgebungsbedingungen zu erkennen. Da in der Simulation die Umgebungsbedingungen bekannt sind, kann es mit Supervised Learning trainiert werden.</p><p></p><p>
+In einer echten Umgebung arbeiten das Base Policy Modul und das Adaption Modul dann zusammen. Das Adaption Modul erkennt die Umgebungsbedingungen und das Base Policy Modul steuert den Roboter.</p><p></p><p>
+Blogeintrag: <a href="https://ai.facebook.com/blog/ai-now-enables-robots-to-adapt-rapidly-to-changing-real-world-conditions/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/ai-now-enables-robots-to-adapt-rapidly-to-changing-real-world-conditions/</a> (englisch)</p><p>
+Video dazu: <a href="https://www.youtube.com/watch?v=nBy1piJrq1A" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=nBy1piJrq1A</a> (englisch)</p><p></p></span><h2 id="3">Warum wir die Fähigkeiten von KIs überschätzen</h2><span><p>
+In den letzten Jahren gab es ein paar beeindruckende Demonstrationen von KI-Fähigkeiten. Ob eine KI den besten Go Spieler schlägt, einen Roboter Saltos machen lässt oder einen Zauberwürfel in Sekundenschnelle löst, zwei Dinge haben diese Vorführungen gemeinsam: sie sehen beeindruckend aus und wären für die allermeisten Menschen sehr schwierig.</p><p></p><p>
+Warum das trotzdem nicht bedeutet, dass KI uns Menschen überlegen ist, erklärt ein Artikel bei IEEE Spectrum.</p><p>
+Zwei Faktoren sind dabei entscheidend: zum einen die Fähigkeiten der KI - denn im Gegensatz zu Menschen, die viele Dinge relativ gut können, sind heutige KIs auf eine ganz bestimmte Aufgabe spezialisiert.</p><p>
+Der zweite Faktor ist, wie wir die Schwierigkeit einer Aufgabe einschätzen. Dabei schließen wir von uns selbst auf andere – wir gehen bei der Beurteilung davon aus, wie schwierig eine Aufgabe für uns selbst wäre.</p><p>
+Für einen Salto z.B. braucht ein Mensch eine gewisse Sportlichkeit und Kontrolle über den Körper. Diese beiden Eigenschaften sorgen dafür, dass ein Mensch, der einen Salto schafft, wahrscheinlich auch in einer Reihe von anderen Dingen gut ist.</p><p></p><p>
+Wenn wir einen KI-gesteuerten Roboter sehen der einen Salto kann, dann schließen wir unbewusst daraus, dass er auch diese weiteren Fähigkeiten hat, genauso wie ein Mensch sie hätte.</p><p>
+Das ist aber bei einer KI ein Trugschluss, weil sie eben immer nur auf eine Aufgabe spezialisiert ist.</p><p></p><p>
+Zusammengefasst: Wir Menschen bewerten KIs genauso wie uns selbst, obwohl unsere Art zu lernen und unsere Fähigkeiten völlig anders sind. Dadurch überschätzen wir, was KIs können.</p><p></p><p>
+Der Artikel: <a href="https://spectrum.ieee.org/humans-cognitive-biases-facing-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://spectrum.ieee.org/humans-cognitive-biases-facing-ai</a> (englisch)</p><p></p></span><h2 id="2">Sind Bronzegewinner:innen glücklicher als Silbergewinner:innen?</h2><span><p>
+Bei einer Siegerehrung stehen drei glückliche Sieger:innen auf dem Treppchen.</p><p>
+Aber wie glücklich sind sie wirklich? Das haben amerikanische Forscher:innen mithilfe von Gesichterkennungssoftware untersucht.</p><p>
+Sie sind zu dem Ergebnis gekommen, dass die Goldmedaillengewinner:innen am glücklichsten sind, gefolgt von den Bronzegewinner:innen und die Zweitplatzierten sind am wenigsten glücklich mit ihrem Erfolg.</p><p></p><p>
+Das Ergebnis erklären die Forscher:innen damit, dass die Dritten wahrscheinlich froh waren noch eine Medaille gewonnen zu haben, während die Zweiten sich über den verpassten Sieg ärgerten.</p><p>
+Dazu haben sie die Gesichtsausdrücke von 413 Athlet:innen aus 67 Ländern bei 142 Siegerehrungen bei Olympischen Spielen zwischen 2000 und 2016 mit einer Software analysiert.</p><p></p><p>
+Die aus den Ergebnissen gezogene Schlussfolgerung wirkt logisch und die Forschung ist sicher gut gemacht (aber leider hinter einer Bezahlschranke).</p><p>
+Aber mit dem dazu veröffentlichten Artikel habe ich mehrere Probleme. Er schreibt der Software Fähigkeiten zu, die sie gar nicht hat und zeichnet außerdem das problematische Bild einer unfehlbaren KI.</p><p>
+Das beginnt schon beim Titel: <em>“Facial expression software knows which Olympic medal makes you happier and why”</em>. Weiß die Gesichterkennungssoftware wirklich warum? Nein – die Antwort auf das “warum” war die Schlussfolgerung der Forscher:innen, die sie aus den Ergebnissen der Software gezogen haben.</p><p></p><p>
+Am problematischsten finde ich aber diesen Halbsatz: <em>“[...] facial expression software – which nearly eliminates possible bias – […]“</em>.</p><p>
+Wer sich in letzter Zeit mit Gesichterkennung beschäftigt hat, weiß, dass es gerade in diesem Bereich sehr große Probleme mit Bias gibt.</p><p>
+Die Probleme sind so groß, dass Amazon und Microsoft Strafverfolgungsbehörden verboten haben, ihre Gesichtserkennungssoftware einzusetzen und IBM die Arbeit an Gesichterkennung sogar komplett eingestellt hat.</p><p></p><p>
+Dass die Benutzer denken, die Ergebnisse von KI wären objektiv, weil sie von einem Computer kommen, ist eins der größten Probleme beim Einsatz von KI. Einige Beispiele dafür finden sich in diesem Artikel: <a href="https://www.newscientist.com/article/2166207-discriminating-algorithms-5-times-ai-showed-prejudice/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.newscientist.com/article/2166207-discriminating-algorithms-5-times-ai-showed-prejudice/</a></p><p></p><p>
+Artikel über die Forschung: <a href="https://twin-cities.umn.edu/news-events/facial-expression-software-knows-which-olympic-medal-makes-you-happier-and-why" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twin-cities.umn.edu/news-events/facial-expression-software-knows-which-olympic-medal-makes-you-happier-and-why</a> (englisch)</p><p></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Beispiel, wieso der Einsatz von Gesichterkennungssoftware problematisch sein kann: <a href="https://themarkup.org/privacy/2021/07/06/this-manual-for-a-popular-facial-recognition-tool-shows-just-how-much-the-software-tracks-people" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Markup</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">TU Chemnitz und das Cornell Lab of Ornithology haben <a href="https://birdnet.cornell.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">eine App</a> entwickelt, die mit einem neuronalen Netz Vögel an ihrem Gesang erkennen kann<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine andere <a href="https://candidegardening.com/GB/identify-plants" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">App, die Pflanzen anhand eines Bilds erkennen kann</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Erklärung von Diffusion Models: <a href="https://lilianweng.github.io/lil-log/2021/07/11/diffusion-models.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag bei Github</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Youtube Kanal macht mithilfe von KI aus alten Spieleintros 4K Videos: <a href="https://www.theverge.com/2021/7/25/22593438/upscale-enhance-hd-4k-8k-final-fantasy-kingdom-hearts-wow-onimusha" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../10">« Vorherige</a><a class="" href="../12">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
