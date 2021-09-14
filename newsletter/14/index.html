@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #14</h1><span>Hallo und herzlich willkommen zur vierzehnten Ausgabe von KI News. In dieser Ausgabe zeige ich wie Google Maps die Fahrtzeit berechnet, wie KIs laufen lernen können und wie Bilder im Internet durch maschinelles Lernen besser laden.
+  Viel Spaß beim Lesen! <p></p></span><h2 id="4">Wie Google Maps deine Fahrtzeit berechnet</h2><span><p>
+Wir alle haben wahrscheinlich schon die Navi-Funktion von Google Maps benutzt, um herauszufinden, wie lange eine Fahrt dauert. Aber wie berechnet eigentlich Google, wie lange man für eine bestimmte Strecke braucht?</p><p>
+Forscher:innen, unter anderem von Google, haben dafür ein verbessertes System entwickelt und jetzt veröffentlicht wie es funktioniert.</p><p></p><p>
+Die Schwierigkeit dabei ist, dass sich während der Fahrt die Verkehrsbedingungen ändern können. Zum Beispiel, wenn man während einer längeren Fahrt in den Berufsverkehr kommt.</p><p>
+Daher muss die Fahrtzeitberechnung nicht nur die aktuelle Situation betrachten, sondern auch, wie der Verkehr sich während der Fahrt ändert. Es müssen quasi die Verkehrsbedingungen in der Zukunft vorausgesagt werden.</p><p>
+Dazu kommt, dass die Fahrtzeit auch durch Verkehr auf Straßen, die nicht direkt auf der Route liegen, beeinflusst werden kann, weil z.B. Ampeln anders geschalten werden.</p><p></p><p>
+Google Maps hat dazu die meistbefahrenen Straßen weltweit in Segmente von 50-100 Meter Länge eingeteilt, und diese wiederum zu „Supersegmenten“ von 1-2 Kilometern Länge zusammengefasst.</p><p>
+So entstanden insgesamt ca. 1 Million Supersegmente, die das Straßennetz darstellen.</p><p>
+Für die Berechnung der Fahrtzeit werden die Supersegmente als Graph betrachtet. Jedes Segment ist dabei ein Knoten auf dem Graph, aufeinanderfolgende Segmente sind im Graph durch Kanten verbunden.</p><p>
+Die Fahrtzeit kann dann in dieser Graph-Darstellung von einem Graph Neural Network (ein spezielles neuronales Netz für Graphen) berechnet werden.</p><p></p><p>
+Als Eingabe für das neuronale Netz werden, außer dem Straßen-Graph, Echtzeitdaten des Verkehrs der letzten halben Stunde und historische Daten der letzten 4 Monate benutzt. Das sind zum Beispiel die aktuelle Uhrzeit, der Wochentag, Fahrzeit pro Segment, Größe der Segmente und die Straßenarten.</p><p></p><p>
+Dieses System wird aktuell in Google Maps eingesetzt und konnte die Anzahl der Fahrtzeitvorhersagen, die deutlich von der tatsächlichen Zeit abweichen, z.B. in Berlin um 21% reduzieren.</p><p><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Link zum Paper: <a href="https://arxiv.org/abs/2108.11482" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2108.11482</a> (englisch)</li>
+</ul></p></span><h2 id="3">Wie eine KI laufen lernt</h2><span><p>
+Eine Methode des maschinellen Lernens, bei der KIs selbstständig herausfinden, was sie in einer bestimmten Situation am besten tun sollten, ist Reinforcement Learning (auf Deutsch: <a href="https://de.wikipedia.org/wiki/Best%C3%A4rkendes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Bestärkendes Lernen</a>). Dabei probiert die KI am Anfang zufällige Aktionen aus und erhält eine Belohnung, wenn eine Aktion erfolgreich war. So lernt sie, welche Aktionen erfolgversprechend sind, und kann ihr Verhalten daran anpassen.</p><p>
+Ein sehr bekanntes Beispiel für die Anwendung von Reinforcement Learning ist <a href="https://de.wikipedia.org/wiki/AlphaGo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">AlphaGo</a>, die KI, die 2016 gegen den Go-Profispieler Lee Sedol gewonnen hat.</p><p></p><p>
+Reinforcement Learning eignet sich vor allem für Bereiche, in denen man eine Situation simulieren kann (zum Beispiel eine Anordnung von Steinen auf einem Go-Brett), aber die optimale Strategie nicht einfach beschrieben werden kann, z.B. weil das Spiel bzw. die Umgebung zu komplex ist.</p><p>
+Außerdem ist es wichtig, dass die zufälligen Aktionen am Anfang zu einer Belohnung für die KI führen können. Sonst würde sie nie über diesem zufälligen Zustand hinaus kommen.</p><p></p><p>
+Das ist zum Beispiel ein Problem beim Laufen lernen. Die verschiedenen Bewegungen, die von unterschiedlichen Körperteilen gleichzeitig gemacht werden müssen, um bei einem Schritt nicht umzufallen, sind relativ komplex.</p><p>
+Daher passiert es nur sehr selten, dass eine untrainierte KI es zufällig schafft einen Schritt zu machen. Deshalb ist es sehr schwierig für eine KI, laufen zu lernen.</p><p></p><p>
+Ein Team von Intel hat sich einen neuen Ansatz überlegt und die Aufgabe aufgeteilt: ein Modell sollte lernen das Gleichgewicht zu halten, eins sollte den Fuß heben und so weiter. Dadurch, dass es kleinere Aufgaben sind, führen sie schneller zum Erfolg und sind für eine KI deutlich leichter zu lernen.</p><p>
+Die Forscher:innen haben sich außerdem überlegt, dass alle KIs bei ihren jeweiligen kleinen Bewegungen zuerst die selben physikalischen Gesetze lernen müssen. Um das zu beschleunigen, haben sie die Modelle über einen gemeinsamen Speicher verbunden, in dem sie ihre „Erfahrungen“ austauschen können.</p><p></p><p>
+Um die einzelnen Bewegungen zu einem sinnvollen Ganzen zusammenzusetzen, haben sie dann ein Optimierungsverfahren namens „<a href="https://de.wikipedia.org/wiki/Evolution%C3%A4rer_Algorithmus" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Evolutionärer Algorithmus</a>“ benutzt. Dabei werden verschiedene Zusammensetzungen getestet, bewertet und aus den am besten abschneidenden wieder neue Kombinationen gebildet.</p><p>
+Damit haben sie es dann schließlich geschafft, einer KI das Laufen beizubringen.</p><p><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel, der den Ansatz beschreibt: <a href="https://spectrum.ieee.org/reinforcement-learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://spectrum.ieee.org/reinforcement-learning</a> (englisch)<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Link zum Paper: <a href="https://arxiv.org/abs/1905.00976" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/1905.00976</a> (englisch)</li>
+</ul></p></span><h2 id="2">KI optimiert Bilder fürs Internet</h2><span><p>
+Wahrscheinlich hat jede:r von uns schon einmal erlebt, wie nervig es bei einer schlechten Internetverbindung sein kann, zu warten, bis die Bilder auf einer Webseite endlich geladen sind.</p><p>
+Dabei haben wir, meistens unbewusst, die verschiedenen Möglichkeiten gesehen, wie Bilder im Internet geladen werden:</p><p>
+Es gibt die, die plötzlich auftauchen, wenn sie fertig geladen sind, und die ganze Webseite verschieben.</p><p>
+Die zweite Art baut sich langsam von oben nach unten auf, so dass man den Daten beim Ankommen zuschauen kann.</p><p>
+Und die dritte Art zeigt fast von Anfang an ein Bild, das aber zuerst unscharf ist und erst mit den nach und nach übertragenen Daten schärfer wird.</p><p></p><p>
+Das neue Bildformat JPEG XL, das gerade entwickelt wird, bietet viele Verbesserungen gegenüber dem heute üblicherweise benutzten JPEG. Dazu gehört, neben geringerem Speicherbedarf und Unterstützung für Transparenz, auch die Möglichkeit, einen interessanten neuen Ansatz beim Laden zu benutzen.</p><p>
+Beim Erstellen oder Konvertieren eines Fotos kann man ein ML-Modell benutzen, das vorhersagt, wohin Menschen als erstes schauen, wenn sie das Bild sehen.</p><p>
+Die Daten des Bilds werden dann so zusammengesetzt, dass diese Bereiche zuerst geladen und scharf dargestellt werden.</p><p></p><p>
+Dadurch wirken Bilder auch bei langsamer Verbindung schon früher viel schärfer als bei normalen JPEG Fotos. Wie groß dieser Unterschied wirklich ist, zeigt ein Blogpost, den zwei Forscher von Google verfasst haben.</p><p><ul>
+<li style="font-family: georgia, times, times new roman, serif;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Blogpost von Google: <a href="https://opensource.googleblog.com/2021/09/using-saliency-in-progressive-jpeg-xl-images.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://opensource.googleblog.com/2021/09/using-saliency-in-progressive-jpeg-xl-images.html</a> (englisch)</span><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Link zur JPEG XL Webseite: <a href="https://jpeg.org/jpegxl/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://jpeg.org/jpegxl/</a> (englisch)</span><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">JPEG XL Referenzimplentierung: </span><a href="https://github.com/libjxl/libjxl" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/libjxl/libjxl</a> (C++)</li>
+</ul></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">ZDF Magazin Royale Ausgabe zu KI: <a href="https://www.youtube.com/watch?v=F8aegvTVy5g" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Youtube Video</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein neues Modell der Roomba Saugroboter kann jetzt Hundehaufen erkennen und ihnen ausweichen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.theverge.com/2021/9/9/22660467/irobot-roomba-ai-dog-poop-avoidance-j7-specs-price" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://t3n.de/news/saugroboter-roomba-j7-plus-kot-ki-1404362/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nachdem er seine Stimme durch Krebs verloren hat, hat eine KI-Firma dem Schauspieler Val Kilmer seine alte Stimme zurückgegeben
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.washingtonpost.com/technology/2021/08/18/val-kilmer-ai-voice-cloning/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Washington Post</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.youtube.com/watch?v=OSMue60Gg6s" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Youtube Video</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tipps, falls man bei einer Bewerbung auf eine KI trifft: <a href="https://www.wiwo.de/technologie/digitale-welt/vorstellungsgespraech-beim-chatbot-wenn-ki-die-bewerber-auswaehlt-so-stechen-sie-hervor/27440766.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Wirtschaftswoche</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Facebook-KI hat ein Video mit schwarzen Männern als „Video über Primaten“ beschriftet: <a href="https://www.nytimes.com/2021/09/03/technology/facebook-ai-race-primates.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der New York Times</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kurz nach der Veröffentlichung von Github Copilot wurde ein Beispiel bekannt, in dem das Programm eine Funktion aus dem Quellcode eines Spiels 1:1 kopiert ausgab. Das war ein perfektes Beispiel für die Probleme des Tools, deswegen hat Github Änderungen gemacht, damit das nicht mehr vorkommt: Sie haben den Namen einer Funktion auf die „Schimpfwortliste“ gesetzt:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://twitter.com/moyix/status/1432085687365513225" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tweet des Entdeckers</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.theregister.com/2021/09/02/github_copilot_banned_words_cracked/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Register</a><br/>
+		 </li>
+</ul>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../13">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
