@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #18</h1><span>
+                        
+                            Hallo und herzlich willkommen zur achtzehnten Ausgabe von KI News. In dieser Ausgabe geht es unter anderem um die Vorhersage von Formeln, eine neue Trainingsmethode für große Sprachmodelle und die Folgen des Klimawandels.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="5">Vorhersage von Formeln in Google Sheets</h2><span><p>
+Zur Planung meiner Urlaubsreisen benutze ich gerne Google Sheets (das Excel von Google), weil ich darin alle wichtigen Informationen übersichtlich sammeln und sie einfach mit anderen teilen kann. Manchmal verwende ich dabei auch Formeln, zum Beispiel die Summenfunktion, um die Hotelkosten auszurechnen.</p><p>
+Um das noch einfacher zu machen haben Forscher:innen von Google ein Modell entwickelt, das Vorschläge für Formeln macht, wenn man in eine Zelle ‚=‘ schreibt.</p><p>
+Für die Vorschläge benutzt das Modell die Informationen aus den benachbarten Zeilen und Spalten sowie eventuelle Titelzeilen.</p><p>
+Es sagt als erstes die Operatoren voraus, die wahrscheinlich benutzt werden sollen (z.B. SUMME, WENN, …) und danach die Zellen, auf die sie angewandt werden.</p><p></p><p>
+Das Modell basiert im Kern auf Googles Sprachmodell BERT, das die Informationen vorverarbeitet. Dessen Ausgabe wird in mehreren Zwischenschritten noch weiter verarbeitet und am Ende von einem <a href="https://de.wikipedia.org/wiki/Long_short-term_memory" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LSTM</a> in Text umgewandelt. LSTM steht für Long Short Term Memory und ist eine beliebte Architektur für Modelle, die mit Sprache arbeiten.</p><p></p><p>
+Trainiert wurde das Modell auf 46.000 Google Sheets mit Formeln, die von Google Mitarbeiter:innen erstellt oder mit Google geteilt wurden.</p><p>
+Im Test war in 42,5% der Fälle die vorhergesagte Formel die, die der oder die Benutzer:in tatsächlich wollte. Offenbar ist das genug um hilfreich zu sein, denn seit August wird das Modell in Google Sheets eingesetzt.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von Google: <a href="https://ai.googleblog.com/2021/10/predicting-spreadsheet-formulas-from.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2021/10/predicting-spreadsheet-formulas-from.html</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veröffentlichung der Forscher:innen: <a href="https://proceedings.mlr.press/v139/chen21m.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://proceedings.mlr.press/v139/chen21m.html</a></li>
+</ul></p></span><h2 id="4">Neue Methode zum Finetuning von großen Sprachmodellen</h2><span><p>
+Aktuelle Sprachmodelle sind meistens sehr große Modelle, die „vortrainiert“ wurden. Das bedeutet, dass die Modelle bereits darauf trainiert sind Text zu erzeugen, aber noch nicht für eine bestimmte Aufgabe.</p><p>
+Wenn das Modell für eine bestimmte Aufgabe eingesetzt werden soll, muss nochmal ein „Finetuning“ gemacht werden, das Modell also für diese Aufgabe nochmal extra trainiert werden.</p><p>
+Wenn das Modell dann trainiert ist, gibt es mehrere Möglichkeiten, wie man es dazu bringen kann, die Aufgabe zu erfüllen. Eine Möglichkeit ist, einfach auszunutzen, dass das Modell Sprache versteht. Man formuliert eine Antwort vor und lässt sie vom Modell vervollständigen, z.B. „Die Bewertung ‚Das Beste überhaupt!‘ ist ___“, mit der Wahl zwischen positiv und negativ.</p><p></p><p>
+Die neue Idee hier ist jetzt, das Modell nicht, wie bei normalem Finetuning, für eine bestimmte Aufgabe zu trainieren, sondern es darauf zu trainieren, diese Art von Anweisungen besser zu verstehen.</p><p>
+Dazu haben die Forscher:innen 62 Text-Datensätze in solche Anweisungen umgewandelt und verschieden große Varianten eines vortrainierten Sprachmodells damit trainiert.</p><p></p><p>
+Das scheint gut funktioniert zu haben, denn in der Evaluierung war das größte dieser Modelle in 21 von 25 Aufgaben besser als vorher, in 20 von 25 sogar besser als das noch deutlich größere GPT-3 Modell.</p><p>
+Ein interessanter Aspekt ist, dass es von der Größe des Modells abhängt, ob diese Art von Finetuning funktioniert. Modelle mit bis zu 8 Milliarden Parametern waren danach sogar schlechter als vorher, das Modell mit 68 Milliarden Parametern war deutlich besser als ohne das Training, das größte mit 137 Milliarden sogar noch besser.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von Google: <a href="https://ai.googleblog.com/2021/10/introducing-flan-more-generalizable.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2021/10/introducing-flan-more-generalizable.html</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2109.01652" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2109.01652</a></li>
+</ul></p></span><h2 id="3">So könnten die Folgen des Klimawandels aussehen</h2><span><p>
+Viele Menschen sehen den Klimawandel und seine Auswirkungen als etwas an, das vor allem woanders passiert und von dem sie selbst nicht direkt betroffen sind. Ein Team von Forscher:innen von Universitäten und Instituten in Kanada und New York hat daher ein Modell entwickelt, das uns die möglichen Folgen des Klimawandels wortwörtlich näher bringen soll.</p><p>
+Wenn das Modell ein Bild von einem Ort bekommt, generiert es realistisch aussehende Bilder von einer Überflutung an diesem Ort.</p><p></p><p>
+Das funktioniert mit einem zweistufigen Prozess. Im ersten Schritt sagt ein Modell vorher, wo im Bild bei einer Überschwemmung Wasser zu sehen wäre. Das Ergebnis dieser sogenannten Segmentierung wird zusammen mit dem Originalbild an das zweite Modell weitergegeben, das dann an die markierten Bereiche Wasser „zeichnet“.</p><p>
+Ein Problem beim Erstellen des Modells war, Bilder von Orten vor und während einer Flut zu finden. Die Forscher:innen haben daher extra eine Webseite und eine App erstellt, um es einfacher zu machen ihnen solche Fotos zur Verfügung zu stellen. Trotzdem haben sie nur knapp 7.000 Bilder sammeln können, was für das Training eines neuronalen Netzes relativ wenig ist.</p><p>
+Daher haben sie noch zusätzlich mit einer Entwicklungsumgebung für Computerspiele (<a href="https://de.wikipedia.org/wiki/Unity_(Spiel-Engine)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Unity3D</a>) eine 1,5km² große Welt erstellt und so 20.000 weitere, simulierte, Überschwemmungsbilder für das Training erzeugen können.</p><p></p><p>
+Das Ziel der Forscher:innen ist ein System, in das man einfach eine Adresse eingeben kann und dann angezeigt bekommt, wie es dort überflutet aussehen würde. Das Modell ist ein erster großer Schritt auf diesem Weg.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von Nvidia: <a href="https://developer.nvidia.com/blog/ai-researchers-visualize-flooding-caused-by-global-warming/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://developer.nvidia.com/blog/ai-researchers-visualize-flooding-caused-by-global-warming/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2110.02871v1" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2110.02871v1</a></li>
+</ul></p></span><h2 id="2">Zusammengefasst
+
+KI für Picasso</h2><span><span style="font-size:18px"><strong>Zusammengefasst<br/>
+<br/>
+<em>KI für Picasso</em></strong></span><p>
+Eine englische Firma hat sich darauf spezialisiert nach übermalten oder anderweitig verlorenen Kunstwerken zu suchen, und dann mit verschiedenen Technologien auf realistisch wirkende Art zu zeigen, wie diese ausgesehen haben könnten.</p><p>
+Im verlinkten Artikel geht es um ein Bild von Picasso, das er später übermalt hat. Mit Röntgenaufnahmen hat die Firma die Konturen des Bildes erkennen können und dann mit einer ML Technik names Neural Style Transfer eine Version erstellt, die so aussieht, wie Picasso sie gemalt haben könnte.</p><p>
+Das Prinzip von Neural Style Transfer ist, den Stil eines Bildes mithilfe eines neuronalen Netzes auf ein anderes Bild zu übertragen. Damit kann man zum Beispiel eigene Fotos aussehen lassen als hätte Van Gogh sie gemalt, oder eben Picasso.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://edition.cnn.com/style/article/hidden-picasso-nude-scli-intl-gbr/index.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei CNN</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://t3n.de/news/ki-verborgenes-picasso-gemaelde-1417726/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.tensorflow.org/tutorials/generative/style_transfer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tutorial zur Programmierung von Neural Style Transfer mit Tensorflow</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">KI für Bestellungen</span></strong></em></p><p>
+McDonald’s hat an einigen McDrives eine KI die Bestellungen aufnehmen lassen (<a href="http://tobiasfraenzel.de/newsletter/9/#1" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #9</a>). Dazu hat McDonald’s extra eine Tochterfirma gegründet, McD Tech Labs, die sie jetzt an IBM verkauft haben.</p><p>
+Das ist Teil eines größeren Partnerschaft zwischen McDonald’s und IBM, durch die der Einsatz von KI ausgeweitet und die Kundenerfahrung „bequemer und einzigartiger“ werden soll.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.restaurantdive.com/news/mcdonalds-will-sell-mcd-tech-labs-to-ibm/608978/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Restaurantdive</a></li>
+</ul></p><p><span style="font-size:18px"><em><strong>KI für Investoren</strong></em></span></p><p>
+Eine moderne Legende besagt, dass in einem Gespräch 93% dessen was die andere Person wahrnimmt, von Tonfall und Körpersprache bestimmt wird, und das, was wir eigentlich sagen, nur 7% ausmacht. Das ist falsch (<a href="https://cornerstone.lib.mnsu.edu/cgi/viewcontent.cgi?article=1000&amp;context=ctamj" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Quelle</a>).</p><p>
+Aber natürlich enthalten Tonfall und Körpersprache trotzdem Informationen. Investmentfonds fangen jetzt an, diese Informationen mit ML Technologien auszuwerten, um zusätzliche Erkenntnisse zu gewinnen.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.reuters.com/technology/ai-can-see-through-you-ceos-language-under-machine-microscope-2021-10-20/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Reuters</a></li>
+</ul></p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Reportage über Deepfake-Pornos, bei denen illegal die Gesichter von Influencerinnen eingefügt wurden: <a href="https://www.youtube.com/watch?v=ocrh6FI554Q" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video bei Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Adobe hat „Project Morpheus“ vorgestellt, ein Tool zur Videobearbeitung mit ML-Unterstützung: <a href="https://www.youtube.com/watch?v=bpABm6XcRMw" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video bei Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die britischen Geheimdienste haben einen Cloud-Vertrag mit AWS abgeschlossen, um ihre Daten besser analysieren zu können:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.ft.com/content/74782def-1046-4ea5-b796-0802cfb90260" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Financial Times</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.tagesschau.de/wirtschaft/unternehmen/grossbritannien-amazon-aws-spionage-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Tagesschau</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nachdem Microsoft und Nvidia das <a href="http://tobiasfraenzel.de/newsletter/17/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">neue größte Sprachmodell</a> vorgestellt haben, hat ein Mitarbeiter der KI-Firma Huggingface dieses „Größenrennen“ in einem Blogeintrag kritisiert:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://huggingface.co/blog/large-language-models" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Huggingface</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In Amsterdam fährt jetzt ein Boot autonom durch die Grachten:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://news.mit.edu/2021/autonomous-taxi-roboats-1027" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung des MIT</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft hat die Firma übernommen, die mithilfe von KI unerwünschte Nachrichten in Xbox Communitys löscht:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.theverge.com/2021/10/29/22752421/microsoft-two-hat-acquisition-xbox-moderation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In eine Sackgasse in San Francisco fahren im Minutentakt selbstfahrende Autos von Waymo, wenden und fahren wieder weg:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://sanfrancisco.cbslocal.com/2021/10/14/dead-end-sf-street-plagued-with-confused-waymo-cars-trying-to-turn-around-every-5-minutes/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei CBS</a></li>
+</ul>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../17">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
