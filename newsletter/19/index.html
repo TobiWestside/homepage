@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #19</h1><span>
+                        
+                            Hallo und herzlich willkommen zur neunzehnten Ausgabe von KI News. In dieser Ausgabe mit gleich drei neuen ML Modellen: Eins kann Sprachen direkt ineinander übersetzen, eins kann den Inhalt von Bildern beschreiben und das dritte löst Textaufgaben. Dazu noch der Versuch mit Pottwalen zu sprechen, putzende Roboter und einiges mehr!<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="6">100 Sprachen direkt ineinander übersetzen</h2><span><p>
+Die meisten Trainingsdaten für neuronale Netze sind in englischer Sprache verfügbar. Deshalb werden auch die meisten Übersetzungsmodelle darauf trainiert, von und nach Englisch zu übersetzen, aber nicht direkt zwischen anderen Sprachen.</p><p>
+Forscher:innen von Facebook haben ein Modell entwickelt, das 100 Sprachen direkt ineinander übersetzen kann, ohne den Umweg über Englisch zu gehen.</p><p></p><p>
+Als erstes haben sie, aufgrund der oben erwähnten, mangelnden Daten, dafür Trainingsdaten gesammelt: insgesamt 7,5 Milliarden Sätze in den verschiedenen Sprachen.</p><p>
+Eine weitere Herausforderung war, eine Trainingsstrategie zu finden, mit der das Modell trotz der 9.900 Sprachkombinationen, „effizient“ trainiert werden kann („effizient“ für die Maßstäbe von Facebook, sie schreiben von „hunderten GPUs“).</p><p>
+Damit haben sie bereits beim Sammeln der Trainingsdaten angefangen: sie haben zuerst die Daten nach Ähnlichkeit der Sprachen sowie geografischer und kultureller Nähe in 14 Gruppen aufgeteilt. Für jede Gruppe haben sie dann die gleichen Sätze in allen Sprachen dieser Gruppe gesammelt, so dass sie Trainingsdaten für die Übersetzung aller dieser Sprachen ineinander hatten.</p><p></p><p>
+Für jede Gruppe wurden dann „Brückensprachen“ definiert. Für diese haben sie dann wieder Daten gesammelt, die in jeder Brückensprache vorhanden waren.</p><p>
+Zusätzlich haben sie auch noch den „klassischen“ Ansatz benutzt und für jede Sprache auch noch die englische Übersetzung dazu genommen.</p><p>
+Dadurch konnten sie die Anzahl der Sprachkombinationen von 9.900 auf 2.200 reduzieren.</p><p>
+Dazu kamen noch weitere Optimierungen der verwendeten Transformer-Architektur.</p><p></p><p>
+In der Auswertung kam das Modell bei Übersetzungen von und nach Englisch auf ähnliche Werte wie das Englisch-zentrische Vergleichsmodell. Bei Übersetzungen zwischen anderen Sprachen war es dagegen deutlich besser.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von Facebook: <a href="https://ai.facebook.com/blog/introducing-many-to-many-multilingual-machine-translation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/introducing-many-to-many-multilingual-machine-translation/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veröffentlichung der Forscher:innen: <a href="https://ai.facebook.com/research/publications/beyond-english-centric-multilingual-machine-translation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/research/publications/beyond-english-centric-multilingual-machine-translation</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Code des Modells: <a href="https://github.com/pytorch/fairseq/tree/main/examples/m2m_100" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/pytorch/fairseq/tree/main/examples/m2m_100</a></li>
+</ul></p></span><h2 id="5">Neues Modell kann den Inhalt von Bildern verstehen</h2><span><p>
+Forscher:innen von Microsoft haben ebenfalls ein Modell entwickelt, das mit 94 verschiedenen Sprachen funktioniert. Dabei handelt es sich aber nicht um ein Übersetzungsmodell, sondern um ein Modell, das Texte und Bilder einander zuordnen kann.</p><p>
+Auch hier ist es wieder so, dass viele bestehende Modelle Bildern eine englische Beschreibung zuordnen können, aber nicht mit anderen Sprachen funktionieren.</p><p></p><p>
+Das neue Modell von Microsoft funktioniert so: Die Trainingsdaten bestehen aus Bildern und den zugehörigen Beschreibungen, vor allem auf Englisch.</p><p>
+Das Modell hat zwei Komponenten, die als sogenannte Encoder arbeiten. Sie lesen die Daten ein und wandeln sie in eine andere Darstellung um. Einer der Encoder verarbeitet die Bilder, ein anderer die Beschreibungen.</p><p>
+Die Encoder werden darauf trainiert, für Bilder und die zugehörigen Beschreibungen die selbe Darstellung zu erzeugen.</p><p>
+Damit das auch in anderen Sprachen funktioniert, wurden die englischen Beschreibungen übersetzt und der Encoder für die Beschreibungen darauf trainiert, für die anderen Sprachen das gleiche Ergebnis zu erzeugen.</p><p></p><p>
+Das hat zu interessanten Ergebnissen geführt. Zum Beispiel kann das Modell dazu genutzt werden, zu einem bestimmten Bild ähnliche Bilder zu finden. Bei anderen aktuellen Modellen sind das meistens ähnlich aussehende Bilder, die aber etwas ganz anderes zeigen können. Das neue Modell findet dagegen inhaltlich ähnliche Bilder.</p><p>
+Außerdem scheint es teilweise auch den Inhalt von Texten zu erkennen, zum Beispiel bei Infografiken und Vorlesungsfolien.</p><p></p><p>
+Das Modell kann hier mit vorgegebenen Suchbegriffen ausprobiert werden: <a href="https://turing.microsoft.com/bletchley" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://turing.microsoft.com/bletchley</a></p></span><h2 id="4">Können wir bald mit Walen sprechen?</h2><span><p>
+2017 startete an der Universität Harvard eine Initiative, die Klicklaute von Pottwalen zu übersetzen. Das Gute ist, dass sich Klicklaute leicht in Einsen und Nullen übersetzen lassen und so einfach von Computern verarbeitet werden können – im Gegensatz zu den Gesängen anderer Walarten.</p><p></p><p>
+Das Problem ist, dass es, anders als bei den ägyptischen Hieroglyphen, keinen Rosettastein für Pottwale gibt, auf dem die Wallaute übersetzt sind und den wir als Grundlage für weitere Forschung benutzen können.</p><p>
+Daher wollen die Forscher:innen als erstes ein Sprachmodell für Pottwale bauen. Dieses Modell soll, genauso wie Modelle für menschliche Sprache, voraussagen können, welches Wort in einem Satz wahrscheinlich als nächstes kommt, und so grammatikalisch korrekte Sätze bilden.</p><p>
+Damit wollen die Forscher:innen dann mit den Walen kommunizieren.</p><p></p><p>
+Zusätzlich wollen sie die Daten mit weiteren Informationen anreichern: wo die Wale waren, wer mit wem gesprochen hat und was die Reaktion darauf war.</p><p>
+Daraus wollen sie dann Hinweise gewinnen, was der Inhalt der Kommunikation gewesen sein könnte.</p><p>
+Mit genügend dieser Hinweise wird es dann vielleicht möglich die Gespräche der Wale zu übersetzen.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel im Hakai Magazine: <a href="https://hakaimagazine.com/features/are-we-on-the-verge-of-chatting-with-whales/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://hakaimagazine.com/features/are-we-on-the-verge-of-chatting-with-whales/</a></li>
+</ul></p></span><h2 id="3">OpenAI löst Mathe-Textaufgaben</h2><span><p>
+Forscher:innen von OpenAI haben ein System darauf trainiert Mathe-Textaufgaben zu lösen. Es ist doppelt so gut wie das reine Sprachmodell GPT-3, allerdings schlechter als eine Vergleichsgruppe von 9-12 Jahre alten Kindern.</p><p></p><p>
+Das System besteht aus einem Sprachmodell und einem sogenannten Verifier. Das Sprachmodell bekommt die Textaufgabe als Eingabe und soll 100 passende Antworten schreiben. Der Verifier ist darauf trainiert, die richtigen Antworten zu erkennen. Er bekommt diese Antworten vorgelegt und soll ihnen jeweils die Wahrscheinlichkeit zuordnen, dass es sich um die richtige Antwort handelt.</p><p></p><p>
+Nach diesem System haben sie zwei unterschiedlich große Sprachmodelle auf 7.500 Textaufgaben trainiert. Das kleinere Modell hatte 6 Milliarden Parameter, das größere 175 Milliarden Parameter.</p><p>
+Bei beiden haben sich durch den Einsatz des Verifiers die Antworten der Modelle deutlich verbessert. Das kleinere war mit Verifier ungefähr so gut wie das große ohne.</p><p>
+Aber auch das große Modell mit Verifier kam nur auf 55% richtige Antworten, während die Kindergruppe durchschnittlich 60% richtig hatte. Es ist also noch ein weiter Weg, bis Computer uns bei Textaufgaben helfen können.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag von OpenAI: <a href="https://openai.com/blog/grade-school-math/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://openai.com/blog/grade-school-math/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2110.14168" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2110.14168</a></li>
+</ul></p></span><h2 id="2">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Image Scaling Attacks</em></strong></span><p>
+Forscher der TU Braunschweig haben eine Möglichkeit entwickelt, neuronale Netze unbemerkt zu manipulieren. Dabei handelt es sich um eine Methode, die ausnutzt, dass neuronale Netze üblicherweise mit vorverarbeiteten Daten arbeiten. Zum Beispiel werden Bilder oft auf eine kleinere Größe gebracht, damit alle gleich groß sind und um Rechenleistung zu sparen.</p><p>
+Dabei werden bestimmte Pixel im Originalbild ausgewählt, die beibehalten werden, und die anderen Pixel werden verworfen.</p><p>
+Wenn man jetzt genau diese Pixel ersetzt, fällt das im großen Originalbild nicht weiter auf, aber das kleinere Bild, das ins neuronale Netz eingespeist wird, kann ganz anders aussehen.</p><p>
+Beispiele und eine genauere Beschreibung auf <a href="https://scaling-attacks.net/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://scaling-attacks.net/</a></p><p></p><p><em><strong><span style="font-size:18px">Alphabet lässt Roboter putzen</span></strong></em></p><p>
+Eine Gruppe von Forscher:innen bei Alphabet arbeitet an einem Roboter für alltägliche Aufgaben. In einer Art internem Praxistest werden über 100 Prototypen eingesetzt, um in einigen Bürogebäuden eine Reihe von Aufgaben zu übernehmen. Dazu gehört zum Beispiel die Tische in der Kantine abzuwischen und in Meetingräumen zu kontrollieren, ob alle Stühle an ihrem Platz sind.</p><p>
+Die Roboter werden teilweise in simulierten Umgebungen trainiert, um das Lernen zu beschleunigen.</p><p>
+Im Blogpost gibt es auch Beispielvideos der wischenden Roboter, sieht sehr futuristisch aus: <a href="https://x.company/blog/posts/everyday-robots" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://x.company/blog/posts/everyday-robots</a></p><p></p><p><span style="font-size:18px"><em><strong>Predictive Policing</strong></em></span></p><p>
+Der Guardian hat zwei Artikel über die Versuche der Polizei von Los Angeles veröffentlicht, Kriminalität vorherzusagen:</p><p>
+Im einen geht es um eine Software, die Social Media Profile analysiert und behauptet, damit zukünftige Kriminelle erkennen zu können: <a href="https://www.theguardian.com/us-news/2021/nov/17/los-angeles-police-surveillance-social-media-voyager" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theguardian.com/us-news/2021/nov/17/los-angeles-police-surveillance-social-media-voyager</a></p><p>
+Im anderen um eine Software, die Polizeiberichte analysiert und damit versucht vorherzusagen, wann und wo etwas passieren wird: <a href="https://www.theguardian.com/us-news/2021/nov/07/lapd-predictive-policing-surveillance-reform" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theguardian.com/us-news/2021/nov/07/lapd-predictive-policing-surveillance-reform</a></p><p>
+Beides beinhaltet große ethische Probleme und ist gleichzeitig offensichtlich nicht zuverlässig möglich.
+                        </p></span><h2 id="1">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wir sehen ein süßes Katzenbild, das neuronale Netz ein Stinktier: <a href="https://twitter.com/resnextguesser/status/1455270938719653890" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Post auf Twitter</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Tesla hat im sogenannten „Full Self Driving“ Modus einen Unfall gebaut. Nach eigener Aussage hat der Fahrer versucht gegenzulenken, um den Unfall zu vermeiden, aber das Auto ließ sich nicht überzeugen: <a href="https://www.theverge.com/2021/11/12/22778135/tesla-full-self-driving-beta-crash-fsd-california" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Video von Galileo über Cimon, eine KI von IBM, die auf der ISS eingesetzt wird: <a href="https://www.youtube.com/watch?v=tgG672EgJjQ" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Sprachmodell GPT-3 zu benutzen wird einfacher:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://blogs.microsoft.com/ai/new-azure-openai-service/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Microsoft</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://openai.com/blog/api-no-waitlist/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von OpenAI</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Video von Arte über den Einsatz von Robotern in Kriegen: <a href="https://www.youtube.com/watch?v=iDjHmCmGz0k" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Alphabet hat ein neues Unternehmen namens Isomorphic Labs gegründet, das KI zur Entdeckung von neuen Medikamenten-Wirkstoffen entwickeln soll:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.isomorphiclabs.com/blog" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag des neuen Unternehmens</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://t3n.de/news/koennte-alphabets-neues-medizin-1426867/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel über aktuelle Entwicklungen bei autonomen Schiffen: <a href="https://www.computerweekly.com/feature/What-Norwegians-are-learning-as-they-pioneer-autonomous-ships" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Computerweekly</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../18">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
