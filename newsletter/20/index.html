@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #20</h1><span>
+                        
+                            Hallo und herzlich willkommen zur zwanzigsten Ausgabe von KI News.<p>
+Heute geht es um den ersten Fall von Diskriminierung durch einen Computer-Algorithmus, eine App, die hilft, versteckte Kameras zu entdecken, Deepfakes auf gehackten Instagram-Profilen und eine neue Technik für Reinforcement Learning.</p><p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Der möglicherweise erste Fall von Diskriminierung durch einen Algorithmus</h2><span><p>
+London in den 1970er Jahren. An der <a href="https://www.stgeorges.nhs.uk/about/history/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">St George’s Hospital Medical School</a> mussten sich zukünftige Studierende zuerst schriftlich bewerben, bevor sie gegebenenfalls zu einem Gespräch eingeladen wurden. 75% der Bewerber:innen wurden aufgrund der schriftlichen Bewerbung abgelehnt, von den übrigen nochmal 30% nach dem Gespräch.</p><p></p><p>
+Die vielen Bewerbungen zu bewerten war natürlich eine Menge Arbeit, weshalb der stellvertretende Dekan eine Software programmierte, um die Bewerbungen automatisiert auswerten zu lassen.</p><p>
+Neben der Arbeitsersparnis erhoffte er sich davon, dass der Bewerbungsprozess fairer werden würde, da alle Bewerbungen vom Computer gleich behandelt werden.</p><p>
+1979 war die Entwicklung abgeschlossen und als Test wurden in diesem Jahr alle Bewerber sowohl von der Software als auch von Menschen bewertet - mit einer Übereinstimmung zwischen 90 und 95%.</p><p></p><p>
+Da der Test so erfolgreich war, wurde das Programm eingeführt und 1982 wurden alle schritflichen Bewerbungen von der Software automatisiert bearbeitet.</p><p>
+Nach ein paar Jahren, 1986, hatten zwei Dozent:innen den Verdacht, dass das Programm Frauen und nicht-weiße Personen benachteiligen könnte und sie wandten sich an die staatliche Kommision für Rassengleichheit.</p><p>
+Diese startete eine Untersuchung und fand heraus, dass der Algorithmus die Kandidat:innen nicht nur nach Faktoren bewertete, die für die Bewerbung relevant sein sollten.</p><p>
+So wurden die Kandidat:innen zum Beispiel anhand von Name und Geburtsort in die Kategorien weiß und nicht-weiß eingeteilt. Einen nicht-europäischen Namen zu haben konnte 15 Punkte in der Bewertung kosten, Frauen bekamen durchschnittlich 3 Punkte weniger.</p><p>
+Daher befand die Kommision St George's für schuldig, Bewerber:innen diskriminiert zu haben.</p><p></p><p>
+Der Bewertungsalgorithmus war wohl nicht diskriminierender als die vorherige Bewertung durch die Menschen, sonst wäre die Übereinstimmung in der Testphase nicht so hoch gewesen. Das Problem war aber, dass die bestehende Diskriminierung unhinterfragt übernommen und in Form eines scheinbar objektiven Algorithmus festgeschrieben wurde.</p><p>
+Die Ironie an der Sache ist, dass andere Medical Schools noch deutlich niedrigere Zulassungsraten von Minderheiten hatten als St George’s. Man kann also davon ausgehen, dass die Diskriminierung dort noch stärker war, aber nicht bewiesen werden konnte.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei IEEE Spectrum: <a href="https://spectrum.ieee.org/untold-history-of-ai-the-birth-of-machine-bias" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://spectrum.ieee.org/untold-history-of-ai-the-birth-of-machine-bias</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel von 1988 im British Medical Journal: <a href="http://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC2545288&amp;blobtype=pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC2545288&amp;blobtype=pdf</a></li>
+</ul></p></span><h2 id="3">Versteckte Kameras mit KI entdecken</h2><span><p>
+Wenn man den Verdacht hat, dass man eventuell von einer versteckten Kamera beobachtet wird, hat man im Moment drei Möglichkeiten, diese zu finden:</p><p>
+Man kann sie einfach suchen, was aber angesichts der winzigen Größe aktueller Kameras sehr schwierig werden kann.</p><p>
+Man kann ein spezielles Gerät benutzen, einen sogenannten Kameradetektor, und damit den Raum überprüfen, oder man kann eine Analyse der WLAN-Daten durchführen, was natürlich nur bei WLAN-Kameras funktioniert und einem außerdem nur sagt, ob eine Kamera in der Nähe ist, aber nicht wo.</p><p></p><p>
+Ein neuer Ansatz wurde vor kurzem bei einer Konferenz vorgestellt: Forscher:innen haben eine Smartphone-App entwickelt, die Lasersignale abschicken und mit ML-Bildverarbeitung die charakteristischen Reflexionen der Kameras erkennen kann.</p><p></p><p>
+Tatsächlich haben viele aktuelle Smartphones einen Laser eingebaut, im sogenannten <a href="https://de.wikipedia.org/wiki/TOF-Kamera" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Time-of-Flight Sensor</a>. Dieser sendet Lasersignale aus und misst die Laufzeit des Lichts, bis die Reflexionen wieder eintreffen. Dadurch können die Geräte berechnen, wie weit etwas weg ist und so ein 3D-Bild der Umgebung erstellen.</p><p>
+Handys machen damit zum Beispiel auf Fotos den Hintergrund unscharf und benutzen die Sensoren für besseren Autofokus und Gesichtserkennung. Ähnliche Sensoren werden zum Beispiel auch bei selbstfahrenden Autos benutzt, dort sind sie als <a href="https://de.wikipedia.org/wiki/Lidar" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LiDAR</a> bekannt.</p><p>
+Wenn diese Laserimpulse auf eine Kameralinse treffen, wird das Licht fast vollständig wieder zurück reflektiert, was sich von einer Software erkennen lässt.</p><p></p><p>
+So weit so gut, es gibt aber auch eine Reihe von Problemen. So muss zum Beispiel der oder die Benutzer:in den richtigen Abstand zu der versteckten Kamera haben. Um das zu erreichen, benutzt die App sogenannte <a href="https://de.wikipedia.org/wiki/Erweiterte_Realit%C3%A4t" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Augmented Reality</a> (AR) Funktionen, um den Benutzer zu leiten. Das sind Informationen, die auf dem Handybildschirm in die echte Umgebung eingeblendet werden. Ein bekanntes Beispiel für AR ist das Spiel <a href="https://pokemongolive.com/de/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pokemon Go</a>, bei dem man in der echten Welt Pokemon sammeln kann.</p><p></p><p>
+Ein weiteres Problem ist, dass auch andere Gegenstände das Licht stark reflektieren, und so zu falsch angezeigten Treffern führen können. Um das auszuschließen verwenden die Forscher:innen eine Reihe von Filtern in der App, unter anderem neuronale Netze.</p><p></p><p>
+Und schließlich ist auch ein Problem, dass das Handy nicht in einem zu großen Winkel vor die versteckte Kamera gehalten werden darf, weil sonst das Licht nicht mehr zurück reflektiert wird. Hier hat das Team aus der Not aber eine Tugend gemacht, und diese Eigenschaft ausgenutzt, um Reflexionen als Treffer auszuschließen, die außerhalb dieses Winkels liegen.</p><p></p><p>
+Tests der neuen Technik waren wegen Covid-Einschränkungen schwierig, deshalb sind die Ergebnisse mit Vorsicht zu betrachten.</p><p>
+Die Tests liefen so ab: In dreißig Objekte haben die Forscher:innen 1,5mm kleine Löcher gebohrt und Kameras dahinter platziert. Dann haben sie die Gegenstände mit ihrer App gescannt und ausgewertet, wie viele Kameras die App richtig gefunden hat.</p><p>
+Für die anderen Methoden im Vergleich (zwei verschieden Modi eines speziellen Kameradetektors und Suchen mit bloßem Auge) haben sie Videos von den Gegenständen gemacht und 379 Leuten über eine Internetplattform die Aufgabe gegeben, die Position der Kamera im Video zu markieren.</p><p>
+In diesen Tests wurden von der App 89% der Kameras richtig markiert, die Teilnehmer:innen ohne Hilfsmittel fanden 46%, mit dem Kameradetektor lag die Erfolgsquote bei ca. 60%.</p><p>
+Allerdings gibt ein Video natürlich einen ganz anderen Eindruck, als sich die Gegenstände selbst anzuschauen. Auch, dass die Versuche über das Internet durchgeführt wurden, statt in einer kontrollierten Umgebung und dass die Forscher:innen die App selbst bedient haben, könnte zu Verzerrungen geführt haben.</p><p></p><p>
+Aber auch wenn die Erfolgsquote in der Realität niedriger sein sollte, ist es trotzdem erstaunlich, was mit heutigen Smartphone-Kameras und maschinellem Lernen möglich ist.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung in der ACM Digital Library: <a href="https://dl.acm.org/doi/10.1145/3485730.3485941" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://dl.acm.org/doi/10.1145/3485730.3485941</a></li>
+</ul></p></span><h2 id="4">Deepfakes auf gehackten Instagram Profilen</h2><span><p>
+Auf der Plattform <a href="https://news.ycombinator.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Hacker News</a> berichtet ein:e Benutzer:in, dass der Instagram-Account einer Freundin, mit ca. 2000 Followern, gehackt wurde. Nur sechs Stunden, nachdem das Passwort von einer fremden E-Mail-Adresse zurückgesetzt wurde, seien Deepfake-Videos von ihr gepostet worden, in denen sie scheinbar Werbung für Betrugsmaschen mit <a href="https://de.wikipedia.org/wiki/Kryptow%C3%A4hrung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Kryptowährungen</a> macht.</p><p>
+Ein Fernsehsender aus Florida berichtet von einem weiteren Fall, der genauso abgelaufen ist: Das Instagram-Profil eines Musikers wurde gehackt und ein überzeugendes Deepfake-Video von ihm gepostet, in dem er über Bitcoin-Investments spricht.</p><p></p><p>
+Ganz ähnlich, aber „klassischer“, ohne Deepfakes und maschinelles Lernen, läuft eine andere Masche ab: Dabei werden ebenfalls Instagram-Accounts gehackt und die Besitzer:innen dann damit erpresst, dass sie ihren Account nur zurückbekommen, wenn sie ein Video aufnehmen, in dem sie eine Betrugsmasche bewerben.</p><p>
+Aber laut Bericht bekamen sie die Accounts nicht zurück, nachdem sie die Videos geschickt hatten. Stattdessen hat der oder die Erpresser:in, die Videos auf den gehackten Accounts gepostet, um so die Follower zu betrügen, die dem Accountbesitzer vertrauen und nichts von der Erpressung ahnen.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Post auf Hacker News: <a href="https://news.ycombinator.com/item?id=29364427" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://news.ycombinator.com/item?id=29364427</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Fernsehbericht über den Musiker: <a href="https://www.youtube.com/watch?v=vqr0oER03SE" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=vqr0oER03SE</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zwei Artikel über die ähnliche Erpressungsmasche:
+	<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.vice.com/en/article/93bw9z/bitcoin-scam-hostage-videos-instagram" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.vice.com/en/article/93bw9z/bitcoin-scam-hostage-videos-instagram</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.vice.com/en/article/y3vzzx/instagram-scam-video-bitcoin" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.vice.com/en/article/y3vzzx/instagram-scam-video-bitcoin</a></li>
+</ul>
+</li>
+</ul></p></span><h2 id="5">Reinforcement Learning im Pixelchaos</h2><span><p>
+Das menschliche Gehirn kann sich anpassen, wenn sich die Wahrnehmung plötzlich ändert. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010945217301314" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Ein bekanntes Beispiel</a> ist eine spezielle Brille, die den oder die Träger:in alles auf dem Kopf sehen lässt. Nach einer Weile hat sich das Gehirn daran gewöhnt, und man sieht wieder normal. Wenn man die Brille dann abnimmt, sieht man wieder eine Weile alles falschherum, bis sich das Gehirn wieder umgestellt hat.</p><p></p><p>
+Im Gegensatz dazu benötigen viele neuronale Netze, zum Beispiel beim <a href="https://de.wikipedia.org/wiki/Best%C3%A4rkendes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a> (RL), ihre Eingabedaten in einem genau vorgegebenen Format, um zu funktionieren.</p><p>
+Forscher:innen von Google haben jetzt aber eine Methode entwickelt, mit der RL Modelle auch mit zufällig verschobenen Eingaben umgehen können.</p><p>
+Dazu führen sie eine zusätzliche Schicht im neuronalen Netz ein, die die Eingaben verarbeitet. Diese Schicht besteht aus einer Reihe von kleineren neuronalen Netzen, die jeweils einen Teil der Eingaben verarbeiten (sie nennen sie „Sensory Neurons“). Die Ausgaben dieser neuronalen Netze werden dann mit einem „Attention“ genannten Mechanismus verarbeitet, durch den das Modell lernen kann, welche der Eingaben wichtig sind.</p><p>
+Bei einem Rennspiel zum Beispiel sind die Streckenbegrenzungen wichtiger als die Wiese neben der Strecke.</p><p></p><p>
+Dadurch, dass die Sensory Neurons alle unabhängig voneinander einen kleinen Teil der Eingaben verarbeiten, ist es egal, in welcher Reihenfolge bzw. an welcher Stelle welche Eingaben kommen, sie können immer verwendet werden.</p><p>
+Das führt zu sehr beeindruckenden Ergebnissen, wie zum Beispiel in diesem Video, in dem ein neuronales Netz ein Auto steuert. Links sieht man das Spiel in der normalen Ansicht. Das Pixelchaos rechts zeigt, wie das neuronale Netz die Daten als Eingabe bekommt.</p><p><a href="https://attentionneuron.github.io/assets/mp4/car_racing.mp4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;"><img alt="Video, das links ein normales Autorennspiel zeigt und rechts die durcheinander gewürfelte Eingabe für das neuronale Netz" data-file-id="6022203" height="160" src="https://mcusercontent.com/6a2f372a93d527ee449b8e785/images/dd167df8-cd58-4568-18e1-da90f006c898.gif" style="border: 0px;width: 320px;height: 160px;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" width="320"/></a></p><p><span style="font-size:small">(Yujin Tang and David Ha, "The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning", 2021. Source: <a href="https://attentionneuron.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://attentionneuron.github.io/</a>, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CC BY 4.0</a> / converted to gif)</span><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Google: <a href="https://ai.googleblog.com/2021/11/permutation-invariant-neural-networks.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2021/11/permutation-invariant-neural-networks.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Video auf Youtube: <a href="https://www.youtube.com/watch?v=7nTlXhx0CZI" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=7nTlXhx0CZI</a></li>
+</ul></p></span><h2 id="6">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>KI um gestohlene Kulturgüter zu entdecken</em></strong></span><p>
+Zuverlässig zwischen Deko-Objekten, Fälschungen und echten antiken Kulurgütern zu unterscheiden kann selbst für Expert:innen eine Herausforderung sein. Umso schwieriger ist es, zum Beispiel für Zollbeamt:innen bei der Einreisekontrolle, zu erkennen, ob ein antik wirkender Gegenstand tatsächlich antik ist und ob er legal eingeführt wird oder nicht.</p><p>
+Kunstfahnder:innen des bayerischen Landeskriminalamts testen deshalb mit neun weiteren Dienststellen von Polizei und Zoll eine App, um Objekte mit KI-Unterstützung besser beurteilen zu können.</p><p>
+Die Beamt:innen fotografieren dazu den Gegenstand aus mehreren Perspektiven. Die App vergleicht diese Bilder dann mit Fotos von Kulturgütern aus mehreren Epochen und Regionen. Damit gibt sie eine Einschätzung ab, aus welcher Region und Epoche der Gegenstand stammen könnte. Außerdem kann sie auch Warnungen anzeigen, wenn sie einen gestohlenen Gegenstand erkennt.</p><p>
+Dadurch können die Beamt:innen schneller entscheiden, ob ein Objekt noch für weitere Überprüfungen einbehalten werden muss.</p><p>
+📖 Artikel bei der Süddeutschen Zeitung: <a class="source" href="https://www.sueddeutsche.de/bayern/bayern-kulturgueter-app-landeskriminalamt-fahnder-1.5460815" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.sueddeutsche.de/bayern/bayern-kulturgueter-app-landeskriminalamt-fahnder-1.5460815</a></p><p></p><p><em><strong><span style="font-size:18px">Was lernt eine Schach-KI beim Training?</span></strong></em></p><p>
+Zuammen mit dem Schachgroß- und ehemaligen Weltmeister Wladimir Kramnik haben Forscher:innen von Deepmind und Google das Modell <a href="https://de.wikipedia.org/wiki/AlphaZero" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">AlphaZero</a> darauf untersucht, wie es Schachspielen gelernt hat. AlphaZero ist ein neuronales Netz, das drei Brettspiele spielen kann, darunter auch Schach.</p><p>
+Dabei haben sie einige interessante Ähnlichkeiten zu menschlichen Schachspieler:innen gefunden, zum Beispiel bei den Eröffnungszügen und wie das Modell gegnerische Positionen und Möglichkeiten für eigene Züge bewertet.</p><p>
+📖 Artikel bei Chessbase: <a class="source" href="https://en.chessbase.com/post/acquisition-of-chess-knowledge-in-alphazero" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://en.chessbase.com/post/acquisition-of-chess-knowledge-in-alphazero</a></p></span><h2 id="7">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Estnischer Winter vs. Autonome Lieferroboter 1:0: 📖 <a class="source" href="https://twitter.com/UrbanFoxxxx/status/1466782775244111872" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Twitter</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Honda hat ein autonomes Baustellenfahrzeug entwickelt und auf einer Großbaustelle getestet:
+	<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.youtube.com/watch?v=BRtGYnBNG7U" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://t3n.de/news/sieht-lego-honda-zeigt-autonomes-1427958/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tensorflow hat eine Bibliothek für Graph Neural Networks veröffentlicht: 📖 <a class="source" href="https://blog.tensorflow.org/2021/11/introducing-tensorflow-gnn.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Tensorflow</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zusammenfassung des Tensorflow ML Community Day 2021: 📖 <a class="source" href="https://blog.tensorflow.org/2021/11/ml-community-day-2021-recap.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Tensorflow</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>„Können wir ihnen trauen?“</em> - Ein Artikel über selbstfahrende Autos, der die reißerische Titel-Frage selbstverständlich nicht beantwortet: 📖 <a class="source" href="https://www.zeit.de/mobilitaet/2021-11/autonomes-fahren-kuenstliche-intelligenz-verkehrssicherheit-unfall" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Zeit</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein 16-jähriger Kalifornier hat eine Bell-Erkennung entwickelt, um seinen Hund zu beruhigen, wenn er nicht zuhause ist:
+	<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://t3n.de/news/hund-bellen-ki-machine-learning-1428331/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.youtube.com/watch?v=v5hBjouFHQY" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.hackster.io/NathanielF/tinyml-dog-bark-stopper-77e436" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Projekt bei Hackster.io</a></li>
+</ul>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../19">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
