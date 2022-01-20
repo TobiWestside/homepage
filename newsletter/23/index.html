@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #23</h1><span>
+                        
+                            Hallo und herzlich willkommen zur dreiundzwanzigsten Ausgabe von KI News. Heute geht es um ein Frühwarnsystem für Virusvarianten von Biontech, wie Nvidia 3D-Modelle aus Fotos erstellt und wie man mit den (Daten-)Nachbarn Sprachmodelle verbessern kann. Außerdem bessere Bildqualität in Spielen und ein neuer Lieferroboter.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">3D-Modelle aus Fotos erstellen</h2><span><p>
+Forscher:innen von Nvidia haben eine Methode entwickelt, mit der ein neuronales Netz konsistent Bilder von einem Objekt aus verschiedenen Blickwinkeln und mit verschiedenen Eigenschaften erzeugen kann. Als Eingabe dafür reicht ein einzelnes Bild des Objekts aus.</p><p>
+Dieser Prozess, aus einem 2D-Bild eine 3D-Darstellung zu machen, wird auch „Inverse Graphics“ genannt.</p><p></p><p>
+Eine Software, die aus Eingabedaten ein Bild erzeugen kann, nennt man <a href="https://de.wikipedia.org/wiki/Bildsynthese" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Renderer</a>. Normale Renderer kann man nicht direkt in ein neuronales Netz einbauen, da bei ihnen der Trainingsprozess nicht funktionieren würde. Damit das Training klappt, müssen sie bestimmte mathematische Eigenschaften erfüllen, sie müssen <a href="https://de.wikipedia.org/wiki/Differenzierbarkeit" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">differenzierbar</a> sein.</p><p>
+Mit einem integrierten differenzierbaren Renderer kann ein neuronales Netz dann lernen, direkt Bilder aus 3D-Modell-Daten zu erzeugen.</p><p>
+Die aktuellen Methoden, um 3D-Darstellungen mit neuronalen Netzen zu erzeugen, benötigen noch aufwändig zu sammelnde Referenzdaten, z.B. Bilder des Objekts aus mehreren Blickwinkeln.</p><p></p><p>
+Eine aktuelle Architektur von neuronalen Netzen zur Erzeugung von Bildern sind <a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Generative Adversarial Networks</a> (GANs). In Versuchen haben Forscher:innen herausgefunden, dass diese die dreidimensionalen Eigenschaften eines Objekts implizit zu lernen scheinen. So haben sie es z.B. geschafft, durch bestimmte Änderungen den „Blickwinkel“ im erzeugten Bild zu bestimmen. Allerdings sind bei GANs verschiedene Eigenschaften miteinander verwoben, so dass sich dann z.B. auch die Farbe ändert.</p><p></p><p>
+Die Forscher:innen von Nvidia haben herausgefunden, wie sie in einem bestimmten GAN (<a href="https://de.wikipedia.org/wiki/StyleGAN" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">StyleGAN</a>) relativ gut nur den Blickwinkel verändern können. Dadurch können sie ganz einfach neue Bilder von Objekten aus verschiedenen Blickwinkeln erzeugen.</p><p>
+Das haben sie genutzt, und beide Techniken kombiniert: Das GAN erzeugt Bilder aus mehreren Blickwinkeln, mit denen der differenzierbare Renderer dann lernen kann ein 3D-Bild zu berechnen.</p><p>
+Mit diesem 3D-Bild kann wiederum das GAN so verbessert werden, dass intern die verschiedenen Eigenschaften der erzeugten Bilder besser getrennt sind und unabhängig voneinander verändert werden können.</p><p></p><p>
+Dadurch konnten sie das GAN darauf trainieren Bilder zu erzeugen, bei denen die Eigenschaften beliebig geändert werden können.</p><p>
+Mit dem so trainierten GAN konnten die Forscher:innen Bilder generieren, bei denen sie den Kamerablickwinkel frei bestimmen, und die Form der dargestellten Autos (die Objekte, mit denen sie den Versuch gemacht haben) ändern konnten.</p><p>
+Probleme gab es noch bei der Beleuchtung, die zwischen den Bildern nicht konsistent blieb, und dem Hintergrund, dessen Aussehen immer noch mit manchen anderen Eigenschaften zusammen hing.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Nvidia: <a href="https://blogs.nvidia.com/blog/2021/04/16/gan-research-knight-rider-ai-omniverse/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://blogs.nvidia.com/blog/2021/04/16/gan-research-knight-rider-ai-omniverse/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Paper: <a href="https://arxiv.org/abs/2010.09125" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2010.09125</a></li>
+</ul></p></span><h2 id="3">Frühwarnsystem für gefährliche Virusvarianten von Biontech und InstaDeep</h2><span><p>
+Von Anfang Oktober bis Ende November 2021 wurden mehr als 70.000 neue Varianten des Coronavirus entdeckt. Die meisten davon machen das Virus ungefährlicher oder haben keine signifikanten Auswirkungen. Aber wie erkennt man in dieser Masse die gefährlichen?</p><p>
+Biontech und die Londoner KI Firma <a href="https://www.instadeep.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">InstaDeep</a> haben ein System entwickelt, das mithilfe von Deep Learning diese gefährlichen Varianten des Coronavirus frühzeitig erkenennen soll.</p><p>
+Dazu werden zwei Ansätze miteinander kombiniert: Zum einen eine Modellierung des Spike Proteins (wie stark die Bindung an die Zellen und die Erkennung durch Antikörper sind), zum anderen ein neuronales Netz mit Transformer-Architektur, das auf den Gensequenzen der Viren arbeitet.</p><p>
+Daraus werden zwei Werte berechnet: ein "Immune Escape Score", also wie gut das Virus vom Immunsystem erkannt werden kann, und ein "Fitness Score", der das Übertragungspotential des Virus angibt.</p><p></p><p>
+Ein Transformer ist eine Architektur, die eigentlich vor allem zur Textverarbeitung und bei Sprachmodellen verwendet wird. Die Forscher:innen machen sich hier zu nutze, dass Gensequenzen auch als Buchstabenfolgen dargestellt werden können, und sich so von Transformern verarbeiten lassen.</p><p>
+Beim Training wird ein zweistufiges Verfahren angewandt. Zuerst wird das Modell auf allgemeinen Sequenzierungsdaten des Coronavirus trainiert (sogenanntes „Pretraining“). Danach wird es nochmal speziell mit den Daten von Spike-Proteinen trainiert („Fine-tuning“).</p><p>
+Dazu werden in einer Sequenz immer einige Aminosäuren „maskiert“ und das Modell lernt, die dadurch entstandene Lücke korrekt zu füllen.</p><p></p><p>
+Dieses Modell wird dann dazu benutzt, die Ähnlichkeit zwischen Gensequenzen verschiedener Varianten zu berechnen. Dazu wird die Eigenschaft von Transformern ausgenutzt, dass sie lernen können ähnliche Eingabesequenzen intern ähnlich darzustellen.</p><p>
+Für die untersuchte Sequenz wird dann der Abstand in dieser internen Darstellung zu den Wuhan- und D614G-Varianten berechnet (D614G ist eine Mutation am Spike-Protein, die die Übertragung erhöht und z.B. in den Varianten Alpha, Beta, Gamma, Delta und Omikron vorkommt).</p><p>
+Da das Modell außerdem gelernt hat, welche Sequenzen eine höhere Wahrscheinlichkeit haben vorzukommen und welche seltener sind, kann man hieraus auch die Wahrscheinlichkeit ableiten, mit der eine bestimmte Mutation auftritt.</p><p></p><p>
+In Versuchen zwischen September 2020 und November 2021 hat das System 90% der von der WHO mindestens als „Variant under Monitoring“ benannten Varianten erkannt, durchschnittlich 58 Tage vor der Einstufung durch die WHO.</p><p>
+Die Alpha, Beta, Gamma, Theta, Eta und Omikron Varianten wurden in der gleichen Woche, in der zum ersten Mal Sequenzierungsdaten hochgeladen wurden, erkannt, bei Omikron gelang das sogar am gleichen Tag.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung von Biontech: <a href="https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Paper: <a href="https://www.biorxiv.org/content/10.1101/2021.12.24.474095v1" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.biorxiv.org/content/10.1101/2021.12.24.474095v1</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel der Tagesschau: <a href="https://www.tagesschau.de/wirtschaft/unternehmen/biontech-umsatzprognose-warnsystem-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.tagesschau.de/wirtschaft/unternehmen/biontech-umsatzprognose-warnsystem-101.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>RKI zu Virusvarianten: <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Virologische_Basisdaten.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Virologische_Basisdaten.html</a></li>
+</ul></p></span><h2 id="4">RETRO: Mit den (Daten-)Nachbarn Sprachmodelle verbessern</h2><span><p>
+Aktuelle Sprachmodelle sind riesig und haben daher auch eine sehr lange Trainingszeit und einen hohen Energieverbrauch. Zum Beispiel würde es <a href="https://arxiv.org/abs/2104.04473" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nach Schätzungen</a> 34 Tage dauern, um das bekannte Sprachmodell <a href="https://de.wikipedia.org/wiki/OpenAI#GPT-3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GPT-3</a> auf 1024 Grafikkarten parallel zu trainieren.</p><p>
+Daher hatten Forscher:innen die Idee, kleinere Sprachmodelle zu verwenden und ihre Vorhersagen mit zusätzlichen Daten verbessern. Da mehr Daten im Training auch wieder eine längere Trainingszeit, hohen Energieaufwand etc. bedeuten, kommen die zusätzlichen Daten in diesem Ansatz erst bei der Vorhersage zum Einsatz.</p><p></p><p>
+Wie funktioniert das? Aus einer sehr großen Datenbank voller Texte werden die Texte herausgesucht, die dem Eingabetext am ähnlichsten sind (die „Nachbarn“). Um dieses Heraussuchen beim Training schneller zu machen, haben die Forscher:innen von Deepmind, deren Veröffentlichung ich unten verlinkt habe, für jeden Text in den Trainingsdaten schon vorab die Nachbarn berechnet.</p><p>
+Diese Texte aus der Datenbank werden dann vom neuronalen Netz als zusätzliche Information genutzt um vorherzusagen, wie der Eingabetext weitergeht.</p><p>
+Bei dem neuronalen Netz handelt es sich um eine Transformer Architektur, die um die Nachbarn-heraussuchen Funktion und eine Attention-Komponente erweitert wurde, die die Nachbarn in die Vorhersage einfließen lässt.</p><p></p><p>
+Deepmind hat eine Text-Datenbank mit 2 Billionen Wörtern benutzt und verschiedene Modell-Größen getestet, von 150 Millionen bis 7 Milliarden Parametern. Sie waren damit die ersten, die den Ansatz in dieser Größenordnung umgesetzt haben. Ihre Variante haben sie RETRO (Retrieval-Enhanced Transformer) genannt.</p><p>
+In Tests haben sie gezeigt, dass das Modell ungefähr so gut ist wie ein zehn mal so großes Modell ohne die RETRO-Erweiterung.</p><p>
+Das Prinzip hat mehrere Vorteile: Einerseits die kleinere Größe und der damit verbundene geringere Trainingsaufwand. Andererseits aber auch, dass man die Vorhersagen, die das Modell macht, auch nach dem Training noch verändern kann, indem man die Texte in der Datenbank oder die Anzahl der betrachteten Nachbarn verändert.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung von DeepMind: <a href="https://deepmind.com/research/publications/2021/improving-language-models-by-retrieving-from-trillions-of-tokens" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://deepmind.com/research/publications/2021/improving-language-models-by-retrieving-from-trillions-of-tokens</a></li>
+</ul></p></span><h2 id="5">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>KI für bessere Bildqualität in Spielen</em></strong></span><p><a href="https://www.nvidia.com/de-de/technologies/dsr/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Dynamic Super Resolution</a> (DSR) ist eine Technik um die Bildqualität von Computerspielen zu verbessern. Dafür stellt man die Grafikkarte so ein, dass sie ein höher aufgelöstes Bild erzeugt als der Bildschirm darstellen kann und das deshalb danach wieder heruntergerechnet wird. Das klingt erstmal unintuitiv, führt aber tatsächlich zu einem besseren Bild, gerade bei feinen Details.</p><p>
+Das Problem dabei ist: durch das höher aufgelöste Bild hat man auch eine deutlich höhere Beanspruchung der Grafikkarte. Um zum Beispiel ein 4K-Bild statt einem Full HD-Bild zu erzeugen, muss die Grafikkarte vier mal so viele Pixel berechnen.</p><p>
+Nvidia hat dafür eine Lösung gefunden und stellt sie mit dem neuen Treiber zur Verfügung: Deep Learning DSR. Dabei wird ein neuronales Netz zur Bildverbesserung eingesetzt, das mit weniger Eingabepixeln ein genauso gutes Bild erzeugen kann. Im Beispiel von Nvidia wird nur das 2,25-fache statt dem vierfachen der Zielauflösung benötigt.</p><p>
+Dadurch ist die Grafikkarte weniger beansprucht, wodurch wiederum die Bildwiederholrate höher sein kann (Im Beispiel 143 Bilder pro Sekunde (FPS) mit DLDSR statt 108 FPS mit normalem DSR).
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Beschreibung von Nvidia: <a href="https://www.nvidia.com/en-us/geforce/news/god-of-war-game-ready-driver/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nvidia.com/en-us/geforce/news/god-of-war-game-ready-driver/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei TheVerge: <a href="https://www.theverge.com/2022/1/14/22884124/nvidia-deep-learning-dynamic-super-resolution-game-ready-driver-ai-upscaling" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/1/14/22884124/nvidia-deep-learning-dynamic-super-resolution-game-ready-driver-ai-upscaling</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">Neuer Lieferroboter von Nuro</span></strong></em></p><p>
+Das Liefer-Startup <a href="https://www.nuro.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Nuro</a> hat in einem Blogeintrag die dritte Generation ihres autonomen Transporters vorgestellt. Dieser ist als komplett autonomes Fahrzeug konzipiert, und hat daher keine Sitzplätze. Das hat den Vorteil, dass kein Insassenschutz notwendig ist. So hat der Transporter zum Beispiel einen Airbag außen, als Schutz für andere.</p><p>
+Das vollelektrische Auto kann bis zu 70 km/h schnell fahren, ist mit dem Lidar Aufbau auf dem Dach ungefähr so groß wie ein Erwachsener und „20% schmaler als durchschnittliche Autos“ (da es sich dabei wohl um amerikanische Autos handelt, also ungefähr so breit wie ein durchschnittliches Auto in Europa? 😄).</p><p>
+Der Frachtraum ist mit knapp 0,8 m³ relativ klein, kann gut 200 kg Gewicht transportieren und mit Einsätzen sind verschiedene Bereiche unterschiedlich klimatisierbar.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Nuro: <a href="https://medium.com/nuro/introducing-our-next-generation-nuro-8c1c63488342" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://medium.com/nuro/introducing-our-next-generation-nuro-8c1c63488342</a></li>
+</ul></p></span><h2 id="6">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie KI von Pokerspielern eingesetzt wird: 📖 <a href="https://www.nytimes.com/2022/01/18/magazine/ai-technology-poker.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der NY Times</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Es gibt Hanteln mit Alexa-Integration: 📖 <a href="https://www.theverge.com/2022/1/11/22876686/nordictrack-ifit-alexa-adjustable-dumbbells-fitness" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei TheVerge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel über das „Autonome Kampfjets“-Projekt des amerikanischen Verteidigungsministeriums: 📖 <a href="https://www.newyorker.com/magazine/2022/01/24/the-rise-of-ai-fighter-pilots" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel beim NewYorker</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">So funktioniert eine KI, die Animefiguren zeichnet: 📖 <a href="https://waifulabs.com/blog/ai-creativity" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Waifulabs</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Was kann Github Copilot noch, außer Code schreiben? 📖 <a href="https://dagshub.com/blog/github-copilot-not-code/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag bei Dagshub</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zusammenfassung der Entwicklung von selbstfahrenden Autos in China: 📖 <a href="https://techcrunch.com/2022/01/14/2021-robotaxi-china/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nach tödlichem Unfall mit Tesla „Autopilot“ - Anklage wegen Totschlags gegen den Fahrer: 📖 <a href="https://arstechnica.com/cars/2022/01/manslaughter-charges-follow-tesla-drivers-autopilot-red-light-run/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Arstechnica</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die kalifornische Verkehrsbehörde will ihren Umgang mit Teslas „Full Self-Driving“ überprüfen: 📖 <a href="https://www.latimes.com/business/story/2022-01-11/dmv-message-to-legislatures-ontesla-full-self-driving-safety-its-not-our-job" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der LA Times</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Cheezam erkennt französischen Käse auf Fotos: 📖 <a href="https://cheezam.fr/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://cheezam.fr/</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Argumentation, dass Reinforcement Learning für Fine-tuning benutzt werden sollte: 📖 <a href="https://ankeshanand.com/blog/2022/01/08/rl-fine-tuning.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Ankesh Anand</a>
+<ul>
+</ul>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../22">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
