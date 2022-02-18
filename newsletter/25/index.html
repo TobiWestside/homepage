@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #25</h1><span>
+                        
+                            Hallo und herzlich willkommen zur fünfundzwanzigsten Ausgabe von KI News. Heue geht es um eine KI, die Programmieraufgaben lösen kann, ein Modell, das mit Sprache, Bildern und Texten umgehen kann, und die Frage, ob selbstfahrende Autos in Deutschland ohne Fahrer:in getestet werden dürfen.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Modell für Sprache, Bilder und Text</h2><span><p>
+Um ein ML-Modell zu trainieren, gibt es, ganz allgemein, zwei Möglichkeiten. Beim <a href="https://de.wikipedia.org/wiki/%C3%9Cberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Überwachten Lernen</a> (Supervised Learning) wird dem Modell beim Training "gezeigt", welche Ausgabe es bei einer bestimmten Eingabe erzeugen soll. Ein Beispiel ist ein Spamfilter, der anhand von vielen Beispielen lernt, E-Mails in Spam und nicht-Spam einzuteilen.</p><p>
+Das zweite ist <a href="https://de.wikipedia.org/wiki/Un%C3%BCberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Unüberwachtes Lernen</a> (Unsupervised Learning), bei dem ein Algorithmus Muster in den Daten erkennt, ohne dass explizit vorgegeben wird, wie diese aussehen sollen. Ein Beispiel dafür ist <a href="https://de.wikipedia.org/wiki/Clusteranalyse" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Clustering</a>, also das Einteilen von Daten in verschiedene Gruppen.</p><p></p><p>
+Eine Variante des Überwachten Lernens ist <a href="https://de.wikipedia.org/wiki/Selbst%C3%BCberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Selbstüberwachtes Lernen</a> (Self-supervised Learning), bei dem ein Modell lernt, einen Teil der Eingabedaten vorherzusagen. Ein Beispiel dafür ist ein Sprachmodell, das lernen soll das nächste Wort eines Satzes vorherzusagen. Beim Selbstüberwachten Lernen wird im Prinzip eine Art Lückentext erstellt, den das Modell lernt auszufüllen.</p><p></p><p>
+Forscher:innen von Meta AI ist es gelungen, ein Modell zu entwickeln, das selbstüberwacht auf mehreren unterschiedlichen Arten von Daten trainiert werden kann; nämlich Sprache, Bilder und Text.</p><p>
+Dazu haben sie einen Trick angewandt: Zuerst haben sie jeweils ein Modell für jede der drei Arten von Daten selbstüberwacht trainiert. Diese Modelle nennen sie "Lehrer".</p><p></p><p>
+Danach haben sie ein "Schüler"-Modell trainiert. Als Eingabe bekommt es maskierte Daten, die von einer der drei Arten sind, wie beim Selbstüberwachten Lernen. Zusätzlich wird aber, wie beim Überwachten Lernen, eine erwartete Ausgabe vorgegeben: der interne Zustand des Lehrer-Modells, wenn ihm dieselben Daten unmaskiert gegeben werden.</p><p>
+Das Modell lernt dadurch quasi für mehrere Datenarten, das Verhalten eines anderen Modells vorherzusagen, das speziell für diese Art von Daten trainiert wurde.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Meta AI: <a href="https://ai.facebook.com/blog/the-first-high-performance-self-supervised-algorithm-that-works-for-speech-vision-and-text/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/the-first-high-performance-self-supervised-algorithm-that-works-for-speech-vision-and-text/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://ai.facebook.com/research/data2vec-a-general-framework-for-self-supervised-learning-in-speech-vision-and-language" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/research/data2vec-a-general-framework-for-self-supervised-learning-in-speech-vision-and-language</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Code of Github: <a href="https://github.com/pytorch/fairseq/tree/main/examples/data2vec" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/pytorch/fairseq/tree/main/examples/data2vec</a></li>
+</ul></p></span><h2 id="3">AlphaCode: KI programmiert</h2><span><p>
+Bei Programmierwettbewerben bekommen die Teilnehmer typischerweise 5-10 Aufgaben und drei Stunden Zeit um die passenden Lösungen zu programmieren. Die Aufgaben sind Textbeschreibungen davon, was das Programm tun soll, und einige Beispiele, welche Ausgabe bei welcher Eingabe erwartet wird.</p><p>
+Die von den Teilnehmern abgegebenen Programme werden dann automatisch auf einem Server getestet.</p><p></p><p>
+Forscher:innen von Deepmind haben ein Modell entwickelt, das sie AlphaCode nennen, und das solche Aufgaben von Programmierwettbewerben lösen kann.</p><p>
+Dazu haben sie ein <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Sprachmodell erst auf 715 GB Programmcode von Github trainiert, und dann nochmal extra auf <a href="https://github.com/deepmind/code_contests" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Competitive Programming Daten</a> (sogenanntes Finetuning).</p><p>
+Die Aufgaben werden dabei als Übersetzungsaufgaben betrachtet: das Modell soll den Text der Aufgabenstellung in Quelltext übersetzen. Daher verwenden sie die Encoder-Decoder-Variante der Transformer-Architektur, die für Übersetzungen genutzt wird.</p><p></p><p>
+Um eine Aufgabe zu lösen, generiert das Modell eine riesige Menge (Millionen) an Python und C++ Programmen. Diese werden dann auf den in der Aufgabe angegebenen Beispielen getestet. Diesen Test bestehen 99% der generierten Programme nicht, für ca. 10% der Aufgaben wurde sogar kein einziges gefunden.</p><p>
+Es können aber auch immer noch zehntausende übrig bleiben, die bei den Beispielen die richtigen Ergebnisse liefern.</p><p>
+Um aus dieser Menge eine Auswahl zu treffen wird noch ein weiteres Modell trainiert, das zusätzliche Tests erzeugt. Darauf werden die Programme wieder getestet, und diejenigen, die die gleichen Ergebnisse liefern, zusammen in eine Gruppe gesteckt. Diese werden nach der Größe sortiert.</p><p>
+Beginnend mit dem größten wird dann aus jedem Cluster ein Programm genommen, bis maximal zehn Kandidaten übrig bleiben (tatsächlicher Durchschnitt: 2,4).</p><p>
+Diese werden dann zum Test auf dem Server abgegeben.</p><p></p><p>
+Die Forscher:innen haben die Teilnahme an zehn Wettbewerben im Dezember 2021 simuliert. Dabei landete das Modell im Mittelfeld, es war durchschnittlich schlechter als 54% der Teilnehmer.</p><p></p><p>
+Beispiele für die Aufgaben und Lösungen kann man auf <a href="https://alphacode.deepmind.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://alphacode.deepmind.com/</a> anschauen. Besonders interessant finde ich dabei, dass man für die einzelnen Teile des Codes anzeigen lassen kann, welcher Teil des Aufgabentexts dazu geführt hat, dass das Modell diesen Code erzeugt hat.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Deepmind: <a href="https://deepmind.com/blog/article/Competitive-programming-with-AlphaCode" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://deepmind.com/blog/article/Competitive-programming-with-AlphaCode</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen (PDF): <a href="https://storage.googleapis.com/deepmind-media/AlphaCode/competition_level_code_generation_with_alphacode.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://storage.googleapis.com/deepmind-media/AlphaCode/competition_level_code_generation_with_alphacode.pdf</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei The Verge: <a href="https://www.theverge.com/2022/2/2/22914085/alphacode-ai-coding-program-automatic-deepmind-codeforce" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/2/2/22914085/alphacode-ai-coding-program-automatic-deepmind-codeforce</a></li>
+</ul></p></span><h2 id="4">Dürfen autonome Autos in Deutschland ohne Fahrer:in getestet werden?</h2><span><p>
+Die Zeit hat online einen Artikel über autonomes Fahren veröffentlicht. In der Vorschau des Artikels heißt es <em>"Fast 100 Jahre wird schon am selbstfahrenden Auto geforscht. Dieses Jahr steht der Durchbruch bevor."</em>. Das klang spannend. Ein bevorstehender Durchbruch, von dem ich noch nichts gehört hatte?</p><p>
+Nachdem ich ihn angeklickt hatte, änderte sich die Zusammenfassung leider: <em>"Der Traum vom selbstfahrenden Auto scheint zum Greifen nah. Wann ist es endlich so weit?"</em>. Schade, also doch noch nicht dieses Jahr?</p><p></p><p>
+Im Artikel selbst geht es als erstes um ein Projekt von <a href="https://www.sixt.de/magazine/news/robotaxi-mobileye-sixt/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Sixt und Mobileye</a>. Das wird so beschrieben: <em>"Der Autovermieter Sixt wird die Fahrzeuge des chinesischen Herstellers Nio bald nutzen, um damit Passagiere in der Region München zu transportieren. Auf gewöhnlichen Straßen, im echten Verkehr – aber ohne Fahrer."</em>.</p><p>
+Andere Nachrichtenseiten schreiben dagegen, dass auch in den Sixt/Mobileye-Autos Fahrer:innen sitzen werden (z.B. <a href="https://www.sueddeutsche.de/wirtschaft/sixt-autonomes-fahren-mobileye-autovermieter-muenchen-1.5404773" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Süddeutsche Zeitung</a>, <a href="https://www.golem.de/news/autonomes-fahren-mobileye-und-sixt-starten-robotaxi-dienst-in-muenchen-2109-159415.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Golem</a>).</p><p>
+Den Rest konnte ich leider nicht lesen, weil er hinter einer Paywall liegt, aber der Artikel hat mich zum Nachdenken gebracht - sitzen nun Fahrer:innen in den Autos oder nicht?</p><p>
+Ich wusste, dass es in Kalifornien einige Unternehmen gibt, die Fahrzeuge auch ohne Sicherheitsfahrer:in testen, der/die im Notfall eingreifen könnte (zum Beispiel <a href="https://www.nuro.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Nuro</a>, über dessen neue Entwicklung ich in <a href="http://tobiasfraenzel.de/newsletter/23/#5" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #23</a> berichtet habe).</p><p></p><p>
+Aber wäre das in Deutschland auch möglich?</p><p></p><p>
+Im Sommer 2021 ist eine neue <a href="https://www.bmvi.de/SharedDocs/DE/Artikel/DG/gesetz-zum-autonomen-fahren.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Gesetzesänderung</a> in Kraft getreten, die einen rechtlichen Rahmen für autonomes Fahren geschaffen hat.</p><p>
+Relevant für die Frage ist dabei § 1i Straßenverkehrsgesetz <em>"Erprobung von automatisierten und autonomen Fahrfunktionen"</em>.</p><p>
+Darin heißt es:</p><p><em>"(1) Kraftfahrzeuge, die zur Erprobung von Entwicklungsstufen für die Entwicklung automatisierter oder autonomer Fahrfunktionen dienen, dürfen auf öffentlichen Straßen nur betrieben werden, wenn<br/>
+[...]<br/>
+4. das Kraftfahrzeug im Betrieb wie folgt permanent überwacht wird:<br/>
+a) bei automatisierten Fahrfunktionen erfolgt die Überwachung durch einen in Bezug auf technische Entwicklungen für den Kraftfahrzeugverkehr zuverlässigen Fahrzeugführer,<br/>
+b) bei autonomen Fahrfunktionen erfolgt die Überwachung durch eine vor Ort anwesende, in Bezug auf technische Entwicklungen für den Kraftfahrzeugverkehr zuverlässige Technische Aufsicht."</em></p><p></p><p>
+Bei "automatisierten Fahrfunktionen", das heißt, wenn das Auto noch nicht vollständig autonom fahren kann, muss es von einem "zuverlässigen Fahrzeugführer", also einem Fahrer oder einer Fahrerin überwacht werden.</p><p></p><p>
+Bei "autonomen Fahrfunktionen", was wohl auf die Autos von Sixt/Mobileye zutreffen würde, ist von "Fahrzeugführer" nicht mehr die Rede, nur von einer "Technischen Aufsicht", die "anwesend" sein muss. Da sich Autos bewegen, bedeutet "vor Ort anwesend" wohl "muss im Auto sein".</p><p></p><p>
+Warum jetzt "Technische Aufsicht" statt "Fahrzeugführer"?</p><p>
+Weil autonome Autos per Definition in § 1d StVG keinen Fahrzeugführer brauchen:</p><p><em>"Ein Kraftfahrzeug mit autonomer Fahrfunktion im Sinne dieses Gesetzes ist ein Kraftfahrzeug, das<br/>
+1. die Fahraufgabe ohne eine fahrzeugführende Person selbstständig in einem festgelegten Betriebsbereich erfüllen kann"</em>.</p><p></p><p>
+Wenn es, anders als bei normalen Autos, keinen Fahrzeugführer gibt, handelt es sich bei der Technischen Aufsicht trotzdem um das, was man umgangssprachlich Sicherheitsfahrer:in nennt?</p><p>
+Die Aufgaben der Technischen Aufsicht während der Fahrt sind in § 1d StVG definiert:</p><p><em>"Technische Aufsicht eines Kraftfahrzeugs mit autonomer Fahrfunktion im Sinne dieses Gesetzes ist diejenige natürliche Person, die dieses Kraftfahrzeug während des Betriebs [...] deaktivieren und für dieses Kraftfahrzeug [...] Fahrmanöver freigeben kann."</em></p><p>
+"Fahrmanöver freigeben" klingt für mich sehr nach Sicherheitsfahrer:in, der oder die im Notfall das Lenkrad festhält, um ein gefährliches Manöver zu verhindern.</p><p></p><p>
+Allerdings: Einen Führerschein braucht man (<a href="https://www.gesetze-im-internet.de/fev_2010/BJNR198000010.html#BJNR198000010BJNG000200000" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">laut Fahrerlaubnisverordnung</a>) nur als Fahrzeugführer. Als Technische Aufsicht muss man laut § 1i lediglich "in Bezug auf technische Entwicklungen für den Kraftfahrzeugverkehr zuverlässig" sein.</p><p></p><p><em>Zusammengefasst</em>: Autonome Autos haben per Definition keinen Fahrzeugführer, sondern eine Technische Aufsicht. Diese muss sich im Auto befinden, scheint aber nicht unbedingt einen Führerschein zu brauchen, da sie ja nicht Fahrzeugführer ist. Trotzdem muss sie aber "Fahrmanöver freigeben" können.</p><p>
+Ob sie das zum Fahrer bzw. zur Fahrerin macht ist wohl Interpretationssache.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei der Zeit: <a href="https://www.zeit.de/2022/07/autonomes-fahren-fortschritt-technologie" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.zeit.de/2022/07/autonomes-fahren-fortschritt-technologie</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Bericht über das Autofahren ohne Fahrer: <a href="https://www.zeit.de/mobilitaet/2022-02/autonomes-fahren-kuenstliche-intelligenz-waymo-erfahrungsbericht" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.zeit.de/mobilitaet/2022-02/autonomes-fahren-kuenstliche-intelligenz-waymo-erfahrungsbericht</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Liste der Unternehmen mit "Driverless Testing Permit" in Kalifornien: <a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-testing-permit-holders/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-testing-permit-holders/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>§ 1i Straßenverkehrsgesetz: <a href="http://www.gesetze-im-internet.de/stvg/__1i.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://www.gesetze-im-internet.de/stvg/__1i.html</a></li>
+</ul></p></span><h2 id="5">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Neues Open-Source-Sprachmodell: GPT-NeoX-20B</em></strong></span><p>
+EleutherAI, ein Zusammenschluss von Freiwilligen KI-Entwickler:innen und -Forscher:innen, hat ein neues sehr großes Sprachmodell veröffentlicht. Das Modell basiert, wie die anderen aktuellen sehr großen Sprachmodelle, auf der Transformer-Architektur.</p><p>
+Was die Modelle von EleutherAI von zum Beispiel denen von <a href="https://openai.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Open AI</a> (bekannt für die GPT-Modelle) unterscheidet, ist, dass hinter EleutherAI kein Unternehmen steht, das damit Geschäfte machen will, sondern dass alle Modelle als Open Source freigegeben werden.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von EleutherAI: <a href="https://blog.eleuther.ai/announcing-20b/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://blog.eleuther.ai/announcing-20b/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Download-Links auf Github: <a href="https://github.com/EleutherAI/gpt-neox/blob/main/README.md" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/EleutherAI/gpt-neox/blob/main/README.md</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Interview auf Youtube: <a href="https://www.youtube.com/watch?v=AJwnbSP_rq8" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=AJwnbSP_rq8</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">Vorhersage von Zahlenfolgen</span></strong></em></p><p>
+Forscher:innen von Meta AI haben ein neuronales Netz mit Transformer-Architektur darauf trainiert, aus Zahlenfolgen die Gesetze vorherzusagen, nach denen sie gebildet werden.</p><p>
+Als Trainingsdaten haben sie fünf Millionen selbstgenerierte, zufällige Zahlenfolgen benutzt.</p><p>
+Das Training dauerte auf 16 Grafikkarten mehr als 10 Tage (ca. 250h).</p><p>
+Die einfachste Art von Funktionen aus den Trainingsdaten, nur mit Addition, Subtraktion und Multiplikation, konnte das Modell zu 78% korrekt vorhersagen, die schwierigste immerhin noch zu 50%.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2201.04600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2201.04600</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Hier ausprobieren: <a href="http://recur-env.eba-rm3fchmn.us-east-2.elasticbeanstalk.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://recur-env.eba-rm3fchmn.us-east-2.elasticbeanstalk.com/</a></li>
+</ul><div class="source"><br/>
+<em><strong><span style="font-size:18px">US Grenzschutz testet Roboterhunde</span></strong></em><br/>
+Das "Science and Technology Directorate", die Entwicklungsabteilung des amerikanischen Heimatschutzministeriums, hat zweieinhalb Jahre lang mit dem Hersteller Ghost Robotics zusammengearbeitet, um sicherzustellen, dass deren Roboterhunde die Anforderungen des Grenzschutzes erfüllen.<br/>
+Dabei wurde unter anderem das Laufen in schwierigem Gelände mit 10 kg Zuladung getestet. Das können zum Beispiel verschiedene Arten von Kameras (normal, Wärme, Nachtsicht) oder andere Sensoren sein.<br/>
+Auch automatische Patrouillengänge in der Wüste und das ferngesteuerte Eindringen in ein Wohnhaus wurden getestet.<br/>
+Interessant bei der Wahl des Herstellers: Das bekanntere Boston Dynamics verbietet die Bewaffnung ihrer Roboter, Ghost Robotics erlaubt sie (s. <a href="http://tobiasfraenzel.de/newsletter/17/#3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #17</a>).
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung des Heimatschutzministeriums: <a href="https://www.dhs.gov/science-and-technology/news/02/01/feature-article-robot-dogs-take-another-step-towards-deployment" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.dhs.gov/science-and-technology/news/02/01/feature-article-robot-dogs-take-another-step-towards-deployment</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei The Verge: <a href="https://www.theverge.com/2022/2/3/22915760/us-robot-dogs-border-patrol-dhs-tests-ghost-robotics" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/2/3/22915760/us-robot-dogs-border-patrol-dhs-tests-ghost-robotics</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel beim Guardian: <a href="https://www.theguardian.com/us-news/2022/feb/04/us-tests-of-robotic-patrol-dogs-on-mexican-border-prompt-outcry" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theguardian.com/us-news/2022/feb/04/us-tests-of-robotic-patrol-dogs-on-mexican-border-prompt-outcry</a></li>
+</ul>
+</div></p></span><h2 id="6">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der automatische Algorithmus einer Autohandelsplattform hat für ein sieben Jahre altes Auto mehr als den Neupreis bezahlt: 📖 <a href="https://www.theverge.com/22923871/carvana-pandemic-used-car-prices-sold-online-chip-shortage" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das amerikanische Finanzministerium verzichtet jetzt doch auf Gesichtserkennung für den Online-Zugang: 📖 <a href="https://www.theverge.com/2022/2/7/22922212/irs-id-me-facial-recognition-end-privacy-concerns" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Cruise bietet Fahrten in fahrerlosen Autos in San Francisco an: 📖 <a href="https://www.getcruise.com/news/welcome-riders" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Cruise</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">"When the Algorithm is Your Boss": Ein Artikel über die Auswirkungen, wenn Manager durch Algorithmen ersetzt werden 📖 <a href="https://tribunemag.co.uk/2022/01/amazon-algorithm-human-resource-management-tech-worker-surveillance" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tribune Magazine</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zwei weitere Angestellte verlassen Googles Ethical AI Gruppe:
+	<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://alex-hanna.medium.com/on-racialized-tech-organizations-and-complaint-a-goodbye-to-google-43fd8045991d" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Alex Hanna</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://dylnbkr.medium.com/on-leaving-google-f1bcfb57aa4d" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Dylan Baker</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://www.protocol.com/bulletins/alex-hanna-resignation-letter" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Protocol</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In der kommenden iOS Version 15.4 funktioniert Face ID auch mit Maske: 📖 <a href="https://www.theverge.com/2022/2/2/22912677/apple-face-id-mask-update-ios-15-4-beta-hands-on-impressions" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI löst (manche) Aufgaben der Mathe-Olympiade:
+	<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://openai.com/blog/formal-math/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Open AI</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'><a href="https://arxiv.org/abs/2202.01344" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung der Forscher:innen</a>
+<ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../24">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
