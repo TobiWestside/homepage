@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #26</h1><span>
+                        
+                            Hallo und herzlich willkommen zur sechsundzwanzigsten Ausgabe von KI News. Heute zeige ich, wie Uber die Fahrtdauer berechnet, wie Google neuronale Netze schneller macht, wie maschinelles Lernen für Kernfusion eingesetzt werden kann und noch mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">So berechnet Uber die Fahrtdauer mit Deep Learning</h2><span><p>
+Der Fahrdienstleister Uber ist vor allem als Taxi-App bekannt, bietet aber bereits seit 2014 auch einen Lieferdienst für Essen an. Bei beiden Geschäftsmodellen ist es wichtig, genau abschätzen zu können, wie lange eine Fahrt dauern wird. Nur dadurch kann man einem Kunden oder einer Kundin verlässlich sagen, wie lange die Wartezeit auf das Auto oder das bestellte Essen sein wird.</p><p></p><p>
+Für diese Abschätzung hat Uber bisher auch schon ein ML Modell benutzt, das auf einer Variante von <a href="https://de.wikipedia.org/wiki/Entscheidungsbaum" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Entscheidungsbäumen</a> (<a href="https://en.wikipedia.org/wiki/Gradient_boosting" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Gradient-boosted Trees</a>) basierte. Wegen der immer größeren Datenmengen entschied sich das Team schließlich dazu, das Modell durch ein neuronales Netz zu ersetzen.</p><p>
+Um den Aufwand zu rechtfertigen, muss das System mit dem neuronalen Netz in verschiedenen Bereichen besser sein als bisher: Es soll eine Vorhersage innerhalb von Millisekunden machen können, dabei genauer sein als bisher, und es soll sowohl für den Lieferdienst als auch den Taxidienst funktionieren.</p><p></p><p>
+Das neue System funktioniert so: Ein Navigationsalgorithmus, basierend auf Karten und Echtzeit-Verkehrsdaten, berechnet, wie lange eine Fahrt dauern wird (<a href="http://tobiasfraenzel.de/newsletter/16/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Lies hier w</a><a href="http://tobiasfraenzel.de/newsletter/16/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ie Google Maps deine Route berechnet</a>). Danach kommt das neuronale Netz zum Einsatz, das unter anderem mithilfe von Start- und Zielort, Zeit der Anfrage und aktueller Verkehrslage die Abweichung der Berechnung des Navigationsalgorithmus von der Wirklichkeit vorhersagt. Es funktioniert quasi wie ein erfahrener Berater, der sich die Planung des Algorithmus anschaut und sagt <em>"Um 17:30 Uhr über die Autobahn? Da brauchst du mindestens 10 Minuten länger."</em></p><p></p><p>
+Die Entwickler:innen haben sieben verschiedene Architekturen für das neuronale Netz getestet. Eine Variante der <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Architektur (<a href="https://linear-transformers.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Linear Transformer</a>) stellte sich dabei als am besten geeignet heraus, weil sie relativ schnell Vorhersagen machen kann, was ja eine der Anforderungen an das neue System war.</p><p>
+Nach dem Transformer-basierten Teil kommt noch eine weitere Schicht im neuronalen Netz, die die Vorhersage speziell für verschiedene Arten von Fahrten (z.B. lang/kurz, Lieferdienst/Taxi) anpassen kann.</p><p>
+Beim Training des Modells wird außerdem eine besondere Loss-Funktion verwendet, um zum Beispiel berücksichtigen zu können, dass es oft besser ist eine Minute zu früh zu sein als eine Minute zu spät.</p><p></p><p>
+Das System konnte die Erwartungen erfüllen und wird bereits produktiv eingesetzt.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung von Uber: <a href="https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/</a></li>
+</ul></p></span><h2 id="3">So optimiert Google die Performance von neuronalen Netzen</h2><span><p>
+Beim Training von neuronalen Netzen kommen manche mathematische Operationen deutlich häufiger vor als andere. Daher läuft es auf spezieller Hardware, die für diese Operationen optimiert ist, deutlich schneller als auf normalen Prozessoren.</p><p>
+Da für 3D-Darstellungen ähnliche Berechnungen gemacht werden müssen, sind Grafikkarten (GPUs) gut geeignet und werden oft benutzt. Es gibt aber auch extra entwickelte Prozessoren, zum Beispiel die <a href="https://cloud.google.com/tpu/docs/intro-to-tpu" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tensor Processing Units (TPUs)</a> von Google.</p><p>
+Je nachdem wie ein neuronales Netz implementiert ist, kann es sein, dass es Operationen erfordert, für die die eine oder die andere Art von Prozessor besser geeignet ist.</p><p></p><p>
+Da es sehr aufwändig ist, ein großes neuronales Netz zu trainieren, werden oft erst kleinere "Basismodelle" entwickelt, und diese dann vergrößert, wenn man mit der Architektur an sich zufrieden ist.</p><p>
+Für die Vergrößerung gibt es verschiedene Möglichkeiten. Man kann zum Beispiel die Anzahl oder die Größe der Schichten des neuronalen Netzes erhöhen. Eine Methode namens <a href="https://en.wikipedia.org/wiki/Neural_architecture_search" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Neural Architecture Search (NAS)</a> kann verschiedene Kombinationen von Änderungen testen, um so die Architektur zu finden, mit der das NAS die besten Ergebnisse liefert.</p><p></p><p>
+Diesen Ansatz haben Forscher:innen von Google erweitert, um die Eigenschaften der genutzten Hardware zu berücksichtigen.</p><p>
+Sie haben dazu das Wissen, welche Art von Operationen auf welchen Prozessoren besonders schnell ausgeführt werden kann, in die NAS integriert. Dann haben sie der NAS als weiteres Ziel, neben möglichst guten Ergebnissen, gegeben, die Architekturen zu bevorzugen, deren Operationen auf einer vorgegebenen Prozessorart am schnellsten sind.</p><p></p><p>
+Dadurch haben sie es geschafft eine Gruppe von Modellen namens EfficientNet-X zu entwickeln, deren Ergebnisse ähnlich gut sind wie die der bereits existierenden <a href="https://arxiv.org/abs/1905.11946" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">EfficientNet</a>-Gruppe. EfficientNet-X ist aber auf GPUs und TPUs doppelt so schnell wie EfficientNet.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Google AI: <a href="https://ai.googleblog.com/2022/02/unlocking-full-potential-of-datacenter.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2022/02/unlocking-full-potential-of-datacenter.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen (PDF): <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Searching_for_Fast_Model_Families_on_Datacenter_Accelerators_CVPR_2021_paper.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Searching_for_Fast_Model_Families_on_Datacenter_Accelerators_CVPR_2021_paper.pdf</a></li>
+</ul></p></span><h2 id="4">So hilft Reinforcement Learning bei Kernfusion</h2><span><p>
+Kernfusion wird als eine mögliche Energiequelle der Zukunft erforscht. Bei Kernfusion werden Wasserstoffatome zu Heliumatomen verschmolzen, wobei Energie freigesetzt wird.</p><p>
+Das Problem dabei: damit die Atome fusionieren müssen extreme Bedingungen herrschen (Beim <a href="https://www.iter.org/mach" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Iter-Projekt</a> sind zum Beispiel Temperaturen von 150 Millionen °C geplant, zehn Mal so heiß wie der <a href="https://de.wikipedia.org/wiki/Sonne#Kern" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Kern der Sonne</a>). Bei diesen Bedingungen wird aus dem Wasserstoffgas ein Plasma und gegeneinander stoßende Atomkerne können verschmelzen.</p><p></p><p>
+Damit das Plasma die nötigen Temperaturen erreichen kann, darf es nicht an die Außenwände stoßen, da es sonst zu stark auskühlt.</p><p>
+Deshalb sind Kernfusionsreaktoren ringförmig gebaut und es werden starke Magnetfelder eingesetzt, die das Plasma in der Mitte der Ringbahn halten. Damit das funktioniert, dürfen die Magnetfelder allerdings nicht genau ringförmig sein. Dafür gibt es zwei verschiedene Ansätze: <a href="https://de.wikipedia.org/wiki/Stellarator" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Stellaratoren</a>, die komplex verdrehte Magnete einsetzen, und <a href="https://de.wikipedia.org/wiki/Tokamak" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tokamaks</a>, bei denen die nötige Verdrehung durch einen Strom im Plasma selbst erzeugt wird.</p><p>
+Damit das Magnetfeld stark genug wird, sind viele Magneten nötig, die sehr präzise zusammen gesteuert werden müssen.</p><p></p><p>
+Forscher:innen von Deepmind und der Universität von Lausanne (<a href="https://www.epfl.ch/de/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">EPFL</a>) haben ein neuronales Netz darauf trainiert, die Magnetfelder eines Tokamaks so zu steuern, dass sie das Plasma damit gezielt kontrollieren können.</p><p>
+Obwohl die EPFL selbst einen funktionierenden Fusionsreaktor (<a href="https://de.wikipedia.org/wiki/Tokamak_%C3%A0_configuration_variable" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TCV</a>) besitzt, ist der Zugang dazu natürlich sehr begrenzt und muss mit anderen Forschungsteams geteilt werden. Daher haben die Forscher:innen der EPFL zuerst eine Simulation des TCV entwickelt, in der das neuronale Netz mithilfe von <a href="https://de.wikipedia.org/wiki/Best%C3%A4rkendes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a> trainiert wurde, die <a href="https://www.epfl.ch/research/domains/swiss-plasma-center/research/tcv/research_tcv_tokamak/tcv-technical-data/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">48 Magnetspulen</a> des Reaktors zu steuern.</p><p></p><p>
+Das trainierte Modell haben die Forscher:innen dann im echten Tokamak eingesetzt, um das Plasma in bestimmte Formen zu bringen und deren Eigenschaften zu untersuchen. Damit konnte zum Beispiel zum ersten Mal im TCV das Plasma in zwei Hälften geteilt werden. Außerdem wurden Plasma-Formen untersucht, die denen des im Bau befindlichen Reaktors ITER ähneln, um Erkenntnisse über das zukünftige Verhalten von Plasma in ITER zu gewinnen.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogpost von Deepmind: <a href="https://www.deepmind.com/blog/article/Accelerating-fusion-science-through-learned-plasma-control" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.deepmind.com/blog/article/Accelerating-fusion-science-through-learned-plasma-control</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://www.nature.com/articles/s41586-021-04301-9" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41586-021-04301-9</a></li>
+</ul></p></span><h2 id="5">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Warum Journalisten bei KI-Apps vorsichtig sein sollten</em></strong></span><p>
+Im November hat ein Journalist mit einem Angehörigen der verfolgten chinesischen Minderheit der Uiguren am Telefon gesprochen. Weil er sich bewusst war, wie sensibel das Gespräch sein könnte, hat er extra ein verschlüsseltes Telefonat über die Signal App gemacht.</p><p>
+Am nächsten Tag bekam er eine Nachricht von <a href="https://otter.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Otter.ai</a>, der App, die er zum automatischen Mitschreiben benutzt hatte: "<em>Was war der Zweck der Aufnahme mit dem Titel 'Mustafa Aksu'?</em>".</p><p>
+Da wurde ihm bewusst, dass sein Telefonat möglicherweise doch nicht so privat war, wie er dachte. Die ganze Geschichte kannst du bei Politico lesen:
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel von Politico: <a href="https://www.politico.com/news/2022/02/16/my-journey-down-the-rabbit-hole-of-every-journalists-favorite-app-00009216" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.politico.com/news/2022/02/16/my-journey-down-the-rabbit-hole-of-every-journalists-favorite-app-00009216</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">So benutzt Tinder KI</span></strong></em></p><p>
+Bei der Datingapp Tinder analysiert eine KI die Nachrichten der Benutzer:innen, um unangebrachte Nachrichten entweder ganz zu verhindern oder wenigstens dafür zu sorgen, dass sie einfacher gemeldet werden können.</p><p>
+Wenn sie eine Nachricht erkennt, die beim Empfänger möglicherweise nicht gut ankommen würde, fragt die App nochmal extra nach, ob die Nachricht wirklich verschickt werden soll. In Tests hat das zu einem Rückgang der unangemessenen Nachrichten um 10% geführt.</p><p>
+Bei der oder dem Empfänger:in werden als unangemessen eingestufte Nachrichten dann markiert. Das hat zu einem Anstieg der gemeldeten Nachrichten um 46% geführt.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei t3n: <a href="https://t3n.de/news/interview-tinder-leupold-sicherheit-reporting-dating-apps-1450339/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/interview-tinder-leupold-sicherheit-reporting-dating-apps-1450339/</a></li>
+</ul><div class="source"><br/>
+<em><strong><span style="font-size:18px">So verbessert KI den S-Bahn-Verkehr</span></strong></em><br/>
+Die Bahn setzt KI in einem Pilotprojekt bei der S-Bahn Stuttgart ein, das jetzt auch auf die S-Bahnen Rhein-Main und München ausgweitet werden soll.<br/>
+Im Störungsfall konnte die Pünktlichkeit durch das System um bis zu 3 Prozentpunkte erhöht werden.<br/>
+Dafür werden den Mitarbeiter:innen zum Beispiel Empfehlungen gegeben, welcher Zug einen Bahnhof zuerst verlassen sollte, damit die folgenden Verzögerungen möglichst gering bleiben.<br/>
+Eine laufende Simulation des Beriebs kann außerdem frühzeitig auf sich anbahnende Probleme hinweisen und zeigen, wie sich Entscheidungen auf den Betrieb auswirken würden.<br/>
+In Stuttgart können so laut Bahn Verspätungen von bis zu 8 Minuten ausgeglichen werden.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Ingenieur.de: <a href="https://www.ingenieur.de/technik/fachbereiche/verkehr/deutsche-bahn-ki-soll-helfen-doch-es-bleibt-ein-gewaltiges-problem/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.ingenieur.de/technik/fachbereiche/verkehr/deutsche-bahn-ki-soll-helfen-doch-es-bleibt-ein-gewaltiges-problem/</a></li>
+</ul>
+</div></p></span><h2 id="6">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://engineering.nyu.edu/faculty/brendan-dolan-gavitt" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Ein Informatikprofessor</a> der NYU hat getestet, ob ein Sprachmodell einfache Mathefragen beantworten kann (z.B. "Was ist 28142 + 16738"). Es konnte nur 10 von 100 richtig beantworten, aber war bei vielen nahe dran: 📖 <a href="https://twitter.com/moyix/status/1491803929801150471" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Post auf Twitter</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine KI kann in den USA kein Urheberrecht beanspruchen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.theverge.com/2022/2/21/22944335/us-copyright-office-reject-ai-generated-art-recent-entrance-to-paradise" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://t3n.de/news/ki-kuenstliche-intelligenz-urheberrecht-patent-copyright-1453761/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forscher:innen haben ein ML-Modell entwickelt, das die Kreditentscheidungen von Bank-Filialleitern zu 95% voraussagen kann:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.unite.ai/simple-ai-can-anticipate-bank-managers-loan-decisions-to-over-95-accuracy/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Unite.ai</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://arxiv.org/abs/2202.04218" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung der Forscher:innen</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der wissenschaftliche Leiter von Open AI hat getwittert "möglicherweise sind heutige große neuronale Netze ein wenig bewusst", und damit ein Twitter-Drama ausgelöst. Der wissenschaftliche Leiter für KI von Meta hat ihm vehement widersprochen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://twitter.com/ilyasut/status/1491554478243258368" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tweet von Ilya Sutskever</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://twitter.com/ylecun/status/1492604977260412928" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tweet von Yann LeCun</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://lastweekin.ai/p/conscious-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Zusammenfassung auf lastweekin.ai</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Modell kann den Geschmack von Früchten vorhersagen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://www.pnas.org/content/119/7/e2115865119" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung der Forscher:innen</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://t3n.de/news/kuenstliche-intelligenz-ki-obst-gemuese-geschmack-1453318/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Amazon hat in Washington DC den ersten kassenlosen Supermarkt der Marke Whole Foods eröffnet: 📖 <a href="https://www.theverge.com/2022/3/1/22956093/amazon-whole-foods-just-walk-out-cashierless-tech-glover-park-washington-dc" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../25">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
