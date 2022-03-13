@@ -24,6 +24,22 @@
 			colors[0] = "#FFFFFF";
 			colors[1] = "#000000";
 
+			// Number of players
+			players = getPlayers();
+			if (players < 1) {
+				players = 2;
+			}
+
+			if (players == 1) {
+				document.getElementById("onePlayerButton").style.fontWeight = "bold";
+				document.getElementById("twoPlayerButton").style.fontWeight = "regular";
+				location.hash = '#playerLabel';
+			} else if (players == 2) {
+				document.getElementById("onePlayerButton").style.fontWeight = "regular";
+				document.getElementById("twoPlayerButton").style.fontWeight = "bold";
+				location.hash = '#playerLabel';
+			}
+
 			// Initial distribution
 			tilesColors[44] = colors[0];
 			tilesColors[55] = colors[0];
@@ -103,8 +119,12 @@
 						// If there where some tiles of the opponent's color and now there is a tile of the player's color
 						// those tiles will be flipped, so add them to the array
 						for (var k = 1; k <= counter; k++) {
-							tiles.push(String(parseInt(tileId) + k*direction));
+							var nextTileCoordinates = parseInt(tileId) + k*direction;
+							if (tiles.indexOf(nextTileCoordinates) == -1) {
+								tiles.push(String(nextTileCoordinates));
+							}
 						}
+						break;
 					} else {
 						// If there is a tile of the player's color, but there are no tiles that can be flipped in between
 						counter = 0;
@@ -204,21 +224,24 @@
 					}
 				}
 				if (moves == 0) {
-					// If both players can't flip any tiles, the game is over
-					if(white > black){
-						alert("White wins!");
-					}
-					else if(white < black){
-						alert("Black wins!");
-					}
-					else{
-						alert("Game over");
-					}
+					sleep(500).then(() => {
+						// If both players can't flip any tiles, the game is over
+						if(white > black){
+							alert("White wins!");
+						}
+						else if(white < black){
+							alert("Black wins!");
+						}
+						else{
+							alert("Game over");
+						}
+					});
 					
 				}
 			}
 			// Display the color of the current player
 			document.getElementById("playerLabel").style.backgroundColor = colors[turns%2];
+			console.log("After turn finished");
 		}
 		
 		/*
@@ -244,11 +267,14 @@
 		 * do the flip animation
 		 */
 		function checkTile(tileId) {
+			console.log("Want to place token at " + tileId);
 			var clickedTileColor = tilesColors[parseInt(tileId)];
 			// If the tile doesn't have a color yet
 			if (clickedTileColor == undefined) {
 				// Check which tiles will be flipped
-				var tiles = tilesToBeColored(tileId)
+				var tiles = tilesToBeColored(tileId);
+				console.log("This will flip " + tiles.length + " tiles");
+				console.log("at: " + tiles);
 				// If at least one tile is flipped, the move is allowed
 				if (tiles.length > 0) {
 					// Update the color of the field that the player clicked on
@@ -258,9 +284,74 @@
 						tilesColors[parseInt(tiles[k])] = colors[turns % 2];
 						flip(tiles[k]);
 					}
+					console.log("Flipped tiles");
 					afterTurn();
+
+					console.log("Next turn: " + turns);
+					console.log("It's: " + colors[turns%2] + "'s turn");
+					if (players == 1 && turns%2 == 1) {
+						console.log("Next move: AI");
+						console.log("Let the AI wait a sec");
+							sleep(100).then(() => {
+							aiMove(tiles);
+						});
+					} else {
+						console.log("Next move: Human");
+					}
 				}
 			}
+		}
+
+		function findBestMove(excluded_tiles) {
+			var max_amount = -1;
+			var tileId = -1;
+			// loop over all tiles
+			for (k = 0; k < tilesColors.length; k++) {
+				if (excluded_tiles.indexOf(k) == -1 && tilesColors[k] != "border") {
+					// count the number of tiles to be flipped
+					var tiles = tilesToBeColored(k);
+					// if there are multiple tiles with the same amount, select the first
+					if (tiles.length > max_amount && tilesColors[k] == undefined) {
+						max_amount = tiles.length;
+						tileId = k;
+						console.log("BEST MOVE:")
+						console.log("Placing " + tileId);
+						console.log("will flip: " + max_amount);
+					}
+				}
+			}
+			// return the id of the selected tile
+			console.log("AI places token at tile " + tileId);
+			console.log("Color of the tile: " + tilesColors[tileId]);
+			return tileId;
+		}
+
+		function aiMove(excluded_tiles) {
+			console.log("AI move started")
+			checkTile(findBestMove(excluded_tiles));
+			console.log("AI move ended");
+		}
+
+		function getPlayers() {
+			currentUrl = (window.location.search).toString();
+			players_array = currentUrl.split("=");
+			if (players_array.length > 1) {
+				if (players_array[1] == 1 || players_array[1] == 2) {
+					return players_array[1];
+				} else {
+					console.log("unexpected parameter: " + players_array);
+					return -1;
+				}
+			}
+		}
+
+		function setPlayers(noOfPlayers) {
+			window.location.search = '?players=' + noOfPlayers;
+		}
+
+		// sleep time expects milliseconds
+		function sleep (time) {
+			return new Promise((resolve) => setTimeout(resolve, time));
 		}
 		
 	</script>
@@ -281,215 +372,219 @@
 			<div id="playerLabel" style="height:5vmin; width:5vmin; border:1px solid black; margin-right:1vmin; float:left;"></div>
 			<div id="whiteLabel" style="height:5vmin; width:5vmin; border:1px solid black; text-align:center; vertical-align:middle; font-size:4vmin; margin-right:1vmin; float:left;">2</div>
 			<div id="blackLabel" style="height:5vmin; width:5vmin; border:1px solid black; text-align:center; vertical-align:middle; font-size:4vmin; float:left; background-color:black; color:white;">2</div>
-			<button style="border:2px solid #555555; height:5vmin; width:10vmin; margin-left:auto; display:block;" onclick="location.reload();">Restart</button>
+			<div style="float:right;">
+				<div style="height:5vmin; text-align:center; vertical-align:top; font-size:3.5vmin; display:inline-block">Players:</div>
+				<button id="onePlayerButton" style="border:2px solid #555555; height:5vmin; width:10vmin; display:inline-block; font-size:3.5vmin;" onclick="setPlayers(1);">1</button>
+				<button id="twoPlayerButton" style="border:2px solid #555555; height:5vmin; width:10vmin; display:inline-block; font-size:3.5vmin;" onclick="setPlayers(2);">2</button>
+			</div>
 		</div>
 		<table style="background-color:green; height:84vmin; width:84vmin; border-collapse:collapse; margin-left:auto; margin-right:auto;">
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(11);">
-					<div id="11" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(11);"></div>
+					<div id="11" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(12);">
-					<div id="12" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(12);"></div>
+					<div id="12" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(13);">
-					<div id="13" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(13);"></div>
+					<div id="13" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(14);">
-					<div id="14" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(14);"></div>
+					<div id="14" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(15);">
-					<div id="15" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(15);"></div>
+					<div id="15" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(16);">
-					<div id="16" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(16);"></div>
+					<div id="16" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(17);">
-					<div id="17" style="box-shadow:; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(17);"></div>
+					<div id="17" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(18);">
-					<div id="18" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(18);"></div>
+					<div id="18" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(21);">
-					<div id="21" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(21);"></div>
+					<div id="21" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(22);">
-					<div id="22" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(22);"></div>
+					<div id="22" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(23);">
-					<div id="23" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(23);"></div>
+					<div id="23" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(24);">
-					<div id="24" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(24);"></div>
+					<div id="24" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(25);">
-					<div id="25" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(25);"></div>
+					<div id="25" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(26);">
-					<div id="26" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(26);"></div>
+					<div id="26" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(27);">
-					<div id="27" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(27);"></div>
+					<div id="27" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(28);">
-					<div id="28" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(28);"></div>
+					<div id="28" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(31);">
-					<div id="31" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(31);"></div>
+					<div id="31" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(32);">
-					<div id="32" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(32);"></div>
+					<div id="32" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(33);">
-					<div id="33" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(33);"></div>
+					<div id="33" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(34);">
-					<div id="34" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(34);"></div>
+					<div id="34" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(35);">
-					<div id="35" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(35);"></div>
+					<div id="35" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(36);">
-					<div id="36" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(36);"></div>
+					<div id="36" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(37);">
-					<div id="37" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(37);"></div>
+					<div id="37" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(38);">
-					<div id="38" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(38);"></div>
+					<div id="38" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(41);">
-					<div id="41" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(41);"></div>
+					<div id="41" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(42);">
-					<div id="42" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(42);"></div>
+					<div id="42" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(43);">
-					<div id="43" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(43);"></div>
+					<div id="43" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(44);">
-					<div id="44" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(44);"></div>
+					<div id="44" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(45);">
-					<div id="45" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(45);"></div>
+					<div id="45" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(46);">
-					<div id="46" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(46);"></div>
+					<div id="46" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(47);">
-					<div id="47" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(47);"></div>
+					<div id="47" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(48);">
-					<div id="48" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(48);"></div>
+					<div id="48" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(51);">
-					<div id="51" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(51);"></div>
+					<div id="51" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(52);">
-					<div id="52" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(52);"></div>
+					<div id="52" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(53);">
-					<div id="53" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(53);"></div>
+					<div id="53" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(54);">
-					<div id="54" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(54);"></div>
+					<div id="54" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #222222; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(55);">
-					<div id="55" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(55);"></div>
+					<div id="55" style="box-shadow:0.5vmin 0.5vmin 0.5vmin #335533, inset -1.5vmin -1.5vmin 3vmin #CCCCCC; width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(56);">
-					<div id="56" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(56);"></div>
+					<div id="56" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(57);">
-					<div id="57" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(57);"></div>
+					<div id="57" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(58);">
-					<div id="58" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(58);"></div>
+					<div id="58" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(61);">
-					<div id="61" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(61);"></div>
+					<div id="61" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(62);">
-					<div id="62" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(62);"></div>
+					<div id="62" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(63);">
-					<div id="63" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(63);"></div>
+					<div id="63" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(64);">
-					<div id="64" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(64);"></div>
+					<div id="64" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(65);">
-					<div id="65" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(65);"></div>
+					<div id="65" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(66);">
-					<div id="66" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(66);"></div>
+					<div id="66" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(67);">
-					<div id="67" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(67);"></div>
+					<div id="67" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(68);">
-					<div id="68" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(68);"></div>
+					<div id="68" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(71);">
-					<div id="71" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(71);"></div>
+					<div id="71" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(72);">
-					<div id="72" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(72);"></div>
+					<div id="72" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(73);">
-					<div id="73" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(73);"></div>
+					<div id="73" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(74);">
-					<div id="74" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(74);"></div>
+					<div id="74" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(75);">
-					<div id="75" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(75);"></div>
+					<div id="75" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(76);">
-					<div id="76" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(76);"></div>
+					<div id="76" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(77);">
-					<div id="77" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(77);"></div>
+					<div id="77" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(78);">
-					<div id="78" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(78);"></div>
+					<div id="78" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(81);">
-					<div id="81" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(81);"></div>
+					<div id="81" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(82);">
-					<div id="82" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(82);"></div>
+					<div id="82" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(83);">
-					<div id="83" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(83);"></div>
+					<div id="83" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(84);">
-					<div id="84" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(84);"></div>
+					<div id="84" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(85);">
-					<div id="85" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(85);"></div>
+					<div id="85" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(86);">
-					<div id="86" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(86);"></div>
+					<div id="86" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(87);">
-					<div id="87" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(87);"></div>
+					<div id="87" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 				<td style="border: 1px solid #333333; width:10vmin; height:10vmin;" onclick="checkTile(88);">
-					<div id="88" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;" onclick="checkTile(88);"></div>
+					<div id="88" style="width:8vmin; height:8vmin; border-radius:50%; margin-left:auto; margin-right:auto;"></div>
 				</td>
 			</tr>
 		</table>
