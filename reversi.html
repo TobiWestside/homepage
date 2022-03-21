@@ -302,8 +302,9 @@
 						console.log("Next move: AI");
 						console.log("Let the AI wait a sec");
 							var slider = document.getElementById("aiSpeed");
-							console.log("AI Speed Slider Value: " + slider.value);
-							sleep(slider.value).then(() => {
+							var waitMillis = 5000 - slider.value;
+							console.log("AI wait time: " + waitMillis);
+							sleep(waitMillis).then(() => {
 							aiMove(tiles);
 							moveBlocked = false;
 						});
@@ -671,7 +672,7 @@
 						<label for="aiSpeed" id="speedLabel">KI Geschwindigkeit</label>
 					</td>
 					<td>
-						<input type="range" min="0" max="5000" value="500" class="slider" id="aiSpeed">
+						<input type="range" min="0" max="5000" value="4500" class="slider" id="aiSpeed">
 					</td>
 				</tr>
 				<tr>
