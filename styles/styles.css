@@ -162,3 +162,24 @@ div#container-main h1 {
 div.container-project-inner {
     text-align: left;
 }
+
+@media (prefers-color-scheme: dark) {
+    body, #onePlayerButton, #twoPlayerButton, input, textarea{
+        color: #dadada;
+        background-color: #18181f;
+    }
+
+    hr.divider {
+        color: #dadada;
+        background-color: #dadada;
+    }
+
+    a {
+        color: #dadada;
+    }
+
+    #playerLabel, #whiteLabel {
+        color: #333;
+        background-color: #fff;
+    }
+}
