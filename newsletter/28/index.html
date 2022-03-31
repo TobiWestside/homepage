@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #28</h1><span>
+                        
+                            Hallo und herzlich willkommen zur achtundzwanzigsten Ausgabe von KI News. Heute geht es um ein Modell, das im Krankenhaus Blutvergiftungen vorhersagen kann und die Herausforderungen beim Einsatz in der Klinik, um eins, das Fragen beantworten und seine Quellen zitieren kann, und ein neuronales Netz aus dem Jahr 1989.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Sepsis Watch: KI im Krankenhaus</h2><span><p>
+Blutvergiftungen sind sehr gefährlich, wenn sie unbehandelt bleiben, und gleichzeitig schwierig zu diagnostizieren.</p><p>
+Um die Behandlung von Blutvergiftungen zu verbessern, hat das Duke University Hospital in North Carolina verschiedene Möglichkeiten getestet; zum Beispiel Handlungsempfehlungen beim Umgang damit oder Meldungen in der elektronischen Patientenakte, die auf Risikopatient:innen hinweisen sollen.</p><p>
+Das Problem mit den Meldungen war aber, dass sie sehr viele Fehlalarme ausgelöst haben. Und weil es so viele Fehlalarme gab, haben sich die Behandelnden daran gewöhnt, die Meldungen zu ignorieren.</p><p>
+Daher hatten diese Maßnahmen nur geringen Erfolg.</p><p>
+Zwei beteiligte Ärzte haben deshalb vorgeschlagen, eine Software zu entwickeln, die maschinelles Lernen benutzt, um genauere Ergebnisse zu bekommen und weniger Fehlalarme auszulösen.</p><p>
+Bei internen Untersuchungen hat sich gezeigt, dass es in der Notaufnahme das größte Verbesserungspotential beim Umgang mit Blutvergiftungen gab, daher konzentrierten sie sich darauf.</p><p></p><p>
+Das erste Jahr des Projekts verbrachten sie hauptsächlich damit, Daten von Patient:innen zu sammeln und zu bereinigen.</p><p>
+So kamen sie auf mehr als 40.000 Datensätze aus den Jahren 2014 und 2015, mit verschiedenen Werten wie den Vitaldaten während des Krankenhausaufenthalts, Laborergebnissen, und Patientendaten wie Alter, Vorerkrankungen und Medikationsgeschichte.</p><p>
+Mit diesen Daten konnten sie schließlich ein neuronales Netz (mit <a href="https://de.wikipedia.org/wiki/Long_short-term_memory" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LSTM</a>-Architektur) trainieren, das aus der zeitlichen Entwicklung der Daten eine Wahrscheinlichkeit vorhersagen konnte, dass ein/e Patient:in eine Blutvergiftung entwickelt.</p><p>
+In Tests konnten sie damit durchschnittlich vier Stunden vorher erkennen, dass jemand eine Blutvergiftung entwickeln würde, bevor es tatsächlich passiert ist. Mit einem Fehlalarm auf zwei richtige Alarme konnte außerdem die Anzahl der Fehlalarme deutlich reduziert werden.</p><p>
+Um das Modell einfach benutzbar zu machen, haben sie es in eine iPad App verpackt, die die vorhergesagten Risiken für die Patient:innen mit Farben kennzeichnet.</p><p></p><p>
+Technisch war das Projekt also erfolgreich, aber in der Testphase haben sich Herausforderungen im praktischen Einsatz gezeigt.</p><p>
+Beispielsweise wurde die App von einem speziellen Notfall-Team von Pfleger:innen überwacht, um zu verhindern, dass die Meldungen der App einfach ignoriert werden, wie beim vorherigen System.</p><p>
+Bei einem Alarm mussten diese die zuständigen Ärzt:innen anrufen und sie darüber informieren. Dadurch, dass jetzt quasi die Pfleger:innen eine Diagnose hatten, die sie den Ärzt:innen mitteilten, statt andersherum, veränderte sich die bestehende Hierarchie zwischen Ärzt:innen und Pfleger:innen.</p><p>
+Ein Pfleger berichtet, dass er das Gefühl hatte, dass dadurch manche Ärzt:innen ihre medizinische Urteilsfähigkeit in Frage gestellt sahen.</p><p></p><p>
+Eine weitere Schwierigkeit war, dass das neuronale Netz nur einen Risikowert anzeigt, aber keine Begründung dafür liefern kann. Die Ärzt:innen wollten bei einem Alarm aber gerne wissen, was sie eventuell übersehen oder falsch interpretiert hatten.</p><p>
+Dazu kam noch, dass Blutvergiftungen zwar für die Klinikleitung eine hohe Priorität hatten, das Personal in der Notaufnahme aber vor allem damit beschäftigt war, Patient:innen mit Knochenbrüchen oder psychischen Notfällen zu stabilisieren, und gar keinen Verbesserungsbedarf beim Umgang mit Blutvergiftungen sah.</p><p></p><p>
+Die Pfleger:innen entwickelten während der Testphase verschiedene Strategien, um die Akzeptanz ihrer Anrufe bei den Ärzt:innen zu erhöhen. Zum Beispiel nicht gegen Schichtende anzurufen oder den Status von mehreren Patient:innen in einem Telefonat zu besprechen statt jeden einzeln.</p><p>
+Weitere Strategien waren unter anderem am Anfang eines Anrufs erstmal "Wie geht's?" zu fragen und dann das weitere Gespräch an die Antwort anzupassen oder nicht einfach die Vorhersage der App mitzuteilen, sondern nach der Meinung der Ärzt:innen dazu zu fragen.</p><p>
+Außerdem begannen die Pfleger:innen vor Gesprächen die Patientengeschichte anzuschauen, um bei Nachfragen noch zusätzlichen Kontext geben zu können.</p><p></p><p>
+Nach der dreijährigen Entwicklungszeit und einer Pilotphase von bis Mitte 2019 wird die App heute unter dem Namen "Sepsis Watch" in der Klinik der Duke University eingesetzt.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Anschaulicher Artikel bei The Verge: <a href="https://www.theverge.com/c/22927811/medical-algorithm-explainer-sepsis-risk-watch" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/c/22927811/medical-algorithm-explainer-sepsis-risk-watch</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Technology Review: <a href="https://www.technologyreview.com/2020/10/02/1009267/ai-reduced-hospital-deaths-in-the-real-world/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.technologyreview.com/2020/10/02/1009267/ai-reduced-hospital-deaths-in-the-real-world/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Untersuchung der Anpassungen im klinischen Alltag: <a href="https://datasociety.net/library/repairing-innovation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://datasociety.net/library/repairing-innovation/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Wissenschaftliche Veröffentlichung der Entwickler:innen: <a href="https://arxiv.org/abs/1706.04152" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/1706.04152</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Übersicht über die Funktionsweise (PDF): <a href="https://dihi.org/wp-content/uploads/2020/02/Sepsis-Watch-One-Pager.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://dihi.org/wp-content/uploads/2020/02/Sepsis-Watch-One-Pager.pdf</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Duke Health: <a href="https://physicians.dukehealth.org/articles/dukes-augmented-intelligence-system-helps-prevent-sepsis-ed" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://physicians.dukehealth.org/articles/dukes-augmented-intelligence-system-helps-prevent-sepsis-ed</a></li>
+</ul></p></span><h2 id="3">GopherCite zitiert Quellen für seine Antworten</h2><span><p>
+Wenn man einem aktuellen Sprachmodell eine Frage stellt, dann kann es oft die richtige Antwort dafür vorhersagen. Oft ist die Vorhersage aber auch kompletter Unsinn.</p><p>
+Um das zu verbessern, haben Forscher:innen von Deepmind ein System entwickelt, das Quellen für seine Antworten zitiert.</p><p></p><p>
+Das neue System besteht aus drei Teilen: Ein Teil, der die Frage googlet, einer der aus den Ergebnissen eine Reihe von möglichen Antworten generiert, und einer, der die beste Antwort auswählt.</p><p>
+Der Generierungsteil basiert auf Gopher, einem "normalen" Sprachmodell von Deepmind mit 280 Milliarden Parametern, das von den Forscher:innen speziell für die neue Aufgabe mit <a href="https://de.wikipedia.org/wiki/%C3%9Cberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Supervised Learning</a> weiter trainiert wurde.</p><p>
+Der Antwort-Auswählen-Teil basiert auf einer kleineren Version von Gopher (7 Milliarden Parameter), die sie mit <a href="https://de.wikipedia.org/wiki/Reinforcement_Learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a> für die Aufgabe trainiert haben.</p><p></p><p>
+Um passende Trainingsdaten zu bekommen, haben sie zuerst vom Basis-Gopher-Modell Antworten zu Fragen generieren lassen und diese dann von Menschen bewerten lassen.</p><p>
+Für den Generierungsteil waren das 5.000 Fragen, bei denen die generierte Antwort danach bewertet wurde, ob sie einerseits für die Frage plausibel ist und andererseits auch von der Quelle unterstützt wird. Dadurch konnte das Modell lernen, wie es Antworten generiert, die zur Frage passen und von der Quelle unterstützt werden.</p><p>
+Für den Antwort-Auswählen-Teil haben sie das Modell für jede Frage jeweils zwei Antworten generieren lassen, und Menschen dann die bessere auswählen lassen. Dadurch konnte das Modell anhand von 33.242 Frage-Antwort-Paaren lernen, bessere und schlechtere Antworten zu unterscheiden.</p><p></p><p>
+Um das System zu testen, haben die Forscher:innen die generierten Antworten wieder von Menschen bewerten lassen. Bei Fragen nach Fakten bescheinigten diese den Antworten zu 80% eine hohe Qualität, bei Fragen nach Erklärungen zu 67%.</p><p>
+Wenn das Modell zusätzlich die Möglichkeit hatte Fragen nicht zu beantworten, wenn es die eigene Antwort selbst nicht gut fand, dann verbesserte sich das sogar noch zu 90% bzw. 80%.</p><p></p><p>
+Obwohl das System also gut funktioniert, ist so nicht garantiert, dass die Antwort auch wirklich von der Quelle belegt wird, und auch die Vertrauenswürdigkeit der Quelle wird nicht geprüft.</p><p>
+Außerdem bleibt noch offen, wie man mit fiktionalen, satirischen oder metaphorischen Inhalten umgehen soll. Zum Beispiel antwortet es auf die Frage "Was verleiht Red Bull?" mit "Flügel" und zitiert dazu die Red-Bull-Webseite.</p><p>
+Ich erwarte, dass es in diesem Bereich in nächster Zeit noch einiges an Entwicklungen geben wird, um diese Punkte anzugehen, denn auch andere Forscher:innen bei Google (<a href="https://blog.google/technology/ai/lamda/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LaMDA</a>, <a href="https://arxiv.org/abs/2004.14546" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">WT5</a>) und OpenAI (<a href="https://arxiv.org/abs/2112.09332" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">WebGPT</a>) arbeiten an ähnlichen Systemen.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Deepmind: <a href="https://deepmind.com/research/publications/2022/GopherCite-Teaching-Language-Models-To-Support-Answers-With-Verified-Quotes" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://deepmind.com/research/publications/2022/GopherCite-Teaching-Language-Models-To-Support-Answers-With-Verified-Quotes</a></li>
+</ul></p></span><h2 id="4">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Neuronale Netze 33 Jahre in der Vergangeheit und in der Zukunft</em></strong></span><p><a href="https://karpathy.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Andrej Karpathy</a>, "Senior Director of AI" bei Tesla, hat ein altes neuronales Netz von <a href="http://yann.lecun.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Yann LeCun</a>, dem heutigen KI-Forschungsleiter von Meta AI, nachprogrammiert. In LeCuns Veröffentlichung von 1989 wird vermutlich das erste neuronale Netz beschrieben, das für einen realen Anwendungsfall (Handschrifterkennung) auf die selbe Weise trainiert wurde, wie es heute noch bei neuronalen Netzen gemacht wird, mit der sogenannten <a href="https://de.wikipedia.org/wiki/Backpropagation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Backpropagation</a>.</p><p>
+Damit kam Karpathy auch zu ähnlichen Ergebnissen wie die Forscher:innen 1989.</p><p>
+Dann hat er ausprobiert, was passiert, wenn er Erkenntnisse aus der aktuellen Forschung darauf anwendet, um das Modell zu optimieren.</p><p>
+(Für die Nerds: andere <a href="https://de.wikipedia.org/wiki/Verlustfunktion_(Statistik)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Loss-Funktion</a>, <a href="https://arxiv.org/abs/1412.6980" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Adam Optimizer</a>, <a href="https://en.wikipedia.org/wiki/Data_augmentation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Data Augmentation</a>, <a href="https://de.wikipedia.org/wiki/Dropout_(k%C3%BCnstliches_neuronales_Netz)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Dropout</a> und <a href="https://de.wikipedia.org/wiki/Rectifier_(neuronale_Netzwerke)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ReLU-Aktivierungsfunktion</a>)</p><p>
+Damit konnte er die Anzahl der Fehler im Test um 60% reduzieren, allerdings vervierfachte sich auch die Trainingszeit. 1989 dauerte das Training noch drei Tage auf einem Großrechner, da hätte das einen deutlichen Unterschied gemacht. Heute sind es auf einem MacBook Air nur noch 90s, da fällt das nicht mehr so stark ins Gewicht.</p><p>
+Daraus schließt er für die neuronalen Netze im Jahr 2055: sie funktionieren im Prinzip gleich, sind nur viel größer (10 Millionen Mal), genauso wie die Trainingsdatensätze. Neuronale Netze, die heute spezielle Rechner und Tage an Training brauchen, wird man auf dem Laptop trainieren können. Und, dass die heutigen Modelle genauso wie damals noch nicht komplett optimiert sind und kleine Änderungen die Fehler halbieren könnten.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Andrej Karpathy: <a href="https://karpathy.github.io/2022/03/14/lecun1989/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://karpathy.github.io/2022/03/14/lecun1989/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung von 1989: <a href="http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">MIT trainiert Roboter in einer Simulation</span></strong></em></p><p>
+Forscher:innen des MIT haben einem vierbeinigen Roboter in einer Simulation mithilfe von <a href="https://de.wikipedia.org/wiki/Reinforcement_Learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a> beigebracht zu laufen, sich verschiedenen Untergründen und Bodenbeschaffenheiten anzupassen, sich schnell zu drehen und schnell zu rennen.</p><p>
+Das so trainierte Modell haben sie dann auf einen echten Roboter übertragen, der dadurch die trainierten Fähigkeiten auch in der echten Welt anwenden konnte. Damit konnten sie einen neuen Geschwindigkeitsrekord von ca. 14 km/h für diesen Robotertyp aufstellen.</p><p>
+Forscher:innen von Meta AI haben schon letzten Sommer etwas ganz ähnliches gemacht (<a href="http://tobiasfraenzel.de/newsletter/11/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">mein Bericht dazu</a>). Der Unterschied scheint aber zu sein, dass das System von Meta auf zwei Module setzte, eins für die Steuerung und eins für die Erkennung der Umgebung, während das des MIT nur aus einem besteht, das beides kann.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei The Verge: <a href="https://www.theverge.com/2022/3/17/22982620/robot-run-speed-mit-mini-cheetah-ai-reinforcement-learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/3/17/22982620/robot-run-speed-mit-mini-cheetah-ai-reinforcement-learning</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Video auf Youtube: <a href="https://www.youtube.com/watch?v=-BqNl3AtPVw" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=-BqNl3AtPVw</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite des Projekts: <a href="https://sites.google.com/view/model-free-speed/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://sites.google.com/view/model-free-speed/</a></li>
+</ul></p></span><h2 id="5">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Werden 2030 in amerikanischen Städten selbstfahrende Taxis unterwegs sein? Darum geht es in einer öffentlichen Wette über 10.000$: 📖 <a href="https://blog.codinghorror.com/the-2030-self-driving-car-bet/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Jemand, dessen Fahrrad geklaut wurde, hat eine KI entwickelt, die für ihn ebay Kleinanzeigen danach durchsucht: 📖 <a href="https://t3n.de/news/fahrrad-geklaut-ebay-kleinanzeigen-ki-1462029/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Waymo testet selbstfahrende Autos jetzt in San Francisco ohne Fahrer: 📖 <a href="https://www.theverge.com/2022/3/30/23002082/waymo-driverless-san-francisco-downtown-phoenix" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 
+	<ul>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Forscher von Meta AI hat eine Kindergeschichte über ein kleines rotes Buch geschrieben und von einer KI illustrieren lassen: 📖 <a href="https://www.youtube.com/watch?v=QLTyqoJJKTo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../27">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
