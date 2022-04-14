@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #29</h1><span>
+                        
+                            Hallo und herzlich willkommen zur neunundzwanzigsten Ausgabe von KI News. Heute mit dem jetzt neuen größten Sprachmodell, wie KI bei den Grammys und beim großen Teilchenbeschleuniger am CERN benutzt wird, und mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">PaLM: das neue größte Sprachmodell (diesmal von Google)</h2><span><p>
+Nachdem Microsoft <a href="http://tobiasfraenzel.de/newsletter/17/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">letzten Oktober</a> mit "Megatron Turing NLG" das damals größte Sprachmodell mit 530 Milliarden Parametern entwickelt hatte, hat Google jetzt nachgelegt, und das Pathways Language Model (PaLM) mit 540 Milliarden Parametern vorgestellt.</p><p></p><p>
+Ein so großes Modell hat natürlich auch einen sehr großen Trainingsaufwand: Die Trainingsdaten bestanden aus insgesamt 780 Milliarden Tokens (ein Token entspricht meistens einem Wort) aus Social-Media-Posts in mehreren Sprachen, Webseiten, Büchern, Wikipedia und Quellcode von Github.</p><p>
+Beim Training wurden besondere Prozessoren namens <a href="https://de.wikipedia.org/wiki/Tensor_Processing_Unit" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TPUv4</a> (Tensor Processing Unit Version 4) verwendet, die speziell für das Training von neuronalen Netzen optimiert sind.</p><p>
+In mehreren Phasen wurde das Modell für insgesamt 50 Tage auf 6144 TPUv4 Chips und für zwei Wochen auf 3072 TPUs trainiert. Außerdem hat Google extra ein System namens <a href="https://arxiv.org/abs/2203.12533" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pathways</a> entwickelt, um diese große Anzahl von Prozessoren im Training überhaupt effizient nutzen zu können.</p><p></p><p>
+Den CO₂-Ausstoß für das Training geben die Forscher:innen mit ca. 270 tCO₂e (Tonnen CO₂-Äquivalent) an, was <a href="http://tobiasfraenzel.de/newsletter/27/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nach meinen Berechnungen</a> ungefähr 0,1% des geschätzten gesamten CO₂-Ausstoßes durch das Training von ML-Modellen bei Google entspricht.</p><p>
+Dieser relativ niedrige Wert kommt daher, weil das Training in einem der Google-Rechenzentren durchgeführt wurde, die den höchsten Ökostrom-Anteil haben.</p><p></p><p>
+Das Modell ist von den Forscher:innen auf sehr vielen verschiedenen Aufgaben getestet worden. Ein Teil davon ist der "<a href="https://github.com/google/BIG-bench" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">BIG-Bench</a>" Test, der aus 150 Aufgaben besteht.</p><p>
+Auf den Test wurde das Modell vorbereitet, indem es für jede der Aufgaben mit fünf Beispielen mit Lösung trainiert wurde. Diese Technik nennt sich "5-shot learning", wobei die Zahl die Anzahl an Beispielen angibt. Es gibt also z.B. auch 1-shot learning, wo dem Modell nur ein Beispiel für eine Aufgabe gegeben wird.</p><p>
+Im Vergleich zu den Milliarden an Wörtern im eigentlichen Training ist das sehr wenig, es reicht aber schon aus, um deutliche Verbesserungen zu erreichen.</p><p>
+Bei PaLM waren nach dem 5-shot learning die Ergebnisse in 65% der BIG-Bench Aufgaben gleich gut oder besser als die durchschnittliche menschliche Antwort. Allerdings gehören zu BIG-Bench auch Aufgaben wie "Die buchstäbliche Bedeutung von persischen Redewendungen erkennen", bei denen die befragten Menschen eventuell einfach nicht die nötigen Sprachkenntnisse hatten.</p><p></p><p>
+Auf 58 der BIG-Bench Aufgaben sind auch ältere Modelle schon getestet worden. PaLM war in den allermeisten dieser Aufgaben (44 von 58) besser als der bisherige Stand der Forschung.</p><p>
+Auf einer anderen Gruppe von Tests, die nur auf Englisch waren, war PaLM in 24 von 29 (1-shot) bzw. 28 von 29 (5-shot) besser als der aktuelle Stand der Forschung.</p><p>
+Interessanterweise war es in allen der 29 Tests besser als Megatron Turing NLG, das fast gleich groß ist.</p><p></p><p>
+Eines der anschaulichsten Beispiele für die Fähigkeiten von PaLM ist, dass es Witze erklären kann:</p><p><em><strong>Input:</strong> I was supposed to start writing the paper at 5:00 PM. But then I started playing with this cool new language model for 10 minutes. 10 minutes later, it's suddenly 9:30 PM!<br/>
+<strong>Model Output:</strong> This joke is about how time flies when you're having fun. The person was supposed to start writing a paper at 5:00 PM, but they started playing with a language model instead. They thought they were only playing with it for 10 minutes, but it was actually 4.5 hours.</em></p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogpost von Google: <a href="https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2204.02311" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2204.02311</a></li>
+</ul></p></span><h2 id="3">DALL-E 2 generiert Bilder aus Beschreibungen</h2><span><p>
+OpenAI hat DALL-E 2 vorgestellt, ein Modell, das, wie sein Vorgänger <a href="https://openai.com/blog/dall-e/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">DALL-E</a> von letztem Jahr, aus einer Beschreibung ein Bild erzeugen kann.</p><p>
+Im Vergleich zu letztem Jahr hat es zwei neue Fähigkeiten dazu bekommen, und zwar kann es jetzt auch bereits existierende Bilder bearbeiten und Varianten von Bildern erstellen.</p><p>
+Um ein Bild bearbeiten zu lassen, kann man einfach den ungefähren Bereich auswählen und beschreiben was dort hin soll, das Modell fügt es dann ein.</p><p>
+Bei den Varianten handelt es sich um Bilder, die den gleichen Stil und Inhalt haben, aber eben ein bisschen unterschiedlich aussehen.</p><p></p><p>
+DALL-E 2 wurde mit Bildern und den dazu passenden Beschreibungen trainiert. Die Forscher:innen haben die Trainingsdaten gefiltert, und damit Bilder entfernt, die sexuelle oder Gewaltdarstellungen enthalten sowie Symbole von radikalen Gruppen.</p><p></p><p>
+Eigentlich besteht DALL-E 2 aus zwei Modellen, die zusammenarbeiten. Ein Modell verarbeitet den Eingabetext zu einer Art Zwischenergebnis, das zweite Modell generiert daraus dann das Bild.</p><p>
+Das erste Modell haben die Forscher:innen dabei so trainiert, dass dieses Zwischenergebnis der internen Darstellung eines anderen bild- und textverarbeitenden Modells von OpenAI entspricht, nämlich <a href="https://openai.com/blog/clip/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CLIP</a>. Das haben sie deshalb gemacht, weil diese Darstellungen offenbar besonders gut Inhalt und Stil des Bildes repräsentieren können.</p><p>
+Beide Modelle von DALL-E 2 basieren auf sogenannten <a href="http://tobiasfraenzel.de/newsletter/6/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Diffusion Models</a>. Das sind Modelle, die darauf trainiert wurden, aus einem zufälligen Pixelrauschen ein Bild zu erzeugen. Im Fall von DALL-E 2 haben sie dazu noch gelernt, die eingegebene Beschreibung beim Generieren des Bildes zu berücksichtigen.</p><p></p><p>
+DALL-E 2 wurde zwar vorgestellt, ist aber nicht öffentlich verfügbar. Im Moment haben nur 400 ausgewählte Leute Zugang dazu, davon 200 Mitarbeiter von OpenAI.</p><p>
+Einer aus dieser Gruppe hat seinen Zugang genutzt, um zu schauen, wie das Modell die Twitter-Beschreibungen seiner Freunde darstellt, und die Ergebnisse auf Twitter gepostet: <a href="https://twitter.com/nickcammarata/status/1511861061988892675" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twitter.com/nickcammarata/status/1511861061988892675</a></p><p>
+Ein anderer hat ganz verschiedene Sachen ausprobiert, zum Beispiel, ob DALL-E 2 auch Gedichte schreiben kann: <a href="https://www.lesswrong.com/posts/r99tazGiLgzqFX7ka/playing-with-dall-e-2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.lesswrong.com/posts/r99tazGiLgzqFX7ka/playing-with-dall-e-2</a></p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite von DALL-E 2: <a href="https://openai.com/dall-e-2/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://openai.com/dall-e-2/</a></li>
+</ul></p></span><h2 id="4">KI bei den Grammys</h2><span><p>
+IBM hat zusammen mit der <a href="https://de.wikipedia.org/wiki/The_Recording_Academy" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Recording Academy</a>, die die Grammys verleiht, ein System namens "Grammy Insights" entwickelt.</p><p>
+Mit diesem System haben sie Informationen aus 20 Millionen Artikeln über Grammy-nominierte Künstler:innen analysiert, die von über 100.000 Nachrichtenseiten, Wikipedia und der Grammy Webseite kommen.</p><p>
+Diese Informationen hat das System dann zu kurzen Fakten über die Künstler:innen zusammengefasst, die im Livestream eingeblendet wurden, wenn der oder die Künstler:in auf dem roten Teppich zu sehen war. Außerdem wurden sie auch auf der Webseite der Grammys veröffentlicht.</p><p></p><p>
+Das System hat mehrere Stufen, die nacheinander ablaufen. Als erstes hat es die Informationen zusammengefasst. In der nächsten Stufe hat es dann erst die Qualität der Texte bewertet und danach mit einem vortrainierten <a href="https://en.wikipedia.org/wiki/BERT_(language_model)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">BERT</a>-Sprachmodell klassifiziert, ob sie positiv oder negativ für den oder die Künstler:in sind.</p><p>
+Die Texte mit der höchsten Qualität wurden dann automatisch einer Kategorie zugeordnet.</p><p>
+Welche Rolle die positiv/negativ-Klassifizierung und die Kategorien später spielen, wird aus der Beschreibung leider nicht ganz klar. Vermutlich werden sie bei der Auswahl, welche Texte angezeigt werden, berücksichtigt.</p><p>
+Die so gewonnenen 360.300 Nachrichtenschnipsel wurden dann in einem 3-stufigen Verfahren von mehreren Menschen unabhängig voneinander überprüft und gegebenenfalls nachbearbeitet.</p><p></p><p>
+Das System lief auf einem <a href="https://de.wikipedia.org/wiki/OpenShift" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Red Hat Openshift</a> Cluster aus neun Rechnern mit jeweils 16 CPU Kernen und interessanterweise mehr Arbeitsspeicher als primärem Festplattenspeicher (32GB RAM / 25 GB primary disk). Damit konnten die Nachrichten über alle 1.000 Nominierten in einer Stunde verarbeitet werden.</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel von IBM: <a href="https://developer.ibm.com/articles/transforming-data-into-insight-at-the-grammy-awards/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://developer.ibm.com/articles/transforming-data-into-insight-at-the-grammy-awards/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Grammy.com: <a href="https://www.grammy.com/news/how-grammy-insights-with-ibm-watson-uses-artificial-intelligence-to-help-power-2022-64th-grammys-awards-jon-batiste" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.grammy.com/news/how-grammy-insights-with-ibm-watson-uses-artificial-intelligence-to-help-power-2022-64th-grammys-awards-jon-batiste</a></li>
+</ul></p></span><h2 id="5">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Smartphone App gegen Raser</em></strong></span><p>
+Unbekannte Entwickler:innen haben eine App veröffentlicht, die sie "Speedcam Anywhere" nennen und die sich offenbar an Benutzer im Vereinigten Königreich richtet. Mit der App kann man aus einem kurzen Video die Geschwindigkeit eines Autos berechnen lassen. Man bekommt dann automatisch einen Bericht, mit Bildern aus dem Video, der Geschwindigkeitsbegrenzung an der Stelle, und Informationen ob das Auto zu schnell war und wenn ja, um wie viel.</p><p></p><p>
+Grundsätzlich funktioniert die App so: Der oder die Benutzer:in macht ein Video eines vorbeifahrenden Autos. Die App lädt das Video, zusammen mit Zusatzinformationen wie der GPS-Position, auf einen Server hoch.</p><p>
+Dort wird das Video verarbeitet: das Nummernschild wird automatisch ausgelesen, um Informationen über das Automodell zu bekommen (scheinbar geht das im Vereinigten Königreich), und die Positionen der Räder im Video erkannt.</p><p>
+Die Software misst dann die Zeit, die vergangen ist, bis die Hinterräder den selben Punkt erreichen wie die Vorderräder. Durch die Informationen über das Automodell weiß sie, wie weit die Räder auseinander sind, und kann dadurch die Geschwindigkeit berechnen.</p><p></p><p>
+Die App hat allerdings ein paar technische Schwächen. So kann zum Beispiel die erkannte GPS-Position recht ungenau sein, was zu falschen Annahmen über die zulässige Höchstgeschwindigkeit führen kann.</p><p>
+Außerdem darf die Kamera während der Aufnahme des Videos nicht bewegt werden; bei aus der Hand aufgenommenen Videos könnte es daher schwierig werden, die Geschwindigkeit genau zu berechnen.</p><p>
+Dazu kommt noch die Frage, was man mit den Berechnungen der App eigentlich tun soll - denn sie hat keine Zulassung um von der Polizei benutzt zu werden, und gibt auch die erstellten Berichte nicht an die Polizei weiter.</p><p>
+Und schließlich kostet auch noch die Benutzung der App etwas: 0,15 Pfund pro Aufnahme im "Pro-Mode" (mit Genauigkeit von ±3km/h) und 0,015 Pfund pro Aufnahme im "Basic-Mode" (±10%).
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite der Entwickler:innen: <a href="https://speedcamanywhere.com/#faq" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://speedcamanywhere.com/#faq</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Speedcam Anywhere im Google Play Store: <a href="https://play.google.com/store/apps/details?id=com.speedcamanywhere" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://play.google.com/store/apps/details?id=com.speedcamanywhere</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">Wie KI am LHC genutzt wird</span></strong></em></p><p>
+In einem Vortrag, der auf Youtube veröffentlicht wurde, hat der Physiker <a href="https://atlas.cern/authors/david-rousseau" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">David Rousseau</a> erklärt, wie KI genutzt wird, um die Daten des <a href="https://de.wikipedia.org/wiki/Large_Hadron_Collider" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LHC-Teilchenbeschleunigers</a> am Kernforschungszentrum <a href="https://de.wikipedia.org/wiki/CERN" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CERN</a> zu interpretieren.</p><p>
+Das Problem, vor dem die Forscher:innen stehen, ist, dass einige Teilchen nicht direkt gemessen werden können, zum Beispiel das mit dem LHC nachgewiesene <a href="https://de.wikipedia.org/wiki/Higgs-Boson" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Higgs-Boson</a>.</p><p>
+Sie messen daher stattdessen andere Teilchen, die bei den Kollisionen im Teilchenbeschleuniger entstehen, und interpretieren die Ergebnisse mithilfe von Regel-basierten Systemen. Daraus können sie dann auch über die Teilchen Erkenntnisse gewinnen, die sie nicht direkt messen konnten.</p><p></p><p>
+Ein großer Teil der Rechenzeit wurde von diesen Systemen gebraucht, um die Bewegungen der Teilchen aus den Messungen zu rekonstruieren. Daher hat das CERN vor vier Jahren die <a href="https://sites.google.com/site/trackmlparticle/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TrackML Kaggle Challenge</a> gestartet, um eine effizientere Methode, basierend auf maschinellem Lernen, zu finden. Eine "Kaggle Challenge" ist eine Art Wettbewerb auf der Plattform <a href="https://www.kaggle.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Kaggle</a>, bei dem üblicherweise Daten und ein Ziel vorgegeben werden (und oft auch ein Preisgeld). Die Teilnehmer versuchen dann, das ML-Modell zu entwickeln, das das Ziel am besten erreicht, um das Preisgeld zu gewinnen.</p><p></p><p>
+Die Daten aus den Experimenten am LHC sind üblicherweise keine einfachen Text- oder Bilddaten, sondern sehr spezielle Messdaten aus Detektoren. Es wäre zu aufwändig, bei allen diesen Daten von Hand eine Beschreibung (Label) hinzuzufügen, um sie als Trainingsdaten für ein Modell benutzen zu können. Daher ist es schwierig, ausreichend Trainingsdaten zu finden.</p><p>
+Die meisten Trainingsdaten erzeugen die Forscher:innen deshalb mit Simulationen am Computer, weil so, im Gegensatz zu den echten Daten aus den Experimenten, der Computer die Labels automatisch zu den Daten hinzufügen kann.</p><p>
+Diese Simulationen sind zwar viel schneller als die Daten von Hand zu bearbeiten, aber immer noch sehr aufwändig.</p><p>
+Bei manchen Detektoren haben die Forscher:innen es aber geschafft, die Messdaten als einfache Bilder darzustellen. Dann haben sie ein neuronales Netz (mit <a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GAN</a>-Architektur) darauf trainiert, solche Bilder zu generieren. Dadurch können sie jetzt diese Bilder, und damit Daten mit Labels, erzeugen, ohne dass eine extra Simulation nötig ist.</p><p>
+Dadurch können diese Daten jetzt tausend Mal schneller erzeugt werden, als durch die bisherigen Simulationen.</p><p></p><p>
+In Zukunft könnte KI auch schon beim Entwurf von Experimenten eingesetzt werden, um zum Beispiel die beste Anordnung von Sensoren in Detektoren herauszufinden.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Vortrag von David Rousseau: <a href="https://www.youtube.com/watch?v=y711kfvqMTs" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=y711kfvqMTs</a></li>
+</ul><div class="source"><br/>
+<em><strong><span style="font-size:18px">CodeGen übersetzt eine Beschreibung in Code</span></strong></em><br/>
+CodeGen ist ein neuronales Netz mit Transformer-Architektur, das eine Beschreibung in Programmcode übersetzen kann.<br/>
+Eigentlich ist es sogar eine "Familie" aus insgesamt zwölf neuronalen Netzen, mit vier verschiedenen Größen (350 Millionen bis 16 Milliarden Parameter) und unterschiedlichen Trainingsdaten.<br/>
+Die insgesamt 1,8 TB Trainingsdaten sind aufgeteilt auf drei Datensätze: "ThePile" mit knapp 1,2 TB normalen Texten und ca. 100 GB Programmcode, "BigQuery" mit 340 GB Code in verschiedenen Programmiersprachen und "BigPython", mit gut 200 GB Python Code.<br/>
+<br/>
+Jede der vier verschieden großen Varianten des neuronalen Netzes wurde in drei Untervarianten aufgeteilt: eine, die nur auf "ThePile" trainiert wurde, also vor allem auf normalen Texten. Eine zweite, die auf der ersten basiert und zusätzlich noch auf dem Code aus den "BigQuery" Daten trainiert wurde. Und eine dritte, die wiederum auf der zweiten basiert und zusätzlich auch noch die "BigPython" Daten zum Training bekam.<br/>
+<br/>
+Das Training des größten Modells auf allen drei Datensätzen dauerte so lange, dass das Paper veröffentlicht wurde, bevor das Training abgeschlossen war.<br/>
+Dafür soll es im Erzeugen von Python-Code ungefähr genauso gut wie das Codex Modell von OpenAI, auf dem z.B. <a href="https://copilot.github.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Github Copilot</a> basiert.<br/>
+<br/>
+Salesforce hat die verschiedenen trainierten Versionen des Modells veröffentlicht, so dass es jeder ausprobieren kann.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Das Modell auf Github: <a href="https://github.com/salesforce/CodeGen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/salesforce/CodeGen</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2203.13474" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2203.13474</a></li>
+</ul>
+</div></p></span><h2 id="6">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zwei meiner Kolleginnen erklären KI:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kenza spricht im "TechTalk" Podcast der Computerwoche darüber, wie KI die Welt verändert: 📖 <a href="https://www.computerwoche.de/a/roboter-zaehmen-leicht-gemacht,3553045" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Podcast bei der Computerwoche</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Isabel erklärt, was "AIOps" bedeutet: <a href="https://www.youtube.com/watch?v=Olx_i6ztLTQ" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Andrew Ng spricht in einem Interview darüber, warum er "Data-centric AI" für eine der wichtigsten Entwicklungen in der KI-Forschung hält: 📖 <a href="https://spectrum.ieee.org/andrew-ng-data-centric-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Interview bei IEEE Spectrum</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Mitfahrt im Level 3-selbstfahrenden Mercedes: 📖 <a href="https://techcrunch.com/2022/04/09/test-mercedes-benz-hands-free-driving-technology/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Was passiert, wenn die Polizei ein selbstfahrendes Auto anhalten will (mit Video): 📖 Artikel bei <a href="https://www.theverge.com/2022/4/10/23019303/heres-what-happens-cops-pull-over-a-driverless-cruise-vehicle-general-motors" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie KI in der Medienaufsicht verwendet wird: 📖 <a href="https://www.medienanstalt-nrw.de/presse/pressemitteilungen-2022/2022/maerz/default-89c6b2daa0/mit-kuenstlicher-intelligenz-zu-einer-modernen-medienaufsicht.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mitteilung der Medienanstalt NRW</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bosch übernimmt ein Startup im Bereich autonomes Fahren: 📖 <a href="https://www.bosch-presse.de/pressportal/de/de/bosch-beschleunigt-mit-uebernahme-von-five-die-software-entwicklung-fuer-automatisiertes-fahren-239040.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mitteilung von Bosch</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../28">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
