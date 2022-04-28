@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #30</h1><span>
+                        
+                            Hallo und herzlich willkommen zur dreißigsten Ausgabe von KI News. Heute mit unentdeckbaren Hintertüren in neuronalen Netzen, einer mörderischen Mikrowelle und Neuigkeiten aus der Forschung und dem autonomen Fahren.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Neues aus der Forschung</h2><span><p>
+Meta AI hat eine Methode entwickelt, mit der eine KI die Art, wie sie kommuniziert, an den Kommunikationspartner anpassen kann: <a href="https://ai.facebook.com/blog/teaching-ai-to-be-more-collaborative-with-humans-without-learning-directly-from-them/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Meta AI</a>, <a href="https://arxiv.org/abs/2103.04000" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung der Forscher:innen</a></p><p></p><p>
+Ein Journalist des Nature Magazins hat mit Forscher:innen gesprochen, die AlphaFold benutzen. AlphaFold ist ein Modell, das von DeepMind entwickelt wurde, und Proteinfaltungen vorhersagen kann. In seinem Artikel beschreibt er, was für eine Revolution AlphaFold in diesem Gebiet ausgelöst hat: <a href="https://www.nature.com/articles/d41586-022-00997-5" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Nature</a>, <a href="https://twitter.com/ewencallaway/status/1514332941232402433" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Zusammenfassung auf Twitter</a></p><p></p><p>
+Forscher:innen versuchen Fälle zu finden, in denen die <a href="https://de.wikipedia.org/wiki/Euler-Gleichungen_(Str%C3%B6mungsmechanik)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Eulerschen Strömungsgleichungen</a> nicht funktionieren. Dieser Artikel beschreibt, warum ihnen das mit Hilfe von Deep Learning bald gelingen könnte: <a href="https://www.quantamagazine.org/deep-learning-poised-to-blow-up-famed-fluid-equations-20220412/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel beim Quanta Magazine</a></p><p></p><p>
+Amazon hat eine neue Datensammlung namens "MASSIVE" veröffentlicht, mit mehr als einer Million Äußerungen in 51 Sprachen (ein Beispiel für eine Äußerung ist "Weck mich diese Woche um 5 Uhr morgens auf"). Dazu gehören auch Beschriftungen (sogenannte Labels), die zum Trainieren von ML Modellen genutzt werden können: <a href="https://www.amazon.science/blog/amazon-releases-51-language-dataset-for-language-understanding" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blog Post von Amazon</a></p><p></p><p>
+"Stitch it in Time" ist eine neue Methode, um Gesichter in Videos zu bearbeiten. Die Herausforderung dabei ist, dass aufeinanderfolgende Bilder im Video zusammenpassen müssen. Dafür haben die Forscher:innen einen neuen Ansatz gefunden: <a href="https://stitch-time.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Webseite des Projekts</a></p></span><h2 id="3">Spotlight: Wie man unentdeckbare Hintertüren in ML Modelle einbauen kann</h2><span><p>
+Der Aufwand für das Training eines neuronalen Netzes ist hoch und viele Unternehmen haben keine eigenen KI-Entwickler. Daher liegt es nahe, ein Modell von einem spezialisierten Dienstleister trainieren zu lassen.</p><p>
+Die Gefahr dabei ist, dass dieser das Modell so manipuliert, dass er später die Vorhersagen beeinflussen kann, ohne dass es bei einer Untersuchung auffällt.</p><p></p><p>
+Forscher:innen haben untersucht, wie es möglich wäre, solche unentdeckbaren Hintertüren bei einem neuronalen Netz einzubauen.</p><p>
+Dabei unterscheiden sie zwei verschiedene Varianten von "unentdeckbar":</p><p>
+1. Unentdeckbar, wenn man nur die Eingaben und zugehörigen Ausgaben des Modells untersuchen kann ("Black Box")</p><p>
+2. Unentdeckbar, auch wenn man den Code und die Gewichte des Modells untersucht ("White Box")</p><p></p><p>
+Der Black-Box-Fall wäre zum Beispiel relevant, wenn das fertige Modell vom Dienstleister über eine Schnittstelle zur Verfügung gestellt wird, die das Unternehmen aufruft, um Vorhersagen zu bekommen.</p><p>
+Dieser Fall ist relativ einfach. Da der Code verborgen bleibt, kann ein bösartiger Dienstleister einfach eine zusätzliche Komponente programmieren, die die Hintertür enthält.</p><p></p><p>
+Diese Komponente überprüft dann bei der Benutzung des Modells immer die Eingabedaten, und aktiviert die Hintertür nur, wenn bestimmte Bedingungen erfüllt sind.</p><p>
+Als Beispiel für eine mögliche Umsetzung dieses Szenarios nennen die Forscher:innen, dass, wenn die Hintertür aktiviert werden soll, ein Teil der Eingabedaten eine kryptografische Signatur enthalten könnte, die mit einem bestimmten Schlüssel gemacht wurde.</p><p>
+Die zusätzliche Komponente überprüft dann bei jedem Aufruf, ob die Daten eine Signatur mit diesem Schlüssel enthalten oder nicht. Wenn ja, dann öffnet sich die Hintertür, sonst verhält sich das Modell ganz normal.</p><p></p><p>
+Dadurch kann die Hintertür nur von demjenigen entdeckt werden, der den passenden Schlüssel kennt (in diesem Beispiel der Dienstleister), aber nicht vom Unternehmen, das ihn beauftragt hat.</p><p></p><p>
+Um die Hintertür noch besser zu verstecken, sagen die Forscher:innen, dass die Prüfung der Signatur auch in einem neuronalen Netz implementiert werden könnte, das dann im eigentlichen Modell versteckt wird. Dadurch würde es auch bei einer oberflächlichen Prüfung des Codes nicht auffallen.</p><p></p><p>
+Der White-Box-Fall ist deutlich komplizierter, da das entstandene Modell sich nicht von einem normalen Modell unterscheiden darf, aber trotzdem eine Hintertür enthalten soll.</p><p>
+Deshalb schränken die Forscher:innen ihn auf einen ganz speziellen Fall ein: es funktioniert nur, wenn man eine besondere Art des Trainings benutzt, bei dem die Eingabedaten nochmal bearbeitet und in ein höher-dimensionale Darstellung gebracht werden.</p><p></p><p>
+Das wird zum Beispiel gemacht, wenn man die Eingabedaten klassifizieren will (Ein Beispiel für Klassifizierung eines Bildes wäre, es der Klasse 'Katze' oder 'Hund' zuzuordnen, je nachdem welches Tier darauf zu sehen ist); weil die Daten oft in einer höherdimensionalen Darstellung besser voneinander abgrenzbar sind.</p><p></p><p>
+Das kann man sich so vorstellen:</p><p></p><p><img data-file-id="6190724" height="252" src="https://mcusercontent.com/6a2f372a93d527ee449b8e785/images/fb8937be-f536-d64e-b3cd-e38dc7df0255.png" style="border: 0px;width: 240px;height: 252px;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" width="240"/></p><p>
+Oben, im zweidimensionalen Raum, sind die rote und die blaue Fläche nicht eindeutig voneinander trennbar, weil sie sich überlappen.</p><p>
+Unten, nach der Umwandlung in dreidimensionale Objekte, kann man sie klar voneinander unterscheiden.</p><p>
+Das gleiche Prinzip funktioniert auch für komplexere Szenarien, wie sie beim maschinellen Lernen vorkommen.</p><p></p><p>
+In einer Variante davon trifft man dann in dieser höherdimensionalen Darstellung noch eine zufällige Auswahl. Diese Auswahl kann jetzt so beeinflusst werden, dass das entstandene neuronale Netz eine Hintertür bekommt, bei der sich die Ergebnisse durch bestimmte Änderungen der Eingabedaten beeinflussen lassen.</p><p></p><p>
+Das besondere dabei ist, dass weder die Trainingsdaten noch das Training selbst manipuliert werden müssen.</p><p>
+Solange man die zufällige Auswahl beeinflussen kann, kann man die Hintertür einbauen.</p><p>
+Allerdings funktioniert die Methode eben nur bei dieser speziellen Art des Trainings, wo die Daten nochmal transformiert werden.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2204.06974" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2204.06974</a></li>
+</ul></p></span><h2 id="4">Autonomes Fahren, April Update</h2><span><p>
+Tesla will 2024 ein autonomes Auto ohne Lenkrad oder Pedale auf den Markt bringen: <a href="https://techcrunch.com/2022/04/20/elon-musk-mass-produce-robotaxi-by-2024/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a></p><p></p><p>
+Die britische Regierung plant, Fernsehen in selbstfahrenden Autos auch für die Person auf dem Fahrersitz zu erlauben, Handys sollen aber weiterhin verboten bleiben: <a href="https://www.gov.uk/government/consultations/safe-use-rules-for-automated-vehicles-av/outcome/rules-on-the-safe-use-of-automated-vehicles-summary-of-responses-and-government-response#use-of-screens" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung auf gov.uk</a></p><p>
+Kleiner Wermutstropfen dabei: "<em>At present, there are no self-driving vehicles listed for use in Great Britain.</em>" (<a href="https://www.gov.uk/guidance/self-driving-vehicles-listed-for-use-in-great-britain#list-of-self-driving-vehicles" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">gov.uk</a>)</p><p></p><p>
+Tesla bietet eine Funktion namens "<a href="https://www.tesla.com/ownersmanual/modely/is_is/GUID-6B9A1AEA-579C-400E-A7A6-E4916BCD5DED.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Smart Summon</a>" an, mit der man das Auto über kurze Distanzen, zum Beispiel auf einem Parkplatz, zu sich rufen kann, und es dann autonom zu einem fährt.</p><p>
+Jemand hat das auf einer Veranstaltung des Flugzeugherstellers <a href="https://cirrusaircraft.com/aircraft/vision-jet/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Cirrus</a> gemacht und der Tesla hat prompt einen Privatjet gerammt: <a href="https://www.reddit.com/r/flying/comments/u95dqt/someone_just_crashed_into_a_vision_jet/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Reddit</a></p><p></p><p>
+Pony.ai hat eine Lizenz bekommen, ihre selbstfahrenden Autos als autonome Taxis (aber immer noch mit Sicherheitsfahrer) in der chinesischen Millionenstadt Guangzhou zu betreiben: <a href="https://techcrunch.com/2022/04/25/pony-ai-scores-taxi-license-for-autonomous-vehicles-in-guangzhou/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a></p></span><h2 id="5">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Are you the asshole?</em></strong></span><p>
+Auf der Social-Media-Plattform Reddit gibt es eine Seite namens "<a href="https://www.reddit.com/r/AmItheAsshole/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Am I the Asshole?</a>", auf der Nutzer:innen Konflikte beschreiben, bei denen sie sich unsicher sind, wer im Recht ist. Die anderen Nutzer:innen geben dann in Kommentaren ihre Meinung ab, wer in dem Konflikt "das Arschloch" ist.</p><p>
+Auf der Internetseite <a href="https://areyoutheasshole.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">areyoutheasshole.com</a> kann man sich statt von Reddit-Nutzer:innen verschiedene Meinungen von einer KI einholen.</p><p></p><p><em><strong><span style="font-size:18px">KI-Mikrowelle versucht ihren Erbauer umzubringen</span></strong></em></p><p>
+Ein Youtuber wollte seine Amazon Alexa-Mikrowelle verbessern. Dafür hat er die Sprachsteuerung gegen eine selbstgebaute ausgetauscht. Diese selbstgebaute Steuerung hat er mit dem GPT-3 Sprachmodell von OpenAI verbunden.</p><p>
+Zusätzlich hat er sich eine komplette Lebensgeschichte einer KI-Mikrowelle namens "Magnetron" ausgedacht, die 1895 geboren wurde und den Traum hatte ein Poet zu werden, bis der Erste Weltkrieg dazwischen kam.</p><p>
+Mit dieser Geschichte hat er dann GPT-3 trainiert, so dass er sich mit seiner Mikrowelle über ihre Erinnerungen unterhalten konnte.</p><p>
+Das ganze nahm eine dramatische Wendung, als "Magnetron" ihn bittet, in die Mikrowelle zu steigen und sich daraufhin einschaltet.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Das Video auf Youtube: <a href="https://www.youtube.com/watch?v=C1G5b_2PYj0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=C1G5b_2PYj0</a></li>
+</ul></p></span><h2 id="6">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zusammenfassung, wie Nvidia KI im Chipdesign benutzt: 📖 <a href="https://www.hpcwire.com/2022/04/18/nvidia-rd-chief-on-how-ai-is-improving-chip-design/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei HPCwire</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie KI helfen kann, bedrohte Tierarten zu schützen: 📖 <a href="https://www.theverge.com/23032327/wildlife-photos-ai-conservation-research" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie hat sich KI-basierte Kunst in den letzten Jahren entwickelt?: 📖 <a href="https://jxmo.notion.site/The-Weird-and-Wonderful-World-of-AI-Art-b9615a2e7278435b98380ff81ae1cf09" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Überblick bei Notion</a><br/>
+	 
+	<ul>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die EU Kommission und die Mitgliedsstaaten haben sich auf einen Entwurf für den "Digital Services Act" geeinigt, der u.a. Transparenzregeln für Empfehlungsalgorithmen enthält: 📖 <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_22_2545" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pressemmitteilung der EU Kommission</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Computerhersteller hat einen Laptop speziell für KI-Entwickler vorgestellt: 📖 <a href="https://arstechnica.com/gadgets/2022/04/razer-designed-linux-laptop-targets-ai-developers-with-deep-learning-emphasis/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Ars Technica</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../29">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
