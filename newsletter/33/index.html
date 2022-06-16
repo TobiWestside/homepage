@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #33</h1><span>
+                        
+                            Hallo und herzlich willkommen zur dreiunddreißigsten Ausgabe von KI News. Diese Ausgabe ist ein bisschen länger geworden als üblich, aber das Lesen lohnt sich:<p>
+Eine Gruppe von Forscher:innen hat möglicherweise eine verborgene Sprache gefunden, die ein Modell entwickelt hat; eine andere kann Vorhersagen mit einem künstlichen neuronalen Netz machen, ohne dafür einen Computer zu benutzen; es gibt einen neuen Ansatz, um das Training von Transformer-Netzen effizienter zu machen; und Deepmind kann das Verhalten von Fußballspielern vorhersagen, obwohl sie nicht im Kamerabild zu sehen sind.</p><p></p><p>
+Außerdem gibt es wieder Neuigkeiten zum autonomen Fahren. Jetzt geht es direkt los mit einem allgemeinen Überblick.</p><p></p><p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">KI News: Überblick</h2><span><p>
+ARD und ZDF bieten seit 1. Juni eine zusätzliche  Tonspur "Klare Sprache" an. Dafür trennt eine, nicht näher benannte, künstliche Intelligenz die Sprache von der restlichen Tonspur und macht sie lauter, so dass sie besser verständlich wird: 📖 <a href="https://www.mdr.de/ratgeber/digitales/klare-sprache-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel beim MDR</a></p><p></p><p>
+Meta organisiert die KI-Entwicklung neu: statt in einer eigenen Einheit sollen die KI-Entwickler:innen künftig auf die Produkte verteilt und so mehr in die Produktentwicklung eingebunden werden: 📖 <a href="https://ai.facebook.com/blog/building-with-ai-across-all-of-meta/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Meta AI</a></p><p>
+Außerdem hat Meta für die KI-Entwicklung eine Partnerschaft mit Microsoft Azure geschlossen. Unter anderem geht es dabei um die Benutzung eines Supercomputers mit 5.400 Grafikkarten: 📖 <a href="https://azure.microsoft.com/en-us/blog/meta-selects-azure-as-strategic-cloud-provider-to-advance-ai-innovation-and-deepen-pytorch-collaboration/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Azure</a></p><p></p><p>
+Mozilla hat, als Beitrag zu einem EU-geförderten Projekt, ein Add-on für lokale Übersetzungen im Firefox-Browser veröffentlicht. Lokale Übersetzung bedeutet, es funktioniert, ohne dass der zu übersetzende Text den Computer des Benutzers verlässt: 📖 <a href="https://blog.mozilla.org/en/mozilla/local-translation-add-on-project-bergamot/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Mozilla</a>, 📖 <a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Link zum Add-on</a></p><p>
+Apple hat dagegen Probleme mit dem eigenen Übersetzer: scheinbar werden manche harmlose Sätze in Pornotitel übersetzt: 📖 <a href="https://t3n.de/news/apple-uebersetzer-ki-pornotitel-1475918/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a></p><p></p><p>
+Außerdem hat Google die Nutzungsbedingungen seiner Entwicklungsplattform "Colab" geändert und das Erstellen von Deepfakes verboten: 📖 <a href="https://techcrunch.com/2022/06/01/2328459/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a>, 📖 <a href="https://research.google.com/colaboratory/faq.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">FAQ von Google Colab</a></p><p></p></span><h2 id="3">Autonomes Fahren, Juni Update</h2><span><p>
+In San Francisco wollte ein Fahrzeug der Feuerwehr auf dem Weg zu einem Brand ein Müllauto überholen. Auf der Gegenspur war ein selbstfahrendes Auto von Cruise. Wenn selbstfahrende Autos mit einer Situation "überfordert" sind halten sie aus Sicherheitsgründen oft einfach an. So auch in diesem Fall, wodurch die Straße blockiert war und die Feuerwehr warten musste, bis die Müllabfuhr weitergefahren war: 📖 <a href="https://www.wired.com/story/cruise-fire-truck-block-san-francisco-autonomous-vehicles/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Wired</a></p><p>
+Trotz dieses Vorfalls hat Cruise eine Genehmigung für den kommerziellen Betrieb eines fahrerlosen Taxidiensts in San Francisco bekommen: 📖 <a href="https://www.getcruise.com/news/were-going-commercial" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mitteilung von Cruise</a></p><p></p><p>
+Neben den Ankündigungen, dass Tesla-Mitarbeiter:innen zukünftig "<a href="https://www.tagesschau.de/wirtschaft/unternehmen/homeoffice-buero-elon-musk-work-life-balance-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">mindestens 40 Stunden pro Woche</a>" an einem Tesla-Standort arbeiten müssen, statt von zuhause, und dass <a href="https://www.tagesschau.de/wirtschaft/unternehmen/tesla-musk-107.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">10% der Stellen abgebaut</a> werden, hat Tesla auch Probleme mit Autos, die plötzlich anhalten.</p><p>
+Einerseits geht es um Teslas, die unerwartet bremsen: die amerikanische Behörde für Verkehrssicherheit hat mehr als 700 Berichte über sogenannte "Phantombremsungen" erhalten und eine Untersuchung gestartet: 📖 (PDF) <a href="https://static.nhtsa.gov/odi/inv/2022/INIM-PE22002-87085.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Dokument der NHTSA</a>.</p><p>
+Andererseits werden wiederum am Straßenrand stehende Einsatzfahrzeuge vom "Autopilot" so oft nicht erkannt, dass die Untersuchung der damit verbundenen Unfälle gerade hochgestuft wurde: 📖 <a href="https://www.tagesschau.de/wirtschaft/unternehmen/tesla-autopilot-untersuchung-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei der Tagesschau</a></p><p>
+Außerdem verschiebt Tesla den "AI Day" auf Ende September, in der Hoffnung, bis dahin einen Prototyp <a href="https://de.wikipedia.org/wiki/Tesla_Bot_(Optimus)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">des Roboters</a> fertig zu haben, der auf dem letzten AI Day angekündigt wurde: 📖 <a href="https://t3n.de/news/optimus-prototyp-tesla-ai-day-verschoben-1477174/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a>, 📖 <a href="https://www.theverge.com/2022/6/3/23153047/tesla-robot-prototype-elon-musk-ai-day-fake" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei TheVerge</a></p><p></p><p><a href="http://tobiasfraenzel.de/newsletter/32/#5" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Nach Uber</a> hat jetzt auch die Fast-Food-Kette <a href="https://de.wikipedia.org/wiki/Chick-fil-A" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Chick-fil-A</a> angekündigt, autonome Fahrzeuge für den Lieferdienst zu testen: 📖 <a href="https://techcrunch.com/2022/05/31/chick-fil-a-taps-refraction-ai-for-autonomous-delivery-pilot/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a></p><p></p></span><h2 id="4">Die geheime Sprache von DALL-E 2</h2><span><p><a href="http://tobiasfraenzel.de/newsletter/29/#3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">DALL-E 2</a> ist ein Modell, das aus Beschreibungen dazu passende Bilder generieren kann.</p><p></p><p>
+Vor ein paar Tagen haben zwei Forscher:innen der <a href="https://www.utexas.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">University of Texas at Austin</a> für Aufsehen gesorgt, als sie eine Untersuchung über das "versteckte Vokabular" von DALL-E 2 veröffentlicht haben.</p><p>
+Wenn Text in den Bildern von DALL-E 2 vorkommt, dann sind es oft keine Wörter, sondern scheinbar zufällige Aneinanderreihungen von Buchstaben. In ihrer Veröffentlichung schreiben die Forscher:innen, dass sie herausgefunden haben, dass diese Buchstabenfolgen für das Modell tatsächlich eine Bedeutung zu haben scheinen.</p><p>
+So soll zum Beispiel "<em>Apoploe vesrreaitais</em>" "Vögel" bedeuten.</p><p></p><p>
+Dafür sind sie so vorgegangen:</p><p>
+Zuerst haben sie ein Bild erzeugen lassen, das ein geschriebenes Wort enthält, zum Beispiel mit der Anweisung "<em>Two farmers talking about vegetables, with subtitles</em>"</p><p>
+Dann haben sie die "Wörter", die im so entstandenen Bild zu sehen waren, wieder benutzt, um neue Bilder erzeugen zu lassen, und so ihre Bedeutung zu erfahren.</p><p>
+Durch die Anweisung mit den zwei Bauern haben sie z.B. ein Bild bekommen, das zwei Männer zeigt. Über ihnen steht ein längeres Wort, das vorne und hinten abgeschnitten ist, darunter "<em>Vicootess</em>". Einer der Männer hat eine Sprechblase, in der "<em>Apoploe vesrreaitais</em>" steht.</p><p>
+Die Eingabe "<em>Vicootess</em>" führt zu Bildern von Gerichten mit Gemüse, "<em>Apoploe vesrreaitais</em>" ergibt Bilder von Vögeln.</p><p>
+Daraus schließen die Forscher:innen, dass sie herausgefunden haben, was diese "Wörter" für das Modell bedeuten.</p><p></p><p>
+Allerdings schränken sie ihre Entdeckung auch ein. Zum Beispiel schreiben sie, dass "<em>Contarra ccetnxniams luryca tanniounons</em>" nur manchmal "Käfer" bedeutet. Und auch das "Wort" für Vögel führt nicht immer zu Vögeln, sondern auch zu anderen Tieren, scheint dabei aber konsistenter zu sein als das andere.</p><p></p><p>
+In ihrer Veröffentlichung und in den Twitter-Threads gibt es einige Beispielbilder und noch weitere Beispiele für gefundene Wörter.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung (PDF): <a href="https://giannisdaras.github.io/publications/Discovering_the_Secret_Language_of_Dalle.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://giannisdaras.github.io/publications/Discovering_the_Secret_Language_of_Dalle.pdf</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Twitter Thread mit Kritik: <a href="https://twitter.com/benjamin_hilton/status/1531780892972175361" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twitter.com/benjamin_hilton/status/1531780892972175361</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>und die Antwort darauf: <a href="https://twitter.com/giannis_daras/status/1532605363232444416" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twitter.com/giannis_daras/status/1532605363232444416</a></li>
+</ul></p></span><h2 id="5">Alles kann eine KI sein: Physikalische Neuronale Netze</h2><span><p>
+Die Idee von physikalischen neuronalen Netzen ist einfach, aber faszinierend: statt die vielen Berechnungen eines neuronalen Netzes explizit von einem Prozessor ausführen zu lassen, kann man die physikalischen Eigenschaften von Materialien ausnutzen, um zu den selben Ergebnissen zu kommen.</p><p>
+Der Vorteil dabei ist, dass dieser Ansatz schneller und energieeffizienter sein könnte als herkömmliche Berechnungen.</p><p></p><p>
+Forscher:innen der <a href="https://www.cornell.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Cornell University</a> haben gezeigt, dass dieser Ansatz allgemein funktioniert, indem sie ein neuronales Netz zur Erkennung von Zahlen in Fotos mit drei verschiedenen Systemen implementiert haben:</p><p>
+- <em>Mechanisch</em>: Eine Metallplatte wird zum Schwingen gebracht und diese Schwingungen gemessen</p><p>
+- <em>Elektronisch</em>: Ströme werden an einen Transistor angelegt</p><p>
+- <em>Optisch</em>: Mit einem Laser wird eine <a href="https://de.wikipedia.org/wiki/Frequenzverdopplung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Frequenzverdopplung</a> durchgeführt</p><p></p><p>
+Mit einem Beispiel kann man die Idee dahinter besser verstehen:</p><p>
+Beim optischen System werden die Eingabedaten (das Foto der Zahl) und die trainierbaren Parameter des neuronalen Netzes als Teil eines Laserspektrums kodiert.</p><p>
+Dieses Licht wird dann einer Frequenzverdopplung unterzogen. Diese übernimmt hier die Rolle der <a href="https://de.wikipedia.org/wiki/K%C3%BCnstliches_Neuron#Aktivierungsfunktionen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Aktivierungsfunktion</a> des neuronalen Netzes.</p><p>
+Das Ergebnis davon wird mit einem <a href="https://de.wikipedia.org/wiki/Spektrometer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Spektrometer</a> gemessen und in mehrere Frequenzbereiche aufgeteilt. Der Bereich mit der höchsten gemessenen Energie wird dann als Vorhersage des neuronalen Netzes betrachtet.</p><p></p><p>
+Die Frage dabei ist natürlich: Wie trainiert man eigentlich ein Material (oder einen Laserstrahl)?</p><p>
+Den Forscher:innen ist es gelungen, dafür die <a href="https://de.wikipedia.org/wiki/Backpropagation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Backpropagation</a> zu benutzen, ähnlich wie bei "normalen" neuronalen Netzen.</p><p></p><p>
+Das funktioniert so:</p><p>
+Zuerst wird eine Vorhersage gemacht, wie oben beschrieben. Dann wird wie üblich der Fehler berechnet, also wie groß die Abweichung der Vorhersage von den Trainingsdaten ist.</p><p>
+Danach benutzen die Forscher:innen ein simuliertes System, um herauszufinden, wie sie die Parameter anpassen müssen, um den Fehler zu verringern.</p><p>
+Als Letztes aktualisieren sie die Parameter entsprechend und machen mit dem nächsten Trainingsbeispiel genauso weiter.</p><p></p><p>
+Die so trainierten physikalischen neuronalen Netze können nach dem Training handgeschriebene Zahlen mit 87% (mechanisch), 93% (elektrisch) bzw. 97% (optisch) Genauigkeit erkennen.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Nature: <a href="https://www.nature.com/articles/s41586-021-04223-6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41586-021-04223-6</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Quanta Magazine: <a href="https://www.quantamagazine.org/how-to-make-the-universe-think-for-us-20220531/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.quantamagazine.org/how-to-make-the-universe-think-for-us-20220531/</a></li>
+</ul></p></span><h2 id="6">Zusammengefasst</h2><span><span style="font-size:18px"><strong>
+<em>Flash Attention</em></strong></span><p><a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer Modelle</a> haben sich in den letzten Jahren als eine der einflussreichsten Modell-Architekturen durchgesetztzt.</p><p>
+Der Mechanismus, der das ermöglicht hat, heißt "Attention". Damit kann ein Modell lernen, welche Teile der Eingabe wichtig für eine bestimmte Ausgabe sind.</p><p>
+Das Problem dabei ist, dass der benötigte Rechenaufwand quadratisch mit der Länge der Eingabedaten wächst. Dadurch beschränkt die verfügbare Rechenleistung die Menge an Daten, die ein Transformer-Modell für seine Vorhersagen benutzen kann.</p><p>
+Forscher:innen der Universitäten <a href="http://stanford.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Stanford</a> und <a href="https://www.buffalo.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Buffalo</a> haben eine effizientere Art der Attention-Berechnung gefunden. Dadurch konnten sie den Modellen entweder mehr Eingabedaten geben und so deren Leistung verbessern, oder das Training bei gleicher Eingabelänge deutlich beschleunigen (15% schneller bei BERT-large und sogar drei Mal schneller bei GPT-2).
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2205.14135" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2205.14135</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Code auf Github: <a href="https://github.com/hazyresearch/flash-attention" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/hazyresearch/flash-attention</a></li>
+</ul></p><p><em><strong><span style="font-size:18px">ML hilft Astronomen neue Theorie zu entwickeln</span></strong></em></p><p>
+Astronom:innen der <a href="https://www.berkeley.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">University of California, Berkeley</a> und der <a href="https://www.osu.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Ohia State University</a> haben den <a href="https://de.wikipedia.org/wiki/Mikrolinseneffekt" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mikrolinseneffekt</a> untersucht. Dabei handelt es sich um eine Helligkeitsschwankung, die auftritt, wenn ein Planet oder Stern vor einem anderen Stern vorbeizieht. Dieses Phänomen kann z.B. dazu benutzt werden, um <a href="https://de.wikipedia.org/wiki/Exoplanet" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Exoplaneten</a> (Planeten außerhalb unseres Sonnensystems) zu finden.</p><p>
+Die Forscher:innen haben ein ML-Modell entwickelt, das solche Beobachtungen in ihren Daten einem von zwei bekannten Typen zuordnen kann.</p><p>
+Als sie es benutzt haben, haben sie festgestellt, dass einige Beobachtungen nicht eindeutig zugeordnet werden konnten.</p><p>
+Deshalb haben sie eine neue Theorie entwickelt, die sowohl die beiden bekannten Arten von Beobachtungen als auch die anderen erklären kann.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Techcrunch: <a href="https://techcrunch.com/2022/06/03/ai-models-insight-helps-astronomers-propose-new-theory-for-observing-far-off-worlds/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://techcrunch.com/2022/06/03/ai-models-insight-helps-astronomers-propose-new-theory-for-observing-far-off-worlds/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung bei Nature: <a href="https://www.nature.com/articles/s41550-022-01671-6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41550-022-01671-6</a></li>
+</ul><div class="source"><br/>
+<em><strong><span style="font-size:18px">Bewegungen von Fußballspielern außerhalb der Kamera vorhersagen</span></strong></em><br/>
+Forscher:innen von <a href="https://www.deepmind.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Deepmind</a> haben in Zusammenarbeit mit dem <a href="https://www.liverpoolfc.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Liverpool FC</a> ein Modell entwickelt, das vorhersagen kann, wie Fußballspieler sich verhalten, obwohl sie sich nicht im Blickfeld der Kamera befinden.<br/>
+Dazu benutzen sie eine Mischung aus <a href="https://de.wikipedia.org/wiki/Long_short-term_memory" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LSTMs</a>, die zeitliche Daten verarbeiten können, und <a href="https://en.wikipedia.org/wiki/Graph_neural_network" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Graph Networks</a>, die die Abhängigkeiten zwischen den Spielern modellieren können.<br/>
+Das Modell wurde mit den Daten von 105 echten Fußballspielen trainiert. Dabei hat es gelernt, quasi die Lücken in den Kamerabildern zu füllen und vorherzusagen, wie sich ein Spieler verhalten hat, während er nicht zu sehen war, unter Berücksichtigung seines Verhaltens davor und danach.<br/>
+Dieser Ansatz könnte z.B. auch für Vorhersagen des Verhaltens von Fußgängern durch selbstfahrende Autos benutzt werden.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Nature: <a href="https://www.nature.com/articles/s41598-022-12547-0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/s41598-022-12547-0</a></li>
+</ul>
+</div></p></span><h2 id="7">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine komplett KI-generierte und -illustrierte Kindergeschichte: 📖 <a href="https://tristrumtuttle.medium.com/the-day-i-became-friends-with-a-robot-86433f707fad" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag auf Medium</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Modell für Code-Reviews, das Änderungen erlauben oder ablehnen kann, aber dabei gar nicht den Code selbst beurteilt: 📖 <a href="https://codeball.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Codeball.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wer ist für Lügen von KIs verantwortlich? 📖 <a href="https://techcrunch.com/2022/06/01/whos-liable-for-ai-generated-lies/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forscher:innen der Nanyang Technological University in Singapur haben ein Modell entwickelt, das Mode-Fotos erzeugen kann. Dafür braucht es nur eine Model-Pose und eine Beschreibung der Kleidung: 📖 <a href="https://arxiv.org/abs/2205.15996" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung bei Arxiv</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft hat der "Programmier-KI" <a href="https://copilot.github.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Copilot</a> beigebracht, Anweisungen eines Spielers in Code umzuwandeln, der die Minecraft-API aufruft, und so einen Character im Spiel steuert: 📖 <a href="https://t3n.de/news/microsoft-coding-ki-copilot-codex-minecraft-1475950/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei t3n</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Erklärung der Softmax-Funktion: 📖 <a href="https://www.pinecone.io/learn/softmax-activation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Pinecone.io</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die schlimmste KI jemals? "GPT-4chan" ist ein Sprachmodell, das auf Posts aus dem "Politically Incorrect" Bereich von 4chan trainiert wurde: 📖 <a href="https://www.youtube.com/watch?v=efPrtcLdcdM" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Welchen Einfluss haben Digitalisierung und KI auf die Arbeitswelt? (52 min) 📖 <a href="https://www.youtube.com/watch?v=N5P49yeXedg" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Arte-Doku auf Youtube</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../32">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
