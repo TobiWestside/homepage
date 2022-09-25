@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #37</h1><span>
+                        
+                            Hallo und herzlich willkommen zur siebenunddreißigsten Ausgabe von KI News. Diesmal unter anderem mit einer Vision für zukünftige intelligente Maschinen, Problemen bei der Reproduzierbarkeit von Forschungsergebnissen, maschinellem Lernen um Compiler-Optimierung zu verbessern, KI für Autoren und einem neuen Chatbot von Meta.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Eine Zukunftsvision für intelligente Maschinen</h2><span><p><a href="https://research.facebook.com/people/lecun-yann/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Yann LeCun</a>, der leitende KI-Wissenschaftler bei Meta, hat seine Vision für intelligente Maschinen der Zukunft veröffentlicht.</p><p>
+Diese sollen mehr wie Tiere, beziehungsweise wie Menschen, lernen, sie sollen überlegen und planen können und ihr Verhalten soll von intrinsischen Motiven geleitet werden statt von Programmierung, externer Überwachung oder Belohnungen.</p><p></p><p>
+Wenn Maschinen mehr wie Menschen und Tiere lernen können sollen, stellt sich die Frage, was heute die Unterschiede sind.</p><p>
+Ein großer Unterschied ist, dass wir etwas lernen können, ohne Millionen von Trainingsbeispielen gesehen zu haben, wie es bei aktuellen ML-Algorithmen nötig ist.</p><p>
+Aber warum können wir das?</p><p>
+Möglicherweise deshalb, weil wir in unserem Kopf eine Vorstellung davon entwickelt haben, wie die Welt funktioniert. Auf dieses Modell der Welt können wir aufbauen, wenn wir etwas Neues lernen.</p><p></p><p>
+Auf dem Weg zu den oben genannten Zielen sieht Yann LeCun die größten Herausforderungen der KI-Forschung in diesen drei Bereichen:</p><p>
+1. Wie können Maschinen durch Beobachtung ein solches Modell der Welt lernen, Vorhersagen machen und Handlungen lernen?</p><p>
+2. Wie können Maschinen auf eine Art überlegen und planen, die mit den aktuellen Trainingsmethoden funktioniert?</p><p>
+3. Wie können Maschinen lernen Konzepte und Handlungspläne auf eine hierarchische Art darzustellen, auf verschiedenen Abstraktionsebenen und auf verschiedenen Zeitachsen?</p><p></p><p>
+Aktuell herrschen in vielen Bereichen Modelle vor, die auf der <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Architektur basieren. Er vertritt die Meinung, dass diese nicht ausreicht, um die Ziele zu erreichen, auch wenn man die Modelle immer weiter vergrößert.</p><p>
+Stattdessen beschreibt er in seiner Veröffentlichung eine neue Architektur, die mögliche Lösungen für alle drei Probleme enthält.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung bei OpenReview: <a href="https://openreview.net/forum?id=BZ5a1r-kVsf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://openreview.net/forum?id=BZ5a1r-kVsf</a></li>
+</ul></p></span><h2 id="3">Führt mehr Open Source zu mehr Reproduzierbarkeit?</h2><span><p>
+Jinen Setpal arbeitet als Ingenieur für maschinelles Lernen bei der Data Science Plattform <em>DagsHub</em>, die auf Open Source Tools basiert und sich an die Open Source Community richtet.</p><p>
+Dabei ist ihm aufgefallen, dass sich viele Forschungsergebnisse zu maschinellem Lernen und künstlicher Intelligenz nicht reproduzieren lassen.</p><p>
+Einige mögliche Gründe dafür beschreibt er in einem Blogeintrag:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die meisten wissenschaftlichen Veröffentlichungen werden auf Englisch geschrieben, aber nur 23% der Weltbevölkerung sprechen Englisch, wodurch eine Sprachbarriere entsteht</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Details und nötige Zwischenschritte in der Implementierung werden nicht explizit genannt</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Minimal- und Maximallängen für eingereichte Beiträge bei wissenschaftlichen Konferenzen, was zum Weglassen von relevanten Informationen oder zum Hinzufügen von irrelevanten Informationen führen kann</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Notwendiger Code, der nicht veröffentlicht wird, oder Verwendung von Abhängigkeiten, die nicht mehr öffentlich verfügbar sind</li>
+</ul>
+Seine Lösung ist wenig überraschend, wenn man bedenkt, dass er mit und für Open Source Software arbeitet: Den Code veröffentlichen. Falls es nicht anders geht, schlägt er ein System vor, das ähnlich funktioniert wie das Patentsystem, bei dem die Erfindungen nach einer gewissen Zeit zur Benutzung durch alle freigegeben werden.</p><p>
+Für die anderen drei Punkte nennt er in seinem Blogeintrag leider keine Lösungsvorschläge.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag bei DagsHub: <a href="https://dagshub.com/blog/unraveling-the-deep-learning-reproducibility-crisis/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://dagshub.com/blog/unraveling-the-deep-learning-reproducibility-crisis/</a></li>
+</ul></p></span><h2 id="4">Zusammengefasst</h2><span><p></p><p><em><strong><span style="font-size:18px">Formale Algorithmen für Transformer</span></strong></em></p><p>
+Zwei Forscher:innen von Deepmind haben festgestellt, dass es zwar viele Beschreibungen der <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Architektur gibt, aber kaum mathematisch präzise formale Beschreibungen und Pseudocode dabei sind.</p><p>
+Deshalb haben sie genau diese erstellt: für die einzelnen Komponenten, aus denen ein Transformer besteht, für verschiedene Varianten der Architektur, für Training und Vorhersage, sowie für wichtige Modelle (z.B. <a href="https://de.wikipedia.org/wiki/OpenAI#GPT-2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GPT-2</a>) und verwandte Aufgaben wie <a href="https://de.wikipedia.org/wiki/Tokenisierung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tokenisierung</a> und <a href="https://de.wikipedia.org/wiki/Worteinbettung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Embedding</a> von Text.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2207.09238" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2207.09238</a></li>
+</ul><div class="source"> </div><em><strong><span style="font-size:18px">MLGO verbessert die Compiler-Optimierung</span></strong></em></p><p>
+Während der Umwandlung von Code in <a href="https://de.wikipedia.org/wiki/Maschinensprache" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Maschinensprache</a> führen <a href="https://de.wikipedia.org/wiki/Compiler" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Compiler</a> oft Optimierungen durch, um Größe und Ausführungsgeschwindigkeit zu verbessern. Was dabei wie genau optimiert wird, wird anhand von Regeln (<a href="https://de.wikipedia.org/wiki/Heuristik" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Heuristiken</a>) entschieden.</p><p>
+Forscher:innen von Google haben jetzt ein Framework namens <em>MLGO</em> entwickelt, mit dem man Techniken basierend auf maschinellem Lernen in einen populären Compiler (<a href="https://de.wikipedia.org/wiki/LLVM" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LLVM</a>) integrieren kann.</p><p>
+Als Anwendungsbeispiel haben sie eine bestimmte Heuristik durch ein neuronales Netz ersetzt, das mithilfe von <a href="https://de.wikipedia.org/wiki/Reinforcement_Learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a> trainiert wurde.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Google AI: <a href="https://ai.googleblog.com/2022/07/mlgo-machine-learning-framework-for.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2022/07/mlgo-machine-learning-framework-for.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2101.04808" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2101.04808</a></li>
+</ul><div class="source">
+<div class="source"><br/>
+<em><strong><span style="font-size:18px">Welchen Einfluss haben Sprachmodelle auf Autor:innen?</span></strong></em><br/>
+"Indie"-Autor:innen, die ihre Geschichten ohne Unterstützung durch einen großen Verlag veröffentlichen, konzentrieren sich manchmal auf ein bestimmtes Nischengenre, in dem sie eine treue Leserschaft gefunden haben. In diesem veröffentlichen sie dann sehr häufig neue Bücher.<br/>
+Ein Artikel bei The Verge beschreibt das anhand einer Autorin, die alle neun Wochen einen neuen Roman fertigstellt. Als sie anfängt ein KI-Tool zu benutzen, das beim Schreiben helfen soll, ist sie überrascht, wie gut es funktioniert, und ihre Produktivität steigt deutlich. Aber sie spürt auch, wie sie die Verbindung zu ihren Geschichten verliert.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei The Verge: <a href="https://www.theverge.com/c/23194235/ai-fiction-writing-amazon-kindle-sudowrite-jasper" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/c/23194235/ai-fiction-writing-amazon-kindle-sudowrite-jasper</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source"><em><strong><span style="font-size:18px">Metas neue Bild-KI kann aus einer Skizze ein Bild erzeugen</span></strong></em><br/>
+Aktuelle Modelle zur Bild-Generierung können anhand von Texteingaben schon erstaunliche Bilder erzeugen. Dabei hat man als Benutzer:in allerdings relativ wenig Kontrolle darüber, wie genau das Bild am Ende aussehen wird.<br/>
+Deshalb haben Forscher:innen von Meta ein Modell entwickelt, das sie <em>Make-a-Scene</em> nennen. Make-a-Scene erhält zusätzlich zur Text-Beschreibung noch eine Skizze, mit der man grob festlegen kann, wie das Bild aussehen soll.<br/>
+Als Beispiel haben sie eine kurze Kindergeschichte geschrieben und von Make-a-Scene illustrieren lassen.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Video der Kindergeschichte auf Youtube: <a href="https://www.youtube.com/watch?v=QLTyqoJJKTo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.youtube.com/watch?v=QLTyqoJJKTo</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Meta AI: <a href="https://ai.facebook.com/blog/greater-creative-control-for-ai-image-generation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/greater-creative-control-for-ai-image-generation/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2203.13131" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2203.13131</a></li>
+</ul>
+<div class="source"> 
+<div class="source"><em><strong><span style="font-size:18px">BlenderBot: der neue Chatbot von Meta</span></strong></em><br/>
+Meta hat außerdem einen Chatbot namens <em>BlenderBot 3</em> veröffentlicht. Dieser kann für seine Antworten auf einen Speicher zugreifen oder das Internet durchsuchen.<br/>
+Das Sprachmodell, auf dem BlenderBot basiert, ist eine weiter-trainierte Version des <a href="http://tobiasfraenzel.de/newsletter/31/#3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>OPT</em> Modells</a>, das Meta Anfang Mai veröffentlicht hat.<br/>
+Die Gefahr bei solchen öffentlichen Chatbots ist immer, dass ein:e der vielen tausend Benutzer:innen eine Möglichkeit findet, den Bot zu unakzeptablen Äußerungen zu bringen. Das abschreckende Beispiel ist dabei der <a href="https://de.wikipedia.org/wiki/Tay_(Bot)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Tay</em> Bot von Microsoft</a>, der so schlimme Dinge von sich gegeben hat, dass er nach nur 16 Stunden wieder abgeschaltet wurde.<br/>
+BlenderBot scheint dagegen besser gewappnet zu sein: In einer ersten Auswertung nach einigen Tagen und 260.000 Nachrichten, wurden nur 0,1% als unangemessen, 1,4% als unsinnig und 1% als nicht zum Thema passend eingestuft.<br/>
+Wenn man den Bot nach Mark Zuckerberg fragt, hat er übrigens keine klare Meinung. <a href="https://www.businessinsider.com/meta-ai-chatbot-gives-insults-praise-for-mark-zuckerberg-2022-8" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Laut Business Insider</a> reichen die Antworten von <em>"Ich denke er ist ein großartiger Kerl"</em> bis <em>"Er ist zu unheimlich und manipulativ"</em>.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Meta AI: <a href="https://ai.facebook.com/blog/blenderbot-3-a-175b-parameter-publicly-available-chatbot-that-improves-its-skills-and-safety-over-time/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/blenderbot-3-a-175b-parameter-publicly-available-chatbot-that-improves-its-skills-and-safety-over-time/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Link zu BlenderBot (aktuell nur in den USA verfügbar): <a href="https://blenderbot.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://blenderbot.ai/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Code auf Github: <a href="https://github.com/facebookresearch/ParlAI/tree/main/projects/bb3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/facebookresearch/ParlAI/tree/main/projects/bb3</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></p></span><h2 id="5">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der Originalcode des <em><a href="https://en.wikipedia.org/wiki/ELIZA" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ELIZA</a></em>-Chatbots wurde wiederentdeckt: 📖 <a href="https://sites.google.com/view/elizagen-org/the-original-eliza" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Beschreibung und Code bei ELIZAGEN</a> (gehostet von Google Sites)<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Google's <em>Minerva</em> Modell kann mathematische und wissenschaftliche Fragen Schritt für Schritt lösen: 📖 <a href="https://ai.googleblog.com/2022/06/minerva-solving-quantitative-reasoning.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Google AI</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft hat ein Sprachmodell namens <em>GODEL</em> veröffentlicht, das auf Dialoge ausgelegt ist: 📖 <a href="https://www.microsoft.com/en-us/research/blog/godel-combining-goal-oriented-dialog-with-real-world-conversations/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Microsoft Research</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine schwedische Forscherin hat das Sprachmodell GPT-3 ein Paper über sich selbst schreiben lassen: 📖 <a href="https://www.scientificamerican.com/article/we-asked-gpt-3-to-write-an-academic-paper-about-itself-mdash-then-we-tried-to-get-it-published/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Scientific American</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mithilfe von DALL-E lassen sich jetzt auch Gesichter bearbeiten: 📖 <a href="https://www.theverge.com/2022/9/20/23362631/openai-dall-e-ai-art-generator-edit-realistic-faces-safety" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Twitter-Nutzerin Supercomposite hat zufällig das Bild einer unheimlichen Frau erzeugen lassen: 📖 <a href="https://twitter.com/supercomposite/status/1567162288087470081" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tweet</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Französische Steuerbehörden haben mithilfe von KI und Satellitenbildern 20.000 nicht angemeldete Pools entdeckt: 📖 <a href="https://www.heise.de/news/Frankreich-KI-findet-auf-Luftbildern-zehntausende-nicht-angemeldete-Pools-7247789.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Heise</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../36">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
