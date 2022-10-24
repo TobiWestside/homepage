@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #38</h1><span>
+                        
+                            Hallo und herzlich willkommen zur achtunddreißigsten Ausgabe von KI News. Es gibt sehr viel Neues, deshalb habe ich versucht, mich bei den einzelnen Nachrichten kurz zu fassen (und bei den meisten hat es auch geklappt). Die sind: der Tesla <em>AI Day</em> mit dem lange erwarteten Roboter, ein Modell zur Video-Generierung von Meta, ein Sprach-Bild-Modell von Google, ein Update zum autonomen Fahren und noch mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Metas Make-a-Video Modell</h2><span><span style="font-size:18px"><strong>Metas <em>Make-a-Video</em> Modell</strong></span><p>
+Nach dem <em><a href="http://tobiasfraenzel.de/newsletter/37/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Make-a-Scene</a></em> Modell, das Bilder generieren kann, hat Meta jetzt das <em>Make-a-Video</em> Modell vorgestellt. Wie der Name schon sagt, kann das Modell kurze Videos erzeugen.</p><p>
+Um Make-a-Scene zu trainieren, haben die Forscher:innen einen zweistufigen Trainingsprozess verwendet:</p><p>
+1. Der erste Schritt benutzt <a href="https://de.wikipedia.org/wiki/%C3%9Cberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">überwachtes Lernen</a>. Damit lernt ein Modell den Zusammenhang zwischen Texten und dazu passenden Bildern herzustellen (<a href="https://en.wikipedia.org/wiki/Text-to-image_model" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Text-to-Image</a>)</p><p>
+2. Im zweiten Schritt wird einem anderen Modell mithilfe von Videos dafür trainiert, zu einem Bild die passenden nächsten Videobilder zu erzeugen (<a href="https://de.wikipedia.org/wiki/Selbst%C3%BCberwachtes_Lernen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">selbstüberwachtes Lernen</a>)</p><p></p><p>
+Dadurch kann das Modell Videos zu Texten erzeugen, ohne dass es direkt auf Text-Video-Daten trainiert wird.</p><p>
+Für bessere Auflösung und flüssigere Videos werden außerdem noch Modelle eingesetzt, die die Auflösung verbessern (super-resolution), sowie Modelle, die zusätzliche Zwischenbilder in die Videos einfügen können.</p><p>
+Super-resolution Modelle erhöhen die Auflösung und müssen deshalb die zusätzlichen, neuen Pixel irgendwie füllen. Da diese Informationen nicht im Originalbild vorkommen, müssen die Modelle sie dazu erfinden oder "halluzinieren".</p><p></p><p>
+Bei den beiden super-resolution Modellen, die hier verwendet werden, werden diese Halluzinationen unterschiedlich behandelt.</p><p>
+Beim ersten Modell wird versucht sie zu reduzieren, indem auch Informationen aus den davor und danach kommenden Bildern betrachtet werden, die dann für die neuen Pixel verwendet werden können.</p><p>
+Beim zweiten wäre das wegen der höheren Auflösung zu aufwändig, daher wird hier versucht, die Hallzinationen konsistent zu halten, um Flackern zu vermeiden.</p><p></p><p>
+Dadurch, dass die einzelnen Teile des Gesamtmodells unabhängig voneinander funktionieren, können sie auch unabhängig voneinander trainiert werden</p><p>
+Als möglicher zukünftiger Entwicklungschritt ist geplant, dass das Modell auch Zusammenhänge zwischen Texten und Phänomenen lernen soll, die sich nur in Videos erkennen lassen (z.B. ob sich etwas von rechts nach links oder von links nach rechts bewegt).</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite des Projekts von Meta AI: <a href="https://makeavideo.studio/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://makeavideo.studio/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Seite des Projekts bei Github Pages: <a href="https://make-a-video.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://make-a-video.github.io/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2209.14792" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2209.14792</a></li>
+</ul></p></span><h2 id="3">Googles PaLI Model</h2><span><span style="font-size:18px"><strong>Googles <em>PaLI</em> Model</strong></span><p>
+Forscher:innen von Google haben ein Modell entwickelt, das Aufgaben mit Bildern und Texten in 109 Sprachen lösen kann.</p><p>
+Dazu gehören zum Beispiel Objekterkennung sowie das Beschreiben (Image Captioning) und Klassifizieren (Image Classification) von Bildern.</p><p></p><p>
+Sie haben mehrere verschieden große Varianten des Modells trainiert. Die kleinste verfügt über 3 Milliarden Parameter, die größte hat insgesamt 17 Milliarden Parameter, davon 4 Milliarden im Bild-Teil und 13 Milliarden im Text-Teil.</p><p></p><p>
+Eigentlich handelt es sich beim PaLI Modell um ein System, das aus 3 "Untermodellen" besteht, die alle auf der <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Architektur basieren: Ein Vision-Transformer, der die Bilddaten vorverarbeitet, ein Transformer-Encoder, der die Textdaten und die vorbereiteten Bilddaten verarbeitet und ein Decoder, der daraus dann die Ausgabetexte erzeugt.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Google AI: <a href="https://ai.googleblog.com/2022/09/pali-scaling-language-image-learning-in.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.googleblog.com/2022/09/pali-scaling-language-image-learning-in.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2209.06794" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2209.06794</a></li>
+</ul></p></span><h2 id="4">Autonomes Fahren, September Update</h2><span><p>
+Ein selbstfahrender Lastwagen des Unternehmens <a href="https://www.tusimple.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TuSimple</a> hat einen Unfall gebaut, weil er auf einer Interstate unerwartet nach links in eine Betonbegrenzung abgebogen ist. Dabei hat er nur knapp ein Auto auf der linken Spur verfehlt. TuSimple gibt dem Fahrer die Schuld, weil er das System nicht neu gestartet hätte. Stattdessen sollten sie sich vielleicht lieber fragen, was mit ihrer Software los ist, wenn sie es für das Richtige hält, mit über 100 km/h eine Betonwand zu rammen. 📖 <a href="https://www.wsj.com/articles/self-driving-truck-accident-draws-attention-to-safety-at-tusimple-11659346202" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel beim Wall Street Journal</a></p><p></p><p>
+Unterdessen fahren autonome Lkw mit Technologie von <a href="https://waymo.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Waymo</a> (und einem Sicherheitsfahrer) im Rahmen eines Testprogramms in Texas seit April Bier von Dallas nach Houston (ca. 350km): 📖 <a href="https://www.bloomberg.com/news/articles/2022-10-03/waymo-driverless-trucks-carry-1-million-pounds-of-modelo-corona" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Bloomberg</a></p><p></p><p><a href="https://www.argo.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ArgoAI</a>, ein weiteres Unternehmen, das an selbstfahrenden Autos arbeitet, hat ein Gremium von externen Experten ins Leben gerufen. Diese sollen Feedback zu Sicherheitspraktiken und -maßnahmen des Unternehmens geben: 📖 <a href="https://www.theverge.com/2022/8/4/23292533" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a></p><p></p><p>
+Zum Schluss noch eine Meldung, die nicht direkt mit autonomem Fahren zu tun hat: BMW hat angekündigt, dass der in den Autos integrierte Sprachassistent in Zukunft auf der Technologie von Amazons <em>Alexa Custom Assistant</em> basieren soll: 📖 <a href="https://www.heise.de/news/BMWs-naechster-Sprachassistent-nutzt-Amazons-Alexa-Technik-7279073.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Heise</a></p></span><h2 id="5">Tesla AI Day</h2><span><p>
+Im Vorfeld des <em>AI Days</em> mit der größten Spannung erwartet wurde sicherlich der letztes Jahr angekündigte <em>Tesla Bot</em>, ein menschenähnlicher Roboter.</p><p>
+Im Gegensatz zum letzten Jahr war dann auch tatsächlich ein Roboter auf der Bühne zu sehen, der ein paar vorsichtige Schritte machen und ins Publikum winken konnte.</p><p>
+Ich habe unten einen Artikel von The Verge verlinkt, der die Reaktionen von einigen Roboter-Experten zusammenfasst. Kurz gesagt: die gezeigten Fähigkeiten waren nichts besonderes, die Geschwindigkeit, mit der der Roboter so weit entwickelt wurde, dagegen schon.</p><p></p><p>
+Außer dem Roboter gab es natürlich auch noch Informationen über die Fahrassistenzsysteme. So haben inzwischen 160.000 Kund:innen in den USA und Kanada die Betaversion des sogenannten <em>Full Self Driving</em>-Systems aktiviert.</p><p>
+Dafür wurden laut Tesla im letzten Jahr mehr als 75.000 Modelle trainiert und 281 Modelle über Softwareupdates ausgeliefert.</p><p></p><p>
+Um die Software zu verbessern, wird unter anderem ein Simulator verwendet, der auf der <a href="https://de.wikipedia.org/wiki/Unreal_Engine" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Unreal Engine</a> basiert, einem Framework zur Entwicklung von Computerspielen.</p><p></p><p>
+Für das Training der Modelle hat Tesla 30 Petabyte an Daten gesammelt (ein Petabyte sind 1.000 Terabyte).</p><p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel über den Roboter: <a href="https://www.theverge.com/2022/9/30/23374729/tesla-bot-ai-day-robot-elon-musk-prototype-optimus-humanoid" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/9/30/23374729/tesla-bot-ai-day-robot-elon-musk-prototype-optimus-humanoid</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel über die nicht-Roboter-Dinge beim AI Day: <a href="https://www.theverge.com/2022/10/1/23380764/tesla-ai-day-full-self-driving-fsd-updates-dojo-supercomputer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/2022/10/1/23380764/tesla-ai-day-full-self-driving-fsd-updates-dojo-supercomputer</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel darüber, wie der Roboter und das Autopilot-Programm zusammenhängen: <a href="https://techcrunch.com/2022/09/30/teslas-robot-strategy-is-inextricably-tied-to-its-autopilot-strategy-for-better-or-for-worse/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://techcrunch.com/2022/09/30/teslas-robot-strategy-is-inextricably-tied-to-its-autopilot-strategy-for-better-or-for-worse/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Zusammenfassung der Reaktionen von Roboter-Experten: <a href="https://www.theverge.com/23384703/tesla-optimus-bot-elon-musk-specs-hype-reaction" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.theverge.com/23384703/tesla-optimus-bot-elon-musk-specs-hype-reaction</a></li>
+</ul></p></span><h2 id="6">Zusammengefasst</h2><span><p></p><p><em><strong><span style="font-size:18px">KI für die Tuberkulose-Diagnose</span></strong></em></p><p>
+Tuberkulose ist <a href="https://www.who.int/publications/i/item/9789240022676" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">eine der häufigsten Todesursachen</a> weltweit. Eine der von der WHO empfohlenen Methoden zur Erkennung einer Infektion ist eine Röntgenaufnahme des Brustkorbs.</p><p>
+Forscher:innen von Google Health haben zusammen mit verschiedenen Gesundheitseinrichtungen in Indien, Sambia und Südafrika ein Deep Learning System entwickelt, das diese Röntgenaufnahmen auswerten kann.</p><p>
+Dieses System wurde auf über 160.000 Aufnahmen von mehr als 22.000 Menschen (aus unbekannten Gründen nur 21% davon weiblich) trainiert, und kann eine aktive Lungentuberkulose ähnlich gut erkennen wie die Radiologen, mit denen es verglichen wurde.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei IEEE Spectrum: <a href="https://spectrum.ieee.org/tuberculosis-screening-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://spectrum.ieee.org/tuberculosis-screening-ai</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen bei Radiology: <a href="https://pubs.rsna.org/doi/10.1148/radiol.212213" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://pubs.rsna.org/doi/10.1148/radiol.212213</a></li>
+</ul><div class="source"> </div><em><strong><span style="font-size:18px">KI um Wale zu schützen</span></strong></em></p><p>
+An der Westküste der USA werden jedes Jahr ungefähr 80 Wale aus bedrohten Arten getötet, die meisten davon durch Kollisionen mit Schiffen.</p><p>
+Das <em>Whale Safe</em> System benutzt Daten von Walbeobachtungen und aus anderen Quellen zusammen mit einem KI-System, das die Rufe von Walen erkennen kann. Damit werden die Gebiete erkannt, in denen sich besonders häufig Wale aufhalten. Dort werden die Schiffe dann gebeten langsamer zu fahren, um Kollisionen zu vermeiden.</p><p>
+Das System wird bereits seit 2020 im <a href="https://de.wikipedia.org/wiki/Santa-Barbara-Kanal" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Santa-Barbara-Kanal</a> eingesetzt und soll zukünftig auch vor San Francisco benutzt werden.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Mitteilung des Marine Mammal Center: <a href="https://www.marinemammalcenter.org/news/whale-safe-to-launch-off-the-san-francisco-coastline" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.marinemammalcenter.org/news/whale-safe-to-launch-off-the-san-francisco-coastline</a></li>
+</ul><div class="source">
+<div class="source"><br/>
+<em><strong><span style="font-size:18px">Amazon entwickelt Roboter-Wachhund mit KI</span></strong></em><br/>
+Amazon will den letztes Jahr vorgestellten <a href="https://www.amazon.com/dp/B078NSDFSB/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Astro</em>-Roboter</a> durch die Verknüpfung mit der <a href="https://de-de.ring.com/pages/security-system" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Ring-Alarmanlage</a> zu einer Art KI-gesteuertem Wachhund machen. Wenn der Alarm ausgelöst wird, kann der Roboter selbstständig zur entsprechenden Stelle fahren, Bilder und Videos übertragen, und, wenn man für den <a href="https://www.amazon.com/b?node=18021383011" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Alexa Guard Plus Service</a> bezahlt, kann er sogar Hundegebell abspielen.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Ankündigung von Amazon: <a href="https://www.aboutamazon.com/news/devices/amazon-astro-2022" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.aboutamazon.com/news/devices/amazon-astro-2022</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei t3n: <a href="https://t3n.de/news/amazon-astro-roboter-wachhund-1502336/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://t3n.de/news/amazon-astro-roboter-wachhund-1502336/</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source"><em><strong><span style="font-size:18px">Neue Deepmind-KI erreicht menschliches Können 200x schneller</span></strong></em><br/>
+Eine <em>Agent57</em> genannte KI war 2020 die erste, die auf 57 Atari-Spielen besser war als die menschliche Vergleichsgruppe. Dafür benötigte sie jedoch sehr viel Spielzeit, die in "Frames" gemessen wurde.<br/>
+Ein Frame ist eine Aktualisierung des Bildschirminhalts. Bei Kinofilmen werden beispielsweise 24 Bilder pro Sekunde angezeigt; bei modernen Spielen sind es oft deutlich mehr, um Ruckeln bei schnellen Bewegungen zu vermeiden.<br/>
+Nach insgesamt 78 Milliarden Frames war Agent57 in allen Spielen besser als Menschen. Die neue KI namens MEME (die Abkürzung steht für <em>MEME is an Efficient Memory-based Exploration agent</em>) benötigt dafür jetzt nur noch 390 Millionen Frames.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2209.07550" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2209.07550</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Deepmind zu Agent57: <a href="https://www.deepmind.com/blog/agent57-outperforming-the-human-atari-benchmark" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.deepmind.com/blog/agent57-outperforming-the-human-atari-benchmark</a></li>
+</ul>
+<div class="source"> 
+<div class="source"><em><strong><span style="font-size:18px">Sichererer neuer Chatbot von Deepmind</span></strong></em><br/>
+Es gibt einige bekannte Probleme, die häufig bei Sprachmodellen auftreten, die für Chatbots verwendet werden: dass die Antworten falsche Informationen enthalten oder gefährliche Ratschläge geben, und dass sie Beleidigungen oder diskriminierende Äußerungen von sich geben.<br/>
+Um einen Chatbot zu entwickeln, der "sicherer" in Bezug auf diese Probleme ist, setzen Forscher:innen von Deepmind auf <a href="https://de.wikipedia.org/wiki/Reinforcement_Learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Reinforcement Learning</a>.<br/>
+Damit bringen sie dem Sprachmodell bei, was gewünschte Antworten sind und was nicht. Dafür wird Feedback von Testern dazu, wie gut einzelne Antworten sind, verwendet. Dazu kommt noch die Vorhersage eines zweiten Modells, ob die Antwort wahrscheinlich gegen bestimmte vorgegebene Regeln verstößt.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Deepmind: <a href="https://www.deepmind.com/blog/building-safer-dialogue-agents" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.deepmind.com/blog/building-safer-dialogue-agents</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2209.14375" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2209.14375</a></li>
+</ul>
+<div class="source"> 
+<div class="source"><em><strong><span style="font-size:18px">Erster kassenloser Biomarkt in Hamburg</span></strong></em><br/>
+In Hamburg hat das Startup <a href="https://www.autonomo.tech/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Autonomo</a> vor kurzem seinen ersten kassenlosen Supermarkt unter dem Namen "Hoody" eröffnet. Beim Eintreten muss man sich mit einer App durch's Scannen eines QR-Codes anmelden. Danach wird mit 32 Kameras und Waagen in den Regalen verfolgt, wer was aus den Regalen nimmt, und beim Verlassen automatisch abgerechnet.<br/>
+In der Anfangsphase sollen aber nur sechs Kunden gleichzeitig im Laden sein, damit die Technik nicht durcheinander kommt.<br/>
+Einer der Gründer von Autonomo ist der ehemalige Real-Chef Patrick Müller-Sarmiento.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel beim Hamburger Abendblatt: <a href="https://www.abendblatt.de/wirtschaft/article236244627/einkaufen-in-hamburgs-erstem-supermarkt-ohne-kassen-hoody-eppendorf.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.abendblatt.de/wirtschaft/article236244627/einkaufen-in-hamburgs-erstem-supermarkt-ohne-kassen-hoody-eppendorf.html</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'> Bericht des NDR: <a href="https://www.ndr.de/fernsehen/sendungen/hamburg_journal/Hamburgs-erster-autonomer-Bio-Supermarkt-vor-dem-Start,hamj125482.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.ndr.de/fernsehen/sendungen/hamburg_journal/Hamburgs-erster-autonomer-Bio-Supermarkt-vor-dem-Start,hamj125482.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></p></span><h2 id="7">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Blogeintrag zu den neuronalen Netzen hinter Alexa: 📖 <a href="https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Amazon Science</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Dall-E 2 ist jetzt für alle verfügbar: 📖 <a href="https://openai.com/dall-e-2/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Dall-E Seite von OpenAI</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie KI-generierte Stimmen in Star Wars Serien verwendet werden: 📖 <a href="https://www.vanityfair.com/hollywood/2022/09/darth-vaders-voice-emanated-from-war-torn-ukraine" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Vanity Fair</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Großbritannien will ausländische Kriminelle mit Smartwatches mit Gesichtserkennung überwachen: 📖 <a href="https://www.theguardian.com/politics/2022/aug/05/facial-recognition-smartwatches-to-be-used-to-monitor-foreign-offenders-in-uk" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel beim Guardian</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein KI-generiertes Bild hat einen Kunstwettbewerb gewonnen: 📖 <a href="https://www.vice.com/en/article/bvmvqm/an-ai-generated-artwork-won-first-place-at-a-state-fair-fine-arts-competition-and-artists-are-pissed" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Vice</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI-generierte Landschaftsbilder (sehr schade, ich würde da wirklich gern mal Urlaub machen): 📖 <a href="https://petapixel.com/2022/08/16/these-are-not-photos-beautiful-landscapes-created-by-new-ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei PetaPixel</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Github Copilot ist jetzt kostenlos verfügbar für Lehrer:innen und Forscher:innen an Bildungseinrichtungen: 📖 <a href="https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Github</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">TikTok enthält jetzt eine einfache Bild-aus-Text-Generierungs-KI: 📖 <a href="https://www.theverge.com/2022/8/15/23306101" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei The Verge</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../37">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Adresse<span class="asterisk">*</span></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
