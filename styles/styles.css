@@ -3,6 +3,10 @@ body {
     color: #333;
 }
 
+h1 {
+    color: #007C89;
+}
+
 a.icon_link {
     display: inline-block;
     margin-bottom: 1em;
@@ -106,7 +110,7 @@ h2 {
 }
 
 a {
-    color: #333;
+    color: #007C89;
 }
 
 nav.menu-main {
@@ -129,6 +133,7 @@ nav.menu-main li {
 
 nav.menu-main a {
     text-decoration: none;
+    color: #333;
 }
 
 nav.menu-main a:hover {
@@ -163,6 +168,34 @@ div.container-project-inner {
     text-align: left;
 }
 
+input.button {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    color: #fff;
+    background-color: #007C89;
+    border: 1px solid #fff;
+}
+
+input.email {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    border: 1px solid #333;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #007C89;
+}
+
+::selection {
+    color: #fff;
+    background: #007C89;
+}
+
 @media (prefers-color-scheme: dark) {
     body, #onePlayerButton, #twoPlayerButton, input, textarea{
         color: #dadada;
@@ -175,7 +208,20 @@ div.container-project-inner {
     }
 
     a {
+        color: #007C89
+    }
+
+    nav.menu-main a {
         color: #dadada;
+    }
+
+    input.button {
+        border: 1px solid #18181f;
+    }
+
+    input.email {
+        color: #dadada;
+        border: 1px solid #dadada;
     }
 
     #playerLabel, #whiteLabel {
