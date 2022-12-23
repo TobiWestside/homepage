@@ -196,6 +196,53 @@ input.email {
     background: #007C89;
 }
 
+label.accordion {
+    background-color: #dadada;
+    padding: 18px;
+    width: 100%;
+    display: block;
+    font-size: 110%;
+}
+
+div.acc-minus {
+    float: right;
+    font-weight: bold;
+}
+
+div.acc-plus {
+    float: right;
+    font-weight: bold;
+    display: none;
+}
+
+input.accordion {
+    display: none;
+}
+
+input#acc-2021:checked ~ div#content-2021 {
+    display: none;
+}
+
+input#acc-2022:checked ~ div#content-2022 {
+    display: none;
+}
+
+input#acc-2021:checked ~ label div#acc-2021-minus {
+    display:none;
+}
+
+input#acc-2021:checked ~ label div#acc-2021-plus {
+    display:block;
+}
+
+input#acc-2022:checked ~ label div#acc-2022-minus {
+    display:none;
+}
+
+input#acc-2022:checked ~ label div#acc-2022-plus {
+    display:block;
+}
+
 @media (prefers-color-scheme: dark) {
     body, #onePlayerButton, #twoPlayerButton, input, textarea{
         color: #dadada;
@@ -227,5 +274,9 @@ input.email {
     #playerLabel, #whiteLabel {
         color: #333;
         background-color: #fff;
+    }
+
+    label.accordion {
+        background-color: #333;
     }
 }
