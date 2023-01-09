@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #42</h1><span>
+                        
+                            Hallo und herzlich willkommen zur zweiundvierzigsten Ausgabe von KI News. Diesmal mit Texten, aus denen 3D-Modelle entstehen, einem neuen effizienten Audio-Codec, einem Sprachmodell, das wissenschaftliche Fragen beantworten können soll und noch mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Text-zu-3D-Modelle von Nvidia und Open AI</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Audio-Codec basierend auf neuronalen Netzen</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Galactica - Sprachmodelle als Schnittstelle zur Wissenschaft?</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zusammengefasst
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Metas neues Modell für Text, Audio und Bilder: data2vec 2.0</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sprachmodell sagt Proteinstrukturen voraus</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bessere Vorschläge für Programmierer durch KI</li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Außerdem</li>
+</ul></span><h2 id="3">Text-zu-3D-Modelle von Nvidia und Open AI</h2><span><p>
+Nvidias neues Modell heißt <em>Magic3D</em>. Die Forscher:innen verfolgen dabei einen zweistufigen Ansatz: Zuerst lassen sie eine 3D-Darstellung mit geringer Qualität erzeugen und verbessern dann im zweiten Schritt die Auflösung.</p><p></p><p>
+Für den ersten Schritt generiert ein <a href="http://tobiasfraenzel.de/newsletter/40/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Diffusion Modell</a> ein Bild mit geringer Auflösung, das zum Text passt. Ein anderes neuronales Netz erzeugt dann aus diesem Bild die erste 3D-Darstellung.</p><p>
+Im zweiten Schritt erhöht ein weiteres Diffusion Modell (genauer: <a href="https://de.wikipedia.org/wiki/Stable_Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Stable Diffusion</em></a>) die Auflösung des Bildes aus Schritt eins. Basierend darauf wird auch die Auflösung der 3D-Darstellung entsprechend erhöht.</p><p></p><p>
+Um schneller zu sein als das <a href="http://tobiasfraenzel.de/newsletter/40/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>DreamFusion</em></a> Modell, das im September veröffentlicht wurde, benutzt <em>Magic3D</em> eine <a href="https://nvlabs.github.io/instant-ngp/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Optimierung</a> für die Umwandlung des Bildes in 3D. Dadurch ist <em>Magic3D</em> ungefähr doppelt so schnell wie <em>DreamFusion</em> (40 min statt 90 min).</p><p></p><p><em>Kurz gesagt</em>:</p><p>
+1. Text -&gt; Bild mit geringer Auflösung -&gt; 3D-Darstellung</p><p>
+2. Auflösung des Bildes erhöhen -&gt; Auflösung der 3D-Darstellung erhöhen</p><p></p><p>
+Die Forscher:innen von OpenAI nennen ihr Modell <em>Point-E</em>. Sie benutzen ebenfalls einen zweistufigen Prozess, aber geben der Geschwindigkeit noch höhere Priorität gegenüber der Qualität der Ergebnisse.</p><p></p><p>
+Auch bei <em>Point-E</em> gibt es im ersten Schritt ein Diffusion Modell (eine Variante des <a href="http://tobiasfraenzel.de/newsletter/22/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>GLIDE</em></a> Modells), das aus dem Text ein Bild generiert.</p><p></p><p>
+Der Unterschied zu <em>Magic3D</em> liegt in dem was darauf folgt. In Schritt zwei erzeugt nämlich ein weiteres Diffusion Modell aus dem Bild eine 3D-Punktewolke mit 1.000 Punkten. Darauf folgt nochmal ein Diffusion Modell, das die Auflösung auf 4.000 Punkte erhöht.</p><p></p><p>
+Mit diesem Ansatz schaffen es die Forscher:innen, eine 3D-Darstellung in nur 1-2 Minuten generieren zu lassen, wenn auch mit geringerer Qualität als <em>DreamFusion</em> oder <em>Magic3D</em>.</p><p></p><p><em>Kurz gesagt</em>:</p><p>
+1. Text -&gt; Bild</p><p>
+2. Bild -&gt; 3D-Punktewolke mit 1.000 Punkten -&gt; 3D-Punktewolke mit 4.000 Punkten
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite von Magic3D: <a href="https://deepimagination.cc/Magic3D/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://deepimagination.cc/Magic3D/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen zu Magic3D: <a href="https://arxiv.org/abs/2211.10440" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2211.10440</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Code von Point-E: <a href="https://github.com/openai/point-e" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/openai/point-e</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen zu Point-E: <a href="https://arxiv.org/abs/2212.08751" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2212.08751</a></li>
+</ul></p></span><h2 id="4">Audio-Codec basierend auf neuronalen Netzen</h2><span><p>
+Meta hat ein Verfahren namens <em>Encodec</em> entwickelt, das, mithilfe von neuronalen Netzen, Audio-Dateien auf ein Zehntel der Größe von Mp3 komprimieren kann. Eine Datei braucht bei vergleichbarer Qualität nur noch 6 Kilobyte pro Sekunde statt 64 kb bei Mp3.</p><p></p><p>
+Um Dateien zu komprimieren benötigt Encodec zwei Teile: ein neuronales Netz mit <a href="https://de.wikipedia.org/wiki/Convolutional_Neural_Network" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CNN-Architektur</a>, das die Informationen aus der Original-Datei verarbeitet, sowie einen weiteren Teil, der das Ergebnis davon mithilfe von <a href="https://de.wikipedia.org/wiki/Vektorquantisierung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Vektorquantisierung</a> komprimiert.</p><p></p><p>
+Beim Training sind noch weitere Komponenten nötig.</p><p>
+Das sind zum einen ein weiteres CNN, das die komprimierten Daten wieder in eine Audiodatei umwandelt, und zum anderen ein "Diskriminator". Das ist ein neuronales Netz, das lernt, die verarbeitete Datei vom Original zu unterscheiden. Mit diesem Feedback kann das erste CNN lernen, eine Komprimierung zu finden, bei der das Ergebnis dem Original möglichst ähnlich ist.</p><p>
+Da der Diskriminator nicht wissen kann, wie etwas für Menschen klingt, benutzen die Forscher:innen die <a href="https://de.wikipedia.org/wiki/Spektrogramm" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Spektrogramme</a> der Dateien als Hilfsmittel, um den Klang darzustellen.</p><p></p><p>
+Ein Vorteil dieses Ansatzes im Vergleich zu vielen anderen aktuellen ML Modellen ist, dass er relativ ressourceneffizient ist. Man braucht keine Hochleistungs-Grafikkarte um <em>Encodec</em> auszuführen, sondern es funktioniert auf einem einzelnen CPU-Kern.</p><p></p><p><em>Kurz gesagt</em>:</p><p>
+Ausführung: Original-Audio -&gt; CNN zur Komprimierung -&gt; Vektorquantisierung -&gt; komprimierte Daten</p><p>
+Training: Original-Audio -&gt; CNN zur Komprimierung -&gt; Vektorquantisierung -&gt; komprimierte Daten -&gt; CNN zur Rückumwandlung in Audio -&gt; Diskriminator vergleicht mit Original und gibt Feedback an das CNN zur Komprimierung
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Meta AI: <a href="https://ai.facebook.com/blog/ai-powered-audio-compression-technique/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/ai-powered-audio-compression-technique/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Code auf Github: <a href="https://github.com/facebookresearch/encodec" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://github.com/facebookresearch/encodec</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2210.13438" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2210.13438</a></li>
+</ul></p></span><h2 id="5">Galactica - Sprachmodelle als Schnittstelle zur Wissenschaft?</h2><span><p>
+Forscher:innen von Meta haben ein Sprachmodell namens <em>Galactica</em> entwickelt, das auf "high-quality" Daten trainiert wurde. Dazu gehören zum Beispiel wissenschaftliche Veröffentlichungen, Lehrbücher, Vorlesungsnotizen und Enzyklopädien.</p><p></p><p>
+Interessant bei Galactica ist, dass das Modell auch in einigen Testaufgaben, die nichts mit Wissenschaft zu tun haben, besser war als andere, zum Teil deutlich größere, Sprachmodelle. Das könnte darauf hindeuten, dass die Qualität der Trainingsdaten für Sprachmodelle eine wichtigere Rolle spielt als bisher angenommen.</p><p></p><p>
+Für mehr Aufmerksamkeit hat aber etwas anderes gesorgt. Meta hat nämlich nach Protesten die Demo-Version des Modells nach nur drei Tagen wieder von der Webseite genommen.</p><p></p><p>
+Der größte Kritikpunkt dabei war, dass Meta den Anschein erweckt hat, als könnte das Modell eine Art Schnittstelle für Wissen sein: Laut der Webseite: "<em>Sie können damit die Literatur erforschen, wissenschaftliche Fragen stellen, wissenschaftlichen Code schreiben und vieles mehr</em>".</p><p></p><p>
+Das klingt erstmal gut. Ein Modell, das auf wissenschaftlichen Arbeiten trainiert wurde, gibt auch wissenschaftliche Antworten, oder?</p><p></p><p>
+Leider nicht.</p><p>
+Sprachmodelle wie Galactica lernen kein "Wissen", sondern nur die statistischen Eigenschaften von Texten. Daher wirken ihre Ausgaben zwar zum Teil sehr intelligent, sie sind aber einfach nur eine statistisch wahrscheinliche Fortsetzung eines Textes.</p><p></p><p>
+Und das ist auch Meta bewusst, denn im Abschnitt "<em>Limitations</em>" schreiben sie unter anderem <em>"Es gibt keine Garantien für wahrheitsgemäße oder zuverlässige Ergebnisse von Sprachmodellen</em>" und "<em>Sprachmodelle sind oft selbstbewusst, aber falsch. Einige der von Galactica generierten Texte können sehr authentisch und selbstbewusst erscheinen, aber in wichtigen Punkten subtil falsch sein</em>".</p><p></p><p>
+Oder kurz gesagt: man kann sich nicht darauf verlassen, dass die Antworten stimmen, auch wenn sie richtig wirken.</p><p></p><p>
+Das steht natürlich im Konflikt mit dem Anspruch von Meta, dass das Modell als eine Art Schnittstelle zu wissenschaftlichen Erkenntnissen genutzt werden kann.</p><p></p><p>
+Und das ist auch vielen Leuten aufgefallen, die das Modell ausprobiert haben.</p><p>
+Dazu gehört unter anderem Michael Black, der Direktor des Max-Planck-Institutes für Intelligente Systeme in Tübingen, der seine Versuche mit Galactica auf Twitter veröffentlich hat und es als "<em>potenziell verzerrend und gefährlich für die Wissenschaft</em>" beschreibt: <a href="https://twitter.com/Michael_J_Black/status/1593133722316189696" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://twitter.com/Michael_J_Black/status/1593133722316189696</a><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite von Galactica: <a href="https://galactica.org/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://galactica.org/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen (PDF): <a href="https://galactica.org/static/paper.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://galactica.org/static/paper.pdf</a></li>
+</ul></p></span><h2 id="6">Zusammengefasst</h2><span><div class="source"> </div><em><strong><span style="font-size:18px">Metas neues Modell für Text, Audio und Bilder: data2vec 2.0</span></strong></em><div class="source">
+<div class="source">Ungefähr vor einem Jahr, am 20. Januar 2022, wurde die erste Version von <a href="http://tobiasfraenzel.de/newsletter/25/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>data2vec</em></a> veröffentlicht. Die grundsätzliche Funktionsweise ist auch in Version zwei noch die gleiche wie beim Original: Für jede Art von Daten (Text, Audio, Bilder) wird ein separates Modell trainiert.<br/>
+Diese Modelle nennen die Forscher:innen "Teacher"-Modelle. Dann trainieren sie das eigentliche <em>data2vec</em> Modell darauf, wenn es eine bestimmte Art von Eingabedaten bekommt, den internen Zustand des entsprechenden Teacher-Modells vorherzusagen.<br/>
+So kann es alle drei Arten von Daten verarbeiten.<br/>
+Durch verschiedene Optimierungen in der Art, wie die Daten im Training verarbeitet werden, sowie ein neuronales Netz mit einer anderen Architektur in einem Teil von <em>data2vec 2.0</em>, konnte die Geschwindigkeit im Vergleich zur ersten Version deutlich gesteigert werden.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag von Meta AI zu data2vec 2.0: <a href="https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen zu data2vec 2.0: <a href="https://ai.facebook.com/research/publications/efficient-self-supervised-learning-with-contextualized-target-representations-for-vision-speech-and-language" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://ai.facebook.com/research/publications/efficient-self-supervised-learning-with-contextualized-target-representations-for-vision-speech-and-language</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source"><strong><em><span style="font-size:18px">Sprachmodell sagt Proteinstrukturen voraus</span></em></strong><br/>
+Das <a href="https://www.deepmind.com/research/highlighted-research/alphafold" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>AlphaFold</em></a>-Modell von DeepMind (gehört zu Google) hat Ende 2020 mit der genauen Vorhersage von Proteinstrukturen für Aufsehen gesorgt und die Forscher:innen haben inzwischen in einer Datenbank die Strukturen von 200 Millionen Proteinen <a href="https://www.deepmind.com/blog/alphafold-reveals-the-structure-of-the-protein-universe" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">veröffentlicht</a>.<br/>
+Jetzt haben Forscher:innen von Meta nachgezogen und ein Modell namens <em>ESMFold</em> entwickelt. Dabei handelt es sich um ein Sprachmodell mit 15 Milliarden Parametern.<br/>
+Aminosäure-Sequenzen von Proteinen lassen sich auch als Buchstaben darstellen, so dass ein Sprachmodell damit arbeiten kann. Deshalb wurde das Modell mit Daten in dieser Darstellung trainiert.<br/>
+Die Ergebnisse sind nicht so genau wie die von <em>AlphaFold</em>, aber dafür ist die Vorhersage deutlich schneller (je nach Länge der Proteinsequenz 6x bis 60x schneller).<br/>
+Mithilfe von <em>ESMFold</em> haben die Forscher:innen 617 Millionen Strukturen von Proteinen vorhergesagt, davon werden 225 Millionen als hohe Qualität eingeschätzt.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Nature: <a href="https://www.nature.com/articles/d41586-022-03539-1" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.nature.com/articles/d41586-022-03539-1</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Atlas der vorhergesagten Proteinstrukturen: <a href="https://esmatlas.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://esmatlas.com/</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source">
+<div class="source"><strong><em><span style="font-size:18px">Bessere Vorschläge für Programmierer durch KI</span></em></strong><br/>
+<a href="https://de.wikipedia.org/wiki/Integrierte_Entwicklungsumgebung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Integrated Development Environments</a> (IDEs) sind die Programme, mit denen Programmierer:innen programmieren. Viele IDEs analysieren dabei den Code, der gerade bearbeitet wird, um Tipps und Hinweise zu geben.<br/>
+Forscher:innen von Microsoft, Uber, Apple und der <a href="https://www.wisc.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Universität von Wisconsin-Madison</a> haben ein Modell namens <em>Overwatch</em> entwickelt, das diese Vorschläge verbessern soll. Dafür bezieht <em>Overwatch</em> nicht nur den aktuellen Code mit ein, an dem jemand arbeitet, sondern auch die zuletzt gemachten Änderungen. Damit versucht es die Änderungen vorherzusagen, die wahrscheinlich als nächstes gemacht werden, um dafür Hilfe anzubieten.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2207.12456" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2207.12456</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></span><h2 id="7">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Atom-Manipulation durch Reinforcement Learning: 📖 <a href="https://www.nature.com/articles/s41467-022-35149-w" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Veröffentlichung der Forscher:innen bei Nature</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft, Github und Open AI werden wegen Github Copilot verklagt:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://githubcopilotlitigation.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Webseite der Anwaltskanzlei zur Klage</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"> 📖 <a href="https://www.bleepingcomputer.com/news/security/microsoft-sued-for-open-source-piracy-through-github-copilot/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Bleepingcomputer</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mit <em>Hey Github</em> programmieren ohne zu tippen: 📖 <a href="https://githubnext.com/projects/hey-github" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Anmeldeseite für die Vorschauversion</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI hat Version 2 des Whisper Modells zur Spracherkennung veröffentlicht: 📖 <a href="https://github.com/openai/whisper/commit/4179ed2475cc84cba66868b516232ef1b74dacdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Code auf Github</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Es gibt ein neues open source Sprachmodell für Klassifikation:  📖 <a href="https://www.together.xyz/blog/releasing-v1-of-gpt-jt-powered-by-open-source-ai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Together</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Robb Oat ist eine App für Github, die, basierend auf einer Beschreibung, selbstständig Code entsprechend ändern kann: 📖 <a href="https://robboat.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">robboat.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Github Action, die, mithilfe von GPT-3, automatisch eine Zusammenfassung einer Codeänderung schreiben kann: 📖 <a href="https://github.com/KanHarI/gpt-commit-summarizer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Code auf Github</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../41">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>

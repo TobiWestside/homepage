@@ -227,6 +227,10 @@ input#acc-2022:checked ~ div#content-2022 {
     display: none;
 }
 
+input#acc-2023:checked ~ div#content-2023 {
+    display: none;
+}
+
 input#acc-2021:checked ~ label div#acc-2021-minus {
     display:none;
 }
@@ -240,6 +244,14 @@ input#acc-2022:checked ~ label div#acc-2022-minus {
 }
 
 input#acc-2022:checked ~ label div#acc-2022-plus {
+    display:block;
+}
+
+input#acc-2023:checked ~ label div#acc-2023-minus {
+    display:none;
+}
+
+input#acc-2023:checked ~ label div#acc-2023-plus {
     display:block;
 }
 
