@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #45</h1><span>
+                        
+                            Hallo und herzlich willkommen zur fünfundvierzigsten Ausgabe von KI News. Diesmal gibt es viele neue Modelle, die etwas aus einem Text erzeugen können - gesprochene Sprache, Bilder, Musik und 3D-Darstellungen. Außerdem habe ich ein Update zu den neuesten Entwicklungen bei ChatGPT und noch mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#3">VALL-E TTS: ein neues Text-to-Speech Modell</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#4">Muse: ein Text-to-Image Transformer</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#5">MusicLM kann aus einer Beschreibung Musik machen</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#6">ChatGPT Update</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#7">Zusammengefasst</a>
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Dream3D: 3D-Darstellungen aus Texten</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forward-Forward Algorithmus</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Stable Attribution: Welche Bilder benutzt Stable DIffusion?</li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#7">Außerdem</a></li>
+</ul></span><h2 id="3">Vall-E TTS: ein neues Text-to-Speech Modell</h2><span><p>
+Vall-E TTS ist ein Modell, das Forscher:innen von Microsoft entwickelt haben. TTS steht dabei für Text-to-Speech und beschreibt was das Modell macht: Text in Sprache umwandeln.</p><p>
+Trainiert wurde Vall-E mit 60.000 Stunden englischer Sprache von 7.000 verschiedenen Sprecher:innen. Laut den Forscher:innen sind das sehr viel mehr Trainingsdaten als bei bisherigen Modellen, die mit höchstens 600 Stunden Sprache trainiert wurden.</p><p></p><p><em>Wie funktioniert Vall-E TTS?</em></p><p>
+Als Eingabedaten bekommt es den Text und eine drei Sekunden lange Sprachaufnahme von der Stimme, mit der der Text gesprochen werden soll.</p><p>
+Sowohl der Text als auch die Aufnahme werden vorverarbeitet, bevor sie an das Modell weitergegeben werden.</p><p>
+Der Text wird in <a href="https://de.wikipedia.org/wiki/Phonem" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Phoneme</a> (Laute mit unterschiedlicher Bedeutung) umgewandelt. Die Sprachaufnahme wird durch einen Audio <a href="https://de.wikipedia.org/wiki/Codec" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Codec</a> in Codes umgewandelt. Als Codec benutzen die Forscher:innen hier das <a href="http://tobiasfraenzel.de/newsletter/42/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">EnCodec Modell</a>.</p><p></p><p>
+Die Phoneme und Codes werden dann an ein Sprachmodell weitergegeben. Dieses Modell macht eine Vorhersage, welche Codes in der Aufnahme als nächstes kommen würden, unter Berücksichtigung des Textes.</p><p>
+Diese vorhergesagten Codes werden zum Schluss von einem Decoder wieder in hörbare Audiodaten umgewandelt.</p><p></p><p>
+Eine Besonderheit von Vall-E TTS ist, dass es auch die Emotionen aus der Sprachaufnahme in die Vorhersage übernehmen kann, auch ohne dafür speziell trainiert zu sein.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Demo-Webseite: <a href="https://valle-demo.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://valle-demo.github.io/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2301.02111" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2301.02111</a></li>
+</ul></p></span><h2 id="4">Muse: ein Text-to-Image Transformer</h2><span><p>
+Forscher:innen von Google haben ein Modell namens Muse entwickelt, das zu Beschreibungen passende Bilder generieren kann.</p><p></p><p>
+Der Aufbau von Muse ist relativ komplex. Es besteht aus einer ganzen Reihe von Modellen, die jeweils spezielle Aufgaben übernehmen.</p><p>
+Muse kann als Eingabedaten Texte und Bilder verarbeiten. Diese werden als erstes vorverarbeitet: die Texte von einem Sprachmodell (<a href="https://arxiv.org/abs/1910.10683" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">T5 Text Encoder</a>), zu sogenannten Embeddings, die Bilder von einem <a href="https://compvis.github.io/taming-transformers/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">VQGAN CNN Modell</a>, zu sogenannten Tokens.</p><p></p><p>
+Darauf folgen dann zwei aufeinander aufbauende Transformer Modelle:</p><p>
+Zuerst das "Base Model". Es lernt, die Tokens eines 256 x 256 Pixel großen Bildes passend zu den Text Embeddings vorherzusagen.</p><p>
+Danach kommt das "Super Resolution Model". Dieses bekommt zusätzlich zu den Embeddings noch die Tokens aus dem Base Model und macht damit eine Vorhersage der Tokens eines 512 x 512 Pixel großen Bildes.</p><p></p><p>
+Trainiert wurde Muse auf einem Datensatz aus 460 Millionen Text-Bild-Paaren. Das Training auf 512 spezialisierten Prozessoren (<a href="https://de.wikipedia.org/wiki/Tensor_Processing_Unit" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">TPUs</a>) dauerte eine Woche.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite mit Beispielen: <a href="https://muse-model.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://muse-model.github.io/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2301.00704" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2301.00704</a></li>
+</ul></p></span><h2 id="5">MusicLM kann aus einer Beschreibung Musik machen</h2><span><p>
+Wie der Name schon andeutet, kann das MusicLM Modell (bis zu fünf Minuten lange) Musikstücke generieren.</p><p>
+Alles was es dazu braucht ist eine Beschreibung, was zu hören sein soll, zum Beispiel “<em>enchanting jazz song with a memorable saxophone solo and a solo singer</em>”.</p><p>
+Das von Google entwickelte Modell kann nicht nur völlig neue Lieder erzeugen, sondern auch gepfiffene oder gesummte Melodien in andere Musik umwandeln, die von einem Text beschrieben wird.</p><p></p><p>
+Beim Training des Modells hatten die Forscher:innen das Problem, dass es nicht besonders viele Beschreibungen von Liedern in der benötigten Form gibt.</p><p>
+Deshalb haben sie MusicLM nicht direkt auf Text-Musik-Datenpaaren trainiert, sondern einen anderen Weg gewählt.</p><p>
+Es gibt ein Modell namens "<a href="https://arxiv.org/abs/2208.12415" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">MuLan</a>", das darauf trainiert ist, Musik und ihre Beschreibung intern sehr ähnlich darzustellen (eine sogenannte "<a href="https://de.wikipedia.org/wiki/Worteinbettung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Einbettung</a>", englisch "Embedding"). Dadurch lassen sich die Text-Embeddings direkt aus der Musik ableiten.</p><p>
+Das wiederum hat den Vorteil, dass man nicht mehr unbedingt tatsächlich Texte braucht, sondern stattdessen die abgeleiteten Embeddings von MuLan benutzen kann.</p><p>
+Dadurch konnten die Forscher:innen MusicLM auf reinen Audio-Daten und den daraus berechneten Text-Embeddings trainieren.</p><p></p><p>
+MusicLM ist also tatsächlich nicht darauf trainiert, Musik aus Texten zu erzeugen, sondern aus den entsprechenden Text-Embeddings von MuLan.</p><p>
+Deshalb muss für eine Vorhersage, also das Generieren von Musik, der Text zuerst in ein Embedding umgewandelt werden, bevor er an MusicLM weitergegeben wird.</p><p></p><p>
+Um zu prüfen wie gut das Modell funktioniert, haben die Forscher:innen einen neuen Datensatz erstellt, für den sie, mithilfe von Musikern, 5.500 Musik-Textbeschreibung-Paare gesammelt haben.</p><p>
+Diesen haben sie auch veröffentlicht, so dass er für die weitere Forschung benutzt werden kann.</p><p></p><p>
+Die Evaluierung von fünf verschiedenen Metriken hat ergeben, dass MusicLM besser funktioniert als bisherige Modelle wie <a href="http://tobiasfraenzel.de/newsletter/41/#7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Riffusion</a> und <a href="https://mubert.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mubert</a>.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite mit Beispielen: <a href="https://google-research.github.io/seanet/musiclm/examples/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://google-research.github.io/seanet/musiclm/examples/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2301.11325" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2301.11325</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei Techcrunch: <a href="https://techcrunch.com/2023/01/27/google-created-an-ai-that-can-generate-music-from-text-descriptions-but-wont-release-it/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://techcrunch.com/2023/01/27/google-created-an-ai-that-can-generate-music-from-text-descriptions-but-wont-release-it/</a></li>
+</ul></p></span><h2 id="6">ChatGPT Update</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI hat APIs für <a href="https://openai.com/blog/chatgpt/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ChatGPT</a> und <a href="https://openai.com/research/whisper" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Whisper</a> (ein Spracherkennungsmodell) eingeführt. Der Blogeintrag hat auch Beispiele, wie die APIs bereits in Apps genutzt werden (u.a. von Snapchat, Instacart und Shopify): 📖 <a href="https://openai.com/blog/introducing-chatgpt-and-whisper-apis" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie der Hype um ChatGPT die geplante KI-Regulierung der EU, den sogenannten "AI Act", beeinflusst:📖 <a href="https://www.politico.eu/article/eu-plan-regulate-chatgpt-openai-artificial-intelligence-act/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">politico.eu</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">MIT Technology Review hat mit Mitarbeitenden von OpenAI über ChatGPT gesprochen und gibt einen interessanten Einblick: 📖 <a href="https://www.technologyreview.com/2023/03/03/1069311/inside-story-oral-history-how-chatgpt-built-openai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">technologyreview.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Artikel mit einer Auflistung der Unternehmen, die versuchen, mit ChatGPT zu konkurrieren: 📖 <a href="https://www.theverge.com/2023/3/5/23599209/companies-keep-up-chatgpt-ai-chatbots" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft hat angefangen, die Einschränkungen für den Bing Chat wieder zu lockern: 📖<a href="https://www.theverge.com/2023/3/8/23631065/microsoft-is-letting-bing-chat-for-longer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Artikel über den aktuellen KI-Hype und die damit einhergehenden Probleme veröffentlicht: 📖 <a href="https://www.tagesschau.de/wirtschaft/technologie/kuenstliche-intelligenz-konzerne-plaene-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a></li>
+</ul></span><h2 id="7">Zusammengefasst</h2><span><div class="source"> </div><em><strong><span style="font-size:18px">Dream3D: 3D-Darstellungen aus Texten</span></strong></em><div class="source">
+<div class="source">Forscher:innen aus China haben ein Modell namens Dream3D entwickelt, das eine Beschreibung in eine 3D-Darstellung umwandeln kann.<br/>
+Dazu benutzt es zuerst ein anderes Modell, um aus einer Beschreibung ein Bild zu generieren, z.B. <a href="https://de.wikipedia.org/wiki/Stable_Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Stable Diffusion</a>.<br/>
+Dieses Bild enthält noch keine Details, sondern nur die grundsätzliche Form des gewünschten Gegenstands.<br/>
+Daraus generiert es dann in einem weiteren Schritt eine einfache 3D-Darstellung.<br/>
+Diese wird dann wiederum als Eingabe für ein weiteres Modell (<a href="https://arxiv.org/abs/2003.08934" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">NeRF</a>) genutzt, das die fehlenden Details hinzufügt.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite mit Beispielen: <a href="https://bluestyle97.github.io/dream3d/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://bluestyle97.github.io/dream3d/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2212.14704" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2212.14704</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source"><strong><em><span style="font-size:18px">Forward-Forward Algorithmus</span></em></strong><br/>
+Das Training von neuronalen Netzen funktioniert aktuell grob gesagt so:<br/>
+Das neuronale Netz bekommt Eingabedaten und verarbeitet diese, um eine Vorhersage zu machen. Die Vorhersage wird mit dem erwarteten Wert vergleichen. Aus diesem Vergleich wird dann berechnet, welche Änderungen im neuronalen Netz gemacht werden müssen, um die nächste Vorhersage näher an den erwarteten Wert zu bringen. Zum Schluss werden diese Änderungen dann angewandt.<br/>
+Der erste Teil dieses Ablaufs, in dem die Vorhersage gemacht wird, heißt "Forward Pass", weil er von vorne (Eingabe) nach hinten (Vorhersage) durch das Netz berechnet wird.<br/>
+Der zweite Teil, wo das Netz angepasst wird, heißt "Backpropagation", weil die Anpassungen von hinten nach vorne gemacht werden.<br/>
+Der Forscher Geoffrey Hinton von Google Brain hat eine neue Methode veröffentlicht, wie die Backpropagation durch einen zweiten Forward Pass ersetzt werden kann, was in manchen Fällen Vorteile haben kann.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Artikel bei InfoQ: <a href="https://www.infoq.com/news/2023/01/hinton-forward-algorithm/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.infoq.com/news/2023/01/hinton-forward-algorithm/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung (PDF): <a href="https://www.cs.toronto.edu/~hinton/FFA13.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.cs.toronto.edu/~hinton/FFA13.pdf</a></li>
+</ul>
+<div class="source"> </div>
+<div class="source">
+<div class="source"><strong><em><span style="font-size:18px">Stable Attribution: welche Bilder benutzt Stable Diffusion?</span></em></strong><br/>
+Bei Modellen wie <a href="https://de.wikipedia.org/wiki/Stable_Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Stable Diffusion</a>, die Bilder generieren können, kann man bei der Benutzung nicht mehr sehen, durch welche Bilder in den Trainingsdaten das Modell gelernt hat, ein bestimmtes Bild zu generieren.<br/>
+Die Webseite Stable Attribution will das ändern. Man kann dort ein Bild hochladen und Stable Attribution sucht dann die Bilder aus den Trainingsdaten von Stable Diffusion heraus, die am "ähnlichsten" dazu sind. Wie genau die Ähnlichkeit berechnet wird, bleibt leider unklar.<br/>
+Witzigerweise funktioniert das auch mit normalen Fotos, die nicht KI-generiert sind. Dadurch kann man die Trainingsdaten einfach nach Bildern durchsuchen, die ähnlich zu einem bestimmten anderen Bild sind. Ich habe das z.B. mit einem Foto von mir ausprobiert und als Ergebnis lauter Bilder von Männern bekommen, die durchaus eine gewisse Ähnlichkeit mit mir hatten.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite: <a href="https://www.stableattribution.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://www.stableattribution.com/</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></span><h2 id="8">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Warum Alexa nicht darauf reagiert, wenn jemand in einer Fernsehwerbung "Alexa" sagt: 📖 <a href="https://www.amazon.science/blog/why-alexa-wont-wake-up-when-she-hears-her-name-in-amazons-super-bowl-ad" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag von Amazon</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sehr gute Erklärung von KI bei Quarks Dimension Ralph: 📖 <a href="https://www.youtube.com/watch?v=SXvI01KtRKQ" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der "Scene Optimizer" in der Foto App von Samsung scheint eine Art von KI zu benutzen, damit Fotos detaillierter aussehen als sie tatsächlich sind: 📖 <a href="https://www.reddit.com/r/Android/comments/11nzrb0/samsung_space_zoom_moon_shots_are_fake_and_here/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Post auf Reddit</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Infinite AI Array: ein witziges Python Package, das mithilfe von GPT-3 dafür sorgt, dass einem die Werte in einer Liste nicht ausgehen: 📖 <a href="https://github.com/ianb/infinite-ai-array" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Infinite AI Array auf Github</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Jemand hat sich einen Katzen-Detektor programmiert, der ihn benachrichtigt, wenn eine Katze in seinem Garten ist: 📖 <a href="https://blog.aawadia.dev/2022/12/20/cats-pi-and-machine-learning/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Blogeintrag bei aawadia.dev</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Deep Learning Tuning Playbook von Forscher:innen von Google und Harvard: 📖 <a href="https://github.com/google-research/tuning_playbook" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Playbook auf Github</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Getty Images verklagt Stability AI: 📖 <a href="https://copyrightlately.com/pdfviewer/getty-images-v-stability-ai-complaint/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Dokument bei copyrightlately.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der Github CEO findet, dass open source Entwickler von der geplanten EU-Regulierung (AI Act) ausgenommen werden sollen: 📖 <a href="https://techcrunch.com/2023/02/03/github-ceo-on-why-open-source-developers-should-be-exempt-from-the-eus-ai-act/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Artikel bei Techcrunch</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Jemand hat eine iPhone-App programmiert, die einen mithilfe von <a href="https://openai.com/research/clip" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CLIP</a> die eigenen Fotos durchsuchen lässt: 📖 <a href="https://mazzzystar.github.io/2022/12/29/Run-CLIP-on-iPhone-to-Search-Photos/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Beschreibung bei Github Pages</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Rockband Limp Bizkit benutzt Deepfakes in einem Musikvideo, um unter anderem Putin, Selensky und Kim Jong Un auftreten zu lassen: 📖 <a href="https://www.youtube.com/watch?v=EnhvI9SCPfk" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Video auf Youtube</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../44">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
