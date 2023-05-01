@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #47</h1><span>
+                        
+                            Hallo und herzlich willkommen zur siebenundvierzigsten Ausgabe von KI News. In dieser Ausgabe gibt es Diffusion Modelle zur Musik-Generierung, Überblicke über die Neuigkeiten bei den verschiedenen Chatbots und die neuen Entwicklungen bei Modellen für 3D-Darstellungen, sowie eine Antwort auf die Frage, ob Diffusion Modelle bei einer Vorhersage auch die Original-Bilder aus den Trainingsdaten generieren können.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#3">Noise2Music: Diffusion Modelle machen aus einer Beschreibung Musik</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#4">DiffModels: Vorhersage von Code-Änderungen</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#5">Der aktuelle Stand bei Chatbots - ChatGPT, Bing, Bard &amp; Co</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#6">Modelle für 3D-Bilder</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#7">Generieren Diffusion Modelle auch Original-Bilder aus den Trainingsdaten?</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#8">Außerdem</a></li>
+</ul></span><h2 id="3">Noise2Music: Diffusion Modelle machen aus einer Beschreibung Musik</h2><span><p>
+Das <em>Noise2Music</em> Modell kann 30 Sekunden lange Audio-Clips erzeugen. Dazu benutzt es eine Reihe von verschiedenen Diffusion Modellen:
+
+<ol>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das erste Modell, das die Forscher:innen <em>Generator Modell</em> nennen, wandelt einen Text in eine Zwischendarstellung um.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Danach folgt ein <em>Cascader Modell</em>, das aus dieser Zwischendarstellung (und ggf. dem Text) 16kHz Musik generiert.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein zweites <em>Cascader Modell</em> verbessert schließlich die Qualität der Musik auf 24kHz.</li>
+</ol></p><p>
+Die Forscher:innen untersuchen in ihrer Arbeit zwei verschiedene Ansätze für die Zwischendarstellung:</p><p>
+Variante eins ist ein Spektrogramm, also eine grafische Darstellung der Frequenzen. Variante zwei ist Audio mit schlechterer Qualität (3,2kHz).</p><p></p><p>
+Bei den Trainingsdaten hatten die Forscher:innen das gleiche Problem wie diejenigen, die an <a href="http://tobiasfraenzel.de/newsletter/45/#5" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">MusicLM</a> gearbeitet haben (das ebenfalls von Google entwickelt wurde), nämlich dass es keinen geeigneten Datensatz mit Musikbeschreibungen gibt.</p><p>
+Für Noise2Music haben sie aber eine andere Lösung gewählt als bei MusicLM: Und zwar haben sie von einem Sprachmodell (<span aria-owns="pdfjs_internal_id_248R pdfjs_internal_id_249R" dir="ltr" style="font-family:sans-serif; font-size:calc(var(--scale-factor)*9.96px); left:50.24%; top:46.27%; transform:scaleX(0.899117)"><a href="https://blog.google/technology/ai/lamda/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LaMDA</a>)</span>, mögliche Beschreibungen für die Musikdateien generieren lassen und dann von einem zweiten Modell (<a href="https://arxiv.org/abs/2208.12415" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">MuLan</a>), jeweils die passendste Beschreibung auswählen lassen.</p><p>
+Dadurch konnten sie ca. 150.000 Stunden Audiodateien beschriften.</p><p></p><p>
+Bei der Auswertung haben sie herausgefunden, dass Noise2Music bessere Ergebnisse liefert als <a href="http://tobiasfraenzel.de/newsletter/41/#7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Riffusion</a> und <a href="https://mubert.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Mubert</a>.</p><p>
+Außerdem schnitt die Variante, die eine Audiodatei mit schlechter Qualität als Zwischendarstellung verwendet hat, etwas besser ab als die Variante mit dem Spektrogramm als Zwischendarstellung. Dafür sei aber die Spektrogramm-Variante billiger zu trainieren und zu benutzen.
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite mit Beispielen: <a href="https://google-research.github.io/noise2music/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://google-research.github.io/noise2music/</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2302.03917" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2302.03917</a></li>
+</ul></p></span><h2 id="4">DiffModels: Vorhersage von Code-Änderungen</h2><span><p>
+Modelle zur Codegenerierung wie <a href="https://openai.com/blog/openai-codex" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">OpenAI Codex</a> oder das darauf basierende <a href="https://github.com/features/copilot" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Github Copilot</a>, sind gut darin, Vorschläge für neuen Code zu machen. Als Programmierer:in muss man aber mindestens genauso oft bestehenden Code verändern, wie man ganz neuen schreibt.</p><p></p><p>
+Dafür hat die Forschergruppe <a href="https://carper.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CarperAI</a> Modelle veröffentlicht, die sie "<em>Diff Models</em>" nennen. "Diff" kommt von "Difference" und beschreibt die Änderungen, die von eine:r Programmierer:in gemacht wurden. Die Diff Models wurden darauf trainiert, genau diese Änderungen vorherzusagen.</p><p></p><p>
+Als Trainingsdaten haben die Entwickler:innen von CarperAI öffentlich zugänglichen Code von Github genommen. Bei Github wird eine einzelne Änderung als "<em>Commit</em>" bezeichnet. 19 Millionen dieser Commits haben die Entwickler:innen für die Trainingsdaten verwendet.</p><p>
+Üblicherweise gibt es zu jedem Commit eine kurze Beschreibung der darin gemachten Code-Änderung, die sie für das Training verwenden konnten.</p><p></p><p>
+Die Diff Models basieren auf den <a href="https://github.com/salesforce/CodeGen" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">CodeGen Modellen von Salesforce</a>, die ebenfalls darauf trainiert sind, Code vorherzusagen. Die Entwickler:innen haben die CodeGen Modelle dafür mithilfe der Diff-Daten weitertrainiert (<a href="https://en.wikipedia.org/wiki/Fine-tuning_(machine_learning)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Finetuning</a>).</p><p></p><p>
+Interessanterweise hat die Auswertung der Entwickler:innen ergeben, dass die originalen CodeGen Modelle besser darin sind, die passenden Korrekturen für Fehler in Python-Code vorherzusagen, als ihre spezialisierten Diff Modelle.</p><p>
+Das heißt, wenn ich das richtig verstanden habe, dass sie im Endeffekt sehr viel Aufwand darin investiert haben, die CodeGen Modelle schlechter zu machen.</p><p>
+(Wenn ich es falsch verstanden habe, schreibt mir gerne eine <a href="mailto:kinews@tobiasfraenzel.de?subject=Man%20man%20man%2C%20da%20hast%20du%20aber%20was%20ganz%20falsch%20verstanden..." style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">E-Mail</a>)
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung von CarperAI: <a href="https://carper.ai/diff-models-a-new-way-to-edit-code/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://carper.ai/diff-models-a-new-way-to-edit-code/</a></li>
+</ul></p></span><h2 id="5">Der aktuelle Stand bei Chatbots - ChatGPT, Bing, Bard &amp; Co</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Chrome Plugin, mit dem man ChatGPT, Bing Chat und Bard benutzen kann: 📖 <a href="https://github.com/chathub-dev/chathub" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">ChatGPT kann jetzt mit Plugins erweitert werden: 📖 <a href="https://openai.com/blog/chatgpt-plugins" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Wikimedia Foundation hat einen Artikel zu den Copyright-Fragen rund um ChatGPT geschrieben (kurz gesagt: es ist unklar): 📖 <a href="https://meta.wikimedia.org/wiki/Wikilegal/Copyright_Analysis_of_ChatGPT" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">meta.wikimedia.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">ChatGPT war in Italien wegen Datenschutzverstößen im April gesperrt, ist nach Anpassungen jetzt aber wieder verfügbar: 📖 <a href="https://www.tagesschau.de/ausland/europa/chatgpt-italien-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft integriert Dall-E in Bing: 📖 <a href="https://blogs.microsoft.com/blog/2023/03/21/create-images-with-your-words-bing-image-creator-comes-to-the-new-bing/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blogs.microsoft.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der Bing-Chatbot antwortet jetzt auch mit Werbung: 📖 <a href="https://twitter.com/debarghya_das/status/1640892791923572737" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">twitter.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Außerdem droht Microsoft anderen Suchmaschinen, die den Bing-Suchindex lizensiert haben, damit, den Zugriff darauf einzuschränken, wenn sie die Bing-Daten für KI-Chatbots verwenden: 📖 <a href="https://www.bloomberg.com/news/articles/2023-03-25/microsoft-threatens-to-restrict-bing-data-from-rival-ai-search-tools" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">bloomberg.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Google hat einer kleinen Gruppe von Nutzer:innen Zugriff auf den Bard Chatbot gegeben, hier sind ein paar Eindrücke von Journalist:innen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>Google opens early access to its ChatGPT rival Bard - here are our first impressions</em> 📖 <a href="https://www.theverge.com/2023/3/21/23649794/google-chatgpt-rival-bard-ai-chatbot-access-hands-on" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>Google's Bard chatbot doesn't love me - but it's still pretty weird</em> 📖 <a href="https://www.theverge.com/2023/3/21/23650472/google-bard-ai-chatbot-hands-on-test" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>AI chatbots compared: Bard vs. Bing vs. ChatGPT</em> 📖 <a href="https://www.theverge.com/2023/3/24/23653377/ai-chatbots-comparison-bard-bing-chatgpt-gpt-4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>Google's Bard lags behind GPT-4 and Claude in head-to-head comparison</em>: 📖 <a href="https://techcrunch.com/2023/03/21/googles-bard-lags-behind-gpt-4-and-claude-in-head-to-head-comparison/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Hier kann man die Updates bei der Entwicklung von Bard verfolgen: 📖 <a href="https://bard.google.com/updates" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">bard.google.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Bing und Bard Chatbots zitieren sich gegenseitig mit Falschinformationen: 📖 <a href="https://www.theverge.com/2023/3/22/23651564/google-microsoft-bard-bing-chatbots-misinformation" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das ZDF heute journal hat jetzt auch entdeckt, dass es ChatGPT gibt, und ein "Interview" damit geführt. Anschließend hat sich noch der "ZDF KI-Experte" geäußert und dabei auf mich recht kompetent gewirkt, obwohl er so Fragen beantworten musste wie <em>"Das ist ja gerade das Perfide: die künstliche Intelligenz schleimt sich quasi bei uns ein. Ist das am Ende die größte Gefahr von allen?"</em>: 📖 <a href="https://youtu.be/cPM3rpS1juw?t=345" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtu.be</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Headhunter scheinen den Bing Chatbot zu benutzen, um automatisch E-Mails an potentielle Job-Kandidaten zu schreiben. Jemand hat deshalb eine Anweisung an Bing in sein/ihr LinkedIn Profil geschrieben, das in diesen Mails zuzugeben: 📖 <a href="https://twitter.com/brdskggs/status/1637114268876144640" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">twitter.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://de.wikipedia.org/wiki/Geoffrey_Hinton" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Geoffrey Hinton</a> hat Google verlassen und warnt vor den Folgen des aktuellen Chatbot-Wettlaufs zwischen Microsoft, Google und anderen: 📖 <a href="https://www.nytimes.com/2023/05/01/technology/ai-google-chatbot-engineer-quits-hinton.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nytimes.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zwei der OpenAI-Mitgründer sprechen über ChatGPT und die Zukunft von KI:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sam Altman im Podcast von Lex Fridman: 📖 <a href="http:// https://www.youtube.com/watch?v=L_Guz73e6fw" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a> (Dauer 2:34 h)</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Greg Brockman in einem TED Talk: 📖 <a href="https://www.youtube.com/watch?v=C_78DM8fG6E" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a> (16 min Vortrag + 14 min Interview)<br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der chinesische Suchmaschinenkonzern Baidu hat den Chatbot <em>Ernie</em> vorgestellt, der Firmengründer sagt aber selbst, dass sie eigentlich noch nicht soweit sind: 📖 <a href="https://t3n.de/news/anleger-reagieren-enttaeuscht-auf-chinas-erste-chatgpt-antwort-1541742/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">t3n.de</a></li>
+</ul></span><h2 id="6">Modelle für 3D-Bilder</h2><span><p>
+Bei 3D-Modellen ist in letzter Zeit so viel passiert, dass ich hier nur eine kurze Übersicht über einige der Veröffentlichungen mit kurzen Stichworten zu den jeweils wichtgsten Punkten gemacht habe.
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Zero-1-to-3</strong>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kann aus einem einzelnen 2D Bild ein neues 2D Bild des selben Objekts aus einem anderen Blickwinkel generieren</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Stable Diffusion Modell, das auf synthetischen Daten weiter trainiert wurde, die Gegenstände aus verschiedenen Blickwinkeln zeigen</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mit Bildern aus mehreren Blickwinkeln kann eine 3D-Darstellung vorhergesagt werden</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Webseite: 📖 <a href="https://zero123.cs.columbia.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://zero123.cs.columbia.edu/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Paper: 📖 <a href="https://arxiv.org/abs/2303.11328" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2303.11328</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Instruct-NeRF2NeRF</strong>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kann eine 3D-Darstellung nach Text-Anweisungen verändern</li>
+</ul>
+<ol>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">3D-Darstellung (<a href="https://arxiv.org/abs/2003.08934" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">NeRF</a>) aus Originalbildern trainieren</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Bild aus der 3D-Darstellung nehmen, das einem Originalbild entspricht</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Von einem Diffusion Modell (<a href="https://arxiv.org/abs/2211.09800" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">InstructPix2Pix</a>) das Bild entsprechend der Anweisungen bearbeiten lassen</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das NeRF mit diesem neuen Bild weiter trainieren</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bis alle Originalbilder ersetzt wurden</li>
+</ol>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Webseite: 📖 <a href="https://instruct-nerf2nerf.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://instruct-nerf2nerf.github.io/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Paper: 📖 <a href="https://arxiv.org/abs/2303.12789" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2303.12789</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Text2Room</strong>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kann 3D-Darstellungen von Räumen nur aus Text erzeugen</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bild für Bild von einem Modell eine 2D-Abbildung eines kompletten Raums und von einem anderen dazu passende Tiefen-Informationen vorhersagen lassen</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Beides zusammenfügen und optimieren</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Webseite: 📖 <a href="https://lukashoel.github.io/text-to-room/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://lukashoel.github.io/text-to-room/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Paper: 📖 <a href="https://arxiv.org/abs/2303.11989" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2303.11989</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Make-a-Video-3D</strong>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Generiert 3D-Videos aus Text</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Text-zu-Video Diffusion Modell erzeugt ein Video</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Benutzt ein "4D"-NeRF, das aus dem Video zeitlich konsistente 3D-Darstellungen generiert</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Webseite: 📖 <a href="https://make-a-video3d.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://make-a-video3d.github.io/</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Paper: 📖 <a href="https://arxiv.org/abs/2301.11280" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2301.11280</a></li>
+</ul>
+</li>
+</ul></p></span><h2 id="7">Generieren Diffusion Modelle auch Original-Bilder aus den Trainingsdaten?</h2><span><div class="source">
+<div class="source">Große Diffusion Modelle werden oft auf Datensätzen aus Milliarden Bildern trainiert, zum Beispiel <a href="https://laion.ai/blog/laion-5b/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">LAION-5B</a>. Dazu gehören auch Bilder von Menschen und Bilder, die durch Lizenzbedingungen o.ä. geschützt sind.<br/>
+Wenn diese später von dem trainierten Modell im Original wiedergegeben werden, könnte das gegen Persönlichkeits- oder Urheberrechte verstoßen. Ob das ein reales Problem ist und wie groß es ist, hat eine Gruppe von Forscher:innen untersucht.<br/>
+<br/>
+Bei Bildern, die mehrfach in den Trainingsdaten vorkommen, ist die Wahrscheinlichkeit größer, dass das Modell eine Vorhersage macht, bei der es sie 1:1 wie das Originalbild generiert. Deshalb haben die Forscher:innen als erstes mehrfach vorkommende Bilder in den Trainingsdaten gesucht.<br/>
+<br/>
+Von den 350.000 am häufigsten vorkommenden Bildern in den Trainingsdaten haben sie dann die Beschreibungen genommen und mit jeder Beschreibung 500 Bilder von <a href="https://de.wikipedia.org/wiki/Stable_Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Stable Diffusion</a> generieren lassen (insgesamt 175 Mio Bilder).<br/>
+<br/>
+So haben sie bei Stable Diffusion insgesamt 107 generierte Bilder gefunden, die genau dem Original aus den Traininingsdaten entsprechen.<br/>
+Für das <a href="https://imagen.research.google/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Imagen</a> Modell haben sie die selbe Untersuchung gemacht, aber nur mit den 1.000 häufigsten Bildern in den Trainingsdaten. Davon entsprachen 23 Bilder 1:1 einem Bild aus den Trainingsdaten.
+
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung der Forscher:innen: <a href="https://arxiv.org/abs/2301.13188" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">https://arxiv.org/abs/2301.13188</a></li>
+</ul>
+</div>
+</div></span><h2 id="8">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nachdem <em>Die Aktuelle</em> ein angebliches Interview mit Michael Schumacher veröffentlich hat, das tatsächlich KI-generiert war, wurde die Chefredakteurin entlassen: 📖 <a href="https://www.tagesschau.de/inland/die-aktuelle-fake-interview-schumacher-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Um die KI-Entwicklung zu beschleunigen legt Google die bisher getrennten Forschungsbereiche <em>Google Brain</em> und <em>Deepmind</em> zu <em>Google Deepmind</em> zusammen: 📖 <a href="https://www.deepmind.com/blog/announcing-google-deepmind" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie KI bei der Suche nach außerirdischen Signalen eingesetzt wird: 📖 <a href="http:// https://blogs.nvidia.com/blog/2023/02/06/ai-potential-alien-signals/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blogs.nvidia.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Aktueller Überblick über die Varianten von Transformer-Modellen: 📖 <a href="https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">lilianweng.github.io</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">FauxPilot - open-source Server, um GitHub Copilot selbst nachzubauen: 📖 <a href="https://github.com/fauxpilot/fauxpilot" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine:e Reddit-Nutzer:in hat mit Midjourney Bilder generieren lassen, die zeigen, wie eine Party in Hogwarts ausgesehen hätte: 📖 <a href="https://www.reddit.com/r/midjourney/comments/11whntf/the_great_party_of_hogwarts/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reddit.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mozilla hat ein Tochterunternehmen gegründet, um an "vertrauenswürdiger KI" (trustworthy AI) zu arbeiten: 📖 <a href="https://techcrunch.com/2023/03/22/mozilla-launches-a-new-startup-focused-on-trustworthy-ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Adobe hat eine Beta-Version von generativen KI-Modellen veröffentlicht, die Künstler unterstützen sollen: 📖 <a href="https://www.adobe.com/sensei/generative-ai/firefly.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">adobe.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Studie hat gezeigt, dass Menschen KI-generierte Texte nicht erkennen können: 📖 <a href="https://www.pnas.org/doi/10.1073/pnas.2208839120" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">pnas.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Indien will KI-Technologie nicht regulieren: 📖 <a href="https://techcrunch.com/2023/04/05/india-opts-against-ai-regulation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die chinesische Cyberspace-Behörde hat einen Entwurf für die Regulierung von KI-Diensten veröffentlicht. Laut Tagesschau gehören zu den vorgeschlagenen Regeln unter anderem, dass die Inhalte "die Grundwerte des Sozialismus widerspiegeln" müssen, sowie Diskriminierung verhindern und wahrheitsgemäß sein sollen: 📖 <a href="https://www.tagesschau.de/wirtschaft/technologie/alibaba-ki-chatbot-china-regulierung-101.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../46">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
