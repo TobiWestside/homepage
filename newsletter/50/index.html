@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #50</h1><span>
+                        
+                            Hallo und herzlich willkommen zur fünfzigsten Ausgabe von KI News. Diesmal geht es um Gedanken lesen und Bildverarbeitung, neue Entwicklungen bei der Steuerung von Robotern, verschiedene neue Ansätze im Zusammenhang mit Trainingsdaten und Verbesserungen bei Transformer-Modellen.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><ul>
+<li><a href="#3">Modelle die "Gedanken lesen" und mit Bildern arbeiten können</a></li>
+<li><a href="#4">Neue Entwicklungen beim Steuern von Robotern</a></li>
+<li><a href="#5">Fokus auf die Trainingsdaten</a></li>
+<li><a href="#6">Verbesserungen bei Transformer-Modellen</a></li>
+<li><a href="#7">Außerdem</a></li>
+</ul></span><h2 id="3">Modelle die "Gedanken lesen" und mit Bildern arbeiten können</h2><span><p><em>ViperGPT</em> kann eine Frage über ein Bild beantworten, indem es <a href="https://de.wikipedia.org/wiki/Python_(Programmiersprache)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Python</a>-Code generiert, der die Frage beantwortet.</p><p>
+Webseite mit Beispielen: 📖 <a href="https://viper.cs.columbia.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">viper.cs.columbia.edu</a>, Veröffentlichung der Forscher:innen: 📖 <a href="https://arxiv.org/abs/2303.08128" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a>, Code: 📖 <a href="https://github.com/cvlab-columbia/viper" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a></p><p></p><p>
+Einen ähnlichen Ansatz - Code generieren und ausführen, um die Ergebnisse zu verwenden - unterstüzt jetzt auch Google <em>Bard</em>: 📖 <a href="https://blog.google/technology/ai/bard-improved-reasoning-google-sheets-export/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blog.google</a></p><p>
+Damit lassen sich vielleicht in Zukunft irritierende Antworten wie diese vermeiden, wo Bard darauf besteht, dass das Wort "Ketchup" kein "e" enthält: 📖 <a href="https://www.theverge.com/2023/5/16/23725747/bard-chatbot-google-neither-artificial-nor-intelligent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></p><p></p><p>
+Es gibt einen neuen Ansatz für ein Modell, das Gedanken lesen kann. Ähnlich wie das <em>MinD-Vis</em> Modell Ende letzten Jahres (<a href="http://tobiasfraenzel.de/newsletter/41/#3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #41</a>), kann auch der neue Ansatz aus <a href="https://de.wikipedia.org/wiki/Funktionelle_Magnetresonanztomographie" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">fMRI</a>-Aufnahmen die Bilder rekonstruieren, die den Proband:innen gezeigt wurden.</p><p>
+Die Forscher:innen lassen dafür von verschiedenen Modellen mehrere Sachen aus den fMRI-Daten vorhersagen: ein (verschwommenes) Bild, eine Bildunterschrift und Tiefeninformationen des Bildes.</p><p>
+Mit diesen Informationen lassen sie dann von <a href="https://de.wikipedia.org/wiki/Stable_Diffusion" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Stable Diffusion</em></a> ein Bild mit besserer Qualität vorhersagen.</p><p>
+Webseite mit Beispielen: 📖 <a href="https://sites.google.com/view/stablediffusion-with-brain/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">sites.google.com</a>, Veröffentlichung: 📖 <a href="https://www.biorxiv.org/content/10.1101/2022.11.18.517004v3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">biorxiv.org</a>, technische Veröffentlichung: 📖 <a href="https://arxiv.org/abs/2306.11536" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></p><p></p><p>
+Aktuelle Modelle, die Bilder generieren können, können meistens keinen lesbaren Text in diesen Bildern erzeugen. Stattdessen sieht man oft merkwürdige Zeichen, die vage an Buchstaben erinnern.</p><p>
+Um das zu verbessern, haben Forscher:innen von Microsoft und chinesischen Universitäten das <em>TextDiffuser</em> Modell entwickelt. Das liest aus einem eingegebenen Text zuerst aus, welche Wörter in dem späteren Bild gezeigt werden sollen, und erstellt für diese ein Layout.</p><p>
+Dieses Layout wird dann beim Generieren des Bildes benutzt, um die Wörter richtig darzustellen.</p><p>
+Veröffentlichung: 📖 <a href="https://arxiv.org/abs/2305.10855" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a>, Code: 📖 <a href="https://github.com/microsoft/unilm/tree/master/textdiffuser" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a></p><p></p><p><em>Bildsegmentierung</em> ist die Aufgabe, herauszufinden, welche Pixel eines Bildes zu welchem Objekt gehören, das im Bild zu sehen ist.</p><p>
+Forscher:innen von Meta haben dafür das <em>Segment Anything</em> Modell (SAM) entwickelt. SAM kann mit verschiedenen Eingaben umgehen.</p><p>
+Nutzer:innen können ein Objekt im Bild anklicken, einen Rahmen darum ziehen oder es mit einem Text beschreiben. SAM versucht mit diesen Informationen dann herauszufinden welches Objekt gemeint ist, und welche Pixel dazu gehören.</p><p>
+Webseite mit Beispielen: 📖 <a href="https://segment-anything.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">segment-anything.com</a>, Blogeintrag: 📖<a href="https://ai.meta.com/blog/segment-anything-foundation-model-image-segmentation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.meta.com</a>, Veröffentlichung: 📖 <a href="https://arxiv.org/abs/2304.02643" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></p><p></p><p><em>Drag Your GAN</em> ist ein Modell, das in Zusammenarbeit von deutschen und amerikanischen Forschungseinrichtungen und Google entstanden ist.</p><p>
+Wie der Name andeutet, kann man mithilfe des Modells etwas ziehen (<em>drag</em>). Und zwar Punkte in Bildern!</p><p>
+Was bedeutet das? Wenn man z.B. ein Bild von einem Hund hat, der auf dem Boden liegt, dann kann man ein paar Bildpunkte nach oben ziehen, und das Modell verändert das Bild so, dass der Hund steht. Man kann auch andere Sachen verändern, z.B. Autos im Bild drehen oder Berge größer oder kleiner machen.</p><p><em>GAN</em> steht für <em>"<a href="https://de.wikipedia.org/wiki/Generative_Adversarial_Networks" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Generative Adversarial Networks</a>"</em> und ist die Methode, mit der die Bilder verändert werden.</p><p>
+Webseite mit Beispielen: 📖 <a href="https://vcai.mpi-inf.mpg.de/projects/DragGAN/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">vcai.mpi-inf.mpg.de</a>, Selbst ausprobieren: 📖 <a href="https://huggingface.co/spaces/DragGan/DragGan" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">huggingface.co</a> Veröffentlichung (PDF): 📖 <a href="https://vcai.mpi-inf.mpg.de/projects/DragGAN/data/paper.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">vcai.mpi-inf.mpg.de</a>, Code: 📖 <a href="https://github.com/XingangPan/DragGAN" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a></p><p></p><p>
+Forscher:innen von Meta haben ein Modell namens <em>ImageBind</em> entwickelt, das sechs verschiedene Arten von Daten einander zuordnen kann.</p><p>
+Zum Beispiel kann es zu einem Bild von einem Hund eine Audio-Aufnahme von Hundegebell finden.</p><p>
+Das funktioniert aber nicht nur mit Bildern und Audio, sondern auch mit Texten, Tiefeninformationen, Wärmedaten, und sogar mit den Daten von Beschleunigungssensoren.</p><p>
+Webseite mit Beispielen: 📖 <a href="https://imagebind.metademolab.com/demo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">imagebind.metademolab.com</a>, Blogeintrag: 📖 <a href="https://ai.meta.com/blog/imagebind-six-modalities-binding-ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.meta.com</a>, Veröffentlichung: 📖 <a href="https://arxiv.org/abs/2305.05665" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></p></span><h2 id="4">Neue Entwicklungen beim Steuern von Robotern</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Steuerung von Fußball-Robotern mit Reinforcment Learning: 📖 <a href="https://arxiv.org/abs/2304.13653" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Sprachmodell PaLM-E kann Roboter steuern: 📖 <a href="https://palm-e.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">palm-e.github.io</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Steuerung von Aufräum-Robotern zum Müllsortieren mit Reinforcement Learning: 📖 <a href="https://rl-at-scale.github.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">rl-at-scale.github.io</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Modell kann Roboter-Arme steuern und dann für sich selbst neue Trainingsdaten erzeugen, um besser zu werden: 📖 <a href="https://www.deepmind.com/blog/robocat-a-self-improving-robotic-agent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein autonomer Roboter, der die Eipakete von Insekten erkennen und zerstören kann: 📖 <a href="https://www.cs.cmu.edu/news/2023/tartan-pest" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">cs.cmu.edu</a></li>
+</ul></span><h2 id="5">Fokus auf die Trainingsdaten</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">"Vergiften" von Trainingsdaten ist das Manipulieren der Daten, um die Vorhersagen eines Modells zu beeinflussen
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mit $60 lassen sich 0,01% der Daten von zwei großen Bilder-Datensätzen manipulieren: 📖 <a href="https://arxiv.org/abs/2302.10149" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auch bei einer bestimmten Trainingsart, dem sogenannten "Instruction Tuning", können die Modelle mit relativ wenig Aufwand (100 manipulierteTrainingsbeispiele) beeinflusst werden: 📖 <a href="https://arxiv.org/abs/2305.00944" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Startup <em>Buildt</em> hat ein kleineres GPT Modell mit den Vorhersagen eines größeren trainiert und damit gute Erfahrungen gemacht: 📖 <a href="https://www.buildt.ai/blog/incorrectusage" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">buildt.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Um die Leistung von ML-Modellen zu verbessern, ist es am naheliegendsten, das Modell selbst zu verändern. Stattdessen kann man aber auch die Daten verbessern, mit denen das Modell trainiert wurde. Damit beschäftigt sich <em>Data-Centric AI</em>. Der Data-Centric AI Kurs des MIT ist online kostenlos verfügbar: 📖 <a href="https://dcai.csail.mit.edu/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">dcai.csail.mit.edu</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><em>Labels</em> in den Daten geben einem Modell beim Training die erwartete Vorhersage vor. <em>Self-Supervised Learning</em> ist eine Methode, wie ML-Modelle trainiert werden können, wenn die Trainingsdaten keine Labels enthalten. Meta hat dafür das <em>"Self-Supervised Learning Cookbook"</em> veröffentlicht, das beschreibt, wie das funktioniert: Blogeintrag: 📖 <a href="https://ai.meta.com/blog/self-supervised-learning-practical-guide/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.meta.com</a>, Kochbuch: 📖 <a href="https://arxiv.org/abs/2304.12210" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wenn die Größe von Sprachmodellen weiter so stark wächst wie in den letzten Jahren, werden bald alle Daten im Internet nicht mehr ausreichen, um sie zu trainieren. Daher haben Forscher:innen untersucht, wie man mit diesem Problem umgehen kann: 📖 <a href="https://arxiv.org/abs/2305.16264" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+</ul></span><h2 id="6">Verbesserungen bei Transformer-Modellen</h2><span><p>
+Eine Beschränkung von Modellen mit <a href="https://de.wikipedia.org/wiki/Transformer_(Maschinelles_Lernen)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Transformer</a>-Architektur (das sind alle aktuellen Sprachmodelle, von <a href="https://platform.openai.com/docs/guides/gpt" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">GPT-4</a> über <a href="https://ai.meta.com/resources/models-and-libraries/llama/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Llama 2</a> bis <a href="https://arxiv.org/abs/2305.10403" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">PaLM 2</a>) ist, dass sie Texte nur bis zu einer bestimmten Länge verarbeiten können. Deshalb "vergisst" ChatGPT z.B. nach einigen Nachrichten den Beginn der Konversation.</p><p>
+Diese Länge nennt man auch "Kontextlänge", weil alles, was kürzer als diese Länge ist, als Kontext für die nächste Vorhersage benutzt werden kann.</p><p>
+Von GPT-4 zum Beispiel gibt es <a href="https://platform.openai.com/docs/models/gpt-4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Versionen</a> mit Kontextlängen von 8.192 bzw. 32.768 <a href="https://de.wikipedia.org/wiki/Tokenisierung" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Tokens</a> (Teile von Wörtern).</p><p>
+Verschiedene Gruppen von Forscher:innen haben daran gearbeitet die maximale Kontextlänge für Transformer-Modelle zu vergrößern:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der Chatbot <a href="https://claude.ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Claude</em></a> von <a href="https://www.anthropic.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>Anthropic</em></a> unterstützt jetzt Kontextlängen von 100.000 Tokens: 📖 <a href="https://www.anthropic.com/index/100k-context-windows" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">anthropic.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In diesem Paper beschreiben Forscher:innen wie sie die Kontextlänge eines Transformer-Modells auf zwei Millionen Tokens erweitern konnten: 📖 <a href="https://arxiv.org/abs/2304.11062" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine andere Gruppe hat eine neue Variante entwickelt, die mit einer Milliarde Tokens arbeiten kann: 📖 <a href="https://arxiv.org/abs/2307.02486" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Und eine weitere Gruppe schreibt sogar "unbegrenzte Länge" (hat aber nur bis 500.000 Tokens getestet): 📖 <a href="https://arxiv.org/abs/2305.01625" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+</ul>
+Zwei weitere mögliche Verbesserungen der Transformer-Architektur sind
+
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">die Erkenntnis, dass bei Modellen mit 175 Milliarden Gewichten bis zu 100 Milliarden davon bei der Vorhersage ignoriert werden können, ohne dass es zu großen Verschlechterungen der Vorhersagen kommt: 📖 <a href="https://arxiv.org/abs/2301.00774" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die <em>Receptance Weighted Key Value</em> (RWKV) Architekur, die Transformer mit der vorher meist verwendeten Architekur für Sprachmodelle, <a href="https://de.wikipedia.org/wiki/Rekurrentes_neuronales_Netz" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank"><em>RNNs</em></a>, verbindet, und so die Vorteile von beiden kombinieren soll: 📖 <a href="https://arxiv.org/abs/2305.13048" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+</ul></p></span><h2 id="7">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sehr gutes Video (auf Deutsch) über den aktuellen KI Hype: 📖 <a href="https://www.youtube.com/watch?v=nRZfnwf7K50" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Eine Webseite, die darüber aufklären will, wie schlecht KI-Detektoren funktionieren: 📖 <a href="https://itwasntai.com/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">itwasntai.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">StarCoder, ein neues open source Modell für Programmcode: 📖 <a href="https://arxiv.org/abs/2305.06161" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a>, 📖 <a href="https://github.com/bigcode-project/starcoder" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">ChatML, die Art, wie Eingabedaten für ChatGPT unter der Decke strukturiert werden: 📖 <a href="https://github.com/openai/openai-python/blob/main/chatml.md" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Der chinesische Suchmaschinenkonzern Baidu hat einen Fonds aufgelegt, der $145 Millionen in Startups für generative KI investieren soll: 📖 <a href="https://www.reuters.com/technology/chinas-baidu-launches-145-million-venture-capital-ai-fund-2023-05-31/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a>
+<div> </div>
+</div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Mozilla hat einen KI-Chatbot in die Dokumentation eingebaut, die Nutzer sind nicht besonders glücklich darüber. Ankündigung: 📖 <a href="https://developer.mozilla.org/en-US/blog/introducing-ai-help/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">developer.mozilla.org</a>, 📖 Bedenken aus der Community: <a href="https://github.com/mdn/yari/issues/9208" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Microsoft erklärt den Supercomputer, auf dem ChatGPT läuft: 📖 <a href="https://www.youtube.com/watch?v=Rk3nTUfRZmo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nachdem sich McDonald's vor zwei Jahren mit IBM zusammengetan hat, um das Aufnehmen von McDrive-Bestellungen zu automatisieren (<a href="http://tobiasfraenzel.de/newsletter/18/#2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #18</a>), hat jetzt Wendy's etwas Ähnliches zusammen mit Google entwickelt: 📖 <a href="https://www.wsj.com/articles/wendys-google-train-next-generation-order-taker-an-ai-chatbot-968ff865" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">wsj.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Zeitschrift <em>Nature</em> wird die Verwendung von KI-generierten Bildern und Videos nur bei fachlich darauf bezogenen Artikeln erlauben: 📖 <a href="https://www.nature.com/articles/d41586-023-01546-4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nature.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Metas erstes Feature mit generativer KI werden Sticker im Facebook Messenger: 📖 <a href="https://www.theverge.com/2023/6/8/23754485/meta-generative-ai-stickers-in-messenger" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Können unentdeckbare Wasserzeichen in KI-generierte Texte eingebaut werden? 📖 <a href="https://eprint.iacr.org/2023/763" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">eprint.iacr.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Sammelklage gegen OpenAI behauptet, dass die Firma beim Sammeln von Trainingsdaten auch sensible Daten, wie medizinische Informationen oder Daten über Kinder, gesammelt hat: 📖 <a href="https://www.businessinsider.com/openai-chatgpt-generative-ai-stole-personal-data-lawsuit-children-medical-2023-6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">businessinsider.com</a>, Klageschrift (PDF): 📖 <a href="https://assets.bwbx.io/documents/users/iqjWHBFdfxIU/rIZH4FXwShJE/v0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">assets.bwbx.io</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auch drei Autor:innen verklagen OpenAI und Meta, wegen angeblicher Urheberrechtsverletzungen: 📖 <a href="https://edition.cnn.com/2023/07/10/tech/sarah-silverman-openai-meta-lawsuit/index.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">edition.cnn.com</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../49">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
