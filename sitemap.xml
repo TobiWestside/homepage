@@ -19,7 +19,7 @@
 </url>
 <url>
   <loc>http://tobiasfraenzel.de/newsletter.html</loc>
-  <lastmod>2023-12-29T10:53:59+00:00</lastmod>
+  <lastmod>2024-02-29T19:31:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -352,6 +352,12 @@
 <url>
   <loc>http://tobiasfraenzel.de/newsletter/55/</loc>
   <lastmod>2023-12-29T10:53:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<url>
+  <loc>http://tobiasfraenzel.de/newsletter/56/</loc>
+  <lastmod>2024-02-29T19:31:16+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 </urlset>
