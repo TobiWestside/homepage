@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #57</h1><span>
+                        
+                            Hallo und herzlich willkommen zur siebenundfünfzigsten Ausgabe von KI News. Heute mit Sora, dem neuen Videomodell von OpenAI, AlphaGeometry, einem Modell von Google, das Geometrie-Aufgaben lösen kann, verschiedenen Neuigkeiten zu Deepfakes, was bei OpenAI außer Sora noch alles passiert ist, KI bei Amazon, auf Google Maps und mehr.<p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"></p><ul>
+<li><a href="#3">Sora - das neue Videomodell von OpenAI</a></li>
+<li><a href="#4">AlphaGeometry - ein Geometrie-Modell von Google</a></li>
+<li><a href="#5">Neuigkeiten zu Deepfakes</a></li>
+<li><a href="#6">Neuigkeiten von OpenAI</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="#7">Zusammengefasst</a><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI Geräte</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Amazon Rufus Chatbot</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI hilft Orte auf Google Maps zu finden</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">"Es gibt keine echten Fotos"</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sessellift mit KI</li>
+</ul></li>
+<li><a href="#8">Außerdem</a></li>
+</ul></span><h2 id="3">Sora - das neue Videomodell von OpenAI</h2><span><p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><br/>
+Sora ist ein sogenannter Diffusion-Transformer und kann aus Texten passende Videos generieren. "Diffusion" beschreibt dabei die Art, wie das neuronale Netz die Videos generiert (<a href="https://tobiasfraenzel.de/newsletter/40/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">s. KI News #40 für mehr Details</a>) und "Transformer" seine Architektur.<br/>
+<br/>
+Die Nutzereingaben ("Prompts") werden nochmal weiterverarbeitet, bevor das Video generiert wird. Sie werden nämlich von einem nicht näher bezeichneten GPT-Modell in detailliertere Beschreibungen umgewandelt.<br/>
+<br/>
+Um Sora zu trainieren, mussten die Forscher:innen von OpenAI erstmal genügend Trainingsdaten erzeugen, also Paare aus Texten und dazu passenden Videos.<br/>
+Dafür haben sie ein Modell trainiert, das Videos beschriftet.<br/>
+<br/>
+Sie haben ein weiteres Modell trainiert, das die Videos in eine komprimierte Form bringt, die sowohl räumliche (die Gegenstände oder Personen, die in einem Bild zu sehen sind) als auch zeitliche (wie die Bilder im Video aufeinander folgen) Abhängigkeiten der Daten berücksichtigt.<br/>
+Die Ausgabe dieses Modells haben sie dann in kleinere Teile aufgeteilt, die sie "Patches" nennen.<br/>
+<br/>
+Auf diesen Patches wurde dann Sora trainiert. Sora selbst erzeugt also nicht die Videos direkt, sondern nur eine komprimierte Version, die aus Patches besteht.<br/>
+<br/>
+Um am Ende trotzdem ein Video zu bekommen, müssen die von Sora vorhergesagten Patches also schließlich noch von einem weiteren Modell wieder in Pixel-Bilder umgewandelt werden.<br/>
+<br/>
+Der ganze Prozess, um ein Video zu generieren, funktioniert so:<br/>
+Der Prompt wird von einem GPT-Modell mit zusätzliche Details angereichert. Diese Variante des Prompts wird dann an Sora weitergegeben. Sora erzeugt daraus Patches, also eine komprimierte Version eines Videos.<br/>
+Diese wandelt ein weiteres Modell schließlich in ein richtiges Video um.<br/>
+<br/>
+Durch den Ansatz mit den Patches kann Sora Videos mit verschiedenen Auflösungen und Formaten generieren.<br/>
+<br/>
+Außerdem kann es auch einzelne Bilder generieren, Bilder in Videos umwandeln und Videos verlängern - in die Zukunft und die Vergangenheit. Dadurch kann es zum Beispiel einen Übergang zwischen zwei existierenden Videos schaffen.<br/>
+<br/>
+Die von Sora generierten Videos können bis zu einer Minute lang sein.<br/>
+<br/>
+OpenAI gibt aktuell neben Leuten, die die Sicherheit des Modells prüfen sollen, nur ausgewählten Künstler:innen, Designer:innen und Filmemacher:innen Zugang zu Sora, was möglicherweise auf die angepeilte künftige Zielgruppe schließen lässt.</p><ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Video mit Beispielen: <a href="https://www.youtube.com/watch?v=HK6y8DAPN_0" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Webseite zu Sora mit Beispielen und Beschreibungen: <a href="https://openai.com/sora" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Technischer Bericht: <a href="https://openai.com/research/video-generation-models-as-world-simulators" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a></li>
+</ul></span><h2 id="4">AlphaGeometry - ein Geometrie-Modell von Google</h2><span><p>
+Die Forscher:innen bei Google hatten etwas sehr hilfreiches: Ein Programm, das geometrische Operationen ausführen und erkennen kann, ob dadurch eine bestimmte Aufgabe gelöst wurde.</p><p></p><p>
+Und trotzdem hatten sie auch ein Problem, denn das Programm kann trotzdem keine Aufgaben lösen, weil es unendlich viele mögliche Kombinationen von Operationen gibt, die das Programm ausführen kann. Man kann immer noch mehr Punkte, Strecken, Winkel und so weiter konnstruieren.</p><p>
+Woher soll das Programm also wissen, welche Schritte es ausführen muss, um zu einer Lösung zu kommen?</p><p></p><p>
+Die Idee der Forscher:innen war es, ein Sprachmodell zu benutzen, das diesem Geometrie-Programm sagt, was es tun soll.</p><p></p><p>
+Dieses Sprachmodell haben sie auf 100 Millionen Beschreibungen der Lösungen von Geometrie-Problemen trainiert. Dabei handelte es sich um Beweise von bestimmten Eigenschaften von geometrischen Situationen.</p><p></p><p>
+Da nicht einmal Google 100 Millionen Beweise für Geometrie-Aufgaben mal eben rumliegen hat, mussten die Forscher:innen diese erst selbst beschaffen.</p><p>
+Alles von Hand zu lösen wäre auch ein bisschen zu aufwändig geworden, also haben sie die Geometrie-Aufgaben und die zugehörigen Beschreibungen der Lösungen von einem Programm generieren lassen.</p><p></p><p>
+Dazu sind sie folgendermaßen vorgegangen:</p><p>
+Zuerst haben sie eine geometrische Ausgangssituation erzeugt, durch das zufällige Auswählen von geometrischen Figuren und Eigenschaften, wie z.B. Geraden, Dreiecke, Mittelpunkte usw.</p><p>
+Dann haben sie das Geometrie-Programm in mehreren Runden alle möglichen Aussagen über diese Ausgangssituation treffen lassen. Eine dieser Aussagen haben sie dann als zu beweisende Eigenschaft ausgewählt.</p><p></p><p>
+Die Schritte und Hilfskonstruktionen, die das Programm machen musste, um diese Aussage über die Ausgagssituation treffen zu können, sind die minimal nötigen Schritte für ihren Beweis.</p><p></p><p>
+Um daraus jetzt eine Geometrie-Aufgabe zu machen, haben sie die Teile der Ausgangssituation, die nicht in der Aussage selbst vorkamen, weggelassen.</p><p></p><p>
+Dadurch erhielten sie eine Aufgabe mit einer bestimmten Ausgangssituation, für die eine bestimmte Eigenschaft bewiesen werden muss.</p><p>
+Und dazu hatten sie jetzt auch noch die Lösung, also die Schritte, die nötig sind, um die Eigenschaft zu beweisen.</p><p></p><p>
+Mit diesen Daten haben sie das Sprachmodell dann trainiert.</p><p></p><p>
+Mit dessen Hilfe war das Geometrie-Programm dann in der Lage, 25 von 30 Test-Aufgaben zu lösen, fast so viele wie der Durchschnitt der Goldmedaillen-Gewinner der Mathe-Olympiade (25,9).
+<ul>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Blogeintrag: <a href="https://deepmind.google/discover/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a></li>
+<li class="source" style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;list-style: "\1F4D6  ";'>Veröffentlichung bei Nature: <a href="https://www.nature.com/articles/s41586-023-06747-5" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nature.com</a></li>
+</ul></p></span><h2 id="5">Neuigkeiten zu Deepfakes</h2><span><br type="_moz"/><p>
+Anfang des Jahres gab es gehäuft Nachrichten über Deepfakes, hier ein Überblick:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Indiens Regierung hat Betreiber von digitalen Plattformen gewarnt, dass sie verboten werden könnten, wenn sie nicht mehr gegen Deepfakes unternehmen: 📖 <a href="https://techcrunch.com/2024/01/16/india-puts-tech-firms-on-notice-over-deepfakes-inaction/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auf Twitter sind pornografische Deepfake-Fotos von Taylor Swift veröffentlicht worden: 📖 <a href="https://www.theverge.com/2024/1/25/24050334/x-twitter-taylor-swift-ai-fake-images-trending" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das hat zu neuen Gesetzesinitiativen in den USA gegen solche Bilder geführt: 📖 <a href="https://www.theverge.com/2024/1/30/24056385/congress-defiance-act-proposed-ban-nonconsensual-ai-porn" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In Florida gibt es schon ein solches Gesetz und die ersten Verurteilten sind zwei 13 und 14 Jahre alte Jungen, die Deepfake-Nacktbilder ihrer Mitschülerinnen erstellt haben: 📖 <a href="https://www.theverge.com/2024/3/8/24094633/deepfake-ai-explicit-images-florida-teenagers-arrested" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sogar die heute Show ist durch Taylor Swift auf Deepfakes aufmerksam geworden: 📖 <a href="https://www.youtube.com/watch?v=_Mn0bZcnowQ" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auf Youtube gab es wohl viele betrügerische Deepfake-Werbeclips, gegen die Youtube jetzt stärker vorgehen will: 📖 <a href="https://www.theverge.com/2024/1/25/24050443/youtube-is-investing-heavily-in-its-ability-to-stop-ai-celebrity-scam-ads" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Aufsichtsgremium von Meta hat das Unternehmen dazu aufgefordert, seine Richtlinien zu Deepfakes neu zu schreiben: 📖 <a href="https://oversightboard.com/decision/FB-GW8BY1Y3/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">oversightboard.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein:e Mitarbeiter:in eines Unternehmens in Hongkong hat nach einer Videokonferenz mit einer betrügerischen Deepfake-Version seines/ihres Finanzchefs mehr als 25 Millionen US-Dollar an die Betrüger überwiesen: 📖 <a href="https://edition.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">edition.cnn.com</a></li>
+</ul></p></span><h2 id="6">Neuigkeiten von OpenAI</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Seit dem 12. Februar sind Metadaten nach C2PA Standard in den Bildern von DALL-E 3 integriert, um sie als KI-generiert zu kennzeichnen: 📖 <a href="https://help.openai.com/en/articles/8912793-c2pa-in-dall-e-3" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">help.openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Nutzungsbedingungen von ChatGPT wurden geändert, um auch militärische Nutzung zu erlauben: 📖 <a href="https://theintercept.com/2024/01/12/open-ai-military-ban-chatgpt/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theintercept.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Es gibt jetzt ChatGPT für Teams, womit mehrere Nutzer:innen zusammenarbeiten können: 📖 <a href="https://openai.com/chatgpt/team" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI hat einen Plan veröffentlicht, um Missbrauch bei den dieses Jahr anstehenenden Wahlen zu verhindern: 📖 <a href="https://openai.com/blog/how-openai-is-approaching-2024-worldwide-elections" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Es gibt eine Reihe von neuen Modell-Versionen: 📖 <a href="https://openai.com/blog/new-embedding-models-and-api-updates" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Andrej Karpathy, einer der Mitgründer von OpenAI, verlässt das Unternehmen: 📖 <a href="https://twitter.com/karpathy/status/1757600075281547344" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">twitter.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Elon Musk verklagt OpenAI, weil sie nicht mehr ihrer ursprünglichen Mission folgen würden, der Menschheit als Ganzes zu nützen (<a href="https://openai.com/blog/introducing-openai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a>): 📖 <a href="https://www.theguardian.com/technology/2024/mar/01/elon-musk-sues-open-ai-profit-power-microsoft-sam-altman" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theguardian.com</a>, 📖 <a href="https://www.theverge.com/2024/3/1/24087937/elon-musk-suing-openai-nightmare-1l-contracts-exam" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a>, 📖<a href="https://www.courthousenews.com/wp-content/uploads/2024/02/musk-v-altman-openai-complaint-sf.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">courthousenews.com (PDF)</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Als Reaktion darauf hat OpenAI einen Blogpost mit einigen E-Mails von Elon Musk veröffentlicht: 📖 <a href="https://openai.com/blog/openai-elon-musk" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sam Altman hat eine Reihe von aufsehenerregenden Aussagen getroffen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">KI verbrauche so viel Energie, dass man dafür in Zukunft einen Durchbruch bei den Energiequellen bräuchte, z.B. Kernfusion: 📖 <a href="https://futurism.com/sam-altman-energy-breakthrough" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">futurism.com</a><br/>
+		 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Er sei auf der Suche nach Investoren, die sieben Billionen US-Dollar in Chip-Fabriken stecken: 📖 <a href="https://www.tagesschau.de/wirtschaft/unternehmen/openai-umsatzwachstum-investitionen-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a><br/>
+		Zum Vergleich: Die gesamte weltweite Halbleiter-Industrie hatte 2023 einen Umsatz von knapp 530 Milliarden US-Dollar (<a href="https://de.statista.com/statistik/daten/studie/150901/umfrage/umsatz-in-der-halbleiterindustrie-seit-1988-weltweit/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">de.statista.com</a>), OpenAI hatte laut Reuters laut Financial Times 2023 einen Umsatz von zwei Milliarden US-Dollar (<a href="https://www.reuters.com/technology/openai-hits-2-bln-revenue-milestone-ft-2024-02-09/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a>). Die geforderten Investments betragen also das 13-fache des weltweiten Halbleiter-Umsatzes und das 3.500-fache des OpenAI-Umsatzes.<br/>
+		 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI generiere täglich 100 Milliarden Wörter, alle Menschen zusammen generierten täglich 100 Billionen Wörter: 📖 <a href="https://twitter.com/sama/status/1756089361609981993" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">twitter.com</a><br/>
+		(was auch immer "Wörter generieren" bei Menschen genau bedeuten soll - Schreiben? Sprechen? Zählen nur aufgezeichnete Wörter? Und wer zählt die eigentlich?)<br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Untersuchung der Vorfälle rund um die kurzzeitige Entlassung von Sam Altman ist abgeschlossen: 📖 <a href="https://openai.com/blog/review-completed-altman-brockman-to-continue-to-lead-openai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a>, 📖 <a href="https://www.theverge.com/2024/3/8/24094885/openai-sam-altman-investigation-board-results" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a>, 📖 <a href="https://www.reuters.com/technology/sam-altman-return-openais-board-information-reports-2024-03-08/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Als Hauptursache wurde ein Vertrauensverlust des damaligen Verwaltungsrats in Sam Altman genannt. Der Verwaltungsrat habe zwar die Befugnis gehabt, Altman zu entlassen, aber sein Verhalten sei kein zwingender Kündigungsgrund gewesen.<br/>
+		 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der seit den Geschehnissen im November 2023 sehr kleine Verwaltungsrat wurde von bisher drei (Bret Taylor, Larry Summers, Adam D'Angelo) auf jetzt sieben Mitglieder erweitert: 📖 <a href="https://openai.com/blog/openai-announces-new-members-to-board-of-directors" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+		Die neuen sind:
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sam Altman (CEO von OpenAI),</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sue Desmond-Hellmann (frühere CEO der Bill and Melinda Gates Foundation),</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nicole Seligman (frühere EVP von Sony),</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Fidji Simo (CEO von Instacart)<br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Es gibt noch weitere Änderungen bei OpenAI: 📖 <a href="https://openai.com/blog/review-completed-altman-brockman-to-continue-to-lead-openai" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a>
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue Richtlinien zur Unternehmensführung und Interessenskonflikten</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Whistleblower-Hotline</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue Ausschüsse im Verwaltungsrat, darunter einer, der sich explizit mit dem Vorantreiben von OpenAIs Mission beschäftigen soll</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></span><h2 id="7">Zusammengefasst</h2><span><p></p><p><span style="font-size:18px"><em><strong>KI Geräte</strong></em></span></p><p>
+Es gibt einige neue Geräte, die für die Benutzung auf KI setzen:
+<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Brille, deren Hersteller sich passenderweise "Brilliant" nennt: 📖 <a href="https://brilliant.xyz/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">brilliant.xyz</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der "AI Pin" von Humane (<a href="https://hu.ma.ne/aipin/tech-details" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">hu.ma.ne</a>), über den ich in <a href="https://tobiasfraenzel.de/newsletter/54/#7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #54</a> schon geschrieben habe. Ein Youtuber hat ein witziges Review-Video dazu gemacht: 📖 <a href="https://www.youtube.com/watch?v=9FIwYkGc4Qw" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein weiteres kleines Gerät namens "Rabbit R1": 📖 <a href="https://www.rabbit.tech/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">rabbit.tech</a></li>
+</ul></p><p><span style="font-size:18px"><strong><em>Amazon Rufus Chatbot</em></strong></span></p><p>
+In den USA hat Amazon einen Chatbot mit dem Name Rufus in der Smartphone App eingeführt.</p><p>
+Das Modell wurde laut Amazon auf dem Produktkatalog, Kundenbewertungen, Fragen und Antworten von Kunden und Informationen aus dem Internet trainiert.</p><p>
+Der Chatbot soll dabei helfen, die richtigen Produkte zu finden, indem Kund:innen ihn zum Beispiel fragen können, worauf sie beim Kauf von einem bestimmten Produkt achten sollten oder was sie für einen bestimmten Anlass oder eine Aktivität brauchen könnten.</p><p>
+📖 <a href="https://www.aboutamazon.com/news/retail/amazon-rufus" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">aboutamazon.com</a></p><p></p><p><span style="font-size:18px"><strong><em>KI hilft Orte auf Google Maps zu finden</em></strong></span></p><p>
+KI Modelle sollen dabei helfen, die Suchanfragen besser zu verstehen und die Informationen in Google Maps zu analysieren. So soll man zum Beispiel einfach nach "Aktivitäten an einem regnerischen Tag" suchen können.</p><p>
+Die Ergebnisse werden in Kategorien sortiert und mit Bildern und Zusammenfassungen von Bewertungen angezeigt.</p><p>
+📖 <a href="https://blog.google/products/maps/google-maps-generative-ai-local-guides/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blog.google</a></p><p></p><p><span style="font-size:18px"><strong><em>"Es gibt keine echten Fotos"</em></strong></span></p><p>
+Vor einem Jahr gab es eine Kontroverse rund um Mond-Fotos, die mit dem Samsung Galaxy S23 gemacht wurden, und bei denen die Kamera-Software Details künstlich hinzugefügt hat (<a href="https://www.reddit.com/r/Android/comments/11nzrb0/samsung_space_zoom_moon_shots_are_fake_and_here/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reddit.com</a>).</p><p>
+Jetzt hat sich der Leiter von Samsung Customer Experience in einem Interview mit den Worten geäußert "Es gibt keine echten Fotos".</p><p>
+Er argumentiert damit, dass Digitalfotos immer nur Werte sind, die von einem Sensor registriert werden. Diese reproduzierten nur, was unsere Augen sehen, und seien daher bedeutungslos.</p><p>
+📖 <a href="https://www.techradar.com/phones/samsung-galaxy-phones/there-is-no-such-thing-as-a-real-picture-samsung-defends-ai-photo-editing-on-galaxy-s24" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techradar.com</a></p><p></p><p><span style="font-size:18px"><strong><em>Sessellift mit KI</em></strong></span></p><p>
+Der Hersteller Doppelmayr hat zwei Skilifte mit KI gebaut, die bereits in Österreich und der Schweiz in Betrieb sind.</p><p>
+Mit Kameras wird der Ausstiegsbereich der Sessellifte überwacht. Die Kamerabilder werden von einem KI-System ausgewertet, das erkennt, wenn z.B. jemand länger zum Aussteigen braucht oder gestürzt ist und dann automatisch den Lift bremsen und anhalten kann.</p><p>
+Der Lift in Österreich ist dadurch der weltweit erste Sessellift, der ohne Personal in der Bergstation betrieben werden kann.</p><p>
+📖 <a href="https://vorarlberg.orf.at/stories/3240255/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">vorarlberg.orf.at</a></p></span><h2 id="8">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auf Amazon gab es kurzzeitig Artikel zu kaufen, die als Produktname <em>"Entschuldigung, aber ich kann diese Anfrage nicht erfüllen, da sie gegen die OpenAI Nutzungsbedingungen verstößt"</em> (auf englisch) hatten: 📖 <a href="https://www.theverge.com/2024/1/12/24036156/openai-policy-amazon-ai-listings" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Katzenklappe, die sich nur öffnet, wenn die Katze keine tote Maus im Mund hat: 📖 <a href="https://www.engadget.com/the-flappie-ai-cat-door-stops-your-pet-from-gifting-you-dead-mice-033237654.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">engadget.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Jemand setzt einen einfachen Chatbot ein, um Kundentermine automatisch anzusetzen und fragt sich jetzt, wie er mit den Männern umgehen soll, die den Bot anbaggern: 📖 <a href="https://www.askamanager.org/2024/01/men-are-hitting-on-my-scheduling-bot-because-it-has-a-womans-name.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">askamanager.org</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Bing hat seit der Einführung von Bing Chat nur 1% Marktanteil gewonnen: 📖 <a href="https://www.seroundtable.com/bing-market-share-chatgpt-36751.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">seroundtable.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>HuggingFace und Google Cloud haben eine strategische Partnerschaft geschlossen: 📖 <a href="https://www.googlecloudpresscorner.com/2024-01-25-Google-Cloud-and-Hugging-Face-Announce-Strategic-Partnership-to-Accelerate-Generative-AI-and-ML-Development" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">googlecloudpresscorner.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Anündigung von Hugging Chat Assistant (ähnlich wie OpenAI "GPTs"): 📖 <a href="https://twitter.com/_philschmid/status/1753429249363452274" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">twitter.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Meta hat Code Llama 70 B angekündigt: 📖 <a href="https://ai.meta.com/blog/code-llama-large-language-model-coding/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.meta.com</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Der österreichische Arbeitsmarktservice hat jetzt einen eigenen Chatbot auf Basis von ChatGPT: 📖 <a href="https://www.derstandard.de/story/3000000201774/vorurteile-und-zweifelhafte-umsetzung-der-ams-ki-chatbot-trifft-auf-spott-und-hohn" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">derstandard.de</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Arbeitsumstände der Menschen, die die KI trainieren: 📖 <a href="https://www.tagesschau.de/wirtschaft/unternehmen/ki-klickarbeiter-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a><br/>
+	 </div>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<div>Vorschläge der "Ständigen Wissenschaftlichen Kommission" zum Umgang mit KI in der Schule: 📖 <a href="https://www.tagesschau.de/inland/gesellschaft/ki-chatgpt-schule-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a></div>
+</li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../56">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
