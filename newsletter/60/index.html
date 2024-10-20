@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Homepage Tobias Fränzel</title>
+<meta content="" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../styles/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/newsletter_styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../img/favicon.png" rel="icon" type="image/png"/>
+<!-- Mailchimp signup styles -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+      #mc_embed_signup form{padding:0;margin-top:2em;}
+    	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+</meta></head>
+<body>
+<nav class="menu-main">
+<ul>
+<li><a href="../../index.html">Tobias Fränzel</a></li>
+<li><a href="../../newsletter.html">Newsletter</a></li>
+<li><a href="../../projekte.html">Projekte</a></li>
+<li><a href="../../kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<hr class="divider"/>
+<div id="container-main">
+<h1>KI News #60</h1><span>
+                        
+                            Hallo und herzlich willkommen zur sechzigsten Ausgabe von KI News. Wie letztes Mal versprochen, mit einem Überblick über die Neuigkeiten von Google aus den letzten Monaten. Außerdem hat Apple eine Reihe von KI-Ankündigungen gemacht, bei OpenAI und xAI sind Dinge passiert und Meta beschreibt die KI Infrastruktur für Llama 3.<p>
+Es gibt einen neuen Fall, wo jemand ChatGPT als Informationsquelle benutzt hat und damit sehr öffentlich auf die Nase gefallen ist.</p><p>
+Zu guter Letzt gibt es ein Update zum autonomen Fahren (Waymo hatte ein Hup-Problem und Cruise ist auf dem Weg zurück in den Normalbetrieb) - und noch mehr.</p><p>
+Viel Spaß beim Lesen!
+                        </p></span><h2 id="2">Inhalt</h2><span><p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"></p><ul>
+<li><a href="#3">Nobelpreise für KI-Forscher</a></li>
+<li><a href="#4">Neuigkeiten von Google</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neuigkeiten von Apple</li>
+<li><a href="#6">Neuigkeiten von OpenAI</a></li>
+<li><a href="#7">Neuigkeiten von xAI</a></li>
+<li><a href="#8">Metas KI Infrastruktur</a></li>
+<li><a href="#9">KI Fehler und Halluzinationen</a></li>
+<li><a href="#10">Autonomes Fahren, Oktober Update</a></li>
+<li><a href="#11">Außerdem</a></li>
+</ul></span><h2 id="3">Nobelpreise für KI-Forscher</h2><span>
+Sowohl der Physik- als auch der Chemie-Nobelpreis gingen in diesem Jahr an KI-Forscher.<p></p><p>
+Der Nobelpreis für Physik wurde je zur Hälfte an <a href="https://de.wikipedia.org/wiki/John_Hopfield" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">John Hopfield</a> und <a href="https://de.wikipedia.org/wiki/Geoffrey_Hinton" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Geoffrey Hinton</a> verliehen, für ihre Beiträge zur Entwicklung von künstlichen neuronalen Netzen. Diese sind die Grundlage für quasi alles, worüber ich in diesem Newsletter schreibe: 📖 <a href="https://www.nobelprize.org/prizes/physics/2024/summary/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nobelprize.org</a></p><p></p><p>
+Der Nobelpreis für Chemie wurde an drei Personen vergeben: zur Hälfte an <a href="https://de.wikipedia.org/wiki/David_Baker_(Biochemiker)" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">David Baker</a> und zu je einem Viertel an <a href="https://de.wikipedia.org/wiki/Demis_Hassabis" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Demis Hassabis</a> und <a href="https://de.wikipedia.org/wiki/John_M._Jumper" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">John Jumper</a>. Alle drei haben Methoden entwickelt, um die Struktur von Proteinen mithilfe von Computern vorherzusagen.</p><p>
+Demis Hassabis und John Jumper haben dafür ein KI-Modell entwickelt (zusammen mit vielen weiteren Forscher:innen) und bekommen den Nobelpreis explizit für die zweite Version davon, AlphaFold2 (<a href="https://www.nature.com/articles/s41586-021-03819-2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nature.com</a>): 📖 <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nobelprize.org</a></p></span><h2 id="4">Neuigkeiten von Google</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue KI-Features in der Google Suche
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In der Google Suche wird bei manchen Suchbegriffen jetzt eine KI-generierte Antwort ("AI Overview") über den eigentlichen Ergebnissen eingeblendet.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Antworten enthalten auch Links zu den Quellen, damit man sie überprüfen oder weitere Informationen finden kann.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Problem dabei: im Internet steht wirklich viel Scheiß. Deshalb kann man auch zum größten Unsinn eine Quelle finden.<br/>
+		Zum Beispiel hat jemand das Problem gegooglet, dass der Käse von der Pizza rutscht. Eine im AI Overview vergeschlagene Lösung: ungiftigen Klebstoff in die Soße mischen, damit sie klebriger wird. Quelle: irgendein Quatsch-Post auf Reddit. (<a href="https://x.com/kurtopsahl/status/1793494822436917295" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a>)<br/>
+		Jemand anderes wollte wissen, was er oder sie tun soll, weil der Blinker des Autos kein Geräusch mehr macht. Einer der KI-Vorschläge: die Blinker-Flüssigkeit austauschen. (<a href="https://x.com/DaltonEverett_/status/1792320370839585080" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a>)<br/>
+		Weitere Beispiele hat Watson.ch gesammelt: <a href="https://www.watson.ch/digital/google/246434058-google-ki-suche-liefert-unfassbar-peinliche-antworten-12-beispiele" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">watson.ch</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Google sagt, die fragwürdigen Ergebnisse gäbe es nur bei einigen ungewöhnlichen Suchanfragen und dass sie nicht dem Erlebnis der meisten Nutzer:innen entsprechen würden: <a href="https://www.theverge.com/2024/5/23/24162896/google-ai-overview-hallucinations-glue-in-pizza" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Obwohl das Thema jetzt wieder besonders viel Aufmerksamkeit bekommt, ist das Problem an sich nicht neu.<br/>
+		Auch die ohne KI erstellten Antworten von Google sind teilweise falsch (<a href="https://tobiasfraenzel.de/newsletter/22/#6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #22</a>) und sie konnten auch bisher schon unbeabsichtigt KI-Halluzinationen beinhalten (<a href="https://tobiasfraenzel.de/newsletter/53/#7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #53</a>).</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://blog.google/products/search/generative-ai-google-search-may-2024/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blog.google</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://www.theverge.com/2024/5/14/24155321/google-search-ai-results-page-gemini-overview" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">CO₂ Emissionen
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die CO₂ Emissionen von Google im Jahr 2023 sind gegenüber 2022 um 13% gestiegen, seit 2019 sogar um 48%.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der Strombedarf der Google-Rechenzentren ist von 2022 zu 2023 um 17% (3,5 TWh) gestiegen, laut Google war das einer der Haupt-Treiber der gestiegenen Emissionen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Möglicherweise im Zusammenhang mit diesem Anstieg ist der Hinweis "CO₂-neutral seit 2007", der früher unten auf der Google-Startseite zu sehen war (Screenshot z.B. hier <a href="https://www.webzweipunktnull.de/browser/google-als-startseite-festlegen/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">webzweipunktnull.de</a>) ersetzt worden durch einen neuen Slogan ohne konkrete Aussage: "Drei Jahrzehnte Klimaschutz: Jede Entscheidung zählt).</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Google Environmental Report 📖 <a href="https://www.gstatic.com/gumdrop/sustainability/google-2024-environmental-report.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">gstatic.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue Modelle
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Med-Gemini
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Med-Gemini ist eine Familie von Modellen, die bei medizinischen Anwendungsfällen hilfreich sein soll, z.B. Schreiben von radiologischen Berichten oder Zusammenfassen von Gesundheitsinformationen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://research.google/blog/advancing-medical-ai-with-med-gemini/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">research.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">AlphaProteo
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eine Modellfamilie, die Forscher:innen dabei helfen kann, Proteine zu finden, die an bestimmte andere Proteine binden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://deepmind.google/discover/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Bessere Vorschläge bei Youtube Musik
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Google hat einen Blogpost veröffentlicht, der beschreibt, wie die Vorschläge von Youtube Musik durch den Einsatz von Transformer Modellen verbessert wurden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://research.google/blog/transformers-in-music-recommendation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">research.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">AlphaProof und AlphaGeometry 2
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Beides sind Modelle, die mathematische Probleme lösen können.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Für das Training von AlphaProof haben die Forscher:innen ein Gemini-Sprachmodell darauf trainiert, Aufgabenstellungen von natürlicher Sprache in formale Beschreibungen zu übersetzen.<br/>
+			Für diese Problem-Beschreibungen hat AlphaProof dann mögliche Lösungen generiert. Die möglichen Lösungen wurden dann automatisch auf Korrektheit geprüft. Mit dem Ergebnis der Prüfung wurde AlphaProof dann mithilfe von Reinforcement Learning trainiert.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">AlphaGeometry 2 ist eine verbesserte Version des AlphaGeometry Modells, das im Januar vorgestellt wurde (<a href="https://tobiasfraenzel.de/newsletter/57/#4" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #57</a>).<br/>
+			Es soll schneller sein und komplexere Probleme lösen können als die erste Version.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veo
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Veo ist ein Diffusion-Modell, das Videos in Full-HD-Qualität generieren kann.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Als Eingabe kann Veo einen einfachen Text, ein Bild oder auch ein bestehendes Video verarbeiten.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://deepmind.google/technologies/veo/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Gemini 1.5 Flash und Gemini 1.5 Pro
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Pro Variante mit einer Kontextlänge von 2 Millionen Tokens und die kleinere, aber besonders schnelle, Flash Variante des Gemini Sprachmodells sind veröffentlicht worden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://developers.googleblog.com/en/new-features-for-the-gemini-api-and-google-ai-studio/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">developers.googleblog.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://deepmind.google/technologies/gemini/flash/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Video to Audio
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forscher:innen von Deepmind haben ein Diffusion-Modell entwickelt, das zu einem Video passendes Audio generieren kann, z.B. Hintergrundmusik oder Geräusche.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Um das Ergebnis zu beeinflussen, können Nutzer:innen beschreiben, wie die Audiospur klingen soll und aber auch wie sie nicht klingen soll.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://deepmind.google/discover/blog/generating-audio-for-video/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deepmind.google</a><br/>
+			 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">JEST - eine neue Trainingstechnik
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Abkürzung JEST steht für Joint Example Selection (und das T vielleicht für Training?).</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Idee ist, dass es für ein Modell einfacher ist, von manchen Trainingsdaten zu lernen, wenn sie mit anderen Daten zusammen gruppiert werden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Forscher:innen schreiben, dass durch den Einsatz von JEST nur noch ein Zehntel der Rechenleistung für das Training nötig war.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://arxiv.org/abs/2406.17711" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://decrypt.co/238730/new-ai-training-technique-is-drastically-faster-says-google" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">decrypt.co</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></span><h2 id="5">Apple Intelligence, Siri und ChatGPT Integration</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Apple Intelligence, das KI System von Apple:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Writing Tools: Texte umformulieren (Rewrite), Formulierungen verbessern (Proofread), Zusammenfassen (Summarize).</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mail: wichtigste E-Mails zuerst anzeigen (Priority Messages), Zusammenfassungen als Vorschau statt der ersten Zeilen der Mail, Vorschläge für Antworten (Smart Reply).</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Benachrichtigungen: Zusammenfassungen und wichtigste zuerst anzeigen, ähnlich wie bei E-Mails. Außerdem ein neuer "Nicht Stören"-Modus, bei dem nur als dringend eingeschätzte Benachrichtigungen angezeigt werden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In den Notizen und Telefon Apps können Sprachaufnahmen gemacht, in Texte umgewandelt und zusammengefasst werden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mit Image Playground können iPhone-Nutzer:innen Bilder auf Basis von Fotos und einer Beschreibung oder einem Thema generieren und mit Genmoji können sie eigene Emojis erstellen lassen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Um Fotos und Videos in der Galerie wieder zu finden, kann man einfach beschreiben nach was man sucht und bekommt passende Fotos oder Video-Stellen vorgeschlagen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Außerdem kann das "Clean Up" Tool Objekte aus dem Hintergrund von Fotos entfernen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die meisten Funktionen von Apple Intelligence sollen auf dem iPhone selbst laufen. Wenn ein größeres KI-Modell nötig ist, dann soll das zwar in der Cloud laufen, aber nur auf speziellen Servern, die die Daten besonders schützen sollen. Wie genau, das beschreibt Apple hier: <a href="https://security.apple.com/blog/private-cloud-compute/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">security.apple.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue Funktionen in Siri und Integration von ChatGPT
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Siri soll Informationen in E-Mails und anderen Nachrichten analysieren und darauf basierend Fragen beantworten oder Aktionen ausführen können.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auf Wunsch der Nutzer:innen kann Siri Eingaben an ChatGPT weitergeben und die Antworten anzeigen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auch in die Writing Tools wird ChatGPT integriert, so dass man generierte Texte direkt einfügen kann.</li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://www.apple.com/newsroom/2024/06/introducing-apple-intelligence-for-iphone-ipad-and-mac/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">apple.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Wie funktioniert das Ganze?
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Apple veröffentlicht, im Gegensatz zu zum Beispiel OpenAI oder Google, sehr viel mehr Informationen über seine KI-Modelle.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Für Apple Intelligence werden zwei Modelle direkt auf dem iPhone ausgeführt: ein Sprachmodell mit 2,6 Milliarden Parametern und ein Bild-Modell.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein "Orchestration" Service entscheidet, ob eine Aufgabe von den Modellen auf dem iPhone oder in der Cloud ausgeführt wird.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Damit auf dem iPhone nicht für jede Aufgabe ein spezialisiertes Sprachmodell geladen werden muss, nutzt Apple sogenannte "Adapter" - kleinere neuronale Netze, die auf die jeweilige Aufgabe angepasst sind und die Ausgabe des Sprachmodells entsprechend verarbeiten.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://machinelearning.apple.com/research/introducing-apple-foundation-models" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">machinelearning.apple.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://arxiv.org/abs/2407.21075" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein interessanter Blogeintrag darüber, wie sich Apples Ansatz bei KI von Google oder Microsoft unterscheidet: 📖 <a href="https://www.ben-evans.com/benedictevans/2024/06/20/apple-intelligence" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ben-evans.com</a></li>
+</ul></span><h2 id="6">Neuigkeiten von OpenAI</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI hat eine neue Modell-Familie namens o1 entwickelt, die zahlende Kund:innen nutzen können. Dabei handelt es sich um Sprachmodelle, die in ihren Antworten mehrere Zwischenschritte nutzen (die sogenannte "Chain-of-Thought" Technik), um komplexe Probleme besser lösen zu können: 📖 <a href="https://openai.com/o1/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In einer neuen Finanzierungsrunde hat OpenAI 6,6 Milliarden US-Dollar von Investoren bekommen. Das Unternehmen wurde dabei mit 150 Milliarden Dollar bewertet: 📖 <a href="https://openai.com/index/scale-the-benefits-of-ai/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a>. Zusätzlich hat sich OpenAI Kredite in Höhe von 4 Milliarden US-Dollar gesichtert: 📖 <a href="https://openai.com/index/new-credit-facility-enhances-financial-flexibility/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a>.<br/>
+	Außerdem gibt es Gerüchte über eine mögliche Restrukturierung: 📖 <a href="https://www.reuters.com/technology/artificial-intelligence/openai-remove-non-profit-control-give-sam-altman-equity-sources-say-2024-09-25/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mehrere hochranginge Mitarbeiter haben OpenAI verlassen:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mitgründer John Schulman arbeitet in Zukunft für Konkurrent Anthropic:
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ankündigung auf X: 📖 <a href="https://x.com/johnschulman2/status/1820610863499509855" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Reaktion von Sam Altman: 📖 <a href="https://x.com/sama/status/1820617107354083611" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Artikel von CNBC: 📖 <a href="https://www.cnbc.com/2024/08/06/openai-co-founder-john-schulman-says-he-will-join-rival-anthropic.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">cnbc.com</a></li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Technikchefin Mira Murati verlässt OpenAI um "ihre eigenen Erkundungen zu machen":
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ankündigung auf X: 📖 <a href="https://x.com/miramurati/status/1839025700009030027" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forschungsleiter Bob McGrew verlässt OpenAI und sagt "es ist Zeit eine Pause zu machen":
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ankündigung auf X: 📖 <a href="https://x.com/bobmcgrewai/status/1839099787423134051" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Barret Zoph, Leiter des "Post-Training"-Bereichs verlässt OpenAI, weil es sich "wie der richtige Punkt anfühlt um neue Möglichkeiten außerhalb von OpenAI zu erkunden".
+		<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ankündigung auf X: 📖 <a href="https://x.com/barret_zoph/status/1839095143397515452" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Reaktion von Sam Altman auf die drei Ankündigungen auf X: 📖 <a href="https://x.com/sama/status/1839096160168063488" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Dafür hat OpenAI einen neuen "Vice President of Global Policy", Chris Lehane, der vorher unter anderem für AirBnB und die US-Regierung unter Präsident Clinton gearbeitet hat: 📖 <a href="https://www.nytimes.com/2024/08/30/technology/openai-chris-lehane.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">nytimes.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">OpenAI sagt, dass sie Accounts gesperrt haben, die ChatGPT genutzt haben, um Inhalte für eine iranische Beeinflussungskampagne zu generieren: 📖 <a href="https://openai.com/index/disrupting-a-covert-iranian-influence-operation/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Zahlende OpenAI Kund:innen können jetzt GPT-4o fine-tunen, das heißt mit eigenen Daten weitertrainieren: 📖 <a href="https://openai.com/index/gpt-4o-fine-tuning/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">openai.com</a></li>
+</ul></span><h2 id="7">Neuigkeiten von xAI</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">xAI, Elon Musks KI-Unternehmen, hat im Mai 6 Milliarden Dollar von Investoren bekommen: 📖 <a href="https://techcrunch.com/2024/05/26/elon-musks-xai-raises-6b-from-valor-a16z-and-sequoia/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a>, 📖 <a href="https://x.ai/blog/series-b" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">xAI hat zwei neue Modelle entwickelt, Grok-2 und Grok-2 mini, die jetzt zahlenden Nutzer:innen von X zur Verfügung stehen.<br/>
+	Außerdem kooperieren sie mit Black Forest Labs, um das FLUX.1 Modell (<a href="https://tobiasfraenzel.de/newsletter/59/#6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">KI News #59</a>) auf X zu testen.<br/>
+	📖 <a href="https://x.ai/blog/grok-2" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Elon Musk wird wegen der Gründung von xAI von Tesla Aktionären verklagt, die Tesla weniger als Autohersteller und mehr als KI-Unternehmen sehen und xAI somit als direkte Konkurrenz: 📖 <a href="https://www.theverge.com/2024/6/13/24177975/tesla-shareholder-lawsuit-elon-musk-xai-rival-compete" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+</ul></span><h2 id="8">Metas KI Infrastruktur</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Neue Herausforderungen durch die neuen KI Modelle:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Für Generative AI Modelle ist viel mehr Rechenleistung nötig und damit auch viel mehr Grafikkarten als bei bisherigen Modellen.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mehr Grafikkarten bedeuten eine höhere Wahrscheinlichkeit, dass eine davon kaputt geht. Dadurch werden Ausfallsicherheit und schnelle Fehlerbehebung wichtiger.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der aktuelle Trainingsstand muss bei einem Ausfall gesichert sein und dafür effizient gespeichert werden.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die vielen Grafikkarten müssen auf robuste und schnelle Weise miteinander verbunden werden.<br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Probleme, die bei Meta am häufigsten auftreten sind:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Grafikkarten, die nicht erkannt werden</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Grafikkarten-Treiber hängt</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Fehler im Speicher der Grafikkarten</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kaputte Netzwerkkabel<br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Beim Training von Llama 3, das 54 Tage lang ging, sind insgesamt 419 Probleme aufgetreten.<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Auch interessant: sie waren sich nicht sicher, welche Netzwerktechnologie besser funktionieren würde, <a href="https://en.wikipedia.org/wiki/RDMA_over_Converged_Ethernet" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">RoCE</a> oder <a href="https://de.wikipedia.org/wiki/InfiniBand" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">InfiniBand</a>, also haben sie einfach zwei Cluster gebaut, eins mit RoCE und eins mit InfiniBand, jeweils mit 24.000 Grafikkarten.<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Llama 3 und 3.1 Modelle wurden aber noch auf einem RoCE Cluster mit 16.000 Grafikkarten trainiert. In diesem Cluster waren immer ca. 3000 Grafikkarten zu kleineren Clustern verbunden, die dann wiederum zu einem großen Cluster zusammengeschlossen wurden.<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://engineering.fb.com/2024/06/12/data-infrastructure/training-large-language-models-at-scale-meta/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">engineering.fb.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">📖 <a href="https://www.youtube.com/watch?v=ELIcy6flgQI" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a></li>
+</ul></span><h2 id="9">KI Fehler und Halluzinationen</h2><span><p>
+Als "Halluzinationen" werden meistens Ausgaben von Sprachmodellen bezeichnet, die keinen Sinn ergeben oder falsch sind.</p><p></p><p>
+Bei einem Chatbot wie ChatGPT kann das noch harmlos sein - kann aber trotzdem schon unangenehme Folgen haben, wie bei dem Anwalt, der von ChatGPT erfundene Fälle in einem Gerichtsverfahren eingebracht hat (📖 <a href="https://apnews.com/article/artificial-intelligence-chatgpt-courts-e15023d7e6fdf4f099aa122437dbb59b" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">apnews.com</a>) oder bei den falschen Zitaten, die vor kurzem im Trailer des Films "Megalopolis" gezeigt wurden (📖 <a href="https://deadline.com/2024/08/megalopolis-marketing-consultant-lionsgate-ties-cut-trailer-debacle-1236049223/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">deadline.com</a>).</p><p></p><p>
+Bei einigen anderen Fällen ist es noch wichtiger, dass die Informationen, die von dem KI Modell kommen, stimmen, zum Beispiel beim Projekt "AKIRA", bei dem KI Richter:innen in Baden-Württemberg helfen soll Akten zu strukturieren und zusammenzufassen (📖 <a href="https://www.justiz-bw.de/,Lde/21737996" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">justiz-bw.de</a>).</p><p></p><p>
+Ist es also möglich, für solche Anwendungen in der Justiz, Sprachmodelle ohne Halluzinationen zu entwickeln?</p><p></p><p>
+Dazu haben Forscher:innen der Universität Stanford drei kommerzielle Programme untersucht, die für rechtliche Anwendungsfälle angeboten werden.</p><p>
+Ergebnis: Zwei der Programme halluzinierten bei jeder sechsten Anfrage, das andere sogar bei jeder dritten. Zählt man auch die unvollständigen Antworten als fehlerhaft, dann waren sogar beim besten der drei untersuchten Programme mehr als ein Drittel falsch (35%), beim schlechtesten sogar 80%.</p><p></p><p>
+Die Schlussfolgerung der Forscher:innen: als Hilfe, um einen guten Ausgangspunkt für eine eigene Recherche zu bekommen, können KI-Anwendungen hilfreich sein, aber man sollte sich nicht auf sie verlassen: 📖 <a href="https://arxiv.org/abs/2405.20362" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">arxiv.org</a></p><p></p><p>
+Das zeigen auch andere Fälle, bei denen Menschen irrtümlich als Kriminelle identifiziert wurden (<a href="https://www.bbc.com/news/technology-69055945" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">bbc.com</a>) oder fälschlicherweise beschuldigt wurden KI-Tools zu verwenden, ironischerweise von einem KI-Tool (<a href="https://gizmodo.com/ai-detectors-inaccurate-freelance-writers-fired-1851529820" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">gizmodo.com</a>).
+                        </p></span><h2 id="10">Autonomes Fahren, Oktober Update</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Waymo
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat im August die Marke von 100.000 bezahlten Fahrten pro Woche erreicht: 📖 <a href="https://x.com/TechTekedra/status/1825910695311114384" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">bietet auch Fahrten an den und vom Flughafen von Phoenix, Arizona, an: 📖 <a href="https://x.com/Waymo/status/1828447381219586493" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat die Anwohner eines Parkplatzes in San Francisco mit nächtlichen Hupkonzerten wach gehalten, das Problem aber in der Zwischenzeit gelöst: 📖 <a href="https://climatejustice.social/@504DR/112963396298364233" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">climatejustice.social</a>, 📖 <a href="https://techcrunch.com/2024/08/19/the-waymo-robotaxi-honking-problem-has-been-resolved-for-real-this-time/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat in einem Blogeintrag das zukünftige Waymo Auto beschrieben: 📖 <a href="https://waymo.com/blog/2024/08/meet-the-6th-generation-waymo-driver/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">waymo.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Cruise:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat seine selbstfahrenden Autos zurückgerufen, um ein Problem mit unerwartetem Bremsen zu lösen: 📖 <a href="https://techcrunch.com/2024/08/22/cruise-recall-av-fleet-nhtsa-probe-closed/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat angekündigt, dass die selbstfahrenden Autos ab 2025 über die Uber App gebucht werden können: 📖 <a href="https://www.theverge.com/2024/8/22/24226331/uber-cruise-autonomous-rides" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tesla:
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hat auf einer lang erwarteten Veranstaltung mit dem Titel "We, Robot" Protoypen von selbstfahrenden Fahrzeugen gezeigt. Zum einen das "Cybercab", das aussieht wie eine Mischung aus Model Y und Cybertruck und zum anderen den "Robovan", ein autonomer Kleinbus.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die Produktion des Cybercab soll "vor 2027" starten.</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Außerdem wurde angekündigt, dass Model 3 und Model Y künftig auch autonom fahren können sollen. Wie üblich ab nächstem Jahr :)</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Liveblog des Events: 📖 <a href="https://www.theverge.com/2024/10/10/24267132/tesla-robotaxi-we-robot-autonomous-fsd-elon-musk" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">theverge.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Livestream: 📖 <a href="https://www.youtube.com/watch?v=6v6dbxPlsXs" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">youtube.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Die amerikanische Verkehrssicherheitsbehörde NHTSA hat wegen mehreren Unfällen eine Untersuchung des Tesla "Full Self Driving" Systems gestartet: 📖 <a href="https://techcrunch.com/2024/10/18/teslas-full-self-driving-software-under-investigation-by-federal-safety-regulator/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a>, <a href="https://static.nhtsa.gov/odi/inv/2024/INOA-PE24031-23232.pdf" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">static.nhtsa.gov (PDF)</a><br/>
+		 </li>
+</ul>
+</li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Weitere
+	<ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Pony AI bereitet seinen Börsengang vor: 📖 <a href="https://techcrunch.com/2024/10/19/four-takeaways-from-pony-ais-ipo-filing/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a></li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Der CEO von Motional ist zurückgetreten: 📖 <a href="https://techcrunch.com/2024/09/18/ceo-of-self-driving-startup-motional-is-stepping-down/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">techcrunch.com</a></li>
+</ul>
+</li>
+</ul></span><h2 id="11">Außerdem</h2><span><ul>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Windows Recall: Microsoft will ein neues Feature einführen, das regemäßig Screenshots von allem macht, was auf dem Bildschirm zu sehen ist. Mit diesen Screenshots soll dann eine KI Fragen zu allem beantworten können, was man irgendwann mal gemacht hat. 📖 <a href="https://blogs.windows.com/windowsexperience/2024/06/07/update-on-the-recall-preview-feature-for-copilot-pcs/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">blogs.windows.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Stable Fast 3D: ein neues Modell von Stability AI, das aus einem Bild eine 3D Darstellung machen kann. 📖 <a href="https://stability.ai/news/introducing-stable-fast-3d" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">stability.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Stability AI hat außerdem angekündigt, dass <a href="https://de.wikipedia.org/wiki/James_Cameron" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">James Cameron</a> (der Regisseur von Titanic und Avatar) dem Verwaltungsrat beitreten wird: 📖 <a href="https://stability.ai/news/james-cameron-joins-stability-ai-board-of-directors" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">stability.ai</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Meta und Spotify haben ein gemeinsames Statement veröffentlicht, in dem sie komplexe und inkonsistente Regulierungen in der EU kritisieren: 📖 <a href="https://about.fb.com/news/2024/08/why-europe-should-embrace-open-source-ai-zuckerberg-ek/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">about.fb.com</a>, <a href="https://newsroom.spotify.com/2024-08-23/mark-zuckerberg-and-daniel-ek-on-why-europe-should-embrace-open-source-ai-it-risks-falling-behind-because-of-incoherent-and-complex-regulation-say-the-two-tech-ceos/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">newsroom.spotify.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Torchat: Ein Framework um Pytorch LLMs lokal auszuführen: 📖 <a href="https://github.com/pytorch/torchchat" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">github.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das Startup <a href="https://www.perceptive.io/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Perceptive</a> hat einen Roboter gebaut, der in einem ersten Test selbstständig eine Zahnbehandlung durchgeführt hat: 📖 <a href="https://newatlas.com/health-wellbeing/robot-dentist-world-first" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">newatlas.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Vergleich von "Reinforcement Learning from Human Feedback", das z.B. beim Training von ChatGPT verwendet wurde, mit "normalem" Reinforcement Learning, das z.B. beim Training von <a href="https://de.wikipedia.org/wiki/AlphaGo" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">AlphaGo</a> verwendet wurde, durch Andrej Karpathy: 📖 <a href="https://x.com/karpathy/status/1821277264996352246" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">x.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein Doktorand der Stanford University hat einen ausführlichen Blogpost zum Thema Machine Unlearning geschrieben, also zur Frage, wie man bestimmte Informationen aus KI Modellen wieder entfernen kann: 📖 <a href="https://ai.stanford.edu/~kzliu/blog/unlearning" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.stanford.edu</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Händler auf Amazons Marketplace Handelsplattform können sich Produktbeschreibungen und Werbeanzeigen mithilfe von KI erzeugen lassen: 📖 <a href="https://www.tagesschau.de/wirtschaft/digitales/amazon-kuenstliche-intelligenz-werbung-100.html" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">tagesschau.de</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Amazons kostenpflichtige neue Alexa-Version namens "Remarkable" wird laut Reuters ein KI-Modell von Anthropic benutzen: 📖 <a href="https://www.reuters.com/technology/artificial-intelligence/amazon-turns-anthropics-claude-alexa-ai-revamp-2024-08-30/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Forscher:innen des MIT haben ein neuronales Netz entwickelt, das die "<a href="https://de.wikipedia.org/wiki/Phonon" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">Phononen</a>dispersionsrelation" von verschiedenen Materialien vorhersagen kann. Das hilft dabei, die Übertragung von Wärme in einem Material zu berechnen (falls ich es richtig verstanden habe): 📖 <a href="https://www.eecs.mit.edu/ai-method-radically-speeds-predictions-of-materials-thermal-properties/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">eecs.mit.edu</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Meta hat Version 3.2 des Llama Sprachmodells veröffentlicht: 📖 <a href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">ai.meta.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Mistral hat ein Modell namens Pixtral 12B veröffentlicht, das auch Bilder verarbeiten kann (📖 <a href="https://mistral.ai/news/pixtral-12b/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">mistral.ai</a>) und zwei neue relativ kleine Sprachmodelle, Ministral 3B und 8B (📖 <a href="https://mistral.ai/news/ministraux/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">mistral.ai</a>).<br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Ein noch kleineres Modell hat AMD veröffentlicht, AMD-135M: 📖 <a href="https://community.amd.com/t5/ai/amd-unveils-its-first-small-language-model-amd-135m/ba-p/711368" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">community.amd.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das deutsche KI-Startup Aleph Alpha gibt dagegen die Entwicklung von eigenen Sprachmodellen auf: 📖 <a href="https://the-decoder.de/aleph-alpha-steigt-aus-dem-ki-wettlauf-aus/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">the-decoder.de</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Nvidia hat im zweiten Quartal 2024 die Hälfte seines Umsatzes nur vier Kunden zu verdanken, die jeweils mehrere Milliarden US-Dollar ausgegeben haben: 📖 <a href="https://fortune.com/2024/08/29/nvidia-jensen-huang-ai-customers/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">fortune.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Das neue Unternehmen des OpenAI Mitgründers Ilya Sutskever "Safe Superintelligence" hat eine Milliarde US-Dollar von Investoren bekommen: 📖 <a href="https://www.reuters.com/technology/artificial-intelligence/openai-co-founder-sutskevers-new-safety-focused-ai-startup-ssi-raises-1-billion-2024-09-04/" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">reuters.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">In Nevada entscheidet in Zukunft Google mit, wer etwas bekommt. Eine KI-Software soll nämlich Empfehlungen für Entscheidungen beim Arbeitslosengeld aussprechen: 📖 <a href="https://gizmodo.com/googles-ai-will-help-decide-whether-unemployed-workers-get-benefits-2000496215" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">gizmodo.com</a><br/>
+	 </li>
+<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Kanadische Forscher:innen haben ein KI-gestütztes Programm entwickelt, das vorhersagen kann, ob sich der Zustand eines Patienten verschlechtern wird, so dass frühzeitig Maßnahmen ergriffen werden können, was zu einem Rückgang der Todesfälle geführt hat: 📖 <a href="https://www.cmaj.ca/content/196/30/E1027" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;" target="_blank">cmaj.ca</a></li>
+</ul></span>
+<p id="bottom-nav-container"><a href="../59">« Vorherige</a><a class="hidden" href="">Nächste »</a></p>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://tobiasfraenzel.us7.list-manage.com/subscribe/post?u=6a2f372a93d527ee449b8e785&amp;id=9d690dbb78" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<p>Hier abonnieren und keine Ausgabe mehr verpassen:</p>
+<!--<div class="indicates-required"><span class="asterisk">*</span> Pflichtfeld</div>-->
+<div class="mc-field-group">
+<label for="mce-EMAIL">E-Mail Adresse:<!--<span class="asterisk">*</span>--></label>
+<input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""/>
+</div>
+<!--<div class="mc-field-group">
+                      <label for="mce-FNAME">Name</label>
+                          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>-->
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_6a2f372a93d527ee449b8e785_9d690dbb78" tabindex="-1" type="text" value=""/></div>
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Anmelden"/></div>
+</div>
+</form>
+</div>
+</div>
+</body>
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tobiasfraenzel.de/misc/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+<!-- End Matomo Code -->
+</html>
